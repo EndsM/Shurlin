@@ -118,7 +118,7 @@ public class Blocks {
         PLANT_OBSIDIAN = register("plant_obsidian", BlockSettings.OBSIDIAN);
         HOLY_FARMER_PORTAL = register("holy_farmer_portal", new HolyFarmerPortalBlock(FabricBlockSettings.of(Material.PORTAL).noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.GLASS).lightLevel(12)));
         CULTIVATION_CRYSTAL = register("cultivation_crystal", new CultivationCrystalBlock(FabricBlockSettings.of(Material.GLASS).strength(-1).nonOpaque()));
-        SUCCULENT_BLOCK = register("succulent_block", new SucculentBlock(FabricBlockSettings.of(Material.ORGANIC_PRODUCT, MaterialColor.GRASS).slipperiness(0.8F).sounds(BlockSoundGroup.SLIME).nonOpaque().lightLevel((state) ->
+        SUCCULENT_BLOCK = register("succulent_block", new SucculentBlock(FabricBlockSettings.of(Material.ORGANIC_PRODUCT, MapColor.PALE_GREEN).slipperiness(0.8F).sounds(BlockSoundGroup.SLIME).nonOpaque().lightLevel((state) ->
                 state.get(SucculentBlock.SHINING) ? 8 : 0
         )));
         LLANDUDNO = register("llandudno_block", BlockSettings.LLANDUDNO);
@@ -175,14 +175,14 @@ public class Blocks {
             LEAVES = FabricBlockSettings.of(Material.LEAVES).strength(0.2f, 0.2f).ticksRandomly().sounds(BlockSoundGroup.GRASS).nonOpaque();
             PLANKS = FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD);
             ORE = FabricBlockSettings.of(Material.STONE).requiresTool().strength(3.0f, 3.0f);
-            CORAL = FabricBlockSettings.of(Material.UNDERWATER_PLANT, MaterialColor.GREEN).noCollision().breakInstantly().sounds(BlockSoundGroup.WET_GRASS);
-            DEAD_CORAL = FabricBlockSettings.of(Material.STONE, MaterialColor.GRAY).requiresTool().noCollision().breakInstantly();
-            CORAL_BLOCK = FabricBlockSettings.of(Material.STONE, MaterialColor.GREEN).requiresTool().strength(1.5F, 6.0F).sounds(BlockSoundGroup.CORAL);
-            DEAD_CORAL_BLOCK = FabricBlockSettings.of(Material.STONE, MaterialColor.GRAY).requiresTool().strength(1.5F, 6.0F);
+            CORAL = FabricBlockSettings.of(Material.UNDERWATER_PLANT, MapColor.GREEN).noCollision().breakInstantly().sounds(BlockSoundGroup.WET_GRASS);
+            DEAD_CORAL = FabricBlockSettings.of(Material.STONE, MapColor.GRAY).requiresTool().noCollision().breakInstantly();
+            CORAL_BLOCK = FabricBlockSettings.of(Material.STONE, MapColor.GREEN).requiresTool().strength(1.5F, 6.0F).sounds(BlockSoundGroup.CORAL);
+            DEAD_CORAL_BLOCK = FabricBlockSettings.of(Material.STONE, MapColor.GRAY).requiresTool().strength(1.5F, 6.0F);
             OBSIDIAN = FabricBlockSettings.of(Material.STONE).requiresTool().strength(60.0F, 1200.0F);
             WORKER = FabricBlockSettings.of(Material.STONE).strength(10.0f, 10.0f);
-            STONE = FabricBlockSettings.of(Material.STONE, MaterialColor.STONE).requiresTool().strength(1.5F, 6.0F);
-            DIRT = FabricBlockSettings.of(Material.SOIL, MaterialColor.DIRT).strength(0.5F).sounds(BlockSoundGroup.GRAVEL);
+            STONE = FabricBlockSettings.of(Material.STONE, MapColor.STONE_GRAY).requiresTool().strength(1.5F, 6.0F);
+            DIRT = FabricBlockSettings.of(Material.SOIL, MapColor.DIRT_BROWN).strength(0.5F).sounds(BlockSoundGroup.GRAVEL);
             LLANDUDNO = FabricBlockSettings.of(Material.METAL).strength(20.0f, 100.0f).requiresTool().sounds(BlockSoundGroup.METAL);
         }
 

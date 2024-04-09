@@ -4,7 +4,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.Inventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.NbtCompound;
 import net.minecraft.screen.SimpleNamedScreenHandlerFactory;
 import net.minecraft.text.Text;
 import net.minecraft.text.TranslatableText;
@@ -38,8 +38,8 @@ public class HolyPearBagItem extends BasicItem {
 
         if (!world.isClient) {
             PortableInventory inventory = new PortableInventory(104, stack);
-            CompoundTag tag = stack.getOrCreateTag();
-            inventory.readTags(tag.getList("inventory", 10));
+            NbtCompound tag = stack.getOrCreateTag();
+            inventory.readNbtList(tag.getList("inventory", 10));
             user.openHandledScreen(createScreenHandler(inventory, user.inventory.selectedSlot));
             user.incrementStat(Stats.OPEN_HOLY_PEAR_BAG);
         }

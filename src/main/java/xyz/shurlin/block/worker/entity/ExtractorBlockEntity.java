@@ -4,7 +4,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.NbtCompound;
 import net.minecraft.recipe.Recipe;
 import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
@@ -109,17 +109,17 @@ public class ExtractorBlockEntity extends AbstractWorkerBlockEntity {
     }
 
     @Override
-    public void fromTag(BlockState state, CompoundTag tag) {
+    public void fromTag(BlockState state, NbtCompound tag) {
         super.fromTag(state, tag);
         this.cur_extractant = tag.getShort("Cur_extractant");
         this.extractant = tag.getShort("Extractant");
     }
 
     @Override
-    public CompoundTag toTag(CompoundTag tag) {
+    public NbtCompound writeNbt(NbtCompound tag) {
         tag.putShort("Cur_extractant", (short) this.cur_extractant);
         tag.putShort("Extractant", (short) this.extractant);
-        return super.toTag(tag);
+        return super.writeNbt(tag);
     }
 
     @Override

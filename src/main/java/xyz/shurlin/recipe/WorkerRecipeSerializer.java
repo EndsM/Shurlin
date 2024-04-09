@@ -9,6 +9,7 @@ import net.minecraft.recipe.RecipeSerializer;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.JsonHelper;
 import net.minecraft.util.registry.Registry;
+import xyz.shurlin.recipe.WorkerRecipeSerializer.RecipeFactory;
 import xyz.shurlin.util.ShurlinLevel;
 
 public class WorkerRecipeSerializer<T extends AbstractWorkerRecipe> implements RecipeSerializer<T> {

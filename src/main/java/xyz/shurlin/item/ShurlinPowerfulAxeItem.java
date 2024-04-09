@@ -45,7 +45,7 @@ public class ShurlinPowerfulAxeItem extends Item {
     }
 
     @Override
-    public boolean isEffectiveOn(BlockState state) {
+    public boolean isSuitableFor(BlockState state) {
         return true;
     }
 

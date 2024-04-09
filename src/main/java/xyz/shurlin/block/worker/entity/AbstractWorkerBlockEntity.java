@@ -4,7 +4,7 @@ import annotations.Nullable;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.NbtCompound;
 import net.minecraft.recipe.Recipe;
 import net.minecraft.recipe.RecipeType;
 import net.minecraft.screen.PropertyDelegate;
@@ -35,15 +35,15 @@ public abstract class AbstractWorkerBlockEntity extends BasicBlockEntity impleme
     protected abstract PropertyDelegate getPropertyDelegate();
 
     @Override
-    public void fromTag(BlockState state, CompoundTag tag) {
+    public void fromTag(BlockState state, NbtCompound tag) {
         super.fromTag(state, tag);
         this.workTime = tag.getInt("WorkTime");
         this.workTimeTotal = tag.getInt("WorkTimeTotal");
     }
 
     @Override
-    public CompoundTag toTag(CompoundTag tag) {
-        super.toTag(tag);
+    public NbtCompound writeNbt(NbtCompound tag) {
+        super.writeNbt(tag);
         tag.putInt("WorkTime", (short) this.workTime);
         tag.putInt("WorkTimeTotal", (short) this.workTimeTotal);
         return tag;

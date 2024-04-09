@@ -7,7 +7,7 @@ import com.google.gson.JsonSyntaxException;
 import net.minecraft.inventory.Inventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.NbtCompound;
 import net.minecraft.network.PacketByteBuf;
 import net.minecraft.recipe.RecipeSerializer;
 import net.minecraft.tag.ServerTagManagerHolder;
@@ -16,6 +16,7 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.JsonHelper;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.World;
+import xyz.shurlin.recipe.ConcentratorRecipe.ConcentratorRecipeSerializer.RecipeFactory;
 import xyz.shurlin.util.ItemOrTag;
 import xyz.shurlin.util.ShurlinLevel;
 import xyz.shurlin.util.Utils;
@@ -104,10 +105,10 @@ public class ConcentratorRecipe extends AbstractWorkerRecipe {
     public static class ConcentrationIngredientVector extends Vector<ConcentrationIngredient> {
         private void write(PacketByteBuf buf) {
             buf.writeVarInt(this.size());
-            CompoundTag tags = new CompoundTag();
+            NbtCompound tags = new NbtCompound();
             int index = 0;
             for (ConcentrationIngredient ingredient : this) {
-                CompoundTag tag = new CompoundTag();
+                NbtCompound tag = new NbtCompound();
                 ItemOrTag itemOrTag = ingredient.itemOrTag;
                 boolean b = itemOrTag.isItem();
                 String id = b ? itemOrTag.getItem().getTranslationKey() : ServerTagManagerHolder.getTagManager().getItems().getTagId(itemOrTag.getTag()).toString();
@@ -116,16 +117,16 @@ public class ConcentratorRecipe extends AbstractWorkerRecipe {
                 tag.putInt("count", ingredient.count);
                 tags.put("tag" + ++index, tag);
             }
-            buf.writeCompoundTag(tags);
+            buf.writeNbt(tags);
         }
 
         private static ConcentrationIngredientVector fromPacket(PacketByteBuf buf) {
             int size = buf.readVarInt();
-            CompoundTag tags = buf.readCompoundTag();
+            NbtCompound tags = buf.readNbt();
             ConcentrationIngredientVector concentrationIngredients = new ConcentrationIngredientVector();
             for (int i = 1; i <= size; i++) {
                 if (tags != null) {
-                    CompoundTag tag = tags.getCompound("tag" + i);
+                    NbtCompound tag = tags.getCompound("tag" + i);
                     boolean b = tag.getBoolean("isItem");
                     Identifier id = new Identifier(tag.getString("id"));
                     ItemOrTag itemOrTag;

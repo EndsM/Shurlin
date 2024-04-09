@@ -6,6 +6,7 @@ import net.minecraft.world.gen.feature.ConfiguredStructureFeature;
 import net.minecraft.world.gen.feature.FeatureConfig;
 import net.minecraft.world.gen.feature.StructureFeature;
 import xyz.shurlin.structure.AncientTreeFeatureConfig;
+import xyz.shurlin.structure.AncientTreeFeatureConfig.TreeKind;
 import xyz.shurlin.structure.StructureKeys;
 
 import static xyz.shurlin.structure.AncientTreeFeatureConfig.TreeKind;

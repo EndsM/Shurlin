@@ -3,8 +3,8 @@ package xyz.shurlin.inventory;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.SimpleInventory;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.CompoundTag;
-import net.minecraft.nbt.ListTag;
+import net.minecraft.nbt.NbtCompound;
+import net.minecraft.nbt.NbtList;
 import xyz.shurlin.Shurlin;
 
 import java.util.ArrayList;
@@ -22,12 +22,12 @@ public class ConnectiveInventory extends SimpleInventory {
         return player;
     }
 
-    public void readTags(ListTag allTags) {
+    public void readNbtList(NbtList allTags) {
         for (int i = 0; i < allTags.size(); ++i) {
-            ListTag personalTags = allTags.getList(i);
+            NbtList personalTags = allTags.getList(i);
             ConnectiveInventory inventory = connectiveInventories.get(i);
             for (int j = 0; j < personalTags.size(); j++) {
-                ItemStack itemStack = ItemStack.fromTag(personalTags.getCompound(i));
+                ItemStack itemStack = ItemStack.fromNbt(personalTags.getCompound(i));
                 if (!itemStack.isEmpty()) {
                     inventory.addStack(itemStack);
                 }
@@ -35,14 +35,14 @@ public class ConnectiveInventory extends SimpleInventory {
         }
     }
 
-    public ListTag getTags() {
-        ListTag allTags = new ListTag();
+    public NbtList toNbtList() {
+        NbtList allTags = new NbtList();
         for (ConnectiveInventory inventory : connectiveInventories) {
             for (int j = 0; j < inventory.size(); j++) {
-                ListTag personalTags = new ListTag();
+                NbtList personalTags = new NbtList();
                 ItemStack itemStack = inventory.getStack(j);
                 if (!itemStack.isEmpty()) {
-                    personalTags.add(itemStack.toTag(new CompoundTag()));
+                    personalTags.add(itemStack.writeNbt(new NbtCompound()));
                 }
                 allTags.add(personalTags);
             }

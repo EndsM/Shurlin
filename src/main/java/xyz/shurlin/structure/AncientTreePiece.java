@@ -1,7 +1,7 @@
 package xyz.shurlin.structure;
 
 import net.minecraft.block.entity.LootableContainerBlockEntity;
-import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.NbtCompound;
 import net.minecraft.structure.*;
 import net.minecraft.structure.processor.BlockIgnoreStructureProcessor;
 import net.minecraft.util.BlockMirror;
@@ -34,7 +34,7 @@ public class AncientTreePiece extends SimpleStructurePiece {
         this.initializeStructureData(manager);
     }
 
-    public AncientTreePiece(StructurePieceType type, StructureManager manager, CompoundTag tag) {
+    public AncientTreePiece(StructurePieceType type, StructureManager manager, NbtCompound tag) {
         super(type, tag);
         this.template = new Identifier(tag.getString("Template"));
         this.rotation = BlockRotation.NONE;
@@ -43,7 +43,7 @@ public class AncientTreePiece extends SimpleStructurePiece {
     }
 
     @Override
-    protected void toNbt(CompoundTag tag) {
+    protected void toNbt(NbtCompound tag) {
         super.toNbt(tag);
         tag.putString("Template", this.template.toString());
         tag.putString("Rotation", this.rotation.name());

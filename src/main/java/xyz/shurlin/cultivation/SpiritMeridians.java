@@ -1,6 +1,6 @@
 package xyz.shurlin.cultivation;
 
-import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.NbtCompound;
 
 public class SpiritMeridians {
     private final SpiritPropertyType type;
@@ -94,15 +94,15 @@ public class SpiritMeridians {
         return maxEx;
     }
 
-    public CompoundTag toTag() {
-        CompoundTag tag = new CompoundTag();
+    public NbtCompound toTag() {
+        NbtCompound tag = new NbtCompound();
         tag.putShort("level", this.level);
         tag.putDouble("cur_spirit", this.curSpirit);
         tag.putDouble("cur_ex", this.curEx);
         return tag;
     }
 
-    public static SpiritMeridians fromTag(SpiritPropertyType type, CompoundTag tag) {
+    public static SpiritMeridians fromTag(SpiritPropertyType type, NbtCompound tag) {
         return new SpiritMeridians(type,
                 tag.getShort("level"),
                 tag.getDouble("cur_spirit"),

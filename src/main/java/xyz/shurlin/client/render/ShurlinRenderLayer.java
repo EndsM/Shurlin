@@ -22,6 +22,6 @@ public class ShurlinRenderLayer extends RenderPhase {
     }
 
     public static VertexConsumer getGlint(VertexConsumerProvider vertexConsumerProvider, RenderLayer renderLayer) {
-        return VertexConsumers.dual(vertexConsumerProvider.getBuffer(SPIRIT_GLINT), vertexConsumerProvider.getBuffer(renderLayer));
+        return VertexConsumers.union(vertexConsumerProvider.getBuffer(SPIRIT_GLINT), vertexConsumerProvider.getBuffer(renderLayer));
     }
 }
