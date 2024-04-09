@@ -1,6 +1,6 @@
 package xyz.shurlin.block.worker.entity;
 
-import annotations.Nullable;
+
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.item.ItemStack;
@@ -9,6 +9,7 @@ import net.minecraft.recipe.Recipe;
 import net.minecraft.recipe.RecipeType;
 import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.util.Tickable;
+import org.jetbrains.annotations.Nullable;
 import xyz.shurlin.block.entity.BasicBlockEntity;
 import xyz.shurlin.recipe.AbstractWorkerRecipe;
 import xyz.shurlin.util.ShurlinLevel;
