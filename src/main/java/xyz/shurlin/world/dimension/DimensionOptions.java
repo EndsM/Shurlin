@@ -9,7 +9,7 @@ public class DimensionOptions {
     public static final RegistryKey<net.minecraft.world.dimension.DimensionOptions> HOLY_FARMER;
 //    public static final RegistryKey<net.minecraft.world.dimension.DimensionOptions> SHURLIN;
 
-    private static RegistryKey<net.minecraft.world.dimension.DimensionOptions> register(String name){
+    private static RegistryKey<net.minecraft.world.dimension.DimensionOptions> register(String name) {
         return RegistryKey.of(Registry.DIMENSION_OPTIONS, new Identifier(Shurlin.MODID, name));
     }
 

@@ -11,7 +11,7 @@ public class BiomeKeys {
     public static final RegistryKey<Biome> PARASOL_ANCIENT_FOREST_KEY = register("parasol_ancient_forest");
     public static final RegistryKey<Biome> FIRE_LAND_KEY = register("fire_land");
 
-    private static RegistryKey<Biome> register(String registryName){
+    private static RegistryKey<Biome> register(String registryName) {
         return RegistryKey.of(Registry.BIOME_KEY, new Identifier(Shurlin.MODID, registryName));
     }
 

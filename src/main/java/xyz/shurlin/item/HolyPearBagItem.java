@@ -27,9 +27,10 @@ public class HolyPearBagItem extends BasicItem {
 
     /**
      * Stat increment from open chest to open holy pear bag.
-     * @since 0.1.2-beta
+     *
      * @author Shurlin
      * @author teddyxlandlee
+     * @since 0.1.2-beta
      */
     @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
@@ -38,7 +39,7 @@ public class HolyPearBagItem extends BasicItem {
         if (!world.isClient) {
             PortableInventory inventory = new PortableInventory(104, stack);
             CompoundTag tag = stack.getOrCreateTag();
-            inventory.readTags(tag.getList("inventory",10));
+            inventory.readTags(tag.getList("inventory", 10));
             user.openHandledScreen(createScreenHandler(inventory, user.inventory.selectedSlot));
             user.incrementStat(Stats.OPEN_HOLY_PEAR_BAG);
         }
@@ -47,6 +48,6 @@ public class HolyPearBagItem extends BasicItem {
     }
 
     private SimpleNamedScreenHandlerFactory createScreenHandler(Inventory inventory, int slot) {
-        return new SimpleNamedScreenHandlerFactory((syncId, inv, player) -> new BiggerContainerScreenHandler(syncId, inv, inventory, slot),TITLE);
+        return new SimpleNamedScreenHandlerFactory((syncId, inv, player) -> new BiggerContainerScreenHandler(syncId, inv, inventory, slot), TITLE);
     }
 }

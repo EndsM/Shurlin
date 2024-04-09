@@ -14,7 +14,7 @@ public class FeatureKeys {
 //    public static final RegistryKey<ConfiguredFeature<?, ?>> ORE_PLANT_JADE;
 
 
-    private static RegistryKey<ConfiguredFeature<?,?>> register(String registryName){
+    private static RegistryKey<ConfiguredFeature<?, ?>> register(String registryName) {
         return RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN, new Identifier(Shurlin.MODID, registryName));
     }
 

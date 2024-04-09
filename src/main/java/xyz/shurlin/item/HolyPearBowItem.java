@@ -44,7 +44,7 @@ public class HolyPearBowItem extends BowItem {
             ProjectileEntity projectileEntity = holyPearArrow.createArrow(world, user, 0, destroy);
             projectileEntity.setProperties(user, user.pitch, user.yaw, 0.0F, f * 10.0F, 1.0F);
             world.spawnEntity(projectileEntity);
-            stack.damage(1, user, e->e.sendEquipmentBreakStatus(EquipmentSlot.MAINHAND));
+            stack.damage(1, user, e -> e.sendEquipmentBreakStatus(EquipmentSlot.MAINHAND));
         }
     }
 }

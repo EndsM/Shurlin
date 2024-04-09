@@ -9,7 +9,7 @@ public class HerbalMedicinalPelletItem extends Item {
         super(new Settings().maxCount(16).food(component));
     }
 
-    HerbalMedicinalPelletItem(){
+    HerbalMedicinalPelletItem() {
         super(new Settings().maxCount(16).food(new FoodComponent.Builder().hunger(1).snack().saturationModifier(0.0f).build()));
     }
 

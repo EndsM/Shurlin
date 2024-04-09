@@ -22,11 +22,11 @@ public class HolyFarmerChunkGenerator extends ChunkGenerator {
 
     public static final Codec<HolyFarmerChunkGenerator> CODEC = RecordCodecBuilder.create((instance) ->
             instance.group(
-                    BiomeSource.CODEC.fieldOf("biome_source")
-                            .forGetter((generator) -> generator.biomeSource),
-                    Codec.BOOL.fieldOf("custom_bool")
-                            .forGetter((generator) -> generator.customBool)
-            )
+                            BiomeSource.CODEC.fieldOf("biome_source")
+                                    .forGetter((generator) -> generator.biomeSource),
+                            Codec.BOOL.fieldOf("custom_bool")
+                                    .forGetter((generator) -> generator.customBool)
+                    )
                     .apply(instance, instance.stable(HolyFarmerChunkGenerator::new))
     );
 

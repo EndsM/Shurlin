@@ -10,7 +10,7 @@ public class DimensionTypes {
     public static final RegistryKey<DimensionType> HOLY_FARMER;
 //    public static final RegistryKey<DimensionType> SHURLIN;
 
-    private static RegistryKey<DimensionType> register(String name){
+    private static RegistryKey<DimensionType> register(String name) {
         return RegistryKey.of(Registry.DIMENSION_TYPE_KEY, new Identifier(Shurlin.MODID, name));
     }
 

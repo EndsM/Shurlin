@@ -12,7 +12,7 @@ public class Biomes {
     public static final Biome PARASOL_ANCIENT_FOREST;
     public static final Biome FIRE_LAND;
 
-    private static Biome register(Identifier id, Biome biome){
+    private static Biome register(Identifier id, Biome biome) {
         return Registry.register(BuiltinRegistries.BIOME, id, biome);
     }
 

@@ -6,7 +6,7 @@ import net.minecraft.item.Item;
 import net.minecraft.world.World;
 import xyz.shurlin.entity.projectile.HolyPearArrowEntity;
 
-public class HolyPearArrowItem extends Item{
+public class HolyPearArrowItem extends Item {
 
     public HolyPearArrowItem() {
         super(new Item.Settings().group(ItemGroups.SHURLIN));

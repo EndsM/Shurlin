@@ -28,7 +28,7 @@ public class BiomeGenerator {
 //        BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, ORE_PLANT_JADE);
     }
 
-    private static void handleBiome(Biome biome){
+    private static void handleBiome(Biome biome) {
 //        RegistryKey<Biome> key = BuiltinRegistries.BIOME.getKey(biome).get();
 //        if(key.equals(BiomeKeys.FOREST)){
 //            biome.getGenerationSettings().getStructureFeatures().add(()->ShurlinConfiguredFeatures.ANCIENT_OAK_TREE);
@@ -112,7 +112,6 @@ public class BiomeGenerator {
 //                                maximum //y坐标最高
 //                        ))));
 //    }
-
 
 
 }

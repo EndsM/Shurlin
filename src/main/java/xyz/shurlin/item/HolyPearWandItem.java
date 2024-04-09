@@ -18,7 +18,7 @@ public class HolyPearWandItem extends BasicItem {
     @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
         ItemStack stack = user.getStackInHand(hand);
-        for(int i=0;i<8;i++){
+        for (int i = 0; i < 8; i++) {
             BeanEntity beanEntity = new BeanEntity(user, world);
 //            ArrowEntity arrowEntity = new ArrowEntity(world, user);
             beanEntity.setProperties(user, user.pitch, user.yaw, 0.5f, 3f, 1.0f);
