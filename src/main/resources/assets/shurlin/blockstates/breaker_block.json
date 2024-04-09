@@ -1,5 +1,7 @@
 {
-    "variants": {
-        "": { "model": "shurlin:block/breaker_block" }
+  "variants": {
+    "": {
+      "model": "shurlin:block/breaker_block"
     }
+  }
 }

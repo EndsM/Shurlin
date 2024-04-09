@@ -1,5 +1,7 @@
 {
-    "variants": {
-        "" : { "model": "shurlin:block/holy_pear_altar" }
+  "variants": {
+    "": {
+      "model": "shurlin:block/holy_pear_altar"
     }
+  }
 }

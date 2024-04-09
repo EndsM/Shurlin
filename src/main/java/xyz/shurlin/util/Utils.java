@@ -103,8 +103,8 @@ public class Utils {
         thread.start();
     }
 
-    public static boolean canDo(Object o1, Object o2){
-        if(o1 instanceof ShurlinLevel && o2 instanceof ShurlinLevel)
+    public static boolean canDo(Object o1, Object o2) {
+        if (o1 instanceof ShurlinLevel && o2 instanceof ShurlinLevel)
             return ((ShurlinLevel) o1).getShurlinLevel() >= ((ShurlinLevel) o1).getShurlinLevel();
         return true;
     }
@@ -113,48 +113,48 @@ public class Utils {
     public static final Identifier OPEN_CUL = new Identifier(Shurlin.MODID, "key_open_cul");
     public static final Identifier INJECT_SPIRIT = new Identifier(Shurlin.MODID, "inject_spirit");
 
-    public static void spawnItem(World world, BlockPos pos, Item item, int cnt){
-        world.spawnEntity(new ItemEntity(world, pos.getX(),pos.getY(),pos.getZ(),new ItemStack(item, cnt)));
+    public static void spawnItem(World world, BlockPos pos, Item item, int cnt) {
+        world.spawnEntity(new ItemEntity(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(item, cnt)));
     }
 
-    public static void setRandomBlock(World world, BlockPos middlePos, int r, BlockState state){
+    public static void setRandomBlock(World world, BlockPos middlePos, int r, BlockState state) {
         Random random = new Random();
         world.setBlockState(middlePos.add(random.nextInt(r * 2 + 1) - r,
                 random.nextInt(r * 2 + 1) - r,
                 random.nextInt(r * 2 + 1) - r), state);
     }
 
-    public static int getAllABS(int... ints){
+    public static int getAllABS(int... ints) {
         int res = 0;
-        for(int i : ints)
+        for (int i : ints)
             res += Math.abs(i);
         return res;
     }
 
-    public static void joinHolyFarmerDimension(ServerWorld world, Entity entity){
+    public static void joinHolyFarmerDimension(ServerWorld world, Entity entity) {
         MinecraftServer minecraftServer = world.getServer();
         RegistryKey<World> key = world.getRegistryKey() == World.OVERWORLD ? Dimensions.HOLY_FARMER : World.OVERWORLD;
         ServerWorld destination = minecraftServer.getWorld(key);
         if (destination != null && !entity.hasVehicle()) {
             BlockPos pos = destination.getTopPosition(Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, entity.getBlockPos());
             FabricDimensionInternals.changeDimension(entity, destination,
-                    new TeleportTarget(Vec3d.of(pos), Vec3d.ZERO, 0,0));
+                    new TeleportTarget(Vec3d.of(pos), Vec3d.ZERO, 0, 0));
 //            entity.setPos(pos.getX(), pos.getY(), pos.getZ());
         }
     }
 
-    public static boolean isSealed(World world, BlockPos pos, BlockPos[] dirs, Block inside, Block seal, Vector<BlockPos> found){
+    public static boolean isSealed(World world, BlockPos pos, BlockPos[] dirs, Block inside, Block seal, Vector<BlockPos> found) {
 //        System.out.println(pos);
-        if(found.contains(pos))
+        if (found.contains(pos))
             return true;
         BlockState block = world.getBlockState(pos);
         found.add(pos);
-        if(block.isOf(inside)){
-            for(BlockPos dir:dirs){
-                if(!isSealed(world, pos.add(dir), dirs, inside, seal, found))
+        if (block.isOf(inside)) {
+            for (BlockPos dir : dirs) {
+                if (!isSealed(world, pos.add(dir), dirs, inside, seal, found))
                     return false;
             }
-        }else return block.isOf(seal);
+        } else return block.isOf(seal);
         return true;
     }
 

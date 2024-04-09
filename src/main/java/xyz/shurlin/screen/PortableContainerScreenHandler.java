@@ -23,7 +23,7 @@ public class PortableContainerScreenHandler extends GenericContainerScreenHandle
 
     @Override
     public Text getDisplayName() {
-        return new TranslatableText( "container.portable_container");
+        return new TranslatableText("container.portable_container");
     }
 
     @Override

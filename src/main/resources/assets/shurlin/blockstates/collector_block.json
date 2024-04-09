@@ -1,5 +1,7 @@
 {
-    "variants": {
-        "": { "model": "shurlin:block/collector" }
+  "variants": {
+    "": {
+      "model": "shurlin:block/collector"
     }
+  }
 }

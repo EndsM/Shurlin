@@ -1,5 +1,7 @@
 {
-    "variants": {
-        "": { "model": "shurlin:block/phoenix_planks" }
+  "variants": {
+    "": {
+      "model": "shurlin:block/phoenix_planks"
     }
+  }
 }

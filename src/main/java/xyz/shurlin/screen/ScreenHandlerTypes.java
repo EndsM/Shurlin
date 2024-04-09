@@ -33,7 +33,7 @@ public class ScreenHandlerTypes {
     public static final ScreenHandlerType<CultivationScreenHandler> CULTIVATION_SCREEN_HANDLER_TYPE = register("cultivation_ui",
             CultivationScreenHandler::new);
 
-    private static <T extends ScreenHandler> ScreenHandlerType<T> register(String registryName, ScreenHandlerRegistry.SimpleClientHandlerFactory<T> entry){
-            return ScreenHandlerRegistry.registerSimple(new Identifier(Shurlin.MODID, registryName), entry);
+    private static <T extends ScreenHandler> ScreenHandlerType<T> register(String registryName, ScreenHandlerRegistry.SimpleClientHandlerFactory<T> entry) {
+        return ScreenHandlerRegistry.registerSimple(new Identifier(Shurlin.MODID, registryName), entry);
     }
 }

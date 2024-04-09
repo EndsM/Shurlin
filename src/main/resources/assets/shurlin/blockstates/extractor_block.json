@@ -1,5 +1,7 @@
 {
-    "variants": {
-        "": { "model": "shurlin:block/extractor" }
+  "variants": {
+    "": {
+      "model": "shurlin:block/extractor"
     }
+  }
 }

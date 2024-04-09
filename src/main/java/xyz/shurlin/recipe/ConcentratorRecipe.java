@@ -32,11 +32,11 @@ public class ConcentratorRecipe extends AbstractWorkerRecipe {
 
     @Override
     public boolean matches(Inventory inv, World world) {
-        for(int i=0;i<concentrationIngredients.size();i++){
+        for (int i = 0; i < concentrationIngredients.size(); i++) {
             ConcentrationIngredient concentrationIngredient = concentrationIngredients.elementAt(i);
             ItemStack stack = inv.getStack(i);
             boolean b = concentrationIngredient.itemOrTag.contains(stack.getItem()) && stack.getCount() >= concentrationIngredient.count;
-            if(!b)
+            if (!b)
                 return false;
         }
         return !(inv instanceof ShurlinLevel) || Utils.canDo(inv, this.shurlinLevel);
@@ -63,12 +63,12 @@ public class ConcentratorRecipe extends AbstractWorkerRecipe {
             String group = JsonHelper.getString(jsonObject, "group", "");
             JsonArray jsonArray = JsonHelper.getArray(jsonObject, "ingredients");
             ConcentrationIngredientVector concentrationIngredients = new ConcentrationIngredientVector();
-            for(JsonElement jsonElement:jsonArray){
+            for (JsonElement jsonElement : jsonArray) {
                 concentrationIngredients.add(new ConcentrationIngredient(jsonElement.getAsJsonObject()));
             }
             String result = JsonHelper.getString(jsonObject, "result");
             Identifier result_id = new Identifier(result);
-            int count = JsonHelper.getInt(jsonObject, "count",1);
+            int count = JsonHelper.getInt(jsonObject, "count", 1);
             ItemStack output = new ItemStack(Registry.ITEM.getOrEmpty(result_id).orElseThrow(() ->
                     new IllegalStateException("Item: " + result + " does not exist")), count);
             int workingTime = JsonHelper.getInt(jsonObject, "workingTime");
@@ -95,22 +95,22 @@ public class ConcentratorRecipe extends AbstractWorkerRecipe {
             buf.writeFloat(recipe.shurlinLevel.getShurlinLevel());
         }
 
-        interface RecipeFactory<ConcentratorRecipe>{
+        interface RecipeFactory<ConcentratorRecipe> {
             ConcentratorRecipe create(Identifier id, String group, ConcentrationIngredientVector concentrationIngredientVector, ItemStack output, int cookTime, ShurlinLevel shurlinLevel);
         }
 
     }
 
-    public static class ConcentrationIngredientVector extends Vector<ConcentrationIngredient>{
-        private void write(PacketByteBuf buf){
+    public static class ConcentrationIngredientVector extends Vector<ConcentrationIngredient> {
+        private void write(PacketByteBuf buf) {
             buf.writeVarInt(this.size());
             CompoundTag tags = new CompoundTag();
             int index = 0;
-            for(ConcentrationIngredient ingredient : this){
+            for (ConcentrationIngredient ingredient : this) {
                 CompoundTag tag = new CompoundTag();
                 ItemOrTag itemOrTag = ingredient.itemOrTag;
                 boolean b = itemOrTag.isItem();
-                String id = b?itemOrTag.getItem().getTranslationKey():ServerTagManagerHolder.getTagManager().getItems().getTagId(itemOrTag.getTag()).toString();
+                String id = b ? itemOrTag.getItem().getTranslationKey() : ServerTagManagerHolder.getTagManager().getItems().getTagId(itemOrTag.getTag()).toString();
                 tag.putBoolean("isItem", b);
                 tag.putString("id", id);
                 tag.putInt("count", ingredient.count);
@@ -119,17 +119,17 @@ public class ConcentratorRecipe extends AbstractWorkerRecipe {
             buf.writeCompoundTag(tags);
         }
 
-        private static ConcentrationIngredientVector fromPacket(PacketByteBuf buf){
+        private static ConcentrationIngredientVector fromPacket(PacketByteBuf buf) {
             int size = buf.readVarInt();
             CompoundTag tags = buf.readCompoundTag();
             ConcentrationIngredientVector concentrationIngredients = new ConcentrationIngredientVector();
-            for(int i=1;i<=size;i++){
+            for (int i = 1; i <= size; i++) {
                 if (tags != null) {
-                    CompoundTag tag = tags.getCompound("tag"+i);
+                    CompoundTag tag = tags.getCompound("tag" + i);
                     boolean b = tag.getBoolean("isItem");
                     Identifier id = new Identifier(tag.getString("id"));
                     ItemOrTag itemOrTag;
-                    if(b)
+                    if (b)
                         itemOrTag = new ItemOrTag(Registry.ITEM.get(id));
                     else
                         itemOrTag = new ItemOrTag(ServerTagManagerHolder.getTagManager().getItems().getTag(id));
@@ -158,11 +158,11 @@ public class ConcentratorRecipe extends AbstractWorkerRecipe {
 
         public ConcentrationIngredient(JsonObject object) {
             Identifier identifier;
-            if(object.has("item")){
+            if (object.has("item")) {
                 identifier = new Identifier(JsonHelper.getString(object, "item"));
                 Item item = Registry.ITEM.getOrEmpty(identifier).orElseThrow(() -> new JsonSyntaxException("Unknown item '" + identifier + "'"));
                 itemOrTag = new ItemOrTag(item);
-            }else if(object.has("tag")){
+            } else if (object.has("tag")) {
                 identifier = new Identifier(JsonHelper.getString(object, "tag"));
                 Tag<Item> tag = ServerTagManagerHolder.getTagManager().getItems().getTag(identifier);
                 if (tag == null) {

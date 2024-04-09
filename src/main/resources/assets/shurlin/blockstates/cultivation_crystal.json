@@ -1,5 +1,7 @@
 {
   "variants": {
-    "": { "model": "shurlin:block/cultivation_crystal" }
+    "": {
+      "model": "shurlin:block/cultivation_crystal"
+    }
   }
 }

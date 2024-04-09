@@ -23,7 +23,7 @@ public class ShurlinBiomeFeatures {
 //        builder.feature(GenerationStep.Feature.SURFACE_STRUCTURES, ShurlinConfiguredFeatures.ANCIENT_PEAR_TREE);
     }
 
-    public static void addMysteriousStonePillar(Builder builder){
+    public static void addMysteriousStonePillar(Builder builder) {
         builder.feature(GenerationStep.Feature.SURFACE_STRUCTURES,
                 Features.MYSTERIOUS_STONE_PILLAR_FEATURE
                         .configure(new DefaultFeatureConfig())
@@ -31,7 +31,7 @@ public class ShurlinBiomeFeatures {
         );
     }
 
-    public static void addPlantObsidianHeap(Builder builder){
+    public static void addPlantObsidianHeap(Builder builder) {
         builder.feature(GenerationStep.Feature.SURFACE_STRUCTURES,
                 Features.PLANT_OBSIDIAN_HEAP
                         .configure(new DefaultFeatureConfig())
@@ -39,19 +39,19 @@ public class ShurlinBiomeFeatures {
         );
     }
 
-    public static void addPhoenixTrees(Builder builder){
+    public static void addPhoenixTrees(Builder builder) {
         builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ShurlinConfiguredFeatures.TREES_PHOENIX
 //                .createDecoratedFeature(Decorator.COUNT_EXTRA_HEIGHTMAP.configure(new CountExtraChanceDecoratorConfig(8, 0.1F, 1)))
         );
     }
 
-    public static void addSmallBud(Builder builder){
+    public static void addSmallBud(Builder builder) {
         builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ShurlinConfiguredFeatures.SMALL_BUD
 
         );
     }
 
-    public static void addPlatycodonGrandiflorus(Builder builder){
+    public static void addPlatycodonGrandiflorus(Builder builder) {
         builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ShurlinConfiguredFeatures.PLATYCODON_GRANDIFLORUS);
     }
 
@@ -60,7 +60,7 @@ public class ShurlinBiomeFeatures {
                 Feature.RANDOM_PATCH.configure(getConfig(block.getDefaultState(), tries)).decorate(ConfiguredFeatures.Decorators.SQUARE_HEIGHTMAP));
     }
 
-    private static RandomPatchFeatureConfig getConfig(BlockState state, int tries){
+    private static RandomPatchFeatureConfig getConfig(BlockState state, int tries) {
         return (new RandomPatchFeatureConfig.Builder(new SimpleBlockStateProvider(state), SimpleBlockPlacer.INSTANCE)).tries(32).build();
     }
 

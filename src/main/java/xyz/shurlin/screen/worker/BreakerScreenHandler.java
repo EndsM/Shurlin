@@ -14,9 +14,9 @@ import xyz.shurlin.util.ShurlinLevel;
 public class BreakerScreenHandler extends AbstractWorkerScreenHandler {
 
     public BreakerScreenHandler(int syncId, Inventory inventory, PlayerInventory playerInventory, PropertyDelegate propertyDelegate, World world, ShurlinLevel shurlinLevel) {
-        super(ScreenHandlerTypes.BREAKER_SCREEN_HANDLER_TYPE, syncId, inventory, playerInventory,propertyDelegate,world, shurlinLevel);
-        this.addSlot(new WorkerInputSlot(inventory, 0, 56,35, shurlinLevel));
-        this.addSlot(new WorkerOutputSlot(inventory,playerInventory.player,1,116,35));
+        super(ScreenHandlerTypes.BREAKER_SCREEN_HANDLER_TYPE, syncId, inventory, playerInventory, propertyDelegate, world, shurlinLevel);
+        this.addSlot(new WorkerInputSlot(inventory, 0, 56, 35, shurlinLevel));
+        this.addSlot(new WorkerOutputSlot(inventory, playerInventory.player, 1, 116, 35));
         this.addPlayerInventorySlots();
     }
 
@@ -24,7 +24,7 @@ public class BreakerScreenHandler extends AbstractWorkerScreenHandler {
         this(syncId, new WorkerInventory(2, null), playerInventory, new ArrayPropertyDelegate(2), playerInventory.player.world, null);
     }
 
-    public String getName(){
+    public String getName() {
         return "breaker";
     }
 

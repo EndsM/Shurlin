@@ -1,5 +1,7 @@
 {
-    "variants": {
-        "": { "model": "shurlin:block/concentrator" }
+  "variants": {
+    "": {
+      "model": "shurlin:block/concentrator"
     }
+  }
 }

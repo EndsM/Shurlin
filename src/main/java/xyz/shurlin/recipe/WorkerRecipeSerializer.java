@@ -34,12 +34,12 @@ public class WorkerRecipeSerializer<T extends AbstractWorkerRecipe> implements R
         Ingredient ingredient = Ingredient.fromJson(jsonElement);
         String result = JsonHelper.getString(jsonObject, "result");
         Identifier result_id = new Identifier(result);
-        int count = JsonHelper.getInt(jsonObject, "count",1);
+        int count = JsonHelper.getInt(jsonObject, "count", 1);
         ItemStack itemStack = new ItemStack(Registry.ITEM.getOrEmpty(result_id).orElseThrow(() ->
                 new IllegalStateException("Item: " + result + " does not exist")), count);
         int workingTime = JsonHelper.getInt(jsonObject, "workingTime", this.workingTime);
         float shurlinLevel = JsonHelper.getInt(jsonObject, "shurlinLevel", 0);
-        return this.recipeFactory.create(id, group, ingredient, itemStack, workingTime, ()->shurlinLevel);
+        return this.recipeFactory.create(id, group, ingredient, itemStack, workingTime, () -> shurlinLevel);
     }
 
     @Override
@@ -49,7 +49,7 @@ public class WorkerRecipeSerializer<T extends AbstractWorkerRecipe> implements R
         ItemStack itemStack = buf.readItemStack();
         int workingTime = buf.readVarInt();
         float shurlinLevel = buf.readFloat();
-        return this.recipeFactory.create(id, group, ingredient, itemStack, workingTime, ()->shurlinLevel);
+        return this.recipeFactory.create(id, group, ingredient, itemStack, workingTime, () -> shurlinLevel);
     }
 
     @Override
