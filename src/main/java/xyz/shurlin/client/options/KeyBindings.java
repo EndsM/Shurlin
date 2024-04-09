@@ -4,6 +4,7 @@ import io.netty.buffer.Unpooled;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
+import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
 import net.fabricmc.fabric.api.network.ClientSidePacketRegistry;
 import net.minecraft.client.option.KeyBinding;
 import net.minecraft.client.util.InputUtil;
@@ -22,7 +23,7 @@ public class KeyBindings {
         ClientTickEvents.END_CLIENT_TICK.register(minecraftClient -> {
             if (open_cul.isPressed()) {
                 PacketByteBuf passedData = new PacketByteBuf(Unpooled.buffer());
-                ClientSidePacketRegistry.INSTANCE.sendToServer(Utils.OPEN_CUL, passedData);
+                ClientPlayNetworking.send(Utils.OPEN_CUL, passedData);
             }
         });
     }
