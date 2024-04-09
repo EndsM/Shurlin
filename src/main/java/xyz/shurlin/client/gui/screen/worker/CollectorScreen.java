@@ -12,7 +12,7 @@ public class CollectorScreen extends AbstractWorkerScreen<CollectorScreenHandler
     protected final int consistenceHeightTotal = 50;
 
     public CollectorScreen(CollectorScreenHandler handler, PlayerInventory inventory, Text title) {
-        super(handler, inventory,title, handler.getName());
+        super(handler, inventory, title, handler.getName());
         this.progressLength = 46;
     }
 
@@ -24,7 +24,7 @@ public class CollectorScreen extends AbstractWorkerScreen<CollectorScreenHandler
         float k = this.handler.getWorkProgress();
         float consistence = this.handler.getConsistence();
         int consistenceHeight = (int) (consistence * this.consistenceHeightTotal);
-        this.drawTexture(matrices, i + 46, j + 35, 176, 0, (int) (k * this.progressLength +1), 17);
+        this.drawTexture(matrices, i + 46, j + 35, 176, 0, (int) (k * this.progressLength + 1), 17);
         this.drawTexture(matrices, i + 144, j + 13 + (consistenceHeightTotal - consistenceHeight), 176, 17 + (consistenceHeightTotal - consistenceHeight), 20, consistenceHeight);
     }
 }

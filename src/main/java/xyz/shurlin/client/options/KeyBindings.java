@@ -20,14 +20,14 @@ public class KeyBindings {
 
     public static void load() {
         ClientTickEvents.END_CLIENT_TICK.register(minecraftClient -> {
-            if(open_cul.isPressed()) {
+            if (open_cul.isPressed()) {
                 PacketByteBuf passedData = new PacketByteBuf(Unpooled.buffer());
                 ClientSidePacketRegistry.INSTANCE.sendToServer(Utils.OPEN_CUL, passedData);
             }
         });
     }
 
-    static{
+    static {
         keyBinding_j = new KeyBinding(
                 "key.shurlin.1",
                 InputUtil.Type.KEYSYM,

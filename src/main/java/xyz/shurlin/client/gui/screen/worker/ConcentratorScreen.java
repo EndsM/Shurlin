@@ -11,7 +11,7 @@ import xyz.shurlin.screen.worker.ConcentratorScreenHandler;
 public class ConcentratorScreen extends AbstractWorkerScreen<ConcentratorScreenHandler> {
 
     public ConcentratorScreen(ConcentratorScreenHandler handler, PlayerInventory inventory, Text title) {
-        super(handler, inventory,title, handler.getName());
+        super(handler, inventory, title, handler.getName());
         this.progressLength = 22;
     }
 
@@ -21,6 +21,6 @@ public class ConcentratorScreen extends AbstractWorkerScreen<ConcentratorScreenH
         int i = this.x;
         int j = this.y;
         float k = this.handler.getWorkProgress();
-        this.drawTexture(matrices, i + 100, j + 34, 176, 0, (int) (k * this.progressLength +1), 16);
+        this.drawTexture(matrices, i + 100, j + 34, 176, 0, (int) (k * this.progressLength + 1), 16);
     }
 }

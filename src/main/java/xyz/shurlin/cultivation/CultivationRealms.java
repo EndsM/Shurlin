@@ -37,8 +37,8 @@ public enum CultivationRealms {
         return maxRank;
     }
 
-    public CultivationRealms getNextGradation(){
-        return getRealmByGradation((short) (gradation+1));
+    public CultivationRealms getNextGradation() {
+        return getRealmByGradation((short) (gradation + 1));
     }
 
     public short getGradation() {
@@ -47,10 +47,11 @@ public enum CultivationRealms {
 
     /**
      * Simplified this method by putting a map.
+     *
      * @author Garay Shurlin
      * @author teddyxlandlee
-     * @since 0.1.2-beta
      * @see xyz.shurlin.cultivation.CultivationRealms.Map
+     * @since 0.1.2-beta
      */
     @Nullable
     public static CultivationRealms getRealmByGradation(short gradation) {
@@ -59,15 +60,18 @@ public enum CultivationRealms {
 
     /**
      * Simplified {@link #getRealmByGradation} method by putting a map.
+     *
      * @author Garay Shurlin
      * @author teddyxlandlee
-     * @since 0.1.2-beta
      * @see it.unimi.dsi.fastutil.shorts.Short2ObjectMap
      * @see it.unimi.dsi.fastutil.shorts.Short2ObjectOpenHashMap
      * @see #getRealmByGradation(short)
+     * @since 0.1.2-beta
      */
     static final class Map extends Short2ObjectOpenHashMap<CultivationRealms> {
         static final Map INSTANCE = new Map();
-        private Map() {}
+
+        private Map() {
+        }
     }
 }

@@ -16,7 +16,7 @@ public class CultivationRealm {
     CultivationRealm() {
         this.realm = CultivationRealms.SOLDIER;
         this.rank = 1;
-        for(SpiritPropertyType type: SpiritPropertyType.GROUPS){
+        for (SpiritPropertyType type : SpiritPropertyType.GROUPS) {
             this.meridians.put(type, new SpiritMeridians(type));
         }
 
@@ -32,16 +32,16 @@ public class CultivationRealm {
         return new CultivationRealm();
     }
 
-    public CultivationRealm temp(){
+    public CultivationRealm temp() {
         this.realm = CultivationRealms.KING;
         this.upgrade();
         Random random = new Random();
-        int i = random.nextInt(6) +1;
-        for(SpiritPropertyType type: SpiritPropertyType.GROUPS){
+        int i = random.nextInt(6) + 1;
+        for (SpiritPropertyType type : SpiritPropertyType.GROUPS) {
             this.putMeridians(type, new SpiritMeridians(type,
-                    (short)i,
-                    random.nextInt((int)getMaxSpirits(i)),
-                    random.nextInt((int)getMaxExs(i))));
+                    (short) i,
+                    random.nextInt((int) getMaxSpirits(i)),
+                    random.nextInt((int) getMaxExs(i))));
         }
         return this;
     }
@@ -52,14 +52,13 @@ public class CultivationRealm {
         this.rank = rank;
     }
 
-    public void upgrade(){
-        if(best())
+    public void upgrade() {
+        if (best())
             return;
-        if(rank == realm.getMaxRank()){
+        if (rank == realm.getMaxRank()) {
             this.realm = realm.getNextGradation();
             this.rank = 1;
-        }
-        else rank++;
+        } else rank++;
     }
 
     public CultivationRealms getRealm() {
@@ -70,7 +69,7 @@ public class CultivationRealm {
         return rank;
     }
 
-    public String getDescribe(){
+    public String getDescribe() {
         return realm.getName() + ' ' + rank;
     }
 
@@ -78,7 +77,7 @@ public class CultivationRealm {
         return new TranslatableText("realm.shurlin." + this.realm.getName() + ".rank", this.rank);
     }
 
-    public boolean best(){
+    public boolean best() {
         return this.realm.getGradation() == 12 && this.rank == 18;
     }
 
@@ -90,7 +89,7 @@ public class CultivationRealm {
         return meridians;
     }
 
-    public void putMeridians(SpiritPropertyType type, SpiritMeridians meridians){
+    public void putMeridians(SpiritPropertyType type, SpiritMeridians meridians) {
         this.meridians.put(type, meridians);
     }
 }

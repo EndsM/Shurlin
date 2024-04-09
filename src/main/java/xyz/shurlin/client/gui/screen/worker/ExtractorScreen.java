@@ -12,7 +12,7 @@ public class ExtractorScreen extends AbstractWorkerScreen<ExtractorScreenHandler
     private final int maxExtractant;
 
     public ExtractorScreen(ExtractorScreenHandler handler, PlayerInventory inventory, Text title) {
-        super(handler, inventory,title, handler.getName());
+        super(handler, inventory, title, handler.getName());
         this.progressLength = 22;
         maxExtractant = 64;
     }
@@ -25,7 +25,7 @@ public class ExtractorScreen extends AbstractWorkerScreen<ExtractorScreenHandler
         float k = this.handler.getWorkProgress();
         float extractant = this.handler.getExtractant();
         int len = (int) Math.ceil(extractant / maxExtractant * 18 - 0.01);
-        this.drawTexture(matrices, i + 63, j + 60, 176, 0, (int) (k * this.progressLength +1), 13);
+        this.drawTexture(matrices, i + 63, j + 60, 176, 0, (int) (k * this.progressLength + 1), 13);
         this.drawTexture(matrices, i + 76, j + 46, 176, 13, len, 8);
     }
 }
