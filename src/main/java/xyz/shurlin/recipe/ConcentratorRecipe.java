@@ -16,7 +16,6 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.JsonHelper;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.World;
-import xyz.shurlin.recipe.ConcentratorRecipe.ConcentratorRecipeSerializer.RecipeFactory;
 import xyz.shurlin.util.ItemOrTag;
 import xyz.shurlin.util.ShurlinLevel;
 import xyz.shurlin.util.Utils;

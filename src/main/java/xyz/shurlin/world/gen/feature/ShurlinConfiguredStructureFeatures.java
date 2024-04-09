@@ -9,8 +9,6 @@ import xyz.shurlin.structure.AncientTreeFeatureConfig;
 import xyz.shurlin.structure.AncientTreeFeatureConfig.TreeKind;
 import xyz.shurlin.structure.StructureKeys;
 
-import static xyz.shurlin.structure.AncientTreeFeatureConfig.TreeKind;
-
 public class ShurlinConfiguredStructureFeatures {
     public static final ConfiguredStructureFeature<AncientTreeFeatureConfig, ? extends StructureFeature<AncientTreeFeatureConfig>> ANCIENT_OAK_TREE;
     public static final ConfiguredStructureFeature<AncientTreeFeatureConfig, ? extends StructureFeature<AncientTreeFeatureConfig>> ANCIENT_BIRCH_TREE;

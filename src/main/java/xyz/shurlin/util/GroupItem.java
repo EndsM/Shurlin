@@ -19,7 +19,6 @@ public enum GroupItem {
     }
 
 
-
     public static boolean canInsert(GroupItem groupItem, Item item, ShurlinLevel level) {
         return item instanceof ShurlinLevel ?
                 (groupItem.itemList.contains(item) && Utils.canDo(level, (ShurlinLevel) item)) :

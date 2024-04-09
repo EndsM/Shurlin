@@ -2,7 +2,6 @@ package xyz.shurlin.cultivation;
 
 import it.unimi.dsi.fastutil.shorts.Short2ObjectOpenHashMap;
 import org.jetbrains.annotations.Nullable;
-import xyz.shurlin.cultivation.CultivationRealms.Map;
 
 public enum CultivationRealms {
     SOLDIER("soldier", 1, 3),

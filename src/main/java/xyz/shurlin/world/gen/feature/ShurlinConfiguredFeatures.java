@@ -23,7 +23,7 @@ import net.minecraft.world.gen.trunk.DarkOakTrunkPlacer;
 import net.minecraft.world.gen.trunk.StraightTrunkPlacer;
 import xyz.shurlin.Shurlin;
 import xyz.shurlin.block.Blocks;
-import xyz.shurlin.world.gen.feature.ShurlinConfiguredFeatures.States;
+
 import java.util.OptionalInt;
 
 public class ShurlinConfiguredFeatures {
