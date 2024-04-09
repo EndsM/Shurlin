@@ -63,7 +63,7 @@ public abstract class AbstractWorkerRecipe implements Recipe<Inventory> {
         return this.type;
     }
 
-    public int getWorkTime(){
+    public int getWorkTime() {
         return this.workTime;
     }
 

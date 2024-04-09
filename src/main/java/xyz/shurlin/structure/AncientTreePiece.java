@@ -54,7 +54,7 @@ public class AncientTreePiece extends SimpleStructurePiece {
     protected void handleMetadata(String metadata, BlockPos pos, ServerWorldAccess serverWorldAccess, Random random, BlockBox boundingBox) {
         if ("leaves_chest".equals(metadata)) {
             LootableContainerBlockEntity.setLootTable(serverWorldAccess, random, pos.down(), this.data.getLeavesChest());
-        }else if("root_chest".equals(metadata)) {
+        } else if ("root_chest".equals(metadata)) {
             LootableContainerBlockEntity.setLootTable(serverWorldAccess, random, pos.down(), this.data.getRootChest());
         }
     }

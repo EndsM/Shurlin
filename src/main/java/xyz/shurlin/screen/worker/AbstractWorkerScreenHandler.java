@@ -42,7 +42,7 @@ public abstract class AbstractWorkerScreenHandler extends AbstractRecipeScreenHa
 
     @Override
     public void populateRecipeFinder(RecipeFinder finder) {
-        if(this.inventory instanceof RecipeInputProvider){
+        if (this.inventory instanceof RecipeInputProvider) {
             ((RecipeInputProvider) this.inventory).provideRecipeInputs(finder);
         }
     }
@@ -67,26 +67,26 @@ public abstract class AbstractWorkerScreenHandler extends AbstractRecipeScreenHa
         return 1;
     }
 
-    private void addPlayerInventorySlots(int x, int y){
-        for (int i=0;i<3;i++){
-            for(int j=0;j<9;j++){
+    private void addPlayerInventorySlots(int x, int y) {
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 9; j++) {
                 this.addPlayerInventorySlot(i * 9 + j + 9, x + j * 18, y + i * 18);
             }
         }
-        for (int i=0;i<9;i++){
+        for (int i = 0; i < 9; i++) {
             this.addPlayerInventorySlot(i, x + i * 18, y + 58);
         }
     }
 
-    void addPlayerInventorySlots(){
+    void addPlayerInventorySlots() {
         addPlayerInventorySlots(8, 84);
     }
 
-    private void addSlot(int index, int x, int y){
+    private void addSlot(int index, int x, int y) {
         this.addSlot(new Slot(this.inventory, index, x, y));
     }
 
-    private void addPlayerInventorySlot(int index, int x, int y){
+    private void addPlayerInventorySlot(int index, int x, int y) {
         this.addSlot(new Slot(this.playerInventory, index, x, y));
     }
 
@@ -116,7 +116,7 @@ public abstract class AbstractWorkerScreenHandler extends AbstractRecipeScreenHa
     }
 
     @Environment(EnvType.CLIENT)
-    public float getWorkProgress(){
+    public float getWorkProgress() {
         return this.propertyDelegate.get(0) / (float) (this.propertyDelegate.get(1) == 0 ? 20 : this.propertyDelegate.get(1));
     }
 

@@ -14,7 +14,7 @@ public class StructurePieceTypes {
     public static final StructurePieceType ANCIENT_JUNGLE_TREE;
     public static final StructurePieceType ANCIENT_PEAR_TREE;
 
-    private static StructurePieceType register(String id, StructurePieceType piece){
+    private static StructurePieceType register(String id, StructurePieceType piece) {
         return Registry.register(Registry.STRUCTURE_PIECE, new Identifier(Shurlin.MODID, id), piece);
     }
 

@@ -15,7 +15,7 @@ public class StructureKeys {
     public static final RegistryKey<ConfiguredStructureFeature<?, ?>> ANCIENT_JUNGLE_TREE = register("ancient_jungle_tree");
     public static final RegistryKey<ConfiguredStructureFeature<?, ?>> ANCIENT_PEAR_TREE = register("ancient_pear_tree");
 
-    public static void registerAll(){
+    public static void registerAll() {
 //        FabricStructureBuilder.create(new Identifier(Shurlin.MODID, "ancient_oak_tree"), StructureFeatures.ANCIENT_OAK_TREE)
 //                .step(GenerationStep.Feature.SURFACE_STRUCTURES)
 //                .defaultConfig(32, 8, 12345)
@@ -31,7 +31,7 @@ public class StructureKeys {
 
     }
 
-    private static RegistryKey<ConfiguredStructureFeature<?, ?>> register(String registryName){
+    private static RegistryKey<ConfiguredStructureFeature<?, ?>> register(String registryName) {
         return RegistryKey.of(Registry.CONFIGURED_STRUCTURE_FEATURE_WORLDGEN, new Identifier(Shurlin.MODID, registryName));
     }
 

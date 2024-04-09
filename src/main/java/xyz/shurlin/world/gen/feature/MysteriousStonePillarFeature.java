@@ -28,7 +28,7 @@ public class MysteriousStonePillarFeature extends Feature<DefaultFeatureConfig> 
         serverWorldAccess.setBlockState(pos.south(), state, 3);
         serverWorldAccess.setBlockState(pos.west(), state, 3);
         serverWorldAccess.setBlockState(pos.east(), state, 3);
-        for(int i=0;i<8;i++){
+        for (int i = 0; i < 8; i++) {
             serverWorldAccess.setBlockState(pos.up(i), state, 3);
         }
 //        Shurlin.LOGGER.debug(pos);
