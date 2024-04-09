@@ -22,7 +22,7 @@ public class BeanEntity extends ArrowEntity {
 
     @Override
     protected void onHit(LivingEntity target) {
-        target.damage(DamageSource.thrownProjectile(this, getOwner()), random.nextInt(3)+2);
+        target.damage(DamageSource.thrownProjectile(this, getOwner()), random.nextInt(3) + 2);
         this.remove();
     }
 

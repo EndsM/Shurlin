@@ -1,9 +1,9 @@
 package xyz.shurlin.cultivation;
 
 public enum SimpleLevels {
-    LOW(1,"","low"),
-    MIDDLE(2,"§a","middle"),
-    HIGH(3,"§9","high");
+    LOW(1, "", "low"),
+    MIDDLE(2, "§a", "middle"),
+    HIGH(3, "§9", "high");
 
     private final int level;
     private final String color;

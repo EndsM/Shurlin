@@ -76,7 +76,7 @@ public class CultivationScreen extends HandledScreen<CultivationScreenHandler> {
         this.drawTexture(matrices, x, y + 6, 122, 200, (int) (width * percentage2), height);
     }
 
-    private void drawText(MatrixStack matrices, SpiritPropertyType type){
+    private void drawText(MatrixStack matrices, SpiritPropertyType type) {
         int id = type.getId() - 1;
         boolean lr = id / 6 == 0;
         int order = id % 6;

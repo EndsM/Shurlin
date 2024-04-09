@@ -1,5 +1,7 @@
 {
-    "variants": {
-        "": { "model": "shurlin:block/tenuous_darkness_spirit_ore_block" }
+  "variants": {
+    "": {
+      "model": "shurlin:block/tenuous_darkness_spirit_ore_block"
     }
+  }
 }

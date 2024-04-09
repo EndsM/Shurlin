@@ -1,5 +1,7 @@
 {
   "variants": {
-    "": { "model": "shurlin:block/platycodon_grandiflorus" }
+    "": {
+      "model": "shurlin:block/platycodon_grandiflorus"
+    }
   }
 }

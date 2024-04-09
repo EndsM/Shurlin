@@ -10,7 +10,7 @@ import xyz.shurlin.Shurlin;
 
 @Environment(EnvType.CLIENT)
 public class BeanEntityRender extends ProjectileEntityRenderer<BeanEntity> {
-    private static final Identifier TEXTURE = new Identifier(Shurlin.MODID,"textures/item/bean.png");
+    private static final Identifier TEXTURE = new Identifier(Shurlin.MODID, "textures/item/bean.png");
 
     private BeanEntityRender(EntityRenderDispatcher entityRenderDispatcher) {
         super(entityRenderDispatcher);

@@ -1,5 +1,7 @@
 {
   "variants": {
-    "": { "model": "shurlin:block/small_bud" }
+    "": {
+      "model": "shurlin:block/small_bud"
+    }
   }
 }

@@ -9,10 +9,10 @@ class BasicStatusEffect extends StatusEffect {
     @Override
     public void applyUpdateEffect(LivingEntity entity, int amplifier) {
         super.applyUpdateEffect(entity, amplifier);
-        if(this == StatusEffects.LOVED){
+        if (this == StatusEffects.LOVED) {
             entity.setHealth(entity.getMaxHealth());
-            if(entity.isDead()){
-                entity.world.sendEntityStatus(entity, (byte)35);
+            if (entity.isDead()) {
+                entity.world.sendEntityStatus(entity, (byte) 35);
                 entity.setPose(EntityPose.STANDING);
             }
         }
@@ -21,7 +21,7 @@ class BasicStatusEffect extends StatusEffect {
 
     @Override
     public boolean canApplyUpdateEffect(int duration, int amplifier) {
-        if(this == StatusEffects.LOVED)
+        if (this == StatusEffects.LOVED)
             return true;
         return super.canApplyUpdateEffect(duration, amplifier);
     }

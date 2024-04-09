@@ -26,13 +26,13 @@ public class EntityTypes {
 
     public static final EntityType<RoamingSpiritEntity> ROAMING_SPIRIT_ENTITY_TYPE =
             register("roaming_spirit_entity_type",
-                    EntityType.Builder.create(RoamingSpiritEntity::new, SpawnGroup.CREATURE).setDimensions(0.6f,0.6f).maxTrackingRange(8));
+                    EntityType.Builder.create(RoamingSpiritEntity::new, SpawnGroup.CREATURE).setDimensions(0.6f, 0.6f).maxTrackingRange(8));
 
     private static <T extends Entity> EntityType<T> register(String name, EntityType.Builder<T> type) {
         return Registry.register(Registry.ENTITY_TYPE, new Identifier(Shurlin.MODID, name), type.build(name));
     }
 
-    public static void registerAll(){
+    public static void registerAll() {
         FabricDefaultAttributeRegistry.register(ROAMING_SPIRIT_ENTITY_TYPE, RoamingSpiritEntity.createMobAttributes());
     }
 }

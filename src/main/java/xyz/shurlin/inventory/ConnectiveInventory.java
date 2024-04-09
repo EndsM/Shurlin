@@ -23,7 +23,7 @@ public class ConnectiveInventory extends SimpleInventory {
     }
 
     public void readTags(ListTag allTags) {
-        for(int i = 0; i < allTags.size(); ++i) {
+        for (int i = 0; i < allTags.size(); ++i) {
             ListTag personalTags = allTags.getList(i);
             ConnectiveInventory inventory = connectiveInventories.get(i);
             for (int j = 0; j < personalTags.size(); j++) {
@@ -51,13 +51,13 @@ public class ConnectiveInventory extends SimpleInventory {
         return allTags;
     }
 
-    public static ConnectiveInventory getConnectiveInventory(int size, PlayerEntity player){
+    public static ConnectiveInventory getConnectiveInventory(int size, PlayerEntity player) {
         if (connectiveInventories != null)
-            for(ConnectiveInventory inventory : connectiveInventories){
+            for (ConnectiveInventory inventory : connectiveInventories) {
                 if (inventory.getPlayer() == player)
                     return inventory;
             }
-        if(connectiveInventories == null)
+        if (connectiveInventories == null)
             connectiveInventories = new ArrayList<>();
         ConnectiveInventory inventory = new ConnectiveInventory(size, player);
         connectiveInventories.add(inventory);

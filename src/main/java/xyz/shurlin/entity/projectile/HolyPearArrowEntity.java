@@ -14,7 +14,7 @@ import xyz.shurlin.item.Items;
 import xyz.shurlin.util.Utils;
 
 public class HolyPearArrowEntity extends ArrowEntity {
-    private static final int[] powers = new int[]{2,8,30};
+    private static final int[] powers = new int[]{2, 8, 30};
     private int power;
     private boolean destroy;
 
@@ -33,7 +33,7 @@ public class HolyPearArrowEntity extends ArrowEntity {
     @Override
     public void tick() {
         super.tick();
-        world.addParticle(ParticleTypes.ENTITY_EFFECT,this.getParticleX(0.5D), this.getRandomBodyY(), this.getParticleZ(0.5D),0,255, 0);
+        world.addParticle(ParticleTypes.ENTITY_EFFECT, this.getParticleX(0.5D), this.getRandomBodyY(), this.getParticleZ(0.5D), 0, 255, 0);
     }
 
     @Override

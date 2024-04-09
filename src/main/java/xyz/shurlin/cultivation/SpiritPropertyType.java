@@ -26,7 +26,7 @@ public enum SpiritPropertyType {
         this.id = id;
     }
 
-    public String getTranslation(){
+    public String getTranslation() {
         return "type.shurlin." + this.name;
     }
 

@@ -9,7 +9,7 @@ import xyz.shurlin.Shurlin;
 public class StatusEffects {
     public static final StatusEffect LOVED;
 
-    private static StatusEffect register(String registryName, StatusEffect effect){
+    private static StatusEffect register(String registryName, StatusEffect effect) {
         return Registry.register(Registry.STATUS_EFFECT, new Identifier(Shurlin.MODID, registryName), effect);
     }
 
