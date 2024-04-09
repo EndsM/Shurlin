@@ -15,15 +15,15 @@ public enum SimpleLevels {
         this.name = name;
     }
 
-    protected int getLevel() {
+    private int getLevel() {
         return level;
     }
 
-    protected String getColor() {
+    private String getColor() {
         return color;
     }
 
-    protected String getName() {
+    private String getName() {
         return name;
     }
 }
