@@ -44,8 +44,8 @@ public abstract class AbstractWorkerBlockEntity extends BasicBlockEntity impleme
     @Override
     public CompoundTag toTag(CompoundTag tag) {
         super.toTag(tag);
-        tag.putInt("WorkTime", (short)this.workTime);
-        tag.putInt("WorkTimeTotal", (short)this.workTimeTotal);
+        tag.putInt("WorkTime", (short) this.workTime);
+        tag.putInt("WorkTimeTotal", (short) this.workTimeTotal);
         return tag;
     }
 
@@ -94,7 +94,7 @@ public abstract class AbstractWorkerBlockEntity extends BasicBlockEntity impleme
 //        return BreakerRecipes.getData(input).getTime();
 //    }
 
-    boolean isWorking(){
+    boolean isWorking() {
         return this.workTime > 0;
     }
 //
@@ -161,7 +161,7 @@ public abstract class AbstractWorkerBlockEntity extends BasicBlockEntity impleme
         }
     }
 
-    protected int getOutputSlot(){
+    protected int getOutputSlot() {
         return 1;
     }
 

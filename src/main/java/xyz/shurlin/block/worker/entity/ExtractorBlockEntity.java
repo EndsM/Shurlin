@@ -21,13 +21,13 @@ public class ExtractorBlockEntity extends AbstractWorkerBlockEntity {
         super(BlockEntityTypes.EXTRACTOR_BLOCK_ENTITY, "extractor", level, RecipeTypes.EXTRACTING);
     }
 
-    public ExtractorBlockEntity(){
+    public ExtractorBlockEntity() {
         this(0);
     }
 
     @Override
     public ScreenHandler createScreenHandler(int syncId, PlayerInventory playerInventory) {
-        return new ExtractorScreenHandler(syncId,this, playerInventory,this.propertyDelegate,world,this);
+        return new ExtractorScreenHandler(syncId, this, playerInventory, this.propertyDelegate, world, this);
     }
 
     @Override
@@ -40,7 +40,7 @@ public class ExtractorBlockEntity extends AbstractWorkerBlockEntity {
         return new PropertyDelegate() {
             @Override
             public int get(int index) {
-                switch (index){
+                switch (index) {
                     case 0:
                         return ExtractorBlockEntity.this.workTime;
                     case 1:
@@ -56,7 +56,7 @@ public class ExtractorBlockEntity extends AbstractWorkerBlockEntity {
 
             @Override
             public void set(int index, int value) {
-                switch (index){
+                switch (index) {
                     case 0:
                         ExtractorBlockEntity.this.workTime = value;
                     case 1:
@@ -80,28 +80,28 @@ public class ExtractorBlockEntity extends AbstractWorkerBlockEntity {
         if (this.world != null && !this.world.isClient) {
             ItemStack input = this.inventory.get(0);
             ItemStack extractantStack = this.inventory.get(1);
-            if(this.cur_extractant == 0 && !extractantStack.isEmpty()){
+            if (this.cur_extractant == 0 && !extractantStack.isEmpty()) {
                 Item extractant = extractantStack.getItem();
-                if(extractant instanceof ExtractantItem){
+                if (extractant instanceof ExtractantItem) {
                     ExtractantItem extractantItem = (ExtractantItem) extractant;
                     this.extractant = extractantItem.getExtractant();
                     this.cur_extractant = this.extractant;
                     extractantStack.decrement(1);
                 }
             }
-            if(!input.isEmpty()){
+            if (!input.isEmpty()) {
                 Recipe<?> recipe = this.world.getRecipeManager().getFirstMatch(this.recipeType, this, this.world).orElse(null);
-                if(this.canAcceptRecipeOutput(recipe) && this.cur_extractant > 0){
-                    if(!isWorking() || this.workTimeTotal <= 0)
+                if (this.canAcceptRecipeOutput(recipe) && this.cur_extractant > 0) {
+                    if (!isWorking() || this.workTimeTotal <= 0)
                         this.workTimeTotal = this.getWorkTimeTotal();
                     ++this.workTime;
-                    if(this.workTime == this.workTimeTotal){
+                    if (this.workTime == this.workTimeTotal) {
                         this.workTime = 0;
                         --this.cur_extractant;
                         this.craftRecipe(recipe);
                     }
                 }
-            }else {
+            } else {
                 this.workTime = 0;
                 this.workTimeTotal = 0;
             }
@@ -117,8 +117,8 @@ public class ExtractorBlockEntity extends AbstractWorkerBlockEntity {
 
     @Override
     public CompoundTag toTag(CompoundTag tag) {
-        tag.putShort("Cur_extractant",(short) this.cur_extractant);
-        tag.putShort("Extractant",(short) this.extractant);
+        tag.putShort("Cur_extractant", (short) this.cur_extractant);
+        tag.putShort("Extractant", (short) this.extractant);
         return super.toTag(tag);
     }
 

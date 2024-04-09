@@ -12,7 +12,7 @@ public class SucculentBlock extends SlimeBlock {
 
     public SucculentBlock(Settings settings) {
         super(settings);
-        this.setDefaultState(this.getStateManager().getDefaultState().with(SHINING, Shurlin.random.nextFloat()<0.05));
+        this.setDefaultState(this.getStateManager().getDefaultState().with(SHINING, Shurlin.random.nextFloat() < 0.05));
     }
 
     @Override

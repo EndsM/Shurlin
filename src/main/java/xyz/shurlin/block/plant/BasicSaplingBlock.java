@@ -12,7 +12,7 @@ public class BasicSaplingBlock extends SaplingBlock {
         super(new Generator(treeFeatureConfig), settings);
     }
 
-    static class Generator extends SaplingGenerator{
+    static class Generator extends SaplingGenerator {
         private final ConfiguredFeature<TreeFeatureConfig, ?> treeFeatureConfig;
 
         Generator(ConfiguredFeature<TreeFeatureConfig, ?> treeFeatureConfig) {

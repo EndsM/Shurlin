@@ -21,7 +21,7 @@ public class PlatycodonGrandiflorusBlock extends FlowerBlock {
     @Override
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
         ItemStack stack = player.getStackInHand(hand);
-        if(stack.getItem().equals(Items.PLANT_ESSENCE) && stack.getCount() >= 3 && hit.getSide() == Direction.SOUTH){
+        if (stack.getItem().equals(Items.PLANT_ESSENCE) && stack.getCount() >= 3 && hit.getSide() == Direction.SOUTH) {
             stack.decrement(3);
             world.breakBlock(pos, false);
             player.inventory.insertStack(new ItemStack(Items.LIFE_AMULET));

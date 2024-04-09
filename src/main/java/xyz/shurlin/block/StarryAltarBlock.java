@@ -8,7 +8,7 @@ import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
 
 public class StarryAltarBlock extends Block {
-    private static final VoxelShape SHAPE = Block.createCuboidShape(3, 0, 3, 13,10, 13);
+    private static final VoxelShape SHAPE = Block.createCuboidShape(3, 0, 3, 13, 10, 13);
 
     public StarryAltarBlock(Settings settings) {
         super(settings);

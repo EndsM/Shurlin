@@ -20,11 +20,11 @@ abstract class AbstractWorkerBlock extends BlockWithEntity {
 
     @Override
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
-        if(world.isClient){
+        if (world.isClient) {
             return ActionResult.SUCCESS;
-        }else {
+        } else {
             this.openScreen(world, pos, player);
-                return ActionResult.CONSUME;
+            return ActionResult.CONSUME;
         }
     }
 
@@ -44,7 +44,7 @@ abstract class AbstractWorkerBlock extends BlockWithEntity {
         if (itemStack.hasCustomName()) {
             BlockEntity blockEntity = world.getBlockEntity(pos);
             if (blockEntity instanceof AbstractWorkerBlockEntity) {
-                ((AbstractWorkerBlockEntity)blockEntity).setCustomName(itemStack.getName());
+                ((AbstractWorkerBlockEntity) blockEntity).setCustomName(itemStack.getName());
             }
         }
     }
@@ -58,7 +58,7 @@ abstract class AbstractWorkerBlock extends BlockWithEntity {
         if (!state.isOf(newState.getBlock())) {
             BlockEntity blockEntity = world.getBlockEntity(pos);
             if (blockEntity instanceof AbstractWorkerBlockEntity) {
-                ItemScatterer.spawn(world, pos, (AbstractWorkerBlockEntity)blockEntity);
+                ItemScatterer.spawn(world, pos, (AbstractWorkerBlockEntity) blockEntity);
                 world.updateComparators(pos, this);
             }
             super.onStateReplaced(state, world, pos, newState, moved);

@@ -15,12 +15,13 @@ public class MicroCraterBlock extends BasicBlock {
 
     @Override
     public void scheduledTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
-        if(random.nextInt(200)==0){
-            working=true;
+        if (random.nextInt(200) == 0) {
+            working = true;
             erupt(world);
         }
     }
-    private void erupt(ServerWorld world){
+
+    private void erupt(ServerWorld world) {
 //        world.addFireworkParticle();
 
     }

@@ -34,7 +34,7 @@ public class BlockEntityTypes {
             register("llandudno_block_entity", BlockEntityType.Builder.create(AlchemyFurnaceBlockEntity::new, Blocks.LLANDUDNO).build(null));
 
 
-    private static BlockEntityType register(String registryName, BlockEntityType<?> entry){
+    private static BlockEntityType register(String registryName, BlockEntityType<?> entry) {
         return Registry.register(Registry.BLOCK_ENTITY_TYPE,
                 new Identifier(Shurlin.MODID, registryName),
                 entry);

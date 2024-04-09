@@ -29,14 +29,14 @@ public class HolyFarmerPortalBlock extends BasicBlock {
         return SHAPE;
     }
 
-    public static void createPortal(World world, BlockPos pos){
-        if(world.getRegistryKey() == Dimensions.HOLY_FARMER || world.getRegistryKey() == World.OVERWORLD) {
+    public static void createPortal(World world, BlockPos pos) {
+        if (world.getRegistryKey() == Dimensions.HOLY_FARMER || world.getRegistryKey() == World.OVERWORLD) {
             Block block = world.getBlockState(pos).getBlock();
-            if(block == Blocks.HOLY_FARMER_PORTAL || block == Blocks.PLANT_OBSIDIAN)
-                return ;
+            if (block == Blocks.HOLY_FARMER_PORTAL || block == Blocks.PLANT_OBSIDIAN)
+                return;
             world.setBlockState(pos, Blocks.HOLY_FARMER_PORTAL.getDefaultState(), 3);
-            if(block == Blocks.PHOENIX_LEAVES){
-                for(BlockPos dir: Utils.poses_of_horizontal){
+            if (block == Blocks.PHOENIX_LEAVES) {
+                for (BlockPos dir : Utils.poses_of_horizontal) {
                     createPortal(world, pos.add(dir));
                 }
             }
@@ -45,7 +45,7 @@ public class HolyFarmerPortalBlock extends BasicBlock {
 
     @Override
     public void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
-        if(!entity.hasVehicle() && !entity.hasPassengers() && entity.canUsePortals() && world instanceof ServerWorld)
+        if (!entity.hasVehicle() && !entity.hasPassengers() && entity.canUsePortals() && world instanceof ServerWorld)
             Utils.joinHolyFarmerDimension((ServerWorld) world, entity);
     }
 
@@ -61,9 +61,9 @@ public class HolyFarmerPortalBlock extends BasicBlock {
 
     @Override
     public void onBroken(WorldAccess world, BlockPos pos, BlockState state) {
-        for(BlockPos pos1 : Utils.poses_of_horizontal){
+        for (BlockPos pos1 : Utils.poses_of_horizontal) {
             BlockPos pos2 = pos.add(pos1);
-            if(world.getBlockState(pos2).isOf(Blocks.HOLY_FARMER_PORTAL)){
+            if (world.getBlockState(pos2).isOf(Blocks.HOLY_FARMER_PORTAL)) {
                 world.breakBlock(pos2, false);
             }
         }

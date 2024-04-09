@@ -17,13 +17,13 @@ public class CollectorBlockEntity extends AbstractWorkerBlockEntity {
         super(BlockEntityTypes.COLLECTOR_BLOCK_ENTITY, "collector", level, RecipeTypes.COLLECTING);
     }
 
-    public CollectorBlockEntity(){
+    public CollectorBlockEntity() {
         this(0);
     }
 
     @Override
     public ScreenHandler createScreenHandler(int syncId, PlayerInventory playerInventory) {
-        return new CollectorScreenHandler(syncId,this, playerInventory,this.propertyDelegate, world,this);
+        return new CollectorScreenHandler(syncId, this, playerInventory, this.propertyDelegate, world, this);
     }
 
     @Override
@@ -36,7 +36,7 @@ public class CollectorBlockEntity extends AbstractWorkerBlockEntity {
         return new PropertyDelegate() {
             @Override
             public int get(int index) {
-                switch (index){
+                switch (index) {
                     case 0:
                         return CollectorBlockEntity.this.workTime;
                     case 1:
@@ -50,7 +50,7 @@ public class CollectorBlockEntity extends AbstractWorkerBlockEntity {
 
             @Override
             public void set(int index, int value) {
-                switch (index){
+                switch (index) {
                     case 0:
                         CollectorBlockEntity.this.workTime = value;
                     case 1:
@@ -69,24 +69,24 @@ public class CollectorBlockEntity extends AbstractWorkerBlockEntity {
 
     @Override
     public void tick() {
-        if(this.world != null && !this.world.isClient){
+        if (this.world != null && !this.world.isClient) {
             ItemStack input = this.inventory.get(0);
-            if(!input.isEmpty()){
+            if (!input.isEmpty()) {
                 Item collection = input.getItem();
-                if(collection instanceof Collectable){
+                if (collection instanceof Collectable) {
                     Collectable collectable = ((Collectable) collection);
                     this.consistence = collectable.getConsistence(this.world, this.pos);
-                    if(!isWorking() || this.workTimeTotal <= 0)
+                    if (!isWorking() || this.workTimeTotal <= 0)
                         this.workTimeTotal = collectable.getTime();
-                    if(getCollected()){
+                    if (getCollected()) {
                         ++this.workTime;
-                        if(this.workTime == this.workTimeTotal){
+                        if (this.workTime == this.workTimeTotal) {
                             this.workTime = 0;
                             this.craftRecipe();
                         }
                     }
                 }
-            }else{
+            } else {
                 this.workTime = 0;
                 this.workTimeTotal = 0;
                 this.consistence = 0;
@@ -113,7 +113,7 @@ public class CollectorBlockEntity extends AbstractWorkerBlockEntity {
         }
     }
 
-    private boolean getCollected(){
+    private boolean getCollected() {
         return world.random.nextFloat() < (consistence / 100.0f);
     }
 }

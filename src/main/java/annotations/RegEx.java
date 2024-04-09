@@ -3,6 +3,7 @@ package annotations;
 import annotations.meta.TypeQualifierNickname;
 import annotations.meta.TypeQualifierValidator;
 import annotations.meta.When;
+
 import java.lang.annotation.Documented;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
@@ -12,7 +13,6 @@ import java.util.regex.PatternSyntaxException;
 /**
  * This qualifier is used to denote String values that should be a Regular
  * expression.
- * 
  */
 @Documented
 @Syntax("RegEx")

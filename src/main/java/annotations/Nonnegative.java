@@ -3,11 +3,14 @@ package annotations;
 import annotations.meta.TypeQualifier;
 import annotations.meta.TypeQualifierValidator;
 import annotations.meta.When;
+
 import java.lang.annotation.Documented;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 
-/** Used to annotate a value that should only contain nonnegative values */
+/**
+ * Used to annotate a value that should only contain nonnegative values
+ */
 @Documented
 @TypeQualifier(applicableTo = Number.class)
 @Retention(RetentionPolicy.RUNTIME)

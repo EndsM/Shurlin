@@ -1,6 +1,7 @@
 package annotations;
 
 import annotations.meta.TypeQualifierDefault;
+
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -16,7 +17,6 @@ import java.lang.annotation.RetentionPolicy;
  * <li> there is a default parameter annotation applied to a more tightly nested
  * element.
  * </ul>
- * 
  */
 @Documented
 @Nonnull

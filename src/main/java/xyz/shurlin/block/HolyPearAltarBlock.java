@@ -34,7 +34,7 @@ public class HolyPearAltarBlock extends Block {
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
         ItemStack mainStack = player.getStackInHand(Hand.MAIN_HAND);
         ItemStack offStack = player.getStackInHand(Hand.OFF_HAND);
-        if(!mainStack.getItem().equals(Items.PEAR) || !offStack.getItem().equals(Items.PLANT_ESSENCE))
+        if (!mainStack.getItem().equals(Items.PEAR) || !offStack.getItem().equals(Items.PLANT_ESSENCE))
             return ActionResult.FAIL;
         int cnt = Math.min(mainStack.getCount(), offStack.getCount());
         mainStack.decrement(cnt);
@@ -58,13 +58,13 @@ public class HolyPearAltarBlock extends Block {
 
     @Override
     public void onSteppedOn(World world, BlockPos pos, Entity entity) {
-        if(entity instanceof PlayerEntity){
+        if (entity instanceof PlayerEntity) {
             ((PlayerEntity) entity).addExperience(1);
-            if(!((PlayerEntity) entity).abilities.creativeMode)
-                if(world.random.nextFloat() < 0.1)
+            if (!((PlayerEntity) entity).abilities.creativeMode)
+                if (world.random.nextFloat() < 0.1)
                     entity.setFireTicks(200);
-            if(world.isClient){
-                if(KeyBindings.keyBinding_j.isPressed()){
+            if (world.isClient) {
+                if (KeyBindings.keyBinding_j.isPressed()) {
                     PacketByteBuf passedData = new PacketByteBuf(Unpooled.buffer());
                     passedData.writeBlockPos(pos);
                     ClientSidePacketRegistry.INSTANCE.sendToServer(Utils.PACKET_ID_1, passedData);

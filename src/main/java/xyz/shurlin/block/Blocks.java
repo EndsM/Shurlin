@@ -75,19 +75,19 @@ public class Blocks {
     public static final Block TENUOUS_ICE_SPIRIT_ORE_BLOCK;
     public static final Block TENUOUS_TIME_SPACE_SPIRIT_ORE_BLOCK;
 
-    private static Block register(String registryName, Block.Settings settings){
+    private static Block register(String registryName, Block.Settings settings) {
         return register(registryName, new BasicBlock(settings));
     }
 
-    private static Block registerOreBlock(String registryName){
+    private static Block registerOreBlock(String registryName) {
         return register(registryName, new SpiritOreBlock(BlockSettings.ORE));
     }
 
-    private static Block registerOreBlock(String registryName, Material material){
+    private static Block registerOreBlock(String registryName, Material material) {
         return register(registryName, new OreBlock(FabricBlockSettings.of(material).requiresTool().strength(3.0f, 3.0f)));
     }
 
-    private static Block register(String registryName, Block block){
+    private static Block register(String registryName, Block block) {
         return Registry.register(Registry.BLOCK, new Identifier(Shurlin.MODID, registryName), block);
     }
 
@@ -103,7 +103,7 @@ public class Blocks {
         PEAR_LOG = register("pear_log", new PillarBlock(BlockSettings.LOG));
         PEAR_PLANKS = register("pear_planks", BlockSettings.PLANKS);
         PEAR_LEAVES = register("pear_leaves", new LeavesBlock(BlockSettings.LEAVES));
-        PEAR_RIPE_LEAVES = register("pear_ripe_leaves", new LeavesBlock(FabricBlockSettings.of(Material.LEAVES).strength(0.3f,0.3f).ticksRandomly().sounds(BlockSoundGroup.GRASS).nonOpaque()));
+        PEAR_RIPE_LEAVES = register("pear_ripe_leaves", new LeavesBlock(FabricBlockSettings.of(Material.LEAVES).strength(0.3f, 0.3f).ticksRandomly().sounds(BlockSoundGroup.GRASS).nonOpaque()));
         PEAR_DOOR = register("pear_door", new BasicDoorBlock());
         PHOENIX_LOG = register("phoenix_log", new PillarBlock(BlockSettings.LOG));
         PHOENIX_PLANKS = register("phoenix_planks", BlockSettings.PLANKS);
@@ -118,18 +118,18 @@ public class Blocks {
         PLANT_OBSIDIAN = register("plant_obsidian", BlockSettings.OBSIDIAN);
         HOLY_FARMER_PORTAL = register("holy_farmer_portal", new HolyFarmerPortalBlock(FabricBlockSettings.of(Material.PORTAL).noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.GLASS).lightLevel(12)));
         CULTIVATION_CRYSTAL = register("cultivation_crystal", new CultivationCrystalBlock(FabricBlockSettings.of(Material.GLASS).strength(-1).nonOpaque()));
-        SUCCULENT_BLOCK = register("succulent_block", new SucculentBlock(FabricBlockSettings.of(Material.ORGANIC_PRODUCT, MaterialColor.GRASS).slipperiness(0.8F).sounds(BlockSoundGroup.SLIME).nonOpaque().lightLevel((state)->
-            state.get(SucculentBlock.SHINING)?8:0
+        SUCCULENT_BLOCK = register("succulent_block", new SucculentBlock(FabricBlockSettings.of(Material.ORGANIC_PRODUCT, MaterialColor.GRASS).slipperiness(0.8F).sounds(BlockSoundGroup.SLIME).nonOpaque().lightLevel((state) ->
+                state.get(SucculentBlock.SHINING) ? 8 : 0
         )));
-        LLANDUDNO = register("llandudno_block",BlockSettings.LLANDUDNO);
+        LLANDUDNO = register("llandudno_block", BlockSettings.LLANDUDNO);
 
-        DEAD_LEAVE_CORAL = register("dead_leave_coral",new DeadLeaveCoralBlock(BlockSettings.DEAD_CORAL));
-        LEAVE_CORAL = register("leave_coral",new LeaveCoralBlock(DEAD_LEAVE_CORAL, BlockSettings.CORAL));
-        DEAD_LEAVE_CORAL_FAN = register("dead_leave_coral_fan",new DeadLeaveCoralFanBlock(BlockSettings.DEAD_CORAL));
+        DEAD_LEAVE_CORAL = register("dead_leave_coral", new DeadLeaveCoralBlock(BlockSettings.DEAD_CORAL));
+        LEAVE_CORAL = register("leave_coral", new LeaveCoralBlock(DEAD_LEAVE_CORAL, BlockSettings.CORAL));
+        DEAD_LEAVE_CORAL_FAN = register("dead_leave_coral_fan", new DeadLeaveCoralFanBlock(BlockSettings.DEAD_CORAL));
         LEAVE_CORAL_FAN = register("leave_coral_fan", new LeaveCoralFanBlock(DEAD_LEAVE_CORAL_FAN, BlockSettings.CORAL));
         DEAD_LEAVE_CORAL_WALL_FAN = register("dead_leave_coral_wall_fan", new DeadLeaveCoralWallFanBlock(BlockSettings.DEAD_CORAL.dropsLike(DEAD_LEAVE_CORAL_FAN)));
         LEAVE_CORAL_WALL_FAN = register("leave_coral_wall_fan", new LeaveCoralWallFanBlock(DEAD_LEAVE_CORAL_WALL_FAN, BlockSettings.CORAL.dropsLike(LEAVE_CORAL_FAN)));
-        DEAD_LEAVE_CORAL_BLOCK = register("dead_leave_coral_block",new Block(BlockSettings.DEAD_CORAL_BLOCK));
+        DEAD_LEAVE_CORAL_BLOCK = register("dead_leave_coral_block", new Block(BlockSettings.DEAD_CORAL_BLOCK));
         LEAVE_CORAL_BLOCK = register("leave_coral_block", new LeaveCoralBlockBlock(DEAD_LEAVE_CORAL_BLOCK, BlockSettings.CORAL_BLOCK));
 
         HOT_FIRE_STONE = register("hot_fire_stone", BlockSettings.STONE);
@@ -153,7 +153,7 @@ public class Blocks {
 
     }
 
-    private static class BlockSettings{
+    private static class BlockSettings {
         private static final FabricBlockSettings ORE;
         private static final FabricBlockSettings STONE;
         private static final FabricBlockSettings DIRT;
@@ -172,7 +172,7 @@ public class Blocks {
         static {
             PLANT = FabricBlockSettings.of(Material.PLANT).noCollision().ticksRandomly().breakInstantly().nonOpaque().sounds(BlockSoundGroup.GRASS);
             LOG = FabricBlockSettings.of(Material.WOOD).strength(2.0f).sounds(BlockSoundGroup.WOOD);
-            LEAVES = FabricBlockSettings.of(Material.LEAVES).strength(0.2f,0.2f).ticksRandomly().sounds(BlockSoundGroup.GRASS).nonOpaque();
+            LEAVES = FabricBlockSettings.of(Material.LEAVES).strength(0.2f, 0.2f).ticksRandomly().sounds(BlockSoundGroup.GRASS).nonOpaque();
             PLANKS = FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD);
             ORE = FabricBlockSettings.of(Material.STONE).requiresTool().strength(3.0f, 3.0f);
             CORAL = FabricBlockSettings.of(Material.UNDERWATER_PLANT, MaterialColor.GREEN).noCollision().breakInstantly().sounds(BlockSoundGroup.WET_GRASS);
