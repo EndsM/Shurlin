@@ -38,35 +38,35 @@ public class BasicScreenHandler<I extends Inventory> extends ScreenHandler {
         return this.inventory.canPlayerUse(player);
     }
 
-    void addPlayerInventorySlots(int x, int y){
-        for (int i=0;i<3;i++){
-            for(int j=0;j<9;j++){
+    void addPlayerInventorySlots(int x, int y) {
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 9; j++) {
                 this.addPlayerInventorySlot(i * 9 + j + 9, x + j * 18, y + i * 18);
             }
         }
-        for (int i=0;i<9;i++){
+        for (int i = 0; i < 9; i++) {
             this.addPlayerInventorySlot(i, x + i * 18, y + 58);
         }
     }
 
-    void addPlayerInventorySlots(){
+    void addPlayerInventorySlots() {
         addPlayerInventorySlots(8, 84);
     }
 
-    private void addSlot(int index, int x, int y){
+    private void addSlot(int index, int x, int y) {
         this.addSlot(new Slot(this.inventory, index, x, y));
     }
 
-    protected void addPlayerInventorySlot(int index, int x, int y){
+    protected void addPlayerInventorySlot(int index, int x, int y) {
         this.addSlot(new Slot(this.playerInventory, index, x, y));
     }
 
 
-    void addSlots(int x, int y, int r, int c){
+    void addSlots(int x, int y, int r, int c) {
         checkSize(this.inventory, r * c);
         int cnt = 0;
-        for(int i=0;i<r;i++){
-            for(int j=0;j<c;j++){
+        for (int i = 0; i < r; i++) {
+            for (int j = 0; j < c; j++) {
                 addSlot(cnt++, x + j * 18, y + i * 18);
             }
         }
