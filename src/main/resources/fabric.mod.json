@@ -28,17 +28,9 @@
     "shurlin.mixins.json"
   ],
   "depends": {
-    "fabricloader": ">=0.9.0",
-    "fabric": ">=0.19.0",
+    "fabricloader": ">=0.15.0",
+    "fabric": ">=0.42.0",
     "minecraft": "1.16.5"
-  },
-  "suggests": {
-    "sweet_potato": ">1.0.3"
-  },
-  "custom": {
-    "Pigeonia Linkage Standard": {
-      "url": "https://featurehouse.github.io/pigeonia-linkage-standard/v1.0.0/STANDARD.txt",
-      "version": "v1.0.0"
-    }
   }
+  
 }
