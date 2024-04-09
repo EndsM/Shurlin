@@ -14,9 +14,9 @@ import xyz.shurlin.util.ShurlinLevel;
 public class CollectorScreenHandler extends AbstractWorkerScreenHandler {
 
     public CollectorScreenHandler(int syncId, Inventory inventory, PlayerInventory playerInventory, PropertyDelegate propertyDelegate, World world, ShurlinLevel shurlinLevel) {
-        super(ScreenHandlerTypes.COLLECTOR_SCREEN_HANDLER_TYPE, syncId, inventory, playerInventory,propertyDelegate,world, shurlinLevel);
-        this.addSlot(new WorkerInputSlot(inventory, 0, 47,18, shurlinLevel));
-        this.addSlot(new WorkerOutputSlot(inventory, playerInventory.player,1,106,35));
+        super(ScreenHandlerTypes.COLLECTOR_SCREEN_HANDLER_TYPE, syncId, inventory, playerInventory, propertyDelegate, world, shurlinLevel);
+        this.addSlot(new WorkerInputSlot(inventory, 0, 47, 18, shurlinLevel));
+        this.addSlot(new WorkerOutputSlot(inventory, playerInventory.player, 1, 106, 35));
         this.addPlayerInventorySlots();
     }
 
@@ -24,7 +24,7 @@ public class CollectorScreenHandler extends AbstractWorkerScreenHandler {
         this(syncId, new WorkerInventory(3, null), playerInventory, new ArrayPropertyDelegate(3), playerInventory.player.world, null);
     }
 
-    public String getName(){
+    public String getName() {
         return "collector";
     }
 
@@ -38,7 +38,7 @@ public class CollectorScreenHandler extends AbstractWorkerScreenHandler {
         return 2;
     }
 
-    public float getConsistence(){
+    public float getConsistence() {
         return this.propertyDelegate.get(2) / 100.0f;
     }
 }

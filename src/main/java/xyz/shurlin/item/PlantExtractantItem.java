@@ -12,7 +12,7 @@ public class PlantExtractantItem extends ExtractantItem implements Collectable {
 
     @Override
     public int getConsistence(World world, Vec3i pos) {
-        switch (world.getBiome((BlockPos)pos).getCategory()){
+        switch (world.getBiome((BlockPos) pos).getCategory()) {
             case FOREST:
                 return 60;
             case TAIGA:

@@ -21,16 +21,17 @@ public class SwordWeaponItem extends BasicWeaponItem {
     }
 
     public SwordWeaponItem(int maxDamage, WeaponLevels level, WeaponProperties properties) {
-        this(level.unbreakable()?new Item.Settings().maxCount(1):new Item.Settings().maxDamage(maxDamage), level, properties);
+        this(level.unbreakable() ? new Item.Settings().maxCount(1) : new Item.Settings().maxDamage(maxDamage), level, properties);
     }
 
     public SwordWeaponItem(WeaponLevels level, WeaponProperties properties) {
-        this(level.getLevel()*level.getLevel()*100 , level, properties);
+        this(level.getLevel() * level.getLevel() * 100, level, properties);
     }
 
     @Override
     public boolean postHit(ItemStack stack, LivingEntity target, LivingEntity attacker) {
-        if(!this.level.unbreakable())stack.damage(1, attacker, (e) -> e.sendEquipmentBreakStatus(EquipmentSlot.MAINHAND));
+        if (!this.level.unbreakable())
+            stack.damage(1, attacker, (e) -> e.sendEquipmentBreakStatus(EquipmentSlot.MAINHAND));
         return true;
     }
 
@@ -38,7 +39,7 @@ public class SwordWeaponItem extends BasicWeaponItem {
         return slot == EquipmentSlot.MAINHAND ? (this.withSpirit ? this.multimapWithSpirit : this.multimapWithoutSpirit) : super.getAttributeModifiers(slot);
     }
 
-    private void setProperties(WeaponProperties properties){
+    private void setProperties(WeaponProperties properties) {
         ImmutableMultimap.Builder<EntityAttribute, EntityAttributeModifier> builder = ImmutableMultimap.builder();
         builder.put(EntityAttributes.GENERIC_ATTACK_DAMAGE,
                 new EntityAttributeModifier(ATTACK_DAMAGE_MODIFIER_ID, "Weapon modifier",

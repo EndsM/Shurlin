@@ -1,7 +1,7 @@
 package xyz.shurlin.item;
 
 public class WeaponProperties {
-    public static final WeaponProperties DARK_IRON = new WeaponProperties(8,6,-2.0f,-2.4f);
+    public static final WeaponProperties DARK_IRON = new WeaponProperties(8, 6, -2.0f, -2.4f);
 
     private final int attackWithSpirit;
     private final int attackWithoutSpirit;

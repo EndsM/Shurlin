@@ -1,5 +1,7 @@
 {
-    "variants": {
-        "": { "model": "shurlin:block/phoenix_leaves" }
+  "variants": {
+    "": {
+      "model": "shurlin:block/phoenix_leaves"
     }
+  }
 }

@@ -31,7 +31,7 @@ public class Items {
     public static final Item HOLY_PEAR;
     public static final Item HOLY_PEAR_SWORD;
     public static final Item HOLT_PEAR_BOW;
-//    public static final Item HOLY_PEAR_ARROW;
+    //    public static final Item HOLY_PEAR_ARROW;
     public static final Item HOLT_PEAR_WAND;
     public static final Item BEAN;
     public static final Item CHAIN_MINER;
@@ -150,31 +150,31 @@ public class Items {
     public static final Item TENUOUS_TIME_SPACE_SPIRIT_ORE_BLOCK;
 
 
-    private static String getBlockId(Block block){
+    private static String getBlockId(Block block) {
         return Registry.BLOCK.getId(block).getPath();
     }
 
-    private static Item register(String registryName, Item item){
-        return Registry.register(Registry.ITEM, new Identifier(Shurlin.MODID,registryName), item);
+    private static Item register(String registryName, Item item) {
+        return Registry.register(Registry.ITEM, new Identifier(Shurlin.MODID, registryName), item);
     }
 
-    private static Item register(String registryName, Item.Settings settings){
+    private static Item register(String registryName, Item.Settings settings) {
         return register(registryName, new Item(settings));
     }
 
-    private static Item registerSpirit(String registryName, SpiritPropertyType type, double consistence){
+    private static Item registerSpirit(String registryName, SpiritPropertyType type, double consistence) {
         return register(registryName, new SpiritItem(type, consistence));
     }
 
-    private static Item register(Block block){
+    private static Item register(Block block) {
         return register(getBlockId(block), new BasicBlockItem(block));
     }
 
-    private static Item register(String registryName, FoodComponent component){
+    private static Item register(String registryName, FoodComponent component) {
         return register(registryName, new BasicFoodItem(component));
     }
 
-    private static Item register(String registryName){
+    private static Item register(String registryName) {
         return register(registryName, new BasicItem());
     }
 
@@ -192,7 +192,7 @@ public class Items {
         PLANT_JADE = register("plant_jade");
         PEAR = register("pear", new FoodComponent.Builder().hunger(3).snack().saturationModifier(0.3f).build());
         HOLY_PEAR = register("holy_pear");
-        HOLY_PEAR_SWORD  = register("holy_pear_sword", new HolyPearSwordItem());
+        HOLY_PEAR_SWORD = register("holy_pear_sword", new HolyPearSwordItem());
         HOLT_PEAR_BOW = register("holy_pear_bow", new HolyPearBowItem());
 //        HOLY_PEAR_ARROW = register("holy_pear_arrow");
         HOLT_PEAR_WAND = register("holy_pear_wand", new HolyPearWandItem());
@@ -269,7 +269,7 @@ public class Items {
         PLANT_IRON_BLOCK = register(Blocks.PLANT_IRON_BLOCK);
         PLANT_GOLD_BLOCK = register(Blocks.PLANT_GOLD_BLOCK);
         PLANT_JADE_BLOCK = register(Blocks.PLANT_JADE_BLOCK);
-        SMALL_BUD= register(Blocks.SMALL_BUD);
+        SMALL_BUD = register(Blocks.SMALL_BUD);
         PLATYCODON_GRANDIFLORUS = register(Blocks.PLATYCODON_GRANDIFLORUS);
 
         PEAR_LOG = register(Blocks.PEAR_LOG);
@@ -298,7 +298,7 @@ public class Items {
         DEAD_LEAVE_CORAL_BLOCK = register(Blocks.DEAD_LEAVE_CORAL);
         LEAVE_CORAL_BLOCK = register(Blocks.LEAVE_CORAL);
         DEAD_LEAVE_CORAL_FAN_BLOCK = register(getBlockId(Blocks.DEAD_LEAVE_CORAL_FAN), new WallStandingBlockItem(Blocks.DEAD_LEAVE_CORAL_FAN, Blocks.DEAD_LEAVE_CORAL_WALL_FAN, (new Item.Settings()).group(ItemGroups.SHURLIN)));
-        LEAVE_CORAL_FAN_BLOCK = register(getBlockId(Blocks.LEAVE_CORAL_FAN) , new WallStandingBlockItem(Blocks.LEAVE_CORAL_FAN, Blocks.LEAVE_CORAL_WALL_FAN, (new Item.Settings()).group(ItemGroups.SHURLIN)));
+        LEAVE_CORAL_FAN_BLOCK = register(getBlockId(Blocks.LEAVE_CORAL_FAN), new WallStandingBlockItem(Blocks.LEAVE_CORAL_FAN, Blocks.LEAVE_CORAL_WALL_FAN, (new Item.Settings()).group(ItemGroups.SHURLIN)));
         DEAD_LEAVE_CORAL_BLOCK_BLOCK = register(Blocks.DEAD_LEAVE_CORAL_BLOCK);
         LEAVE_CORAL_BLOCK_BLOCK = register(Blocks.LEAVE_CORAL_BLOCK);
 

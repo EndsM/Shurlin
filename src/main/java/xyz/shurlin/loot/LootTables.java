@@ -19,7 +19,7 @@ public class LootTables {
     public static final Identifier ANCIENT_PEAR_TREE_ROOT_CHEST;
     public static final Identifier ANCIENT_PEAR_TREE_LEAVES_CHEST;
 
-    private static Identifier register(String id){
+    private static Identifier register(String id) {
         return new Identifier(Shurlin.MODID, id);
     }
 

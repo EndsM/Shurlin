@@ -35,13 +35,13 @@ public class PlantWandItem extends Item {
         World world = context.getWorld();
         Block block = world.getBlockState(pos).getBlock();
         PlayerEntity player = context.getPlayer();
-        if(player != null) {
+        if (player != null) {
             PlayerInventory inventory = player.inventory;
             ItemStack stack = new ItemStack(Items.MYSTERIOUS_SPIRIT_OF_PLANT);
-            if(block.equals(Blocks.PHOENIX_LEAVES) && inventory.contains(stack)){
+            if (block.equals(Blocks.PHOENIX_LEAVES) && inventory.contains(stack)) {
                 Vector<BlockPos> vector = new Vector<>();
-                if(Utils.isSealed(world, pos, Utils.poses_of_horizontal,
-                        Blocks.PHOENIX_LEAVES, Blocks.PLANT_OBSIDIAN, vector)){
+                if (Utils.isSealed(world, pos, Utils.poses_of_horizontal,
+                        Blocks.PHOENIX_LEAVES, Blocks.PLANT_OBSIDIAN, vector)) {
                     HolyFarmerPortalBlock.createPortal(world, pos);
                     stack.decrement(1);
                 }

@@ -17,12 +17,12 @@ import xyz.shurlin.util.ShurlinLevel;
 public class ConcentratorScreenHandler extends AbstractWorkerScreenHandler {
 
     public ConcentratorScreenHandler(int syncId, Inventory inventory, PlayerInventory playerInventory, PropertyDelegate propertyDelegate, World world, ShurlinLevel shurlinLevel) {
-        super(ScreenHandlerTypes.CONCENTRATOR_SCREEN_HANDLER_TYPE, syncId, inventory, playerInventory,propertyDelegate,world, shurlinLevel);
-        this.addSlot(new Slot(inventory, 3, 15,39));
-        this.addSlot(new Slot(inventory, 2, 33,39));
-        this.addSlot(new Slot(inventory, 1, 51,39));
-        this.addSlot(new WorkerInputSlot(inventory, 0, 73,35, shurlinLevel));
-        this.addSlot(new WorkerOutputSlot(inventory,playerInventory.player,4,134,35));
+        super(ScreenHandlerTypes.CONCENTRATOR_SCREEN_HANDLER_TYPE, syncId, inventory, playerInventory, propertyDelegate, world, shurlinLevel);
+        this.addSlot(new Slot(inventory, 3, 15, 39));
+        this.addSlot(new Slot(inventory, 2, 33, 39));
+        this.addSlot(new Slot(inventory, 1, 51, 39));
+        this.addSlot(new WorkerInputSlot(inventory, 0, 73, 35, shurlinLevel));
+        this.addSlot(new WorkerOutputSlot(inventory, playerInventory.player, 4, 134, 35));
         this.addPlayerInventorySlots();
     }
 
@@ -30,7 +30,7 @@ public class ConcentratorScreenHandler extends AbstractWorkerScreenHandler {
         this(syncId, new WorkerInventory(5, null), playerInventory, new ArrayPropertyDelegate(2), playerInventory.player.world, null);
     }
 
-    public String getName(){
+    public String getName() {
         return "concentrator";
     }
 

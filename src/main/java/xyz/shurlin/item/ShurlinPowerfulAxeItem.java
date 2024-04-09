@@ -21,7 +21,7 @@ public class ShurlinPowerfulAxeItem extends Item {
 
     @Override
     public boolean postHit(ItemStack stack, LivingEntity target, LivingEntity attacker) {
-        if(target instanceof PlayerEntity)
+        if (target instanceof PlayerEntity)
             ((PlayerEntity) target).abilities.invulnerable = false;
         target.kill();
         return true;
@@ -66,7 +66,7 @@ public class ShurlinPowerfulAxeItem extends Item {
 
     @Override
     public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
-        if (entity instanceof PlayerEntity){
+        if (entity instanceof PlayerEntity) {
             PlayerEntity player = (PlayerEntity) entity;
             int time = 240;
             player.addStatusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, time, 255));

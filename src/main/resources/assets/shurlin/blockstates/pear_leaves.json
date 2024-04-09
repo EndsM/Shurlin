@@ -1,5 +1,7 @@
 {
-    "variants": {
-        "": { "model": "shurlin:block/pear_leaves" }
+  "variants": {
+    "": {
+      "model": "shurlin:block/pear_leaves"
     }
+  }
 }

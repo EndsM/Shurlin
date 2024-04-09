@@ -5,7 +5,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import xyz.shurlin.cultivation.SpiritPropertyType;
 
-public class SpiritItem extends BasicItem{
+public class SpiritItem extends BasicItem {
     private final SpiritPropertyType spiritPropertyType;
     private final double spiritConsistence;
 
