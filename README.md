@@ -6,7 +6,7 @@ This is a fork of Shurlin/Shurlin's 1.16.5 branch as of commit <https://github.c
 
 Further development will be different from main branch as of today's view.
 
-This fork also using LGPL-2.1 License like original repo.
+This fork also using LGPL-2.1 License like original repo. But there are some more licenses stuff todo if this repo will be continually developed.
 
 ## Focus
 

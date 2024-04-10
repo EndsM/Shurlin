@@ -12,6 +12,10 @@ import xyz.shurlin.cultivation.CultivatedPlayerAccessor;
 public class CultivationUI implements NamedScreenHandlerFactory {
     private static final TranslatableText TITLE = new TranslatableText("screen.shurlin.cul_screen");
 
+    public CultivationUI() {
+
+    }
+
     @Override
     public Text getDisplayName() {
         return TITLE;
