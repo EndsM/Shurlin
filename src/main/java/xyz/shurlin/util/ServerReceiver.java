@@ -24,7 +24,7 @@ public class ServerReceiver {
                 CultivatedPlayerAccessor accessor = (CultivatedPlayerAccessor) player;
 
                 // Will use player as parameter to open screen later
-                player.openHandledScreen(new CultivationUI());
+                player.openHandledScreen(new CultivationUI(accessor));
             }
         });
     }

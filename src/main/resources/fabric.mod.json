@@ -28,7 +28,7 @@
     "shurlin.mixins.json"
   ],
   "depends": {
-    "fabricloader": ">=0.15.0",
+    "fabricloader": ">=0.15.9",
     "fabric": ">=0.42.0",
     "minecraft": "1.16.5"
   }

@@ -11,9 +11,10 @@ import xyz.shurlin.cultivation.CultivatedPlayerAccessor;
 // This will be Cultivation Menu Screen
 public class CultivationUI implements NamedScreenHandlerFactory {
     private static final TranslatableText TITLE = new TranslatableText("screen.shurlin.cul_screen");
+private CultivatedPlayerAccessor accessor;
 
-    public CultivationUI() {
-
+    public CultivationUI(CultivatedPlayerAccessor accessor) {
+        this.accessor = accessor;
     }
 
     @Override
