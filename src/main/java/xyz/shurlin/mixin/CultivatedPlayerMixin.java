@@ -18,16 +18,15 @@ public class CultivatedPlayerMixin implements CultivatedPlayerAccessor {
 
     @Inject(method = "readCustomDataFromNbt", at = @At("TAIL"))
     private void readCultivationFromTag(NbtCompound tag, CallbackInfo ci) {
-        setRealm(fromTag(tag));
+        setRealm(readTag(tag));
     }
 
     @Inject(method = "writeCustomDataToNbt", at = @At("TAIL"))
     private void writeCultivationToTag(NbtCompound tag, CallbackInfo ci) {
-        tag.put("cul", toTag());
+        tag.put("cul", writeTag());
     }
 
     // Deprecate these later
-
     @Override
     public CultivationRealm getRealm() {
         return this.realm;
@@ -38,7 +37,7 @@ public class CultivatedPlayerMixin implements CultivatedPlayerAccessor {
         this.realm = realm;
     }
 
-    public CultivationRealm fromTag(NbtCompound tags) {
+    public CultivationRealm readTag(NbtCompound tags) {
         NbtCompound tag = tags.getCompound("cul");
         if (!tag.getBoolean("isCultivated"))
             return null;
@@ -54,7 +53,7 @@ public class CultivatedPlayerMixin implements CultivatedPlayerAccessor {
         return realm;
     }
 
-    public NbtCompound toTag() {
+    public NbtCompound writeTag() {
         NbtCompound tag = new NbtCompound();
         CultivationRealm realm = getRealm();
         if (realm != null) {
@@ -71,6 +70,5 @@ public class CultivatedPlayerMixin implements CultivatedPlayerAccessor {
             tag.putBoolean("isCultivated", false);
         return tag;
     }
-
 
 }
