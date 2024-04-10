@@ -1,7 +1,10 @@
 package xyz.shurlin.mixin;
 
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.NbtCompound;
+import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
@@ -11,10 +14,14 @@ import xyz.shurlin.cultivation.*;
 
 
 @Mixin(PlayerEntity.class)
-public class CultivatedPlayerMixin implements CultivatedPlayerAccessor {
+public abstract class CultivatedPlayerMixin extends LivingEntity implements CultivatedPlayerAccessor {
 
     @Unique
     private CultivationRealm realm;
+
+    protected CultivatedPlayerMixin(EntityType<? extends LivingEntity> entityType, World world) {
+        super(entityType, world);
+    }
 
     @Inject(method = "readCustomDataFromNbt", at = @At("TAIL"))
     private void readCultivationFromTag(NbtCompound tag, CallbackInfo ci) {
@@ -26,6 +33,10 @@ public class CultivatedPlayerMixin implements CultivatedPlayerAccessor {
         tag.put("cul", writeTag());
     }
 
+    void init() {
+
+    }
+
     // Deprecate these later
     @Override
     public CultivationRealm getRealm() {
@@ -35,6 +46,10 @@ public class CultivatedPlayerMixin implements CultivatedPlayerAccessor {
     @Override
     public void setRealm(CultivationRealm realm) {
         this.realm = realm;
+    }
+
+    public void getMeridians(){
+
     }
 
     public CultivationRealm readTag(NbtCompound tags) {

@@ -8,6 +8,7 @@ import net.minecraft.text.Text;
 import net.minecraft.text.TranslatableText;
 import xyz.shurlin.cultivation.CultivatedPlayerAccessor;
 
+// This will be Cultivation Menu Screen
 public class CultivationUI implements NamedScreenHandlerFactory {
     private static final TranslatableText TITLE = new TranslatableText("screen.shurlin.cul_screen");
 

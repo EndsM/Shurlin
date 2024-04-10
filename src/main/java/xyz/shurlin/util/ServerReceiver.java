@@ -20,7 +20,7 @@ public class ServerReceiver {
         ServerSidePacketRegistryImpl.INSTANCE.register(Utils.OPEN_CUL, (packetContext, packetByteBuf) -> {
             PlayerEntity player = packetContext.getPlayer();
 
-            if (player instanceof CultivatedPlayerAccessor) {
+            if (player instanceof PlayerEntity) {
                 CultivatedPlayerAccessor accessor = (CultivatedPlayerAccessor) player;
                 if (accessor.getRealm() != null) {
                     player.openHandledScreen(new CultivationUI());

@@ -9,6 +9,7 @@ import xyz.shurlin.screen.ScreenHandlerTypes;
 
 public class CultivationScreenHandler extends ScreenHandler {
     CultivationRealm realm;
+    CultivatedPlayerAccessor accessor;
 
     public CultivationScreenHandler(int syncId, CultivationRealm realm) {
         super(ScreenHandlerTypes.CULTIVATION_SCREEN_HANDLER_TYPE, syncId);
@@ -23,5 +24,4 @@ public class CultivationScreenHandler extends ScreenHandler {
     public boolean canUse(PlayerEntity player) {
         return ((CultivatedPlayerAccessor) player).getRealm() != null;
     }
-
 }
