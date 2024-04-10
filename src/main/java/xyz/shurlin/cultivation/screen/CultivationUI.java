@@ -11,7 +11,7 @@ import xyz.shurlin.cultivation.CultivatedPlayerAccessor;
 // This will be Cultivation Menu Screen
 public class CultivationUI implements NamedScreenHandlerFactory {
     private static final TranslatableText TITLE = new TranslatableText("screen.shurlin.cul_screen");
-private CultivatedPlayerAccessor accessor;
+    private final CultivatedPlayerAccessor accessor;
 
     public CultivationUI(CultivatedPlayerAccessor accessor) {
         this.accessor = accessor;
@@ -24,6 +24,6 @@ private CultivatedPlayerAccessor accessor;
 
     @Override
     public ScreenHandler createMenu(int syncId, PlayerInventory inv, PlayerEntity player) {
-        return new CultivationScreenHandler(syncId, ((CultivatedPlayerAccessor) player).getRealm());
+        return new CultivationScreenHandler(syncId, accessor);
     }
 }

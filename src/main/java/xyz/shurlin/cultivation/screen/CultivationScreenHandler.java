@@ -12,13 +12,13 @@ public class CultivationScreenHandler extends ScreenHandler {
     CultivationRealm realm;
     CultivatedPlayerAccessor accessor;
 
-    public CultivationScreenHandler(int syncId, CultivationRealm realm) {
+    public CultivationScreenHandler(int syncId, CultivatedPlayerAccessor accessor) {
         super(ScreenHandlerTypes.CULTIVATION_SCREEN_HANDLER_TYPE, syncId);
-        this.realm = realm;
+        this.accessor = accessor;
     }
 
     public CultivationScreenHandler(int syncId, PlayerInventory playerInventory) {
-        this(syncId, ((CultivatedPlayerAccessor) playerInventory.player).getRealm());
+        this(syncId, ((CultivatedPlayerAccessor) playerInventory.player));
     }
 
     @Override
