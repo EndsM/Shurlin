@@ -20,9 +20,12 @@ public class ServerReceiver {
         ServerSidePacketRegistryImpl.INSTANCE.register(Utils.OPEN_CUL, (packetContext, packetByteBuf) -> {
             PlayerEntity player = packetContext.getPlayer();
 
-            // How could you abstract PlayerEntity to CultivatedPlayerAccessor?
-            if (((CultivatedPlayerAccessor) player).getter() != null)
-                player.openHandledScreen(new CultivationUI());
+            if (player instanceof CultivatedPlayerAccessor) {
+                CultivatedPlayerAccessor accessor = (CultivatedPlayerAccessor) player;
+                if (accessor.getter() != null) {
+                    player.openHandledScreen(new CultivationUI());
+                }
+            }
         });
     }
 }

@@ -26,11 +26,7 @@ public class CultivatedPlayerMixin implements CultivatedPlayerAccessor {
         tag.put("cul", toTag());
     }
 
-//    @Inject(at = @At("TAIL"), method = "tick()V")
-//    private void tick(CallbackInfo callbackInfo) {
-//        this.realm.healSpiritMeridians(1);
-//    }
-
+    // Deprecate these later
     @Override
     public void setter(CultivationRealm realm) {
         this.realm = realm;
@@ -39,6 +35,22 @@ public class CultivatedPlayerMixin implements CultivatedPlayerAccessor {
     @Override
     public CultivationRealm getter() {
         return this.realm;
+    }
+
+    public CultivationRealm fromTag(NbtCompound tags) {
+        NbtCompound tag = tags.getCompound("cul");
+        if (!tag.getBoolean("isCultivated"))
+            return null;
+        short gradation = tag.getShort("gradation");
+        short rank = tag.getShort("rank");
+        CultivationRealm realm = new CultivationRealm(CultivationRealms.getRealmByGradation(gradation), rank);
+        NbtCompound sm_tag = tag.getCompound("sm");
+        int sm_cnt = 0;
+        for (SpiritPropertyType type : SpiritPropertyType.GROUPS) {
+            NbtCompound tag1 = sm_tag.getCompound(String.valueOf(sm_cnt++));
+            realm.putMeridians(type, SpiritMeridians.fromTag(type, tag1));
+        }
+        return realm;
     }
 
     public NbtCompound toTag() {
@@ -59,19 +71,5 @@ public class CultivatedPlayerMixin implements CultivatedPlayerAccessor {
         return tag;
     }
 
-    public CultivationRealm fromTag(NbtCompound tags) {
-        NbtCompound tag = tags.getCompound("cul");
-        if (!tag.getBoolean("isCultivated"))
-            return null;
-        short gradation = tag.getShort("gradation");
-        short rank = tag.getShort("rank");
-        CultivationRealm realm = new CultivationRealm(CultivationRealms.getRealmByGradation(gradation), rank);
-        NbtCompound sm_tag = tag.getCompound("sm");
-        int sm_cnt = 0;
-        for (SpiritPropertyType type : SpiritPropertyType.GROUPS) {
-            NbtCompound tag1 = sm_tag.getCompound(String.valueOf(sm_cnt++));
-            realm.putMeridians(type, SpiritMeridians.fromTag(type, tag1));
-        }
-        return realm;
-    }
+
 }
