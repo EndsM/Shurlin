@@ -7,6 +7,7 @@ import xyz.shurlin.cultivation.CultivatedPlayerAccessor;
 import xyz.shurlin.cultivation.CultivationRealm;
 import xyz.shurlin.screen.ScreenHandlerTypes;
 
+// Handle Cultivation related GUI
 public class CultivationScreenHandler extends ScreenHandler {
     CultivationRealm realm;
     CultivatedPlayerAccessor accessor;
