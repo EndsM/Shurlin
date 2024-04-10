@@ -48,7 +48,7 @@ public abstract class CultivatedPlayerMixin extends LivingEntity implements Cult
         this.realm = realm;
     }
 
-    public void getMeridians(){
+    public void getMeridians() {
 
     }
 
