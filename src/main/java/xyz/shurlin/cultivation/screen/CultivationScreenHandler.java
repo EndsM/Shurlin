@@ -24,7 +24,4 @@ public class CultivationScreenHandler extends ScreenHandler {
         return ((CultivatedPlayerAccessor) player).getter() != null;
     }
 
-    public CultivationRealm getRealm() {
-        return realm;
-    }
 }

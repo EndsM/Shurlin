@@ -19,7 +19,6 @@ public class CultivationRealm {
         for (SpiritPropertyType type : SpiritPropertyType.GROUPS) {
             this.meridians.put(type, new SpiritMeridians(type));
         }
-
     }
 
     public void healSpiritMeridians(int times) {
