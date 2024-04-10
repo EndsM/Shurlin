@@ -16,12 +16,12 @@ public class CultivationScreenHandler extends ScreenHandler {
     }
 
     public CultivationScreenHandler(int syncId, PlayerInventory playerInventory) {
-        this(syncId, ((CultivatedPlayerAccessor) playerInventory.player).getter());
+        this(syncId, ((CultivatedPlayerAccessor) playerInventory.player).getRealm());
     }
 
     @Override
     public boolean canUse(PlayerEntity player) {
-        return ((CultivatedPlayerAccessor) player).getter() != null;
+        return ((CultivatedPlayerAccessor) player).getRealm() != null;
     }
 
 }

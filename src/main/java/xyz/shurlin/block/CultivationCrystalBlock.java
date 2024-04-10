@@ -36,10 +36,10 @@ public class CultivationCrystalBlock extends BlockWithEntity {
 
     @Override
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
-        CultivationRealm realm = ((CultivatedPlayerAccessor) player).getter();
+        CultivationRealm realm = ((CultivatedPlayerAccessor) player).getRealm();
         if (realm == null) {
             realm = CultivationRealm.of();
-            ((CultivatedPlayerAccessor) player).setter(realm);
+            ((CultivatedPlayerAccessor) player).setRealm(realm);
         }
         player.sendMessage(realm.getDescribeText(), false);
         return ActionResult.FAIL;

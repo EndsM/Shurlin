@@ -14,7 +14,7 @@ public class Commands {
                     .then(literal("check_realm"))
                     .executes(c -> {
                         c.getSource().sendFeedback(
-                                ((CultivatedPlayerAccessor) c.getSource().getPlayer()).getter().getDescribeText(),
+                                ((CultivatedPlayerAccessor) c.getSource().getPlayer()).getRealm().getDescribeText(),
                                 false);
                         return Command.SINGLE_SUCCESS;
                     }));

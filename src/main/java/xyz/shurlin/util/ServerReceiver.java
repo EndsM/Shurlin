@@ -22,7 +22,7 @@ public class ServerReceiver {
 
             if (player instanceof CultivatedPlayerAccessor) {
                 CultivatedPlayerAccessor accessor = (CultivatedPlayerAccessor) player;
-                if (accessor.getter() != null) {
+                if (accessor.getRealm() != null) {
                     player.openHandledScreen(new CultivationUI());
                 }
             }

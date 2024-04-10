@@ -18,6 +18,6 @@ public class CultivationUI implements NamedScreenHandlerFactory {
 
     @Override
     public ScreenHandler createMenu(int syncId, PlayerInventory inv, PlayerEntity player) {
-        return new CultivationScreenHandler(syncId, ((CultivatedPlayerAccessor) player).getter());
+        return new CultivationScreenHandler(syncId, ((CultivatedPlayerAccessor) player).getRealm());
     }
 }
