@@ -1,7 +1,7 @@
 package xyz.shurlin.cultivation;
 
+// CultivatedPlayerInterface
 public interface CultivatedPlayerAccessor {
-    void setter(CultivationRealm realm);
-
     CultivationRealm getter();
+    void setter(CultivationRealm realm);
 }
