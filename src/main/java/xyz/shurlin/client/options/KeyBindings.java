@@ -20,7 +20,7 @@ public class KeyBindings {
 
     public static void load() {
         ClientTickEvents.END_CLIENT_TICK.register(minecraftClient -> {
-            while (open_cul.isPressed()) {
+            if (open_cul.isPressed()) {
                 PacketByteBuf passedData = new PacketByteBuf(Unpooled.buffer());
                 ClientPlayNetworking.send(Utils.OPEN_CUL, passedData);
             }
