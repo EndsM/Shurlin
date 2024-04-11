@@ -1,6 +1,6 @@
 package xyz.shurlin.world.gen.feature;
 
-import com.google.common.collect.ImmutableSet;
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.LeavesBlock;
 import net.minecraft.structure.rule.RuleTest;
@@ -24,6 +24,7 @@ import net.minecraft.world.gen.trunk.StraightTrunkPlacer;
 import xyz.shurlin.Shurlin;
 import xyz.shurlin.block.Blocks;
 
+import java.util.HashSet;
 import java.util.OptionalInt;
 
 public class ShurlinConfiguredFeatures {
@@ -59,11 +60,7 @@ public class ShurlinConfiguredFeatures {
         TREES_PHOENIX = register("trees_phoenix", PHOENIX_TREE.decorate(ConfiguredFeatures.Decorators.SQUARE_HEIGHTMAP).decorate(Decorator.COUNT_EXTRA.configure(new CountExtraDecoratorConfig(6, 0.1F, 1))));
         SMALL_BUD = register("small_bud", Feature.RANDOM_PATCH.configure(Configs.SMALL_BUD_CONFIG).decorate(Decorator.COUNT_EXTRA.configure(new CountExtraDecoratorConfig(6, 0.1f, 1))));
         PLATYCODON_GRANDIFLORUS = register("platycodon_grandiflorus", Feature.RANDOM_PATCH.configure(Configs.PLATYCODON_GRANDIFLORUS_CONFIG).decorate(Decorator.COUNT_EXTRA.configure(new CountExtraDecoratorConfig(6, 0.1f, 1))));
-        PATCH_FIRE = register("patch_fire", Feature.RANDOM_PATCH.configure(
-                        (new RandomPatchFeatureConfig.Builder(new SimpleBlockStateProvider(States.FIRE), SimpleBlockPlacer.INSTANCE))
-                                .tries(64)
-                                .whitelist(ImmutableSet.of(States.HOT_FIRE_DIRT.getBlock()))
-                                .cannotProject().build())
+        PATCH_FIRE = register("patch_fire", Feature.RANDOM_PATCH.configure(Configs.PATCH_FIRE_CONFIG)
                 .decorate(ConfiguredFeatures.Decorators.FIRE));
 
     }
@@ -73,6 +70,7 @@ public class ShurlinConfiguredFeatures {
         private static final TreeFeatureConfig PHOENIX_TREE_CONFIG;
         private static final RandomPatchFeatureConfig SMALL_BUD_CONFIG;
         private static final RandomPatchFeatureConfig PLATYCODON_GRANDIFLORUS_CONFIG;
+        private static final RandomPatchFeatureConfig PATCH_FIRE_CONFIG;
 
         static {
             PEAR_TREE_CONFIG = new TreeFeatureConfig.Builder(
@@ -87,8 +85,15 @@ public class ShurlinConfiguredFeatures {
                     new DarkOakFoliagePlacer(UniformIntDistribution.of(0), UniformIntDistribution.of(0)),
                     new DarkOakTrunkPlacer(6, 2, 1),
                     new ThreeLayersFeatureSize(1, 1, 0, 1, 2, OptionalInt.empty())).build();
-            SMALL_BUD_CONFIG = (new RandomPatchFeatureConfig.Builder(new SimpleBlockStateProvider(States.SMALL_BUD), SimpleBlockPlacer.INSTANCE)).tries(12).build();
-            PLATYCODON_GRANDIFLORUS_CONFIG = (new RandomPatchFeatureConfig.Builder(new SimpleBlockStateProvider(States.PLATYCODON_GRANDIFLORUS), SimpleBlockPlacer.INSTANCE)).tries(4).build();
+            SMALL_BUD_CONFIG = (new RandomPatchFeatureConfig.Builder(new SimpleBlockStateProvider(States.SMALL_BUD), SimpleBlockPlacer.INSTANCE))
+                    .tries(12).build();
+            PLATYCODON_GRANDIFLORUS_CONFIG = (new RandomPatchFeatureConfig.Builder(new SimpleBlockStateProvider(States.PLATYCODON_GRANDIFLORUS), SimpleBlockPlacer.INSTANCE))
+                    .tries(4).build();
+            PATCH_FIRE_CONFIG = (new RandomPatchFeatureConfig.Builder(new SimpleBlockStateProvider(States.FIRE), SimpleBlockPlacer.INSTANCE))
+                    .tries(64).whitelist(new HashSet<Block>() {{
+                        add(States.HOT_FIRE_DIRT.getBlock());
+                    }}).cannotProject().build();
+
         }
     }
 
