@@ -61,7 +61,7 @@ public class ShurlinBiomeFeatures {
     }
 
     private static RandomPatchFeatureConfig getConfig(BlockState state, int tries) {
-        return (new RandomPatchFeatureConfig.Builder(new SimpleBlockStateProvider(state), SimpleBlockPlacer.INSTANCE)).tries(32).build();
+        return (new RandomPatchFeatureConfig.Builder(new SimpleBlockStateProvider(state), SimpleBlockPlacer.INSTANCE)).tries(tries).build();
     }
 
     public static void addHotSprings(Builder builder) {
