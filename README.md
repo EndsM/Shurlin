@@ -15,3 +15,7 @@ The quote down below is original mod's description, recent focus would be realiz
 > 仙灵意为仙草之灵，是一个以植物为核心的玄幻模组。
 >
 > 仙灵有三大体系：主界、神农、仙灵；又有十二灵：金、木、水、火、土、风、光、暗、毒、雷、冰、时空。
+
+## Project Structure
+
+TODO
