@@ -59,7 +59,12 @@ public class ShurlinConfiguredFeatures {
         TREES_PHOENIX = register("trees_phoenix", PHOENIX_TREE.decorate(ConfiguredFeatures.Decorators.SQUARE_HEIGHTMAP).decorate(Decorator.COUNT_EXTRA.configure(new CountExtraDecoratorConfig(6, 0.1F, 1))));
         SMALL_BUD = register("small_bud", Feature.RANDOM_PATCH.configure(Configs.SMALL_BUD_CONFIG).decorate(Decorator.COUNT_EXTRA.configure(new CountExtraDecoratorConfig(6, 0.1f, 1))));
         PLATYCODON_GRANDIFLORUS = register("platycodon_grandiflorus", Feature.RANDOM_PATCH.configure(Configs.PLATYCODON_GRANDIFLORUS_CONFIG).decorate(Decorator.COUNT_EXTRA.configure(new CountExtraDecoratorConfig(6, 0.1f, 1))));
-        PATCH_FIRE = register("patch_fire", Feature.RANDOM_PATCH.configure((new RandomPatchFeatureConfig.Builder(new SimpleBlockStateProvider(States.FIRE), SimpleBlockPlacer.INSTANCE)).tries(64).whitelist(ImmutableSet.of(States.HOT_FIRE_DIRT.getBlock())).cannotProject().build()).decorate(ConfiguredFeatures.Decorators.FIRE));
+        PATCH_FIRE = register("patch_fire", Feature.RANDOM_PATCH.configure(
+                        (new RandomPatchFeatureConfig.Builder(new SimpleBlockStateProvider(States.FIRE), SimpleBlockPlacer.INSTANCE))
+                                .tries(64)
+                                .whitelist(ImmutableSet.of(States.HOT_FIRE_DIRT.getBlock()))
+                                .cannotProject().build())
+                .decorate(ConfiguredFeatures.Decorators.FIRE));
 
     }
 

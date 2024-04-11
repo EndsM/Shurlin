@@ -85,9 +85,9 @@ public class ShurlinBiomeCreator {
         GenerationSettings.Builder generationSettingBuilder = new GenerationSettings.Builder()
                 .surfaceBuilder(ShurlinConfiguredSurfaceBuilder.FIRE_LAND)
                 .feature(GenerationStep.Feature.VEGETAL_DECORATION, ShurlinConfiguredFeatures.PATCH_FIRE);
-
         DefaultBiomeFeatures.addLandCarvers(generationSettingBuilder);
         ShurlinBiomeFeatures.addHotSprings(generationSettingBuilder);
+
 
         return (new Biome.Builder()).precipitation(Biome.Precipitation.RAIN).category(Biome.Category.PLAINS).depth(0.2f).scale(0.2f).temperature(2.0F).downfall(0.0F).effects((new net.minecraft.world.biome.BiomeEffects.Builder()).waterColor(4159204).waterFogColor(329011).fogColor(12638463).skyColor(getSkyColor(2.0F)).moodSound(BiomeMoodSound.CAVE).build()).spawnSettings(spawnSettingBuilder.build()).generationSettings(generationSettingBuilder.build()).build();
     }
