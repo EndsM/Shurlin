@@ -28,12 +28,6 @@ public class KeyBindings {
     }
 
     static {
-        keyBinding_j = new KeyBinding(
-                "key.shurlin.1",
-                InputUtil.Type.KEYSYM,
-                GLFW.GLFW_KEY_J,
-                "category.shurlin.test1"
-        );
         open_cul = new KeyBinding(
                 "key.shurlin.open_cul",
                 InputUtil.Type.KEYSYM,
