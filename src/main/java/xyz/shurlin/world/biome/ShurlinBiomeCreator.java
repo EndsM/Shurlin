@@ -81,7 +81,7 @@ public class ShurlinBiomeCreator {
     public static Biome createFireLand() {
         SpawnSettings.Builder spawnSettingBuilder = new SpawnSettings.Builder();
         spawnSettingBuilder.spawn(SpawnGroup.MONSTER, new SpawnSettings.SpawnEntry(EntityType.MAGMA_CUBE, 2, 4, 4));
-        
+
         GenerationSettings.Builder generationSettingBuilder = new GenerationSettings.Builder()
                 .surfaceBuilder(ShurlinConfiguredSurfaceBuilder.FIRE_LAND)
                 .feature(GenerationStep.Feature.VEGETAL_DECORATION, ShurlinConfiguredFeatures.PATCH_FIRE);
