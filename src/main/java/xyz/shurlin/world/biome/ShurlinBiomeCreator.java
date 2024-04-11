@@ -79,12 +79,16 @@ public class ShurlinBiomeCreator {
     }
 
     public static Biome createFireLand() {
-        SpawnSettings.Builder builder = new SpawnSettings.Builder();
-        builder.spawn(SpawnGroup.MONSTER, new SpawnSettings.SpawnEntry(EntityType.MAGMA_CUBE, 2, 4, 4));
-        GenerationSettings.Builder builder2 = new GenerationSettings.Builder().surfaceBuilder(ShurlinConfiguredSurfaceBuilder.FIRE_LAND).feature(GenerationStep.Feature.VEGETAL_DECORATION, ShurlinConfiguredFeatures.PATCH_FIRE);
-        DefaultBiomeFeatures.addLandCarvers(builder2);
-        ShurlinBiomeFeatures.addHotSprings(builder2);
+        SpawnSettings.Builder spawnSettingBuilder = new SpawnSettings.Builder();
+        spawnSettingBuilder.spawn(SpawnGroup.MONSTER, new SpawnSettings.SpawnEntry(EntityType.MAGMA_CUBE, 2, 4, 4));
+        
+        GenerationSettings.Builder generationSettingBuilder = new GenerationSettings.Builder()
+                .surfaceBuilder(ShurlinConfiguredSurfaceBuilder.FIRE_LAND)
+                .feature(GenerationStep.Feature.VEGETAL_DECORATION, ShurlinConfiguredFeatures.PATCH_FIRE);
 
-        return (new Biome.Builder()).precipitation(Biome.Precipitation.RAIN).category(Biome.Category.PLAINS).depth(0.2f).scale(0.2f).temperature(2.0F).downfall(0.0F).effects((new net.minecraft.world.biome.BiomeEffects.Builder()).waterColor(4159204).waterFogColor(329011).fogColor(12638463).skyColor(getSkyColor(2.0F)).moodSound(BiomeMoodSound.CAVE).build()).spawnSettings(builder.build()).generationSettings(builder2.build()).build();
+        DefaultBiomeFeatures.addLandCarvers(generationSettingBuilder);
+        ShurlinBiomeFeatures.addHotSprings(generationSettingBuilder);
+
+        return (new Biome.Builder()).precipitation(Biome.Precipitation.RAIN).category(Biome.Category.PLAINS).depth(0.2f).scale(0.2f).temperature(2.0F).downfall(0.0F).effects((new net.minecraft.world.biome.BiomeEffects.Builder()).waterColor(4159204).waterFogColor(329011).fogColor(12638463).skyColor(getSkyColor(2.0F)).moodSound(BiomeMoodSound.CAVE).build()).spawnSettings(spawnSettingBuilder.build()).generationSettings(generationSettingBuilder.build()).build();
     }
 }

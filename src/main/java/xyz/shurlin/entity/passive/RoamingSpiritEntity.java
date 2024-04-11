@@ -7,11 +7,9 @@ import net.minecraft.server.world.ServerWorld;
 import net.minecraft.world.World;
 
 public class RoamingSpiritEntity extends PassiveEntity {
-//    private SpiritPropertyType type;
 
     public RoamingSpiritEntity(EntityType<? extends PassiveEntity> entityType, World world) {
         super(entityType, world);
-//        this.type = type;
     }
 
     @Override
@@ -27,6 +25,5 @@ public class RoamingSpiritEntity extends PassiveEntity {
     protected void initGoals() {
         this.goalSelector.add(0, new EscapeDangerGoal(this, 2.0D));
     }
-
 
 }

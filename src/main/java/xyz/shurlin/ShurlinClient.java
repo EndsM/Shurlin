@@ -36,7 +36,9 @@ public class ShurlinClient implements ClientModInitializer {
 
         // EntityRendererRegistry.INSTANCE.register(EntityTypes.BEAN_ENTITY_TYPE, BeanEntityRender::new);
         // EntityRendererRegistry.INSTANCE.register(EntityTypes.HOLY_PEAR_ARROW_ENTITY_TYPE, HolyPearArrowEntityRender::new);
-        EntityRendererRegistry.INSTANCE.register(EntityTypes.ROAMING_SPIRIT_ENTITY_TYPE, (manager, context) -> new RoamingSpiritEntityRender(manager));
+        EntityRendererRegistry.INSTANCE
+                .register(EntityTypes.ROAMING_SPIRIT_ENTITY_TYPE, (manager, context) -> new RoamingSpiritEntityRender(manager));
+
         HandledScreens.registerAll();
         KeyBindings.load();
         Linkage.initClient();
