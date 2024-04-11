@@ -7,7 +7,7 @@ import com.mojang.brigadier.exceptions.CommandSyntaxException;
 public class RealmCommand implements Command<Object> {
     @Override
     public int run(CommandContext<Object> context) throws CommandSyntaxException {
-
+        // Bruh
         return 0;
     }
 }

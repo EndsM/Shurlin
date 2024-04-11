@@ -22,22 +22,19 @@ import java.util.Random;
 
 public class Shurlin implements ModInitializer {
     public static final String MODID = "shurlin";
-    public static final Logger LOGGER = LogManager.getLogger();
+    public static final Logger LOGGER = LogManager.getLogger(MODID);
     public static Random random = new Random();
 
     @Override
     public void onInitialize() {
         BlockEntityTypes.load();
         Items.load();
-//        new Features();
-
         RecipeSerializers.load();
         ServerReceiver.load();
         ScreenHandlerTypes.load();
         ChunkGeneratorTypes.load();
         Dimensions.load();
         DimensionTypes.load();
-//        KeyBindings.load();
         Commands.load();
         Biomes.load();
         BiomeGenerator.load();
@@ -45,8 +42,6 @@ public class Shurlin implements ModInitializer {
         ShurlinConfiguredFeatures.ApplyToBiome();
 //        new Reflector();
 //        new DimensionOptions();
-//        StructureKeys.registerAll();
-//        FeatureKeys.registerAll();
         Linkage.init();
     }
 }

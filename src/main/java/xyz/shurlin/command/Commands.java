@@ -21,4 +21,3 @@ public class Commands {
         });
     }
 }
-//                    .then(argument("targets", EntityArgumentType.players())
