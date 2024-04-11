@@ -21,7 +21,7 @@ public class AncientTreeFeatureConfig implements FeatureConfig {
         this.treeKind = treeKind;
     }
 
-    public static enum TreeKind implements StringIdentifiable {
+    public enum TreeKind implements StringIdentifiable {
         OAK(StructurePieceTypes.ANCIENT_OAK_TREE, "oak", LootTables.ANCIENT_OAK_TREE_LEAVES_CHEST, LootTables.ANCIENT_OAK_TREE_ROOT_CHEST),
         BIRCH(StructurePieceTypes.ANCIENT_BIRCH_TREE, "birch", LootTables.ANCIENT_BIRCH_TREE_LEAVES_CHEST, LootTables.ANCIENT_BIRCH_TREE_ROOT_CHEST),
         DARK_OAK(StructurePieceTypes.ANCIENT_DARK_OAK_TREE, "dark_oak", LootTables.ANCIENT_DARK_OAK_TREE_LEAVES_CHEST, LootTables.ANCIENT_DARK_OAK_TREE_ROOT_CHEST),
@@ -39,7 +39,7 @@ public class AncientTreeFeatureConfig implements FeatureConfig {
         private final Identifier leavesChest;
         private final Identifier rootChest;
 
-        private TreeKind(StructurePieceType type, String name, Identifier leavesChest, Identifier rootChest) {
+        TreeKind(StructurePieceType type, String name, Identifier leavesChest, Identifier rootChest) {
             this.type = type;
             this.name = name;
             this.template = new Identifier(Shurlin.MODID, "ancient_trees/ancient_" + name + "_tree");
