@@ -22,7 +22,7 @@ import java.util.Random;
 
 public class Shurlin implements ModInitializer {
     public static final String MODID = "shurlin";
-    public static final Logger LOGGER = LogManager.getLogger(MODID);
+    private static final Logger LOGGER = LogManager.getLogger(MODID);
     public static Random random = new Random();
 
     @Override
