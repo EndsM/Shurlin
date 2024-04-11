@@ -1,5 +1,7 @@
 package xyz.shurlin.world.gen.feature;
 
+import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
+import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.LeavesBlock;
@@ -7,6 +9,8 @@ import net.minecraft.structure.rule.RuleTest;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.BuiltinRegistries;
 import net.minecraft.util.registry.Registry;
+import net.minecraft.util.registry.RegistryKey;
+import net.minecraft.world.gen.GenerationStep;
 import net.minecraft.world.gen.UniformIntDistribution;
 import net.minecraft.world.gen.decorator.CountExtraDecoratorConfig;
 import net.minecraft.world.gen.decorator.Decorator;
@@ -23,6 +27,7 @@ import net.minecraft.world.gen.trunk.DarkOakTrunkPlacer;
 import net.minecraft.world.gen.trunk.StraightTrunkPlacer;
 import xyz.shurlin.Shurlin;
 import xyz.shurlin.block.Blocks;
+import xyz.shurlin.world.biome.BiomeKeys;
 
 import java.util.HashSet;
 import java.util.OptionalInt;
@@ -43,7 +48,9 @@ public class ShurlinConfiguredFeatures {
     private static <FC extends FeatureConfig> ConfiguredFeature<FC, ?> register(Identifier id, ConfiguredFeature<FC, ?> configuredFeature) {
         return Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, id, configuredFeature);
     }
-
+    private static RegistryKey<ConfiguredFeature<?, ?>> getRegKey(String registryName) {
+        return RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN, new Identifier(Shurlin.MODID, registryName));
+    }
     private static ConfiguredFeature<?, ?> createOre(RuleTest ruleTest, BlockState state, int size, int numPerChunk, int maxy) {
         return Feature.ORE.configure(new OreFeatureConfig(ruleTest, state, size)) // vein size
                 .decorate(Decorator.RANGE.configure(new RangeDecoratorConfig(
@@ -152,6 +159,11 @@ public class ShurlinConfiguredFeatures {
     }
 
     public static class OreGenerators {
+
+    }
+
+    public static void ApplyToBiome() {
+        BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.FIRE_LAND_KEY), GenerationStep.Feature.VEGETAL_DECORATION, getRegKey("patch_fire"));
 
     }
 }
