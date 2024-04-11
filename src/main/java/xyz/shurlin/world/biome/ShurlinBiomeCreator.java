@@ -13,7 +13,6 @@ import net.minecraft.world.gen.feature.ConfiguredStructureFeatures;
 import net.minecraft.world.gen.feature.DefaultBiomeFeatures;
 import net.minecraft.world.gen.surfacebuilder.ConfiguredSurfaceBuilders;
 import xyz.shurlin.world.gen.feature.ShurlinBiomeFeatures;
-import xyz.shurlin.world.gen.feature.ShurlinConfiguredFeatures;
 import xyz.shurlin.world.gen.feature.ShurlinConfiguredStructureFeatures;
 import xyz.shurlin.world.gen.surfacebuilder.ShurlinConfiguredSurfaceBuilder;
 

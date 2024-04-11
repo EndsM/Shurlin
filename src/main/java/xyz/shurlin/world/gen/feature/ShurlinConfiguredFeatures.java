@@ -48,9 +48,11 @@ public class ShurlinConfiguredFeatures {
     private static <FC extends FeatureConfig> ConfiguredFeature<FC, ?> register(Identifier id, ConfiguredFeature<FC, ?> configuredFeature) {
         return Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, id, configuredFeature);
     }
+
     private static RegistryKey<ConfiguredFeature<?, ?>> getRegKey(String registryName) {
         return RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN, new Identifier(Shurlin.MODID, registryName));
     }
+
     private static ConfiguredFeature<?, ?> createOre(RuleTest ruleTest, BlockState state, int size, int numPerChunk, int maxy) {
         return Feature.ORE.configure(new OreFeatureConfig(ruleTest, state, size)) // vein size
                 .decorate(Decorator.RANGE.configure(new RangeDecoratorConfig(
