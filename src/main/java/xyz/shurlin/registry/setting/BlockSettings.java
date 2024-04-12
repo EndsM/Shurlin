@@ -6,20 +6,21 @@ import net.minecraft.block.Material;
 import net.minecraft.sound.BlockSoundGroup;
 
 public class BlockSettings {
-    private static final FabricBlockSettings ORE;
-    private static final FabricBlockSettings STONE;
-    private static final FabricBlockSettings DIRT;
-    private static final FabricBlockSettings LOG;
-    private static final FabricBlockSettings LEAVES;
-    private static final FabricBlockSettings PLANKS;
-    private static final FabricBlockSettings PLANT;
-    private static final FabricBlockSettings CORAL;
-    private static final FabricBlockSettings DEAD_CORAL;
-    private static final FabricBlockSettings CORAL_BLOCK;
-    private static final FabricBlockSettings DEAD_CORAL_BLOCK;
-    private static final FabricBlockSettings OBSIDIAN;
-    private static final FabricBlockSettings WORKER;
-    private static final FabricBlockSettings LLANDUDNO;
+    // Constants
+    public static final FabricBlockSettings ORE;
+    public static final FabricBlockSettings STONE;
+    public static final FabricBlockSettings DIRT;
+    public static final FabricBlockSettings LOG;
+    public static final FabricBlockSettings LEAVES;
+    public static final FabricBlockSettings PLANKS;
+    public static final FabricBlockSettings PLANT;
+    public static final FabricBlockSettings CORAL;
+    public static final FabricBlockSettings DEAD_CORAL;
+    public static final FabricBlockSettings CORAL_BLOCK;
+    public static final FabricBlockSettings DEAD_CORAL_BLOCK;
+    public static final FabricBlockSettings OBSIDIAN;
+    public static final FabricBlockSettings WORKER;
+    public static final FabricBlockSettings LLANDUDNO;
 
     static {
         PLANT = FabricBlockSettings.of(Material.PLANT)

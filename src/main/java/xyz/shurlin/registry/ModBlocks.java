@@ -14,8 +14,8 @@ public class ModBlocks {
 
     private static Block registerBlock(String name, Block block, boolean doRegisterBlockItem) {
         Block registeredBlock = Registry.register(Registry.BLOCK, new Identifier(Shurlin.MODID, name), block);
-        if (doRegisterBlockItem){
-            registerBlockItem(name,block);
+        if (doRegisterBlockItem) {
+            registerBlockItem(name, block);
         }
         return registeredBlock;
     }
@@ -25,8 +25,8 @@ public class ModBlocks {
         return registeredBlockItem;
     }
 
-    public static void Register(){
-        NEW_FORMAT_TEST_BLOCK = registerBlock("new_format_test_block", new Block(FabricBlockSettings.copy(Blocks.COAL_BLOCK)),true);
+    public static void Register() {
+        NEW_FORMAT_TEST_BLOCK = registerBlock("new_format_test_block", new Block(FabricBlockSettings.copy(Blocks.COAL_BLOCK)), true);
 
     }
 }
