@@ -6,7 +6,7 @@ import net.minecraft.block.Material;
 import net.minecraft.sound.BlockSoundGroup;
 
 public class BlockSettings {
-    // Constants
+    // Constants of certain kinds of block
     public static final FabricBlockSettings ORE;
     public static final FabricBlockSettings STONE;
     public static final FabricBlockSettings DIRT;
@@ -23,6 +23,7 @@ public class BlockSettings {
     public static final FabricBlockSettings LLANDUDNO;
 
     static {
+        // Separate value set
         PLANT = FabricBlockSettings.of(Material.PLANT)
                 .noCollision()
                 .ticksRandomly()
