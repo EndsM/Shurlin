@@ -17,7 +17,6 @@ import xyz.shurlin.block.worker.ExtractorBlock;
 import xyz.shurlin.world.gen.feature.ShurlinConfiguredFeatures;
 
 public class Blocks {
-
     public static final Block PLANT_IRON_ORE_BLOCK;
     public static final Block PLANT_IRON_BLOCK;
     public static final Block PLANT_GOLD_ORE_BLOCK;

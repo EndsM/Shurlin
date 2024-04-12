@@ -154,6 +154,7 @@ public class Items {
         return Registry.BLOCK.getId(block).getPath();
     }
 
+    // These are disaster in terms of reading...
     private static Item register(String registryName, Item item) {
         return Registry.register(Registry.ITEM, new Identifier(Shurlin.MODID, registryName), item);
     }
