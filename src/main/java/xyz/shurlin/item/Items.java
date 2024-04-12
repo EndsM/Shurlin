@@ -98,7 +98,6 @@ public class Items {
     public static final Item DARK_IRON_SWORD;
 
     public static final Item PLANT_JADE_ORE_BLOCK;
-    public static final Item PLANT_GOLD_BLOCK;
     public static final Item PLANT_JADE_BLOCK;
     public static final Item SMALL_BUD;
     public static final Item PLATYCODON_GRANDIFLORUS;
@@ -262,7 +261,6 @@ public class Items {
         DARK_IRON_SWORD = register("dark_iron_sword", new SwordWeaponItem(WeaponLevels.INFERIOR_WEAPON, WeaponProperties.DARK_IRON));
 
         PLANT_JADE_ORE_BLOCK = register(Blocks.PLANT_JADE_ORE_BLOCK);
-        PLANT_GOLD_BLOCK = register(Blocks.PLANT_GOLD_BLOCK);
         PLANT_JADE_BLOCK = register(Blocks.PLANT_JADE_BLOCK);
         SMALL_BUD = register(Blocks.SMALL_BUD);
         PLATYCODON_GRANDIFLORUS = register(Blocks.PLATYCODON_GRANDIFLORUS);

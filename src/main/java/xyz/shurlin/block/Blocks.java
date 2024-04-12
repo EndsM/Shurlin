@@ -17,7 +17,6 @@ import xyz.shurlin.block.worker.ExtractorBlock;
 import xyz.shurlin.world.gen.feature.ShurlinConfiguredFeatures;
 
 public class Blocks {
-    public static final Block PLANT_GOLD_BLOCK;
     public static final Block PLANT_JADE_ORE_BLOCK;
     public static final Block PLANT_JADE_BLOCK;
     public static final Block SMALL_BUD;
@@ -88,7 +87,6 @@ public class Blocks {
     }
 
     static {
-        PLANT_GOLD_BLOCK = register("plant_gold_block", FabricBlockSettings.copy(net.minecraft.block.Blocks.GOLD_BLOCK));
         PLANT_JADE_ORE_BLOCK = registerOreBlock("plant_jade_ore_block");
         PLANT_JADE_BLOCK = register("plant_jade_block", FabricBlockSettings.copy(net.minecraft.block.Blocks.DIAMOND_BLOCK));
         SMALL_BUD = register("small_bud", new SmallBudBlock(BlockSettings.PLANT));
