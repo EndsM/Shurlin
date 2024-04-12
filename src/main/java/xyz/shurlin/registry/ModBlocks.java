@@ -21,8 +21,10 @@ public class ModBlocks {
     public static Block PLANT_IRON_BLOCK;
     public static Block PLANT_GOLD_ORE_BLOCK;
     public static Block PLANT_GOLD_BLOCK;
+    public static Block PLANT_JADE_ORE_BLOCK;
 
     // We can do this later, just separate register Blocks and BlockItems, and remove this itemGroup parameter.
+    // Also, we can move ItemGroup to each of item types after remove the BasicItem and BasicBlockItem
     private static Block registerBlock(String name, Block block, ItemGroup itemGroup) {
         Block registeredBlock = Registry.register(Registry.BLOCK, new Identifier(Shurlin.MODID, name), block);
         if (itemGroup != null) {
