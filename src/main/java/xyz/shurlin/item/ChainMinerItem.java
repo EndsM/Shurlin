@@ -16,9 +16,9 @@ import xyz.shurlin.util.Utils;
 import java.util.ArrayList;
 
 public class ChainMinerItem extends PickaxeItem {
-    private World world;
     private final BlockPos[] poses = Utils.poses_of_all_directions;
     private final ArrayList<BlockPos> poses1 = new ArrayList<>();
+    private World world;
 
     public ChainMinerItem() {
         super(ToolMaterials.PLANT_JADE, 1, 5f, new Settings().group(ItemGroups.SHURLIN));

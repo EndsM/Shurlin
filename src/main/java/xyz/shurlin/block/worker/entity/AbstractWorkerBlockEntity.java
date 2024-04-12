@@ -15,9 +15,9 @@ import xyz.shurlin.recipe.AbstractWorkerRecipe;
 import xyz.shurlin.util.ShurlinLevel;
 
 public abstract class AbstractWorkerBlockEntity extends BasicBlockEntity implements ShurlinLevel, Tickable {
+    final PropertyDelegate propertyDelegate;
     int workTime;
     int workTimeTotal;
-    final PropertyDelegate propertyDelegate;
     int level;
     RecipeType<? extends AbstractWorkerRecipe> recipeType;
 

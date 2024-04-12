@@ -17,9 +17,9 @@ public enum SpiritPropertyType {
     ICE("ice", 11),
     TIME_SPACE("time_space", 12);
 
+    public static final SpiritPropertyType[] GROUPS = values();
     private final String name;
     private final int id;
-    public static final SpiritPropertyType[] GROUPS = values();
 
     SpiritPropertyType(String name, int id) {
         this.name = name;

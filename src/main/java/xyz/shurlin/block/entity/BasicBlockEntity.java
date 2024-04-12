@@ -12,8 +12,8 @@ import net.minecraft.text.TranslatableText;
 import net.minecraft.util.collection.DefaultedList;
 
 public abstract class BasicBlockEntity extends LockableContainerBlockEntity {
-    protected DefaultedList<ItemStack> inventory;
     private final String containerName;
+    protected DefaultedList<ItemStack> inventory;
 
     public BasicBlockEntity(BlockEntityType<?> type, String containerName) {
         super(type);

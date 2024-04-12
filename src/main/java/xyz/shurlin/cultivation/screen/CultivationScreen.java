@@ -22,10 +22,10 @@ import static net.minecraft.util.math.MathHelper.floor;
 
 @Environment(EnvType.CLIENT)
 public class CultivationScreen extends HandledScreen<CultivationScreenHandler> {
+    private static final int COLOR = 4210752;
     private final Identifier TEXTURE = new Identifier(Shurlin.MODID, "textures/gui/cultivation_ui.png");
     private final CultivationRealm realm = handler.realm;
     private final Object2ObjectArrayMap<SpiritPropertyType, SpiritMeridians> meridians = realm.getMeridians();
-    private static final int COLOR = 4210752;
 
     public CultivationScreen(CultivationScreenHandler handler, PlayerInventory inventory, Text title) {
         super(handler, inventory, title);
