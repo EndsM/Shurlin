@@ -142,7 +142,7 @@ public class ShurlinConfiguredFeatures {
             SMALL_BUD = Blocks.SMALL_BUD.getDefaultState();
             PLATYCODON_GRANDIFLORUS = Blocks.PLATYCODON_GRANDIFLORUS.getDefaultState();
             PLANT_IRON_ORE_BLOCK = ModBlocks.PLANT_IRON_ORE_BLOCK.getDefaultState();
-            PLANT_GOLD_ORE_BLOCK = Blocks.PLANT_GOLD_ORE_BLOCK.getDefaultState();
+            PLANT_GOLD_ORE_BLOCK = ModBlocks.PLANT_GOLD_ORE_BLOCK.getDefaultState();
             PLANT_JADE_ORE_BLOCK = Blocks.PLANT_JADE_ORE_BLOCK.getDefaultState();
             FIRE = net.minecraft.block.Blocks.FIRE.getDefaultState();
             HOT_FIRE_DIRT = Blocks.HOT_FIRE_DIRT.getDefaultState();
