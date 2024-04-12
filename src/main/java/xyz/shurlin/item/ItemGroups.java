@@ -7,14 +7,14 @@ import net.minecraft.util.Identifier;
 import xyz.shurlin.Shurlin;
 
 public class ItemGroups {
-    // main
+    // main (normal Block items goes here for now)
     public static final ItemGroup SHURLIN = FabricItemGroupBuilder
             .create(new Identifier(Shurlin.MODID, Shurlin.MODID))
             .icon(() -> new ItemStack(Items.PLANT_ESSENCE))
             .build();
     // equipment
 
-    // ore and material
+    // ore and material (Only the dropped ore and smelted ores at this point)
 
-    // decoration
+    // decoration (Grass, coral, etc)
 }

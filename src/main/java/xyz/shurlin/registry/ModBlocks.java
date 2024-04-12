@@ -22,6 +22,7 @@ public class ModBlocks {
     public static Block PLANT_GOLD_ORE_BLOCK;
     public static Block PLANT_GOLD_BLOCK;
 
+    // We can do this later, just separate register Blocks and BlockItems, and remove this itemGroup parameter.
     private static Block registerBlock(String name, Block block, ItemGroup itemGroup) {
         Block registeredBlock = Registry.register(Registry.BLOCK, new Identifier(Shurlin.MODID, name), block);
         if (itemGroup != null) {
@@ -38,7 +39,9 @@ public class ModBlocks {
     public static void Register() {
         // Register blocks and block items
         PLANT_IRON_ORE_BLOCK = registerBlock("plant_iron_ore_block", new SpiritOreBlock(BlockSettings.ORE), ItemGroups.SHURLIN);
-        PLANT_IRON_BLOCK = registerBlock("plant_iron_block", new BasicBlock(FabricBlockSettings.copy(Blocks.IRON_BLOCK)), ItemGroups.SHURLIN);
+        PLANT_IRON_BLOCK = registerBlock("plant_iron_block", new Block(FabricBlockSettings.copy(Blocks.IRON_BLOCK)), ItemGroups.SHURLIN);
         PLANT_GOLD_ORE_BLOCK = registerBlock("plant_gold_ore_block", new SpiritOreBlock(BlockSettings.ORE), ItemGroups.SHURLIN);
+        PLANT_GOLD_BLOCK = registerBlock("plant_gold_block", new Block(FabricBlockSettings.copy(Blocks.GOLD_BLOCK)),ItemGroups.SHURLIN );
+
     }
 }
