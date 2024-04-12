@@ -17,7 +17,6 @@ import xyz.shurlin.block.worker.ExtractorBlock;
 import xyz.shurlin.world.gen.feature.ShurlinConfiguredFeatures;
 
 public class Blocks {
-    public static final Block PLANT_IRON_ORE_BLOCK;
     public static final Block PLANT_IRON_BLOCK;
     public static final Block PLANT_GOLD_ORE_BLOCK;
     public static final Block PLANT_GOLD_BLOCK;
@@ -91,7 +90,6 @@ public class Blocks {
     }
 
     static {
-        PLANT_IRON_ORE_BLOCK = registerOreBlock("plant_iron_ore_block");
         PLANT_IRON_BLOCK = register("plant_iron_block", FabricBlockSettings.copy(net.minecraft.block.Blocks.IRON_BLOCK));
         PLANT_GOLD_ORE_BLOCK = registerOreBlock("plant_gold_ore_block");
         PLANT_GOLD_BLOCK = register("plant_gold_block", FabricBlockSettings.copy(net.minecraft.block.Blocks.GOLD_BLOCK));

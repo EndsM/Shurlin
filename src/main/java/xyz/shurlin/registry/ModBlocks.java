@@ -8,9 +8,12 @@ import net.minecraft.item.Item;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import xyz.shurlin.Shurlin;
+import xyz.shurlin.block.SpiritOreBlock;
+import xyz.shurlin.registry.setting.BlockSettings;
 
 public class ModBlocks {
     public static Block NEW_FORMAT_TEST_BLOCK;
+    public static Block PLANT_IRON_ORE_BLOCK;
 
     private static Block registerBlock(String name, Block block, boolean doRegisterBlockItem) {
         Block registeredBlock = Registry.register(Registry.BLOCK, new Identifier(Shurlin.MODID, name), block);
@@ -27,6 +30,6 @@ public class ModBlocks {
 
     public static void Register() {
         NEW_FORMAT_TEST_BLOCK = registerBlock("new_format_test_block", new Block(FabricBlockSettings.copy(Blocks.COAL_BLOCK)), true);
-
+        PLANT_IRON_ORE_BLOCK = registerBlock("plant_iron_ore_block", new SpiritOreBlock(BlockSettings.ORE), true);
     }
 }

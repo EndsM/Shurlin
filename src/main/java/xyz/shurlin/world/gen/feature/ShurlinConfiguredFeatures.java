@@ -27,6 +27,7 @@ import net.minecraft.world.gen.trunk.DarkOakTrunkPlacer;
 import net.minecraft.world.gen.trunk.StraightTrunkPlacer;
 import xyz.shurlin.Shurlin;
 import xyz.shurlin.block.Blocks;
+import xyz.shurlin.registry.ModBlocks;
 import xyz.shurlin.world.biome.BiomeKeys;
 
 import java.util.HashSet;
@@ -140,7 +141,7 @@ public class ShurlinConfiguredFeatures {
             PHOENIX_LEAVES = Blocks.PHOENIX_LEAVES.getDefaultState().with(LeavesBlock.PERSISTENT, true);
             SMALL_BUD = Blocks.SMALL_BUD.getDefaultState();
             PLATYCODON_GRANDIFLORUS = Blocks.PLATYCODON_GRANDIFLORUS.getDefaultState();
-            PLANT_IRON_ORE_BLOCK = Blocks.PLANT_IRON_ORE_BLOCK.getDefaultState();
+            PLANT_IRON_ORE_BLOCK = ModBlocks.PLANT_IRON_ORE_BLOCK.getDefaultState();
             PLANT_GOLD_ORE_BLOCK = Blocks.PLANT_GOLD_ORE_BLOCK.getDefaultState();
             PLANT_JADE_ORE_BLOCK = Blocks.PLANT_JADE_ORE_BLOCK.getDefaultState();
             FIRE = net.minecraft.block.Blocks.FIRE.getDefaultState();
