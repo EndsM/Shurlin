@@ -19,12 +19,13 @@ import java.util.Optional;
 public class ModBlocks {
     public static Block PLANT_IRON_ORE_BLOCK;
     public static Block PLANT_IRON_BLOCK;
-    public  static Block PLANT_GOLD_ORE_BLOCK;
+    public static Block PLANT_GOLD_ORE_BLOCK;
+    public static Block PLANT_GOLD_BLOCK;
 
     private static Block registerBlock(String name, Block block, ItemGroup itemGroup) {
         Block registeredBlock = Registry.register(Registry.BLOCK, new Identifier(Shurlin.MODID, name), block);
-        if (itemGroup!=null ) {
-            registerBlockItem(name, block,itemGroup);
+        if (itemGroup != null) {
+            registerBlockItem(name, block, itemGroup);
         }
         return registeredBlock;
     }
@@ -37,7 +38,7 @@ public class ModBlocks {
     public static void Register() {
         // Register blocks and block items
         PLANT_IRON_ORE_BLOCK = registerBlock("plant_iron_ore_block", new SpiritOreBlock(BlockSettings.ORE), ItemGroups.SHURLIN);
-        PLANT_IRON_BLOCK = registerBlock("plant_iron_block", new BasicBlock(FabricBlockSettings.copy(Blocks.IRON_BLOCK)),ItemGroups.SHURLIN);
-        PLANT_GOLD_ORE_BLOCK = registerBlock("plant_gold_ore_block",new SpiritOreBlock(BlockSettings.ORE),ItemGroups.SHURLIN);
+        PLANT_IRON_BLOCK = registerBlock("plant_iron_block", new BasicBlock(FabricBlockSettings.copy(Blocks.IRON_BLOCK)), ItemGroups.SHURLIN);
+        PLANT_GOLD_ORE_BLOCK = registerBlock("plant_gold_ore_block", new SpiritOreBlock(BlockSettings.ORE), ItemGroups.SHURLIN);
     }
 }

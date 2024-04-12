@@ -16,4 +16,5 @@ public class ItemGroups {
 
     // ore and material
 
+    // decoration
 }
