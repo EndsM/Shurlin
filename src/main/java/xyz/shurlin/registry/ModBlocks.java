@@ -9,12 +9,9 @@ import net.minecraft.item.ItemGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import xyz.shurlin.Shurlin;
-import xyz.shurlin.block.BasicBlock;
 import xyz.shurlin.block.SpiritOreBlock;
 import xyz.shurlin.item.ItemGroups;
 import xyz.shurlin.registry.setting.BlockSettings;
-
-import java.util.Optional;
 
 public class ModBlocks {
     public static Block PLANT_IRON_ORE_BLOCK;
@@ -43,7 +40,7 @@ public class ModBlocks {
         PLANT_IRON_ORE_BLOCK = registerBlock("plant_iron_ore_block", new SpiritOreBlock(BlockSettings.ORE), ItemGroups.SHURLIN);
         PLANT_IRON_BLOCK = registerBlock("plant_iron_block", new Block(FabricBlockSettings.copy(Blocks.IRON_BLOCK)), ItemGroups.SHURLIN);
         PLANT_GOLD_ORE_BLOCK = registerBlock("plant_gold_ore_block", new SpiritOreBlock(BlockSettings.ORE), ItemGroups.SHURLIN);
-        PLANT_GOLD_BLOCK = registerBlock("plant_gold_block", new Block(FabricBlockSettings.copy(Blocks.GOLD_BLOCK)),ItemGroups.SHURLIN );
-
+        PLANT_GOLD_BLOCK = registerBlock("plant_gold_block", new Block(FabricBlockSettings.copy(Blocks.GOLD_BLOCK)), ItemGroups.SHURLIN);
+        PLANT_JADE_ORE_BLOCK = registerBlock("plant_jade_ore_block", new SpiritOreBlock(BlockSettings.ORE), ItemGroups.SHURLIN);
     }
 }
