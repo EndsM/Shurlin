@@ -75,7 +75,7 @@ public class BlockSettings {
                 .strength(20.0f, 100.0f)
                 .requiresTool()
                 .sounds(BlockSoundGroup.METAL);
-        DOOR=FabricBlockSettings.of(Material.WOOD)
+        DOOR = FabricBlockSettings.of(Material.WOOD)
                 .strength(3.0f)
                 .sounds(BlockSoundGroup.WOOD)
                 .nonOpaque();

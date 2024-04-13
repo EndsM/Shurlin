@@ -97,7 +97,6 @@ public class Items {
     //weapon
     public static final Item DARK_IRON_SWORD;
 
-    public static final Item PHOENIX_LOG;
     public static final Item PHOENIX_PLANKS;
     public static final Item PHOENIX_LEAVES;
     public static final Item HOLY_PEAR_BAG;
@@ -250,7 +249,6 @@ public class Items {
         //weapon
         DARK_IRON_SWORD = register("dark_iron_sword", new SwordWeaponItem(WeaponLevels.INFERIOR_WEAPON, WeaponProperties.DARK_IRON));
 
-        PHOENIX_LOG = register(Blocks.PHOENIX_LOG);
         PHOENIX_PLANKS = register(Blocks.PHOENIX_PLANKS);
         PHOENIX_LEAVES = register(Blocks.PHOENIX_LEAVES);
         BREAKER_BLOCK = register(Blocks.BREAKER_BLOCK);
