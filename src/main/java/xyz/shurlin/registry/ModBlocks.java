@@ -78,7 +78,7 @@ public class ModBlocks {
         PHOENIX_LOG = registerBlock("phoenix_log", new PillarBlock(BlockSettings.LOG), ItemGroups.SHURLIN);
         PHOENIX_PLANKS = registerBlock("phoenix_planks", new Block(BlockSettings.PLANKS), ItemGroups.SHURLIN);
         PHOENIX_LEAVES = registerBlock("phoenix_leaves", new LeavesBlock(BlockSettings.LEAVES), ItemGroups.SHURLIN);
-        // Breaker 破碎仪
+        // Worker Blocks
         BREAKER_BLOCK = registerBlock("breaker_block", new BreakerBlock(BlockSettings.WORKER), ItemGroups.SHURLIN);
         COLLECTOR_BLOCK = registerBlock("collector_block", new CollectorBlock(BlockSettings.WORKER), ItemGroups.SHURLIN);
         CONCENTRATOR_BLOCK = registerBlock("concentrator_block", new ConcentratorBlock(BlockSettings.WORKER), ItemGroups.SHURLIN);
