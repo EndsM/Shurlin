@@ -13,6 +13,7 @@ import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
+import xyz.shurlin.registry.ModBlocks;
 import xyz.shurlin.util.Utils;
 import xyz.shurlin.world.dimension.Dimensions;
 
@@ -35,7 +36,7 @@ public class HolyFarmerPortalBlock extends BasicBlock {
             if (block == Blocks.HOLY_FARMER_PORTAL || block == Blocks.PLANT_OBSIDIAN)
                 return;
             world.setBlockState(pos, Blocks.HOLY_FARMER_PORTAL.getDefaultState(), 3);
-            if (block == Blocks.PHOENIX_LEAVES) {
+            if (block == ModBlocks.PHOENIX_LEAVES) {
                 for (BlockPos dir : Utils.poses_of_horizontal) {
                     createPortal(world, pos.add(dir));
                 }

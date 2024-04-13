@@ -16,7 +16,6 @@ import xyz.shurlin.block.worker.ExtractorBlock;
 import xyz.shurlin.world.gen.feature.ShurlinConfiguredFeatures;
 
 public class Blocks {
-    public static final Block PHOENIX_LEAVES;
     public static final Block BREAKER_BLOCK;
     public static final Block COLLECTOR_BLOCK;
     public static final Block CONCENTRATOR_BLOCK;
@@ -75,7 +74,6 @@ public class Blocks {
     }
 
     static {
-        PHOENIX_LEAVES = register("phoenix_leaves", new LeavesBlock(BlockSettings.LEAVES));
         BREAKER_BLOCK = register("breaker_block", new BreakerBlock(BlockSettings.WORKER));
         COLLECTOR_BLOCK = register("collector_block", new CollectorBlock(BlockSettings.WORKER));
         CONCENTRATOR_BLOCK = register("concentrator_block", new ConcentratorBlock(BlockSettings.WORKER));

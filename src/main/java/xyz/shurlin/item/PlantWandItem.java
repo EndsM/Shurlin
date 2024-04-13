@@ -11,6 +11,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import xyz.shurlin.block.Blocks;
 import xyz.shurlin.block.HolyFarmerPortalBlock;
+import xyz.shurlin.registry.ModBlocks;
 import xyz.shurlin.util.Utils;
 
 import java.util.Vector;
@@ -38,10 +39,10 @@ public class PlantWandItem extends Item {
         if (player != null) {
             PlayerInventory inventory = player.inventory;
             ItemStack stack = new ItemStack(Items.MYSTERIOUS_SPIRIT_OF_PLANT);
-            if (block.equals(Blocks.PHOENIX_LEAVES) && inventory.contains(stack)) {
+            if (block.equals(ModBlocks.PHOENIX_LEAVES) && inventory.contains(stack)) {
                 Vector<BlockPos> vector = new Vector<>();
                 if (Utils.isSealed(world, pos, Utils.poses_of_horizontal,
-                        Blocks.PHOENIX_LEAVES, Blocks.PLANT_OBSIDIAN, vector)) {
+                        ModBlocks.PHOENIX_LEAVES, Blocks.PLANT_OBSIDIAN, vector)) {
                     HolyFarmerPortalBlock.createPortal(world, pos);
                     stack.decrement(1);
                 }
