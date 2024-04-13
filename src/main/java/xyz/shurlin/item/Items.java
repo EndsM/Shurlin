@@ -97,8 +97,6 @@ public class Items {
     //weapon
     public static final Item DARK_IRON_SWORD;
 
-    public static final Item PLATYCODON_GRANDIFLORUS;
-
     public static final Item PEAR_LOG;
     public static final Item PEAR_PLANKS;
     public static final Item PEAR_LEAVES;
@@ -256,8 +254,6 @@ public class Items {
 
         //weapon
         DARK_IRON_SWORD = register("dark_iron_sword", new SwordWeaponItem(WeaponLevels.INFERIOR_WEAPON, WeaponProperties.DARK_IRON));
-
-        PLATYCODON_GRANDIFLORUS = register(Blocks.PLATYCODON_GRANDIFLORUS);
 
         PEAR_LOG = register(Blocks.PEAR_LOG);
         PEAR_PLANKS = register(Blocks.PEAR_PLANKS);
