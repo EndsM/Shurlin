@@ -3,6 +3,7 @@ package xyz.shurlin.registry;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.LeavesBlock;
 import net.minecraft.block.PillarBlock;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.BlockItem;
@@ -27,6 +28,9 @@ public class ModBlocks {
     public static Block SMALL_BUD;
     public static Block PLATYCODON_GRANDIFLORUS;
     public static Block PEAR_LOG;
+    public static Block PEAR_PLANKS;
+    public static Block PEAR_LEAVES;
+    public static Block PEAR_RIPE_LEAVES;
 
     // We can do this later, just separate register Blocks and BlockItems, and remove this itemGroup parameter.
     // Also, we can move ItemGroup to each of item types after remove the BasicItem and BasicBlockItem
@@ -54,5 +58,7 @@ public class ModBlocks {
         SMALL_BUD = registerBlock("small_bud", new SmallBudBlock(BlockSettings.PLANT), ItemGroups.SHURLIN);
         PLATYCODON_GRANDIFLORUS = registerBlock("platycodon_grandiflorus", new PlatycodonGrandiflorusBlock(StatusEffects.REGENERATION, 1314, BlockSettings.PLANT), ItemGroups.SHURLIN);
         PEAR_LOG = registerBlock("pear_log", new PillarBlock(BlockSettings.LOG), ItemGroups.SHURLIN);
+        PEAR_PLANKS = registerBlock("pear_planks" , new Block(BlockSettings.PLANKS),ItemGroups.SHURLIN);
+        PEAR_LEAVES = registerBlock("pear_leaves", new LeavesBlock(BlockSettings.LEAVES),ItemGroups.SHURLIN);
     }
 }
