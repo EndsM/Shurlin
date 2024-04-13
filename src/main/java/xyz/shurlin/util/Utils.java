@@ -109,6 +109,7 @@ public class Utils {
         return true;
     }
 
+    // This naming should change later.
     public static final Identifier PACKET_ID_1 = new Identifier(Shurlin.MODID, "data_1");
     public static final Identifier OPEN_CUL = new Identifier(Shurlin.MODID, "key_open_cul");
     public static final Identifier INJECT_SPIRIT = new Identifier(Shurlin.MODID, "inject_spirit");

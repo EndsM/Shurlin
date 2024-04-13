@@ -1,7 +1,7 @@
 package xyz.shurlin.block;
 
-import io.netty.buffer.Unpooled;
-import net.fabricmc.fabric.api.network.ClientSidePacketRegistry;
+import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
+import net.fabricmc.fabric.api.networking.v1.PacketByteBufs;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
@@ -58,6 +58,7 @@ public class HolyPearAltarBlock extends Block {
 
     @Override
     public void onSteppedOn(World world, BlockPos pos, Entity entity) {
+        // Decide how to actually implement this later.
         if (entity instanceof PlayerEntity) {
             ((PlayerEntity) entity).addExperience(1);
             if (!((PlayerEntity) entity).abilities.creativeMode)
@@ -65,9 +66,9 @@ public class HolyPearAltarBlock extends Block {
                     entity.setFireTicks(200);
             if (world.isClient) {
                 if (KeyBindings.keyBinding_j.isPressed()) {
-                    PacketByteBuf passedData = new PacketByteBuf(Unpooled.buffer());
-                    passedData.writeBlockPos(pos);
-                    ClientSidePacketRegistry.INSTANCE.sendToServer(Utils.PACKET_ID_1, passedData);
+                    PacketByteBuf buffer = PacketByteBufs.create();
+                    buffer.writeBlockPos(pos);
+                    ClientPlayNetworking.send(Utils.PACKET_ID_1, buffer);
                     ((PlayerEntity) entity).sendMessage(new TranslatableText("message.shurlin.holy_pear_altar.bound_success"), false);
                 }
             }
