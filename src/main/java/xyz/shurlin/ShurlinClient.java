@@ -20,8 +20,8 @@ public class ShurlinClient implements ClientModInitializer {
     public void onInitializeClient() {
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutout(),
                 ModBlocks.SMALL_BUD,
-                Blocks.PEAR_SAPLING,
-                Blocks.PHOENIX_SAPLING,
+                ModBlocks.PEAR_SAPLING,
+                ModBlocks.PHOENIX_SAPLING,
                 ModBlocks.PLATYCODON_GRANDIFLORUS,
                 ModBlocks.PEAR_DOOR,
                 Blocks.LEAVE_CORAL,

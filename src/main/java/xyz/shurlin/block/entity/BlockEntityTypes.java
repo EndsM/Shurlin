@@ -4,7 +4,6 @@ import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import xyz.shurlin.Shurlin;
-import xyz.shurlin.block.Blocks;
 import xyz.shurlin.block.worker.entity.BreakerBlockEntity;
 import xyz.shurlin.block.worker.entity.CollectorBlockEntity;
 import xyz.shurlin.block.worker.entity.ConcentratorBlockEntity;

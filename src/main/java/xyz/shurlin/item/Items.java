@@ -101,9 +101,6 @@ public class Items {
     public static final Item HOT_FIRE_DIRT;
     public static final Item HOT_FIRE_STONE;
 
-    public static final Item PEAR_SAPLING;
-    public static final Item PHOENIX_SAPLING;
-
     public static final Item DEAD_LEAVE_CORAL_BLOCK;
     public static final Item LEAVE_CORAL_BLOCK;
     public static final Item DEAD_LEAVE_CORAL_FAN_BLOCK;
@@ -241,10 +238,6 @@ public class Items {
 
         HOT_FIRE_DIRT = register(Blocks.HOT_FIRE_DIRT);
         HOT_FIRE_STONE = register(Blocks.HOT_FIRE_STONE);
-
-        PEAR_SAPLING = register(Blocks.PEAR_SAPLING);
-        PHOENIX_SAPLING = register(Blocks.PHOENIX_SAPLING);
-
 
         DEAD_LEAVE_CORAL_BLOCK = register(Blocks.DEAD_LEAVE_CORAL);
         LEAVE_CORAL_BLOCK = register(Blocks.LEAVE_CORAL);

@@ -11,13 +11,8 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import xyz.shurlin.Shurlin;
 import xyz.shurlin.block.coral.*;
-import xyz.shurlin.block.plant.BasicSaplingBlock;
-import xyz.shurlin.world.gen.feature.ShurlinConfiguredFeatures;
 
 public class Blocks {
-    public static final Block PEAR_SAPLING;
-    public static final Block PHOENIX_SAPLING;
-
     public static final Block DEAD_LEAVE_CORAL;
     public static final Block LEAVE_CORAL;
     public static final Block DEAD_LEAVE_CORAL_FAN;
@@ -84,9 +79,6 @@ public class Blocks {
         TENUOUS_LIGHTNING_SPIRIT_ORE_BLOCK = registerOreBlock("tenuous_lightning_spirit_ore_block");
         TENUOUS_ICE_SPIRIT_ORE_BLOCK = registerOreBlock("tenuous_ice_spirit_ore_block", Material.ICE);
         TENUOUS_TIME_SPACE_SPIRIT_ORE_BLOCK = registerOreBlock("tenuous_time_space_spirit_ore_block");
-
-        PEAR_SAPLING = register("pear_sapling", new BasicSaplingBlock(ShurlinConfiguredFeatures.PEAR_TREE, BlockSettings.PLANT));
-        PHOENIX_SAPLING = register("phoenix_sapling", new BasicSaplingBlock(ShurlinConfiguredFeatures.PHOENIX_TREE, BlockSettings.PLANT));
 
     }
 

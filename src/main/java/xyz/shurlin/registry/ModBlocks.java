@@ -12,12 +12,14 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import xyz.shurlin.Shurlin;
 import xyz.shurlin.block.*;
+import xyz.shurlin.block.plant.BasicSaplingBlock;
 import xyz.shurlin.block.worker.BreakerBlock;
 import xyz.shurlin.block.worker.CollectorBlock;
 import xyz.shurlin.block.worker.ConcentratorBlock;
 import xyz.shurlin.block.worker.ExtractorBlock;
 import xyz.shurlin.item.ItemGroups;
 import xyz.shurlin.registry.setting.BlockSettings;
+import xyz.shurlin.world.gen.feature.ShurlinConfiguredFeatures;
 
 public class ModBlocks {
     public static Block PLANT_IRON_ORE_BLOCK;
@@ -48,6 +50,8 @@ public class ModBlocks {
     public static Block CULTIVATION_CRYSTAL;
     public static Block SUCCULENT_BLOCK;
     public static Block LLANDUDNO;
+    public static Block PEAR_SAPLING;
+    public static Block PHOENIX_SAPLING;
 
     // We can do this later, just separate register Blocks and BlockItems, and remove this itemGroup parameter.
     // Also, we can move ItemGroup to each of item types after remove the BasicItem and BasicBlockItem
@@ -100,5 +104,8 @@ public class ModBlocks {
                         .luminance((state) -> state.get(SucculentBlock.SHINING) ? 8 : 0)
         ), ItemGroups.SHURLIN);
         LLANDUDNO = registerBlock("llandudno_block", new Block(BlockSettings.LLANDUDNO), ItemGroups.SHURLIN);
+        // Saplings
+        PEAR_SAPLING = registerBlock("pear_sapling", new BasicSaplingBlock(ShurlinConfiguredFeatures.PEAR_TREE, BlockSettings.PLANT), ItemGroups.SHURLIN);
+        PHOENIX_SAPLING = registerBlock("phoenix_sapling", new BasicSaplingBlock(ShurlinConfiguredFeatures.PHOENIX_TREE, BlockSettings.PLANT), ItemGroups.SHURLIN);
     }
 }
