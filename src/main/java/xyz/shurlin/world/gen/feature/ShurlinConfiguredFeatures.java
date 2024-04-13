@@ -103,7 +103,6 @@ public class ShurlinConfiguredFeatures {
                     .tries(64).whitelist(new HashSet<Block>() {{
                         add(States.HOT_FIRE_DIRT.getBlock());
                     }}).cannotProject().build();
-
         }
     }
 

@@ -31,6 +31,7 @@ public class Shurlin implements ModInitializer {
     public void onInitialize() {
         ModBlocks.Register();
         ModItems.Register();
+
         BlockEntityTypes.load();
         Items.load();
         RecipeSerializers.load();
@@ -44,15 +45,6 @@ public class Shurlin implements ModInitializer {
         BiomeGenerator.load();
         ShurlinOreFeatures.load();
         ShurlinConfiguredFeatures.ApplyToBiome();
-//        new Reflector();
-//        new DimensionOptions();
         Linkage.init();
     }
 }
-
-//entity
-//command
-//recipe(container)
-//crater
-
-//holy_pear_altar
