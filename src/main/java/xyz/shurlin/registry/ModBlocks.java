@@ -60,6 +60,8 @@ public class ModBlocks {
     public static Block LEAVE_CORAL_FAN;
     public static Block DEAD_LEAVE_CORAL_WALL_FAN;
     public static Block LEAVE_CORAL_WALL_FAN;
+    public static Block DEAD_LEAVE_CORAL_BLOCK;
+    public static Block LEAVE_CORAL_BLOCK;
 
     // We can do this later, just separate register Blocks and BlockItems, and remove this itemGroup parameter.
     // Also, we can move ItemGroup to each of item types after remove the BasicItem and BasicBlockItem
@@ -130,6 +132,7 @@ public class ModBlocks {
         LEAVE_CORAL_FAN = registerBlock("leave_coral_fan", new LeaveCoralFanBlock(DEAD_LEAVE_CORAL_FAN, BlockSettings.CORAL), false);
         DEAD_LEAVE_CORAL_WALL_FAN = registerBlock("dead_leave_coral_wall_fan", new DeadLeaveCoralWallFanBlock(BlockSettings.DEAD_CORAL.dropsLike(DEAD_LEAVE_CORAL_FAN)), false);
         LEAVE_CORAL_WALL_FAN = registerBlock("leave_coral_wall_fan", new LeaveCoralWallFanBlock(DEAD_LEAVE_CORAL_WALL_FAN, BlockSettings.CORAL.dropsLike(LEAVE_CORAL_FAN)), false);
-
+        DEAD_LEAVE_CORAL_BLOCK = registerBlock("dead_leave_coral_block", new Block(BlockSettings.DEAD_CORAL_BLOCK), true);
+        LEAVE_CORAL_BLOCK = registerBlock("leave_coral_block", new LeaveCoralBlockBlock(DEAD_LEAVE_CORAL_BLOCK, BlockSettings.CORAL_BLOCK), true);
     }
 }

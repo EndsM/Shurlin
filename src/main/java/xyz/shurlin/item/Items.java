@@ -100,9 +100,6 @@ public class Items {
     public static final Item HOT_FIRE_DIRT;
     public static final Item HOT_FIRE_STONE;
 
-    public static final Item DEAD_LEAVE_CORAL_BLOCK_BLOCK;
-    public static final Item LEAVE_CORAL_BLOCK_BLOCK;
-
     public static final Item TENUOUS_METAL_SPIRIT_ORE_BLOCK;
     public static final Item TENUOUS_WOOD_SPIRIT_ORE_BLOCK;
     public static final Item TENUOUS_WATER_SPIRIT_ORE_BLOCK;
@@ -233,9 +230,6 @@ public class Items {
 
         HOT_FIRE_DIRT = register(Blocks.HOT_FIRE_DIRT);
         HOT_FIRE_STONE = register(Blocks.HOT_FIRE_STONE);
-
-        DEAD_LEAVE_CORAL_BLOCK_BLOCK = register(Blocks.DEAD_LEAVE_CORAL_BLOCK);
-        LEAVE_CORAL_BLOCK_BLOCK = register(Blocks.LEAVE_CORAL_BLOCK);
 
         TENUOUS_METAL_SPIRIT_ORE_BLOCK = register(Blocks.TENUOUS_METAL_SPIRIT_ORE_BLOCK);
         TENUOUS_WOOD_SPIRIT_ORE_BLOCK = register(Blocks.TENUOUS_WOOD_SPIRIT_ORE_BLOCK);
