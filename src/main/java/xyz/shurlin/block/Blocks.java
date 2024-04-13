@@ -15,8 +15,6 @@ import xyz.shurlin.block.plant.BasicSaplingBlock;
 import xyz.shurlin.world.gen.feature.ShurlinConfiguredFeatures;
 
 public class Blocks {
-    public static final Block HOLY_PEAR_ALTAR;
-    public static final Block STARRY_ALTAR;
     public static final Block MYSTERIOUS_STONE;
     public static final Block PLANT_OBSIDIAN;
     public static final Block HOLY_FARMER_PORTAL;
@@ -69,8 +67,6 @@ public class Blocks {
     }
 
     static {
-        HOLY_PEAR_ALTAR = register("holy_pear_altar", new HolyPearAltarBlock(FabricBlockSettings.copy(net.minecraft.block.Blocks.OBSIDIAN)));
-        STARRY_ALTAR = register("starry_altar", new StarryAltarBlock(FabricBlockSettings.of(Material.STONE).strength(10.0f).lightLevel(12)));
         MYSTERIOUS_STONE = register("mysterious_stone", new MysteriousStoneBlock(FabricBlockSettings.of(Material.STONE).strength(-1, 3600)));
         PLANT_OBSIDIAN = register("plant_obsidian", BlockSettings.OBSIDIAN);
         HOLY_FARMER_PORTAL = register("holy_farmer_portal", new HolyFarmerPortalBlock(FabricBlockSettings.of(Material.PORTAL).noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.GLASS).lightLevel(12)));

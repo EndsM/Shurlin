@@ -1,10 +1,8 @@
 package xyz.shurlin.registry;
 
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
-import net.minecraft.block.Block;
+import net.minecraft.block.*;
 import net.minecraft.block.Blocks;
-import net.minecraft.block.LeavesBlock;
-import net.minecraft.block.PillarBlock;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
@@ -12,10 +10,7 @@ import net.minecraft.item.ItemGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import xyz.shurlin.Shurlin;
-import xyz.shurlin.block.BasicDoorBlock;
-import xyz.shurlin.block.PlatycodonGrandiflorusBlock;
-import xyz.shurlin.block.SmallBudBlock;
-import xyz.shurlin.block.SpiritOreBlock;
+import xyz.shurlin.block.*;
 import xyz.shurlin.block.worker.BreakerBlock;
 import xyz.shurlin.block.worker.CollectorBlock;
 import xyz.shurlin.block.worker.ConcentratorBlock;
@@ -44,6 +39,8 @@ public class ModBlocks {
     public static Block COLLECTOR_BLOCK;
     public static Block CONCENTRATOR_BLOCK;
     public static Block EXTRACTOR_BLOCK;
+    public static Block HOLY_PEAR_ALTAR;
+    public static Block STARRY_ALTAR;
 
     // We can do this later, just separate register Blocks and BlockItems, and remove this itemGroup parameter.
     // Also, we can move ItemGroup to each of item types after remove the BasicItem and BasicBlockItem
@@ -83,5 +80,9 @@ public class ModBlocks {
         COLLECTOR_BLOCK = registerBlock("collector_block", new CollectorBlock(BlockSettings.WORKER), ItemGroups.SHURLIN);
         CONCENTRATOR_BLOCK = registerBlock("concentrator_block", new ConcentratorBlock(BlockSettings.WORKER), ItemGroups.SHURLIN);
         EXTRACTOR_BLOCK = registerBlock("extractor_block", new ExtractorBlock(BlockSettings.WORKER), ItemGroups.SHURLIN);
+        // Altars
+        // Refactor these two later
+        HOLY_PEAR_ALTAR=registerBlock("holy_pear_altar", new HolyPearAltarBlock(FabricBlockSettings.copy(Blocks.OBSIDIAN)),ItemGroups.SHURLIN);
+        STARRY_ALTAR =registerBlock("starry_altar",new StarryAltarBlock(FabricBlockSettings.of(Material.STONE).strength(10.0f).luminance(12)),ItemGroups.SHURLIN);
     }
 }
