@@ -145,7 +145,7 @@ public class ShurlinConfiguredFeatures {
             PLANT_GOLD_ORE_BLOCK = ModBlocks.PLANT_GOLD_ORE_BLOCK.getDefaultState();
             PLANT_JADE_ORE_BLOCK = ModBlocks.PLANT_JADE_ORE_BLOCK.getDefaultState();
             FIRE = net.minecraft.block.Blocks.FIRE.getDefaultState();
-            HOT_FIRE_DIRT = Blocks.HOT_FIRE_DIRT.getDefaultState();
+            HOT_FIRE_DIRT = ModBlocks.HOT_FIRE_DIRT.getDefaultState();
             TENUOUS_METAL_SPIRIT_ORE_BLOCK = Blocks.TENUOUS_METAL_SPIRIT_ORE_BLOCK.getDefaultState();
             TENUOUS_WOOD_SPIRIT_ORE_BLOCK = Blocks.TENUOUS_WOOD_SPIRIT_ORE_BLOCK.getDefaultState();
             TENUOUS_WATER_SPIRIT_ORE_BLOCK = Blocks.TENUOUS_WATER_SPIRIT_ORE_BLOCK.getDefaultState();

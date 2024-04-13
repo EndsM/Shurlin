@@ -7,7 +7,7 @@ import net.minecraft.world.gen.surfacebuilder.SurfaceBuilder;
 import net.minecraft.world.gen.surfacebuilder.SurfaceConfig;
 import net.minecraft.world.gen.surfacebuilder.TernarySurfaceConfig;
 import xyz.shurlin.Shurlin;
-import xyz.shurlin.block.Blocks;
+import xyz.shurlin.registry.ModBlocks;
 
 public class ShurlinSurfaceBuilder {
     public static final BlockState HOT_FIRE_DIRT;
@@ -19,8 +19,8 @@ public class ShurlinSurfaceBuilder {
     }
 
     static {
-        HOT_FIRE_DIRT = Blocks.HOT_FIRE_DIRT.getDefaultState();
-        HOT_FIRE_STONE = Blocks.HOT_FIRE_STONE.getDefaultState();
+        HOT_FIRE_DIRT = ModBlocks.HOT_FIRE_DIRT.getDefaultState();
+        HOT_FIRE_STONE = ModBlocks.HOT_FIRE_STONE.getDefaultState();
         FIRE_LAND_CONFIG = new TernarySurfaceConfig(HOT_FIRE_DIRT, HOT_FIRE_STONE, HOT_FIRE_STONE);
     }
 
