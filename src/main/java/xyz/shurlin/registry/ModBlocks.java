@@ -46,6 +46,7 @@ public class ModBlocks {
     public static Block PLANT_OBSIDIAN;
     public static Block HOLY_FARMER_PORTAL;
     public static Block CULTIVATION_CRYSTAL;
+    public static Block SUCCULENT_BLOCK;
 
     // We can do this later, just separate register Blocks and BlockItems, and remove this itemGroup parameter.
     // Also, we can move ItemGroup to each of item types after remove the BasicItem and BasicBlockItem
@@ -93,5 +94,10 @@ public class ModBlocks {
         PLANT_OBSIDIAN = registerBlock("plant_obsidian", new Block(BlockSettings.OBSIDIAN), ItemGroups.SHURLIN);
         HOLY_FARMER_PORTAL = registerBlock("holy_farmer_portal", new HolyFarmerPortalBlock(FabricBlockSettings.of(Material.PORTAL).noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.GLASS).luminance(12)), ItemGroups.SHURLIN);
         CULTIVATION_CRYSTAL = registerBlock("cultivation_crystal", new CultivationCrystalBlock(FabricBlockSettings.of(Material.GLASS).strength(-1).nonOpaque()), ItemGroups.SHURLIN);
+        SUCCULENT_BLOCK =registerBlock("succulent_block", new SucculentBlock(
+                FabricBlockSettings.of(Material.ORGANIC_PRODUCT, MapColor.PALE_GREEN).slipperiness(0.8F).sounds(BlockSoundGroup.SLIME).nonOpaque()
+                        .luminance((state)-> state.get(SucculentBlock.SHINING)? 8:0)
+        ),ItemGroups.SHURLIN);
+
     }
 }

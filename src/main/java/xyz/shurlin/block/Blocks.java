@@ -15,7 +15,6 @@ import xyz.shurlin.block.plant.BasicSaplingBlock;
 import xyz.shurlin.world.gen.feature.ShurlinConfiguredFeatures;
 
 public class Blocks {
-    public static final Block SUCCULENT_BLOCK;
     public static final Block LLANDUDNO;
 
     public static final Block PEAR_SAPLING;
@@ -63,9 +62,6 @@ public class Blocks {
     }
 
     static {
-        SUCCULENT_BLOCK = register("succulent_block", new SucculentBlock(FabricBlockSettings.of(Material.ORGANIC_PRODUCT, MapColor.PALE_GREEN).slipperiness(0.8F).sounds(BlockSoundGroup.SLIME).nonOpaque().lightLevel((state) ->
-                state.get(SucculentBlock.SHINING) ? 8 : 0
-        )));
         LLANDUDNO = register("llandudno_block", BlockSettings.LLANDUDNO);
 
         DEAD_LEAVE_CORAL = register("dead_leave_coral", new DeadLeaveCoralBlock(BlockSettings.DEAD_CORAL));
@@ -130,7 +126,5 @@ public class Blocks {
             DIRT = FabricBlockSettings.of(Material.SOIL, MapColor.DIRT_BROWN).strength(0.5F).sounds(BlockSoundGroup.GRAVEL);
             LLANDUDNO = FabricBlockSettings.of(Material.METAL).strength(20.0f, 100.0f).requiresTool().sounds(BlockSoundGroup.METAL);
         }
-
     }
-
 }
