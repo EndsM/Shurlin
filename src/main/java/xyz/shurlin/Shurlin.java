@@ -9,6 +9,7 @@ import xyz.shurlin.item.Items;
 import xyz.shurlin.linkage.Linkage;
 import xyz.shurlin.recipe.RecipeSerializers;
 import xyz.shurlin.registry.ModBlocks;
+import xyz.shurlin.registry.ModItems;
 import xyz.shurlin.screen.ScreenHandlerTypes;
 import xyz.shurlin.util.ServerReceiver;
 import xyz.shurlin.world.biome.BiomeGenerator;
@@ -29,6 +30,7 @@ public class Shurlin implements ModInitializer {
     @Override
     public void onInitialize() {
         ModBlocks.Register();
+        ModItems.Register();
         BlockEntityTypes.load();
         Items.load();
         RecipeSerializers.load();
