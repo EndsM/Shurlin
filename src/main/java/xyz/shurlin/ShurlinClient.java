@@ -12,13 +12,14 @@ import xyz.shurlin.client.options.KeyBindings;
 import xyz.shurlin.client.render.entity.RoamingSpiritEntityRender;
 import xyz.shurlin.entity.EntityTypes;
 import xyz.shurlin.linkage.Linkage;
+import xyz.shurlin.registry.ModBlocks;
 
 @Environment(EnvType.CLIENT)
 public class ShurlinClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutout(),
-                Blocks.SMALL_BUD,
+                ModBlocks.SMALL_BUD,
                 Blocks.PEAR_SAPLING,
                 Blocks.PHOENIX_SAPLING,
                 Blocks.PLATYCODON_GRANDIFLORUS,

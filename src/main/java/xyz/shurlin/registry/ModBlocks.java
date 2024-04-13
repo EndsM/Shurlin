@@ -9,6 +9,7 @@ import net.minecraft.item.ItemGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import xyz.shurlin.Shurlin;
+import xyz.shurlin.block.SmallBudBlock;
 import xyz.shurlin.block.SpiritOreBlock;
 import xyz.shurlin.item.ItemGroups;
 import xyz.shurlin.registry.setting.BlockSettings;
@@ -19,6 +20,9 @@ public class ModBlocks {
     public static Block PLANT_GOLD_ORE_BLOCK;
     public static Block PLANT_GOLD_BLOCK;
     public static Block PLANT_JADE_ORE_BLOCK;
+    public static Block PLANT_JADE_BLOCK;
+    public static Block SMALL_BUD;
+    public static Block PLATYCODON_GRANDIFLORUS;
 
     // We can do this later, just separate register Blocks and BlockItems, and remove this itemGroup parameter.
     // Also, we can move ItemGroup to each of item types after remove the BasicItem and BasicBlockItem
@@ -42,5 +46,7 @@ public class ModBlocks {
         PLANT_GOLD_ORE_BLOCK = registerBlock("plant_gold_ore_block", new SpiritOreBlock(BlockSettings.ORE), ItemGroups.SHURLIN);
         PLANT_GOLD_BLOCK = registerBlock("plant_gold_block", new Block(FabricBlockSettings.copy(Blocks.GOLD_BLOCK)), ItemGroups.SHURLIN);
         PLANT_JADE_ORE_BLOCK = registerBlock("plant_jade_ore_block", new SpiritOreBlock(BlockSettings.ORE), ItemGroups.SHURLIN);
+        PLANT_JADE_BLOCK = registerBlock("plant_jade_block", new Block(FabricBlockSettings.copy(Blocks.DIAMOND_BLOCK)),ItemGroups.SHURLIN);
+        SMALL_BUD = registerBlock("small_bud",new SmallBudBlock(BlockSettings.PLANT),ItemGroups.SHURLIN);
     }
 }

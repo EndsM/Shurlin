@@ -139,7 +139,7 @@ public class ShurlinConfiguredFeatures {
             PEAR_RIPE_LEAVES = Blocks.PEAR_RIPE_LEAVES.getDefaultState().with(LeavesBlock.PERSISTENT, true);
             PHOENIX_LOG = Blocks.PHOENIX_LOG.getDefaultState();
             PHOENIX_LEAVES = Blocks.PHOENIX_LEAVES.getDefaultState().with(LeavesBlock.PERSISTENT, true);
-            SMALL_BUD = Blocks.SMALL_BUD.getDefaultState();
+            SMALL_BUD = ModBlocks.SMALL_BUD.getDefaultState();
             PLATYCODON_GRANDIFLORUS = Blocks.PLATYCODON_GRANDIFLORUS.getDefaultState();
             PLANT_IRON_ORE_BLOCK = ModBlocks.PLANT_IRON_ORE_BLOCK.getDefaultState();
             PLANT_GOLD_ORE_BLOCK = ModBlocks.PLANT_GOLD_ORE_BLOCK.getDefaultState();
