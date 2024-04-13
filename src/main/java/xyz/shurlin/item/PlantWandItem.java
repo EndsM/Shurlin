@@ -42,7 +42,7 @@ public class PlantWandItem extends Item {
             if (block.equals(ModBlocks.PHOENIX_LEAVES) && inventory.contains(stack)) {
                 Vector<BlockPos> vector = new Vector<>();
                 if (Utils.isSealed(world, pos, Utils.poses_of_horizontal,
-                        ModBlocks.PHOENIX_LEAVES, Blocks.PLANT_OBSIDIAN, vector)) {
+                        ModBlocks.PHOENIX_LEAVES, ModBlocks.PLANT_OBSIDIAN, vector)) {
                     HolyFarmerPortalBlock.createPortal(world, pos);
                     stack.decrement(1);
                 }

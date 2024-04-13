@@ -10,6 +10,7 @@ import net.minecraft.world.gen.feature.DefaultFeatureConfig;
 import net.minecraft.world.gen.feature.Feature;
 import xyz.shurlin.Shurlin;
 import xyz.shurlin.block.Blocks;
+import xyz.shurlin.registry.ModBlocks;
 import xyz.shurlin.util.Utils;
 
 import java.util.Random;
@@ -27,7 +28,7 @@ public class PlantObsidianHeapFeature extends Feature<DefaultFeatureConfig> {
 //        int y = serverWorldAccess.getTopY(Heightmap.Type.WORLD_SURFACE_WG, x, z);
         pos = serverWorldAccess.getTopPosition(Heightmap.Type.WORLD_SURFACE_WG, pos);
         int r = 3;
-        BlockState state = Blocks.PLANT_OBSIDIAN.getDefaultState();
+        BlockState state = ModBlocks.PLANT_OBSIDIAN.getDefaultState();
 //        pos = pos.down(pos.getY() - y);
 //        float p = 0.8f;
         for (int i = -r; i <= r; i++) {

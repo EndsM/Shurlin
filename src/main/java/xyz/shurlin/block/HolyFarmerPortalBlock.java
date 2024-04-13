@@ -33,7 +33,7 @@ public class HolyFarmerPortalBlock extends BasicBlock {
     public static void createPortal(World world, BlockPos pos) {
         if (world.getRegistryKey() == Dimensions.HOLY_FARMER || world.getRegistryKey() == World.OVERWORLD) {
             Block block = world.getBlockState(pos).getBlock();
-            if (block == Blocks.HOLY_FARMER_PORTAL || block == Blocks.PLANT_OBSIDIAN)
+            if (block == Blocks.HOLY_FARMER_PORTAL || block == ModBlocks.PLANT_OBSIDIAN)
                 return;
             world.setBlockState(pos, Blocks.HOLY_FARMER_PORTAL.getDefaultState(), 3);
             if (block == ModBlocks.PHOENIX_LEAVES) {
