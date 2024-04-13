@@ -12,8 +12,7 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import xyz.shurlin.Shurlin;
 import xyz.shurlin.block.*;
-import xyz.shurlin.block.coral.DeadLeaveCoralBlock;
-import xyz.shurlin.block.coral.LeaveCoralBlock;
+import xyz.shurlin.block.coral.*;
 import xyz.shurlin.block.plant.BasicSaplingBlock;
 import xyz.shurlin.block.worker.BreakerBlock;
 import xyz.shurlin.block.worker.CollectorBlock;
@@ -56,6 +55,10 @@ public class ModBlocks {
     public static Block PHOENIX_SAPLING;
     public static Block DEAD_LEAVE_CORAL;
     public static Block LEAVE_CORAL;
+    public static Block DEAD_LEAVE_CORAL_FAN;
+    public static Block LEAVE_CORAL_FAN;
+    public static Block DEAD_LEAVE_CORAL_WALL_FAN;
+    public static Block LEAVE_CORAL_WALL_FAN;
 
     // We can do this later, just separate register Blocks and BlockItems, and remove this itemGroup parameter.
     // Also, we can move ItemGroup to each of item types after remove the BasicItem and BasicBlockItem
@@ -114,5 +117,9 @@ public class ModBlocks {
         // Coral related, Leave Coral related stuff need naming and structure changes, will figure it out later.
         DEAD_LEAVE_CORAL = registerBlock("dead_leave_coral", new DeadLeaveCoralBlock(BlockSettings.DEAD_CORAL), ItemGroups.SHURLIN);
         LEAVE_CORAL = registerBlock("leave_coral", new LeaveCoralBlock(DEAD_LEAVE_CORAL, BlockSettings.CORAL), ItemGroups.SHURLIN);
+        DEAD_LEAVE_CORAL_FAN = registerBlock("dead_leave_coral_fan", new DeadLeaveCoralFanBlock(BlockSettings.DEAD_CORAL), ItemGroups.SHURLIN);
+        LEAVE_CORAL_FAN = registerBlock("leave_coral_fan", new LeaveCoralFanBlock(DEAD_LEAVE_CORAL_FAN, BlockSettings.CORAL), ItemGroups.SHURLIN);
+        DEAD_LEAVE_CORAL_WALL_FAN = registerBlock("dead_leave_coral_wall_fan", new DeadLeaveCoralWallFanBlock(BlockSettings.DEAD_CORAL.dropsLike(DEAD_LEAVE_CORAL_FAN)), ItemGroups.SHURLIN);
+        LEAVE_CORAL_WALL_FAN = registerBlock("leave_coral_wall_fan", new LeaveCoralWallFanBlock(DEAD_LEAVE_CORAL_WALL_FAN,BlockSettings.CORAL.dropsLike(LEAVE_CORAL_FAN)),ItemGroups.SHURLIN);
     }
 }

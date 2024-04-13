@@ -26,10 +26,10 @@ public class ShurlinClient implements ClientModInitializer {
                 ModBlocks.PEAR_DOOR,
                 ModBlocks.LEAVE_CORAL,
                 ModBlocks.DEAD_LEAVE_CORAL,
-                Blocks.LEAVE_CORAL_FAN,
-                Blocks.DEAD_LEAVE_CORAL_FAN,
-                Blocks.LEAVE_CORAL_WALL_FAN,
-                Blocks.DEAD_LEAVE_CORAL_WALL_FAN);
+                ModBlocks.LEAVE_CORAL_FAN,
+                ModBlocks.DEAD_LEAVE_CORAL_FAN,
+                ModBlocks.LEAVE_CORAL_WALL_FAN,
+                ModBlocks.DEAD_LEAVE_CORAL_WALL_FAN);
         // BlockRenderLayerMap.INSTANCE.putItem(Items.TENUOUS_WOOD_SPIRIT, RenderLayer.());
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getTranslucent(),
                 ModBlocks.HOLY_FARMER_PORTAL,
