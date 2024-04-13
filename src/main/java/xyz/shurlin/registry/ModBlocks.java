@@ -17,6 +17,7 @@ import xyz.shurlin.block.PlatycodonGrandiflorusBlock;
 import xyz.shurlin.block.SmallBudBlock;
 import xyz.shurlin.block.SpiritOreBlock;
 import xyz.shurlin.block.worker.BreakerBlock;
+import xyz.shurlin.block.worker.CollectorBlock;
 import xyz.shurlin.item.ItemGroups;
 import xyz.shurlin.registry.setting.BlockSettings;
 
@@ -38,6 +39,7 @@ public class ModBlocks {
     public static Block PHOENIX_PLANKS;
     public static Block PHOENIX_LEAVES;
     public static Block BREAKER_BLOCK;
+    public static Block COLLECTOR_BLOCK;
 
     // We can do this later, just separate register Blocks and BlockItems, and remove this itemGroup parameter.
     // Also, we can move ItemGroup to each of item types after remove the BasicItem and BasicBlockItem
@@ -72,6 +74,8 @@ public class ModBlocks {
         PHOENIX_LOG = registerBlock("phoenix_log", new PillarBlock(BlockSettings.LOG), ItemGroups.SHURLIN);
         PHOENIX_PLANKS = registerBlock("phoenix_planks", new Block(BlockSettings.PLANKS), ItemGroups.SHURLIN);
         PHOENIX_LEAVES = registerBlock("phoenix_leaves", new LeavesBlock(BlockSettings.LEAVES), ItemGroups.SHURLIN);
+        // Breaker 破碎仪
         BREAKER_BLOCK = registerBlock("breaker_block", new BreakerBlock(BlockSettings.WORKER),ItemGroups.SHURLIN);
+        COLLECTOR_BLOCK = registerBlock("collector_block", new CollectorBlock(BlockSettings.WORKER),ItemGroups.SHURLIN);
     }
 }
