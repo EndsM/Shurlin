@@ -164,6 +164,7 @@ public class ShurlinConfiguredFeatures {
 
     }
 
+    // Move this might help
     public static void ApplyToBiome() {
         BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.FIRE_LAND_KEY), GenerationStep.Feature.VEGETAL_DECORATION, getRegKey("patch_fire"));
 
