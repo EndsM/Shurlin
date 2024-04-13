@@ -21,6 +21,7 @@ public class BlockSettings {
     public static final FabricBlockSettings OBSIDIAN;
     public static final FabricBlockSettings WORKER;
     public static final FabricBlockSettings LLANDUDNO;
+    public static final FabricBlockSettings DOOR;
 
     static {
         // Separate value set
@@ -74,5 +75,9 @@ public class BlockSettings {
                 .strength(20.0f, 100.0f)
                 .requiresTool()
                 .sounds(BlockSoundGroup.METAL);
+        DOOR=FabricBlockSettings.of(Material.WOOD)
+                .strength(3.0f)
+                .sounds(BlockSoundGroup.WOOD)
+                .nonOpaque();
     }
 }
