@@ -34,6 +34,7 @@ public class ModBlocks {
     public static Block PEAR_RIPE_LEAVES;
     public static Block PEAR_DOOR;
     public static Block PHOENIX_LOG;
+    public static Block PHOENIX_PLANKS;
 
     // We can do this later, just separate register Blocks and BlockItems, and remove this itemGroup parameter.
     // Also, we can move ItemGroup to each of item types after remove the BasicItem and BasicBlockItem
@@ -66,5 +67,6 @@ public class ModBlocks {
         PEAR_RIPE_LEAVES = registerBlock("pear_ripe_leaves", new LeavesBlock(BlockSettings.LEAVES.strength(0.3f, 0.3f)), ItemGroups.SHURLIN);
         PEAR_DOOR = registerBlock("pear_door", new BasicDoorBlock(), ItemGroups.SHURLIN);
         PHOENIX_LOG = registerBlock("phoenix_log", new PillarBlock(BlockSettings.LOG), ItemGroups.SHURLIN);
+        PHOENIX_PLANKS = registerBlock("phoenix_planks",new Block(BlockSettings.PLANKS),ItemGroups.SHURLIN);
     }
 }
