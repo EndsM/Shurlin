@@ -32,7 +32,7 @@ public class BlockEntityTypes {
             register("extractor_block_entity", BlockEntityType.Builder.create(ExtractorBlockEntity::new, ModBlocks.EXTRACTOR_BLOCK).build(null));
 
     public static final BlockEntityType LLANDUDNO_BLOCK_ENTITY =
-            register("llandudno_block_entity", BlockEntityType.Builder.create(AlchemyFurnaceBlockEntity::new, Blocks.LLANDUDNO).build(null));
+            register("llandudno_block_entity", BlockEntityType.Builder.create(AlchemyFurnaceBlockEntity::new, ModBlocks.LLANDUDNO).build(null));
 
 
     private static BlockEntityType register(String registryName, BlockEntityType<?> entry) {

@@ -15,8 +15,6 @@ import xyz.shurlin.block.plant.BasicSaplingBlock;
 import xyz.shurlin.world.gen.feature.ShurlinConfiguredFeatures;
 
 public class Blocks {
-    public static final Block LLANDUDNO;
-
     public static final Block PEAR_SAPLING;
     public static final Block PHOENIX_SAPLING;
 
@@ -62,8 +60,6 @@ public class Blocks {
     }
 
     static {
-        LLANDUDNO = register("llandudno_block", BlockSettings.LLANDUDNO);
-
         DEAD_LEAVE_CORAL = register("dead_leave_coral", new DeadLeaveCoralBlock(BlockSettings.DEAD_CORAL));
         LEAVE_CORAL = register("leave_coral", new LeaveCoralBlock(DEAD_LEAVE_CORAL, BlockSettings.CORAL));
         DEAD_LEAVE_CORAL_FAN = register("dead_leave_coral_fan", new DeadLeaveCoralFanBlock(BlockSettings.DEAD_CORAL));
