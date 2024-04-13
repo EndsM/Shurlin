@@ -60,5 +60,6 @@ public class ModBlocks {
         PEAR_LOG = registerBlock("pear_log", new PillarBlock(BlockSettings.LOG), ItemGroups.SHURLIN);
         PEAR_PLANKS = registerBlock("pear_planks" , new Block(BlockSettings.PLANKS),ItemGroups.SHURLIN);
         PEAR_LEAVES = registerBlock("pear_leaves", new LeavesBlock(BlockSettings.LEAVES),ItemGroups.SHURLIN);
+        PEAR_RIPE_LEAVES = registerBlock("pear_ripe_leaves", new LeavesBlock(BlockSettings.LEAVES.strength(0.3f,0.3f)),ItemGroups.SHURLIN);
     }
 }
