@@ -6,7 +6,6 @@ import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.rendereregistry.v1.EntityRendererRegistry;
 import net.minecraft.client.render.RenderLayer;
-import xyz.shurlin.block.Blocks;
 import xyz.shurlin.client.gui.screen.HandledScreens;
 import xyz.shurlin.client.options.KeyBindings;
 import xyz.shurlin.client.render.entity.RoamingSpiritEntityRender;

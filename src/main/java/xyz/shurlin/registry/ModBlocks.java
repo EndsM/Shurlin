@@ -112,7 +112,7 @@ public class ModBlocks {
         STARRY_ALTAR = registerBlock("starry_altar", new StarryAltarBlock(FabricBlockSettings.of(Material.STONE).strength(10.0f).luminance(12)), true);
         MYSTERIOUS_STONE = registerBlock("mysterious_stone", new MysteriousStoneBlock(FabricBlockSettings.of(Material.STONE).strength(-1, 3600)), true);
         PLANT_OBSIDIAN = registerBlock("plant_obsidian", new Block(BlockSettings.OBSIDIAN), true);
-       // Four stuff below are not supposed to have BlockItem
+        // Four stuff below are not supposed to have BlockItem
         HOLY_FARMER_PORTAL = registerBlock("holy_farmer_portal", new HolyFarmerPortalBlock(FabricBlockSettings.of(Material.PORTAL).noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.GLASS).luminance(12)), true);
         CULTIVATION_CRYSTAL = registerBlock("cultivation_crystal", new CultivationCrystalBlock(FabricBlockSettings.of(Material.GLASS).strength(-1).nonOpaque()), true);
         SUCCULENT_BLOCK = registerBlock("succulent_block", new SucculentBlock(
@@ -130,5 +130,6 @@ public class ModBlocks {
         LEAVE_CORAL_FAN = registerBlock("leave_coral_fan", new LeaveCoralFanBlock(DEAD_LEAVE_CORAL_FAN, BlockSettings.CORAL), false);
         DEAD_LEAVE_CORAL_WALL_FAN = registerBlock("dead_leave_coral_wall_fan", new DeadLeaveCoralWallFanBlock(BlockSettings.DEAD_CORAL.dropsLike(DEAD_LEAVE_CORAL_FAN)), false);
         LEAVE_CORAL_WALL_FAN = registerBlock("leave_coral_wall_fan", new LeaveCoralWallFanBlock(DEAD_LEAVE_CORAL_WALL_FAN, BlockSettings.CORAL.dropsLike(LEAVE_CORAL_FAN)), false);
+
     }
 }

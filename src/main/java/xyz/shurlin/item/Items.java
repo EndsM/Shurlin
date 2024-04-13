@@ -3,7 +3,6 @@ package xyz.shurlin.item;
 import net.minecraft.block.Block;
 import net.minecraft.item.FoodComponent;
 import net.minecraft.item.Item;
-import net.minecraft.item.WallStandingBlockItem;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import xyz.shurlin.Shurlin;
@@ -11,7 +10,6 @@ import xyz.shurlin.block.Blocks;
 import xyz.shurlin.cultivation.SpiritConsistences;
 import xyz.shurlin.cultivation.SpiritPropertyType;
 import xyz.shurlin.cultivation.WeaponLevels;
-import xyz.shurlin.registry.ModBlocks;
 
 public class Items {
     public static void load() {

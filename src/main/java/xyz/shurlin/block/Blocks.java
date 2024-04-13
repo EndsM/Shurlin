@@ -10,7 +10,7 @@ import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import xyz.shurlin.Shurlin;
-import xyz.shurlin.block.coral.*;
+import xyz.shurlin.block.coral.LeaveCoralBlockBlock;
 
 public class Blocks {
     public static final Block DEAD_LEAVE_CORAL_BLOCK;
