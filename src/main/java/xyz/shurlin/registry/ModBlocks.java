@@ -16,6 +16,7 @@ import xyz.shurlin.block.BasicDoorBlock;
 import xyz.shurlin.block.PlatycodonGrandiflorusBlock;
 import xyz.shurlin.block.SmallBudBlock;
 import xyz.shurlin.block.SpiritOreBlock;
+import xyz.shurlin.block.worker.BreakerBlock;
 import xyz.shurlin.item.ItemGroups;
 import xyz.shurlin.registry.setting.BlockSettings;
 
@@ -36,6 +37,7 @@ public class ModBlocks {
     public static Block PHOENIX_LOG;
     public static Block PHOENIX_PLANKS;
     public static Block PHOENIX_LEAVES;
+    public static Block BREAKER_BLOCK;
 
     // We can do this later, just separate register Blocks and BlockItems, and remove this itemGroup parameter.
     // Also, we can move ItemGroup to each of item types after remove the BasicItem and BasicBlockItem
@@ -68,8 +70,8 @@ public class ModBlocks {
         PEAR_RIPE_LEAVES = registerBlock("pear_ripe_leaves", new LeavesBlock(BlockSettings.LEAVES.strength(0.3f, 0.3f)), ItemGroups.SHURLIN);
         PEAR_DOOR = registerBlock("pear_door", new BasicDoorBlock(), ItemGroups.SHURLIN);
         PHOENIX_LOG = registerBlock("phoenix_log", new PillarBlock(BlockSettings.LOG), ItemGroups.SHURLIN);
-        PHOENIX_PLANKS = registerBlock("phoenix_planks",new Block(BlockSettings.PLANKS),ItemGroups.SHURLIN);
-        PHOENIX_LEAVES = registerBlock("phoenix_leaves", new LeavesBlock(BlockSettings.LEAVES),ItemGroups.SHURLIN);
-
+        PHOENIX_PLANKS = registerBlock("phoenix_planks", new Block(BlockSettings.PLANKS), ItemGroups.SHURLIN);
+        PHOENIX_LEAVES = registerBlock("phoenix_leaves", new LeavesBlock(BlockSettings.LEAVES), ItemGroups.SHURLIN);
+        BREAKER_BLOCK = registerBlock("breaker_block", new BreakerBlock(BlockSettings.WORKER),ItemGroups.SHURLIN);
     }
 }

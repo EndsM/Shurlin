@@ -2,7 +2,10 @@ package xyz.shurlin.block;
 
 
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
-import net.minecraft.block.*;
+import net.minecraft.block.Block;
+import net.minecraft.block.MapColor;
+import net.minecraft.block.Material;
+import net.minecraft.block.OreBlock;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
@@ -16,7 +19,6 @@ import xyz.shurlin.block.worker.ExtractorBlock;
 import xyz.shurlin.world.gen.feature.ShurlinConfiguredFeatures;
 
 public class Blocks {
-    public static final Block BREAKER_BLOCK;
     public static final Block COLLECTOR_BLOCK;
     public static final Block CONCENTRATOR_BLOCK;
     public static final Block EXTRACTOR_BLOCK;
@@ -74,7 +76,6 @@ public class Blocks {
     }
 
     static {
-        BREAKER_BLOCK = register("breaker_block", new BreakerBlock(BlockSettings.WORKER));
         COLLECTOR_BLOCK = register("collector_block", new CollectorBlock(BlockSettings.WORKER));
         CONCENTRATOR_BLOCK = register("concentrator_block", new ConcentratorBlock(BlockSettings.WORKER));
         EXTRACTOR_BLOCK = register("extractor_block", new ExtractorBlock(BlockSettings.WORKER));
