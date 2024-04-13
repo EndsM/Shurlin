@@ -98,19 +98,6 @@ public class Items {
 
     public static final Item HOLY_PEAR_BAG;
 
-    public static final Item TENUOUS_WOOD_SPIRIT_ORE_BLOCK;
-    public static final Item TENUOUS_WATER_SPIRIT_ORE_BLOCK;
-    public static final Item TENUOUS_FIRE_SPIRIT_ORE_BLOCK;
-    public static final Item TENUOUS_EARTH_SPIRIT_ORE_BLOCK;
-    public static final Item TENUOUS_WIND_SPIRIT_ORE_BLOCK;
-    public static final Item TENUOUS_LIGHT_SPIRIT_ORE_BLOCK;
-    public static final Item TENUOUS_DARKNESS_SPIRIT_ORE_BLOCK;
-    public static final Item TENUOUS_POISON_SPIRIT_ORE_BLOCK;
-    public static final Item TENUOUS_LIGHTNING_SPIRIT_ORE_BLOCK;
-    public static final Item TENUOUS_ICE_SPIRIT_ORE_BLOCK;
-    public static final Item TENUOUS_TIME_SPACE_SPIRIT_ORE_BLOCK;
-
-
     private static String getBlockId(Block block) {
         return Registry.BLOCK.getId(block).getPath();
     }
@@ -224,18 +211,5 @@ public class Items {
 
         //weapon
         DARK_IRON_SWORD = register("dark_iron_sword", new SwordWeaponItem(WeaponLevels.INFERIOR_WEAPON, WeaponProperties.DARK_IRON));
-
-        TENUOUS_WOOD_SPIRIT_ORE_BLOCK = register(Blocks.TENUOUS_WOOD_SPIRIT_ORE_BLOCK);
-        TENUOUS_WATER_SPIRIT_ORE_BLOCK = register(Blocks.TENUOUS_WATER_SPIRIT_ORE_BLOCK);
-        TENUOUS_FIRE_SPIRIT_ORE_BLOCK = register(Blocks.TENUOUS_FIRE_SPIRIT_ORE_BLOCK);
-        TENUOUS_EARTH_SPIRIT_ORE_BLOCK = register(Blocks.TENUOUS_EARTH_SPIRIT_ORE_BLOCK);
-        TENUOUS_WIND_SPIRIT_ORE_BLOCK = register(Blocks.TENUOUS_WIND_SPIRIT_ORE_BLOCK);
-        TENUOUS_LIGHT_SPIRIT_ORE_BLOCK = register(Blocks.TENUOUS_LIGHT_SPIRIT_ORE_BLOCK);
-        TENUOUS_DARKNESS_SPIRIT_ORE_BLOCK = register(Blocks.TENUOUS_DARKNESS_SPIRIT_ORE_BLOCK);
-        TENUOUS_POISON_SPIRIT_ORE_BLOCK = register(Blocks.TENUOUS_POISON_SPIRIT_ORE_BLOCK);
-        TENUOUS_LIGHTNING_SPIRIT_ORE_BLOCK = register(Blocks.TENUOUS_LIGHTNING_SPIRIT_ORE_BLOCK);
-        TENUOUS_ICE_SPIRIT_ORE_BLOCK = register(Blocks.TENUOUS_ICE_SPIRIT_ORE_BLOCK);
-        TENUOUS_TIME_SPACE_SPIRIT_ORE_BLOCK = register(Blocks.TENUOUS_TIME_SPACE_SPIRIT_ORE_BLOCK);
     }
-
 }

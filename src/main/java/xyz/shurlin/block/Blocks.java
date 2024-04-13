@@ -12,17 +12,6 @@ import net.minecraft.util.registry.Registry;
 import xyz.shurlin.Shurlin;
 
 public class Blocks {
-    public static final Block TENUOUS_WOOD_SPIRIT_ORE_BLOCK;
-    public static final Block TENUOUS_WATER_SPIRIT_ORE_BLOCK;
-    public static final Block TENUOUS_FIRE_SPIRIT_ORE_BLOCK;
-    public static final Block TENUOUS_EARTH_SPIRIT_ORE_BLOCK;
-    public static final Block TENUOUS_WIND_SPIRIT_ORE_BLOCK;
-    public static final Block TENUOUS_LIGHT_SPIRIT_ORE_BLOCK;
-    public static final Block TENUOUS_DARKNESS_SPIRIT_ORE_BLOCK;
-    public static final Block TENUOUS_POISON_SPIRIT_ORE_BLOCK;
-    public static final Block TENUOUS_LIGHTNING_SPIRIT_ORE_BLOCK;
-    public static final Block TENUOUS_ICE_SPIRIT_ORE_BLOCK;
-    public static final Block TENUOUS_TIME_SPACE_SPIRIT_ORE_BLOCK;
 
     private static Block register(String registryName, Block.Settings settings) {
         return register(registryName, new BasicBlock(settings));
@@ -41,18 +30,6 @@ public class Blocks {
     }
 
     static {
-        TENUOUS_WOOD_SPIRIT_ORE_BLOCK = registerOreBlock("tenuous_wood_spirit_ore_block");
-        TENUOUS_WATER_SPIRIT_ORE_BLOCK = registerOreBlock("tenuous_water_spirit_ore_block");
-        TENUOUS_FIRE_SPIRIT_ORE_BLOCK = registerOreBlock("tenuous_fire_spirit_ore_block");
-        TENUOUS_EARTH_SPIRIT_ORE_BLOCK = registerOreBlock("tenuous_earth_spirit_ore_block");
-        TENUOUS_WIND_SPIRIT_ORE_BLOCK = registerOreBlock("tenuous_wind_spirit_ore_block");
-        TENUOUS_LIGHT_SPIRIT_ORE_BLOCK = registerOreBlock("tenuous_light_spirit_ore_block");
-        TENUOUS_DARKNESS_SPIRIT_ORE_BLOCK = registerOreBlock("tenuous_darkness_spirit_ore_block");
-        TENUOUS_POISON_SPIRIT_ORE_BLOCK = registerOreBlock("tenuous_poison_spirit_ore_block");
-        TENUOUS_LIGHTNING_SPIRIT_ORE_BLOCK = registerOreBlock("tenuous_lightning_spirit_ore_block");
-        TENUOUS_ICE_SPIRIT_ORE_BLOCK = registerOreBlock("tenuous_ice_spirit_ore_block", Material.ICE);
-        TENUOUS_TIME_SPACE_SPIRIT_ORE_BLOCK = registerOreBlock("tenuous_time_space_spirit_ore_block");
-
     }
 
     private static class BlockSettings {

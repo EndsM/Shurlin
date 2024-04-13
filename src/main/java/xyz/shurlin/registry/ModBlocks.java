@@ -65,6 +65,17 @@ public class ModBlocks {
     public static Block HOT_FIRE_STONE;
     public static Block HOT_FIRE_DIRT;
     public static Block TENUOUS_METAL_SPIRIT_ORE_BLOCK;
+    public static Block TENUOUS_WOOD_SPIRIT_ORE_BLOCK;
+    public static Block TENUOUS_WATER_SPIRIT_ORE_BLOCK;
+    public static Block TENUOUS_FIRE_SPIRIT_ORE_BLOCK;
+    public static Block TENUOUS_EARTH_SPIRIT_ORE_BLOCK;
+    public static Block TENUOUS_WIND_SPIRIT_ORE_BLOCK;
+    public static Block TENUOUS_LIGHT_SPIRIT_ORE_BLOCK;
+    public static Block TENUOUS_DARKNESS_SPIRIT_ORE_BLOCK;
+    public static Block TENUOUS_POISON_SPIRIT_ORE_BLOCK;
+    public static Block TENUOUS_LIGHTNING_SPIRIT_ORE_BLOCK;
+    public static Block TENUOUS_ICE_SPIRIT_ORE_BLOCK;
+    public static Block TENUOUS_TIME_SPACE_SPIRIT_ORE_BLOCK;
 
     // We can do this later, just separate register Blocks and BlockItems, and remove this itemGroup parameter.
     // Also, we can move ItemGroup to each of item types after remove the BasicItem and BasicBlockItem
@@ -141,6 +152,17 @@ public class ModBlocks {
         HOT_FIRE_STONE = registerBlock("hot_fire_stone ", new Block(BlockSettings.STONE), true);
         HOT_FIRE_DIRT = registerBlock("hot_fire_dirt", new Block(BlockSettings.DIRT), true);
         // Spirit ore blocks
-        TENUOUS_METAL_SPIRIT_ORE_BLOCK = registerBlock("tenuous_metal_spirit_ore_block", new SpiritOreBlock(BlockSettings.ORE),true);
+        TENUOUS_METAL_SPIRIT_ORE_BLOCK = registerBlock("tenuous_metal_spirit_ore_block", new SpiritOreBlock(BlockSettings.ORE), true);
+        TENUOUS_WOOD_SPIRIT_ORE_BLOCK = registerBlock("tenuous_wood_spirit_ore_block", new SpiritOreBlock(BlockSettings.ORE), true);
+        TENUOUS_WATER_SPIRIT_ORE_BLOCK = registerBlock("tenuous_water_spirit_ore_block", new SpiritOreBlock(BlockSettings.ORE), true);
+        TENUOUS_FIRE_SPIRIT_ORE_BLOCK = registerBlock("tenuous_fire_spirit_ore_block", new SpiritOreBlock(BlockSettings.ORE), true);
+        TENUOUS_EARTH_SPIRIT_ORE_BLOCK = registerBlock("tenuous_earth_spirit_ore_block", new SpiritOreBlock(BlockSettings.ORE), true);
+        TENUOUS_WIND_SPIRIT_ORE_BLOCK = registerBlock("tenuous_wind_spirit_ore_block", new SpiritOreBlock(BlockSettings.ORE), true);
+        TENUOUS_LIGHT_SPIRIT_ORE_BLOCK = registerBlock("tenuous_light_spirit_ore_block", new SpiritOreBlock(BlockSettings.ORE), true);
+        TENUOUS_DARKNESS_SPIRIT_ORE_BLOCK = registerBlock("tenuous_darkness_spirit_ore_block", new SpiritOreBlock(BlockSettings.ORE), true);
+        TENUOUS_POISON_SPIRIT_ORE_BLOCK = registerBlock("tenuous_poison_spirit_ore_block", new SpiritOreBlock(BlockSettings.ORE), true);
+        TENUOUS_LIGHTNING_SPIRIT_ORE_BLOCK = registerBlock("tenuous_lightning_spirit_ore_block", new SpiritOreBlock(BlockSettings.ORE), true);
+        TENUOUS_ICE_SPIRIT_ORE_BLOCK = registerBlock("tenuous_ice_spirit_ore_block", new SpiritOreBlock(BlockSettings.ORE_IN_ICE),true);
+        TENUOUS_TIME_SPACE_SPIRIT_ORE_BLOCK =registerBlock("tenuous_time_space_spirit_ore_block", new SpiritOreBlock(BlockSettings.ORE),true);
     }
 }

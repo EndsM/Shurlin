@@ -8,6 +8,7 @@ import net.minecraft.sound.BlockSoundGroup;
 public class BlockSettings {
     // Constants of certain kinds of block
     public static final FabricBlockSettings ORE;
+    public static final FabricBlockSettings ORE_IN_ICE;
     public static final FabricBlockSettings STONE;
     public static final FabricBlockSettings DIRT;
     public static final FabricBlockSettings LOG;
@@ -25,6 +26,12 @@ public class BlockSettings {
 
     static {
         // Separate value set
+        ORE = FabricBlockSettings.of(Material.STONE)
+                .requiresTool()
+                .strength(3.0f, 3.0f);
+        ORE_IN_ICE = FabricBlockSettings.of(Material.ICE)
+                .requiresTool()
+                .strength(3.0f, 3.0f);
         PLANT = FabricBlockSettings.of(Material.PLANT)
                 .noCollision()
                 .ticksRandomly()
@@ -42,9 +49,6 @@ public class BlockSettings {
         PLANKS = FabricBlockSettings.of(Material.WOOD)
                 .strength(2.0F, 3.0F)
                 .sounds(BlockSoundGroup.WOOD);
-        ORE = FabricBlockSettings.of(Material.STONE)
-                .requiresTool()
-                .strength(3.0f, 3.0f);
         CORAL = FabricBlockSettings.of(Material.UNDERWATER_PLANT, MapColor.GREEN)
                 .noCollision()
                 .breakInstantly()
