@@ -26,7 +26,6 @@ import net.minecraft.world.gen.stateprovider.WeightedBlockStateProvider;
 import net.minecraft.world.gen.trunk.DarkOakTrunkPlacer;
 import net.minecraft.world.gen.trunk.StraightTrunkPlacer;
 import xyz.shurlin.Shurlin;
-import xyz.shurlin.block.Blocks;
 import xyz.shurlin.registry.ModBlocks;
 import xyz.shurlin.world.biome.BiomeKeys;
 

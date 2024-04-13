@@ -162,7 +162,7 @@ public class ModBlocks {
         TENUOUS_DARKNESS_SPIRIT_ORE_BLOCK = registerBlock("tenuous_darkness_spirit_ore_block", new SpiritOreBlock(BlockSettings.ORE), true);
         TENUOUS_POISON_SPIRIT_ORE_BLOCK = registerBlock("tenuous_poison_spirit_ore_block", new SpiritOreBlock(BlockSettings.ORE), true);
         TENUOUS_LIGHTNING_SPIRIT_ORE_BLOCK = registerBlock("tenuous_lightning_spirit_ore_block", new SpiritOreBlock(BlockSettings.ORE), true);
-        TENUOUS_ICE_SPIRIT_ORE_BLOCK = registerBlock("tenuous_ice_spirit_ore_block", new SpiritOreBlock(BlockSettings.ORE_IN_ICE),true);
-        TENUOUS_TIME_SPACE_SPIRIT_ORE_BLOCK =registerBlock("tenuous_time_space_spirit_ore_block", new SpiritOreBlock(BlockSettings.ORE),true);
+        TENUOUS_ICE_SPIRIT_ORE_BLOCK = registerBlock("tenuous_ice_spirit_ore_block", new SpiritOreBlock(BlockSettings.ORE_IN_ICE), true);
+        TENUOUS_TIME_SPACE_SPIRIT_ORE_BLOCK = registerBlock("tenuous_time_space_spirit_ore_block", new SpiritOreBlock(BlockSettings.ORE), true);
     }
 }

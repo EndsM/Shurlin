@@ -6,7 +6,6 @@ import net.minecraft.item.Item;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import xyz.shurlin.Shurlin;
-import xyz.shurlin.block.Blocks;
 import xyz.shurlin.cultivation.SpiritConsistences;
 import xyz.shurlin.cultivation.SpiritPropertyType;
 import xyz.shurlin.cultivation.WeaponLevels;
