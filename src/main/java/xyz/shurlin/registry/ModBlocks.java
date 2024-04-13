@@ -12,6 +12,8 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import xyz.shurlin.Shurlin;
 import xyz.shurlin.block.*;
+import xyz.shurlin.block.coral.DeadLeaveCoralBlock;
+import xyz.shurlin.block.coral.LeaveCoralBlock;
 import xyz.shurlin.block.plant.BasicSaplingBlock;
 import xyz.shurlin.block.worker.BreakerBlock;
 import xyz.shurlin.block.worker.CollectorBlock;
@@ -52,6 +54,8 @@ public class ModBlocks {
     public static Block LLANDUDNO;
     public static Block PEAR_SAPLING;
     public static Block PHOENIX_SAPLING;
+    public static Block DEAD_LEAVE_CORAL;
+    public static Block LEAVE_CORAL;
 
     // We can do this later, just separate register Blocks and BlockItems, and remove this itemGroup parameter.
     // Also, we can move ItemGroup to each of item types after remove the BasicItem and BasicBlockItem
@@ -107,5 +111,8 @@ public class ModBlocks {
         // Saplings
         PEAR_SAPLING = registerBlock("pear_sapling", new BasicSaplingBlock(ShurlinConfiguredFeatures.PEAR_TREE, BlockSettings.PLANT), ItemGroups.SHURLIN);
         PHOENIX_SAPLING = registerBlock("phoenix_sapling", new BasicSaplingBlock(ShurlinConfiguredFeatures.PHOENIX_TREE, BlockSettings.PLANT), ItemGroups.SHURLIN);
+        // Coral related, Leave Coral related stuff need naming and structure changes, will figure it out later.
+        DEAD_LEAVE_CORAL = registerBlock("dead_leave_coral", new DeadLeaveCoralBlock(BlockSettings.DEAD_CORAL), ItemGroups.SHURLIN);
+        LEAVE_CORAL = registerBlock("leave_coral", new LeaveCoralBlock(DEAD_LEAVE_CORAL, BlockSettings.CORAL), ItemGroups.SHURLIN);
     }
 }

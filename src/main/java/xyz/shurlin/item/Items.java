@@ -101,8 +101,6 @@ public class Items {
     public static final Item HOT_FIRE_DIRT;
     public static final Item HOT_FIRE_STONE;
 
-    public static final Item DEAD_LEAVE_CORAL_BLOCK;
-    public static final Item LEAVE_CORAL_BLOCK;
     public static final Item DEAD_LEAVE_CORAL_FAN_BLOCK;
     public static final Item LEAVE_CORAL_FAN_BLOCK;
     public static final Item DEAD_LEAVE_CORAL_BLOCK_BLOCK;
@@ -239,8 +237,6 @@ public class Items {
         HOT_FIRE_DIRT = register(Blocks.HOT_FIRE_DIRT);
         HOT_FIRE_STONE = register(Blocks.HOT_FIRE_STONE);
 
-        DEAD_LEAVE_CORAL_BLOCK = register(Blocks.DEAD_LEAVE_CORAL);
-        LEAVE_CORAL_BLOCK = register(Blocks.LEAVE_CORAL);
         DEAD_LEAVE_CORAL_FAN_BLOCK = register(getBlockId(Blocks.DEAD_LEAVE_CORAL_FAN), new WallStandingBlockItem(Blocks.DEAD_LEAVE_CORAL_FAN, Blocks.DEAD_LEAVE_CORAL_WALL_FAN, (new Item.Settings()).group(ItemGroups.SHURLIN)));
         LEAVE_CORAL_FAN_BLOCK = register(getBlockId(Blocks.LEAVE_CORAL_FAN), new WallStandingBlockItem(Blocks.LEAVE_CORAL_FAN, Blocks.LEAVE_CORAL_WALL_FAN, (new Item.Settings()).group(ItemGroups.SHURLIN)));
         DEAD_LEAVE_CORAL_BLOCK_BLOCK = register(Blocks.DEAD_LEAVE_CORAL_BLOCK);

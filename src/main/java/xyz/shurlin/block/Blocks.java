@@ -13,8 +13,6 @@ import xyz.shurlin.Shurlin;
 import xyz.shurlin.block.coral.*;
 
 public class Blocks {
-    public static final Block DEAD_LEAVE_CORAL;
-    public static final Block LEAVE_CORAL;
     public static final Block DEAD_LEAVE_CORAL_FAN;
     public static final Block LEAVE_CORAL_FAN;
     public static final Block DEAD_LEAVE_CORAL_WALL_FAN;
@@ -55,8 +53,6 @@ public class Blocks {
     }
 
     static {
-        DEAD_LEAVE_CORAL = register("dead_leave_coral", new DeadLeaveCoralBlock(BlockSettings.DEAD_CORAL));
-        LEAVE_CORAL = register("leave_coral", new LeaveCoralBlock(DEAD_LEAVE_CORAL, BlockSettings.CORAL));
         DEAD_LEAVE_CORAL_FAN = register("dead_leave_coral_fan", new DeadLeaveCoralFanBlock(BlockSettings.DEAD_CORAL));
         LEAVE_CORAL_FAN = register("leave_coral_fan", new LeaveCoralFanBlock(DEAD_LEAVE_CORAL_FAN, BlockSettings.CORAL));
         DEAD_LEAVE_CORAL_WALL_FAN = register("dead_leave_coral_wall_fan", new DeadLeaveCoralWallFanBlock(BlockSettings.DEAD_CORAL.dropsLike(DEAD_LEAVE_CORAL_FAN)));

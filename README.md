@@ -16,6 +16,12 @@ The quote down below is original mod's description, recent focus would be realiz
 >
 > 仙灵有三大体系：主界、神农、仙灵；又有十二灵：金、木、水、火、土、风、光、暗、毒、雷、冰、时空。
 
+Development on 1.16.5 will be focused on get Cultivation system to a MVP stat, which means minimal viable product.
+
+After the basic structure of Cultivation System are done, migration to 1.17 will be executed, version number will also be bumped to 0.2.0
+
+Get the project to higher version of Minecraft will be help development a lot, but also means a lot of things should be refactored, so just take the time.
+
 ## Project Structure
 
 TODO
