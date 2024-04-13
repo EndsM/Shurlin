@@ -1,8 +1,8 @@
 package xyz.shurlin.registry;
 
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
-import net.minecraft.block.*;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.*;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
@@ -82,7 +82,7 @@ public class ModBlocks {
         EXTRACTOR_BLOCK = registerBlock("extractor_block", new ExtractorBlock(BlockSettings.WORKER), ItemGroups.SHURLIN);
         // Altars
         // Refactor these two later
-        HOLY_PEAR_ALTAR=registerBlock("holy_pear_altar", new HolyPearAltarBlock(FabricBlockSettings.copy(Blocks.OBSIDIAN)),ItemGroups.SHURLIN);
-        STARRY_ALTAR =registerBlock("starry_altar",new StarryAltarBlock(FabricBlockSettings.of(Material.STONE).strength(10.0f).luminance(12)),ItemGroups.SHURLIN);
+        HOLY_PEAR_ALTAR = registerBlock("holy_pear_altar", new HolyPearAltarBlock(FabricBlockSettings.copy(Blocks.OBSIDIAN)), ItemGroups.SHURLIN);
+        STARRY_ALTAR = registerBlock("starry_altar", new StarryAltarBlock(FabricBlockSettings.of(Material.STONE).strength(10.0f).luminance(12)), ItemGroups.SHURLIN);
     }
 }
