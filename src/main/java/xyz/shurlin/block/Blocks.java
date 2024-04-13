@@ -16,7 +16,6 @@ import xyz.shurlin.block.worker.ExtractorBlock;
 import xyz.shurlin.world.gen.feature.ShurlinConfiguredFeatures;
 
 public class Blocks {
-    public static final Block PEAR_DOOR;
     public static final Block PHOENIX_LOG;
     public static final Block PHOENIX_PLANKS;
     public static final Block PHOENIX_LEAVES;
@@ -78,7 +77,6 @@ public class Blocks {
     }
 
     static {
-        PEAR_DOOR = register("pear_door", new BasicDoorBlock());
         PHOENIX_LOG = register("phoenix_log", new PillarBlock(BlockSettings.LOG));
         PHOENIX_PLANKS = register("phoenix_planks", BlockSettings.PLANKS);
         PHOENIX_LEAVES = register("phoenix_leaves", new LeavesBlock(BlockSettings.LEAVES));

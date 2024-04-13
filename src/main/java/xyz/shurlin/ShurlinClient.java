@@ -23,7 +23,7 @@ public class ShurlinClient implements ClientModInitializer {
                 Blocks.PEAR_SAPLING,
                 Blocks.PHOENIX_SAPLING,
                 ModBlocks.PLATYCODON_GRANDIFLORUS,
-                Blocks.PEAR_DOOR,
+                ModBlocks.PEAR_DOOR,
                 Blocks.LEAVE_CORAL,
                 Blocks.DEAD_LEAVE_CORAL,
                 Blocks.LEAVE_CORAL_FAN,
