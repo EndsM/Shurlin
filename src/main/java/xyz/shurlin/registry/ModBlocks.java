@@ -19,6 +19,7 @@ import xyz.shurlin.block.SpiritOreBlock;
 import xyz.shurlin.block.worker.BreakerBlock;
 import xyz.shurlin.block.worker.CollectorBlock;
 import xyz.shurlin.block.worker.ConcentratorBlock;
+import xyz.shurlin.block.worker.ExtractorBlock;
 import xyz.shurlin.item.ItemGroups;
 import xyz.shurlin.registry.setting.BlockSettings;
 
@@ -42,6 +43,7 @@ public class ModBlocks {
     public static Block BREAKER_BLOCK;
     public static Block COLLECTOR_BLOCK;
     public static Block CONCENTRATOR_BLOCK;
+    public static Block EXTRACTOR_BLOCK;
 
     // We can do this later, just separate register Blocks and BlockItems, and remove this itemGroup parameter.
     // Also, we can move ItemGroup to each of item types after remove the BasicItem and BasicBlockItem
@@ -80,5 +82,6 @@ public class ModBlocks {
         BREAKER_BLOCK = registerBlock("breaker_block", new BreakerBlock(BlockSettings.WORKER), ItemGroups.SHURLIN);
         COLLECTOR_BLOCK = registerBlock("collector_block", new CollectorBlock(BlockSettings.WORKER), ItemGroups.SHURLIN);
         CONCENTRATOR_BLOCK = registerBlock("concentrator_block", new ConcentratorBlock(BlockSettings.WORKER), ItemGroups.SHURLIN);
+        EXTRACTOR_BLOCK = registerBlock("extractor_block", new ExtractorBlock(BlockSettings.WORKER), ItemGroups.SHURLIN);
     }
 }

@@ -29,7 +29,7 @@ public class BlockEntityTypes {
             register("concentrator_block_entity", BlockEntityType.Builder.create(ConcentratorBlockEntity::new, ModBlocks.CONCENTRATOR_BLOCK).build(null));
 
     public static final BlockEntityType EXTRACTOR_BLOCK_ENTITY =
-            register("extractor_block_entity", BlockEntityType.Builder.create(ExtractorBlockEntity::new, Blocks.EXTRACTOR_BLOCK).build(null));
+            register("extractor_block_entity", BlockEntityType.Builder.create(ExtractorBlockEntity::new, ModBlocks.EXTRACTOR_BLOCK).build(null));
 
     public static final BlockEntityType LLANDUDNO_BLOCK_ENTITY =
             register("llandudno_block_entity", BlockEntityType.Builder.create(AlchemyFurnaceBlockEntity::new, Blocks.LLANDUDNO).build(null));
