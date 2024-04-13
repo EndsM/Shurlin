@@ -9,7 +9,6 @@ import net.minecraft.world.gen.chunk.ChunkGenerator;
 import net.minecraft.world.gen.feature.DefaultFeatureConfig;
 import net.minecraft.world.gen.feature.Feature;
 import xyz.shurlin.Shurlin;
-import xyz.shurlin.block.Blocks;
 import xyz.shurlin.registry.ModBlocks;
 import xyz.shurlin.util.Utils;
 

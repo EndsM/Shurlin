@@ -9,7 +9,6 @@ import net.minecraft.item.ItemUsageContext;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import xyz.shurlin.block.Blocks;
 import xyz.shurlin.block.HolyFarmerPortalBlock;
 import xyz.shurlin.registry.ModBlocks;
 import xyz.shurlin.util.Utils;
