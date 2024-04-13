@@ -12,13 +12,10 @@ import net.minecraft.util.registry.Registry;
 import xyz.shurlin.Shurlin;
 import xyz.shurlin.block.coral.*;
 import xyz.shurlin.block.plant.BasicSaplingBlock;
-import xyz.shurlin.block.worker.CollectorBlock;
-import xyz.shurlin.block.worker.ConcentratorBlock;
 import xyz.shurlin.block.worker.ExtractorBlock;
 import xyz.shurlin.world.gen.feature.ShurlinConfiguredFeatures;
 
 public class Blocks {
-    public static final Block CONCENTRATOR_BLOCK;
     public static final Block EXTRACTOR_BLOCK;
     public static final Block HOLY_PEAR_ALTAR;
     public static final Block STARRY_ALTAR;
@@ -74,7 +71,6 @@ public class Blocks {
     }
 
     static {
-        CONCENTRATOR_BLOCK = register("concentrator_block", new ConcentratorBlock(BlockSettings.WORKER));
         EXTRACTOR_BLOCK = register("extractor_block", new ExtractorBlock(BlockSettings.WORKER));
         HOLY_PEAR_ALTAR = register("holy_pear_altar", new HolyPearAltarBlock(FabricBlockSettings.copy(net.minecraft.block.Blocks.OBSIDIAN)));
         STARRY_ALTAR = register("starry_altar", new StarryAltarBlock(FabricBlockSettings.of(Material.STONE).strength(10.0f).lightLevel(12)));

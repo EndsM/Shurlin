@@ -26,7 +26,7 @@ public class BlockEntityTypes {
             register("collector_block_entity", BlockEntityType.Builder.create(CollectorBlockEntity::new, ModBlocks.COLLECTOR_BLOCK).build(null));
 
     public static final BlockEntityType CONCENTRATOR_BLOCK_ENTITY =
-            register("concentrator_block_entity", BlockEntityType.Builder.create(ConcentratorBlockEntity::new, Blocks.CONCENTRATOR_BLOCK).build(null));
+            register("concentrator_block_entity", BlockEntityType.Builder.create(ConcentratorBlockEntity::new, ModBlocks.CONCENTRATOR_BLOCK).build(null));
 
     public static final BlockEntityType EXTRACTOR_BLOCK_ENTITY =
             register("extractor_block_entity", BlockEntityType.Builder.create(ExtractorBlockEntity::new, Blocks.EXTRACTOR_BLOCK).build(null));

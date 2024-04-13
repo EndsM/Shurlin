@@ -98,7 +98,6 @@ public class Items {
     public static final Item DARK_IRON_SWORD;
 
     public static final Item HOLY_PEAR_BAG;
-    public static final Item CONCENTRATOR_BLOCK;
     public static final Item EXTRACTOR_BLOCK;
     public static final Item HOLY_PEAR_ALTAR;
     public static final Item STARRY_ALTAR;
@@ -245,7 +244,6 @@ public class Items {
         //weapon
         DARK_IRON_SWORD = register("dark_iron_sword", new SwordWeaponItem(WeaponLevels.INFERIOR_WEAPON, WeaponProperties.DARK_IRON));
 
-        CONCENTRATOR_BLOCK = register(Blocks.CONCENTRATOR_BLOCK);
         EXTRACTOR_BLOCK = register(Blocks.EXTRACTOR_BLOCK);
         HOLY_PEAR_ALTAR = register(Blocks.HOLY_PEAR_ALTAR);
         STARRY_ALTAR = register(Blocks.STARRY_ALTAR);
