@@ -16,7 +16,6 @@ import xyz.shurlin.block.worker.ExtractorBlock;
 import xyz.shurlin.world.gen.feature.ShurlinConfiguredFeatures;
 
 public class Blocks {
-    public static final Block PEAR_LOG;
     public static final Block PEAR_PLANKS;
     public static final Block PEAR_LEAVES;
     public static final Block PEAR_RIPE_LEAVES;
@@ -82,7 +81,6 @@ public class Blocks {
     }
 
     static {
-        PEAR_LOG = register("pear_log", new PillarBlock(BlockSettings.LOG));
         PEAR_PLANKS = register("pear_planks", BlockSettings.PLANKS);
         PEAR_LEAVES = register("pear_leaves", new LeavesBlock(BlockSettings.LEAVES));
         PEAR_RIPE_LEAVES = register("pear_ripe_leaves", new LeavesBlock(FabricBlockSettings.of(Material.LEAVES).strength(0.3f, 0.3f).ticksRandomly().sounds(BlockSoundGroup.GRASS).nonOpaque()));

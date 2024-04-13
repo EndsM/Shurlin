@@ -134,7 +134,7 @@ public class ShurlinConfiguredFeatures {
         static final BlockState TENUOUS_TIME_SPACE_SPIRIT_ORE_BLOCK;
 
         static {
-            PEAR_LOG = Blocks.PEAR_LOG.getDefaultState();
+            PEAR_LOG = ModBlocks.PEAR_LOG.getDefaultState();
             PEAR_LEAVES = Blocks.PEAR_LEAVES.getDefaultState().with(LeavesBlock.PERSISTENT, true);
             PEAR_RIPE_LEAVES = Blocks.PEAR_RIPE_LEAVES.getDefaultState().with(LeavesBlock.PERSISTENT, true);
             PHOENIX_LOG = Blocks.PHOENIX_LOG.getDefaultState();

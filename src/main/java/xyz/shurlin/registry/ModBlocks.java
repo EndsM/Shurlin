@@ -3,6 +3,7 @@ package xyz.shurlin.registry;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.PillarBlock;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
@@ -52,5 +53,6 @@ public class ModBlocks {
         PLANT_JADE_BLOCK = registerBlock("plant_jade_block", new Block(FabricBlockSettings.copy(Blocks.DIAMOND_BLOCK)), ItemGroups.SHURLIN);
         SMALL_BUD = registerBlock("small_bud", new SmallBudBlock(BlockSettings.PLANT), ItemGroups.SHURLIN);
         PLATYCODON_GRANDIFLORUS = registerBlock("platycodon_grandiflorus", new PlatycodonGrandiflorusBlock(StatusEffects.REGENERATION, 1314, BlockSettings.PLANT), ItemGroups.SHURLIN);
+        PEAR_LOG = registerBlock("pear_log", new PillarBlock(BlockSettings.LOG), ItemGroups.SHURLIN);
     }
 }
