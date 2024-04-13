@@ -12,7 +12,6 @@ import net.minecraft.util.registry.Registry;
 import xyz.shurlin.Shurlin;
 
 public class Blocks {
-    public static final Block TENUOUS_METAL_SPIRIT_ORE_BLOCK;
     public static final Block TENUOUS_WOOD_SPIRIT_ORE_BLOCK;
     public static final Block TENUOUS_WATER_SPIRIT_ORE_BLOCK;
     public static final Block TENUOUS_FIRE_SPIRIT_ORE_BLOCK;
@@ -42,7 +41,6 @@ public class Blocks {
     }
 
     static {
-        TENUOUS_METAL_SPIRIT_ORE_BLOCK = registerOreBlock("tenuous_metal_spirit_ore_block");
         TENUOUS_WOOD_SPIRIT_ORE_BLOCK = registerOreBlock("tenuous_wood_spirit_ore_block");
         TENUOUS_WATER_SPIRIT_ORE_BLOCK = registerOreBlock("tenuous_water_spirit_ore_block");
         TENUOUS_FIRE_SPIRIT_ORE_BLOCK = registerOreBlock("tenuous_fire_spirit_ore_block");

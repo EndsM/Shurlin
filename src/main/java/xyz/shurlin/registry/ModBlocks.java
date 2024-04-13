@@ -64,6 +64,7 @@ public class ModBlocks {
     public static Block LEAVE_CORAL_BLOCK;
     public static Block HOT_FIRE_STONE;
     public static Block HOT_FIRE_DIRT;
+    public static Block TENUOUS_METAL_SPIRIT_ORE_BLOCK;
 
     // We can do this later, just separate register Blocks and BlockItems, and remove this itemGroup parameter.
     // Also, we can move ItemGroup to each of item types after remove the BasicItem and BasicBlockItem
@@ -139,5 +140,7 @@ public class ModBlocks {
         // Fire land blocks
         HOT_FIRE_STONE = registerBlock("hot_fire_stone ", new Block(BlockSettings.STONE), true);
         HOT_FIRE_DIRT = registerBlock("hot_fire_dirt", new Block(BlockSettings.DIRT), true);
+        // Spirit ore blocks
+        TENUOUS_METAL_SPIRIT_ORE_BLOCK = registerBlock("tenuous_metal_spirit_ore_block", new SpiritOreBlock(BlockSettings.ORE),true);
     }
 }
