@@ -15,7 +15,6 @@ import xyz.shurlin.block.plant.BasicSaplingBlock;
 import xyz.shurlin.world.gen.feature.ShurlinConfiguredFeatures;
 
 public class Blocks {
-    public static final Block MYSTERIOUS_STONE;
     public static final Block PLANT_OBSIDIAN;
     public static final Block HOLY_FARMER_PORTAL;
     public static final Block CULTIVATION_CRYSTAL;
@@ -67,7 +66,6 @@ public class Blocks {
     }
 
     static {
-        MYSTERIOUS_STONE = register("mysterious_stone", new MysteriousStoneBlock(FabricBlockSettings.of(Material.STONE).strength(-1, 3600)));
         PLANT_OBSIDIAN = register("plant_obsidian", BlockSettings.OBSIDIAN);
         HOLY_FARMER_PORTAL = register("holy_farmer_portal", new HolyFarmerPortalBlock(FabricBlockSettings.of(Material.PORTAL).noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.GLASS).lightLevel(12)));
         CULTIVATION_CRYSTAL = register("cultivation_crystal", new CultivationCrystalBlock(FabricBlockSettings.of(Material.GLASS).strength(-1).nonOpaque()));

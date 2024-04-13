@@ -41,6 +41,7 @@ public class ModBlocks {
     public static Block EXTRACTOR_BLOCK;
     public static Block HOLY_PEAR_ALTAR;
     public static Block STARRY_ALTAR;
+    public static Block MYSTERIOUS_STONE;
 
     // We can do this later, just separate register Blocks and BlockItems, and remove this itemGroup parameter.
     // Also, we can move ItemGroup to each of item types after remove the BasicItem and BasicBlockItem
@@ -84,5 +85,6 @@ public class ModBlocks {
         // Refactor these two later
         HOLY_PEAR_ALTAR = registerBlock("holy_pear_altar", new HolyPearAltarBlock(FabricBlockSettings.copy(Blocks.OBSIDIAN)), ItemGroups.SHURLIN);
         STARRY_ALTAR = registerBlock("starry_altar", new StarryAltarBlock(FabricBlockSettings.of(Material.STONE).strength(10.0f).luminance(12)), ItemGroups.SHURLIN);
+        MYSTERIOUS_STONE = registerBlock("mysterious_stone",new MysteriousStoneBlock(FabricBlockSettings.of(Material.STONE).strength(-1, 3600)),ItemGroups.SHURLIN);
     }
 }

@@ -9,6 +9,7 @@ import net.minecraft.world.gen.chunk.ChunkGenerator;
 import net.minecraft.world.gen.feature.DefaultFeatureConfig;
 import net.minecraft.world.gen.feature.Feature;
 import xyz.shurlin.block.Blocks;
+import xyz.shurlin.registry.ModBlocks;
 
 import java.util.Random;
 
@@ -23,7 +24,7 @@ public class MysteriousStonePillarFeature extends Feature<DefaultFeatureConfig> 
 //        int y = serverWorldAccess.getTopY(Heightmap.Type.WORLD_SURFACE_WG, pos.getX(), pos.getZ());
 //        pos = pos.down(pos.getY() - y);
         pos = serverWorldAccess.getTopPosition(Heightmap.Type.WORLD_SURFACE_WG, pos);
-        BlockState state = Blocks.MYSTERIOUS_STONE.getDefaultState();
+        BlockState state = ModBlocks.MYSTERIOUS_STONE.getDefaultState();
         serverWorldAccess.setBlockState(pos.north(), state, 3);
         serverWorldAccess.setBlockState(pos.south(), state, 3);
         serverWorldAccess.setBlockState(pos.west(), state, 3);
