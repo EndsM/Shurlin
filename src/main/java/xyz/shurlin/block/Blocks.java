@@ -15,8 +15,6 @@ import xyz.shurlin.block.plant.BasicSaplingBlock;
 import xyz.shurlin.world.gen.feature.ShurlinConfiguredFeatures;
 
 public class Blocks {
-    public static final Block HOLY_FARMER_PORTAL;
-    public static final Block CULTIVATION_CRYSTAL;
     public static final Block SUCCULENT_BLOCK;
     public static final Block LLANDUDNO;
 
@@ -65,8 +63,6 @@ public class Blocks {
     }
 
     static {
-        HOLY_FARMER_PORTAL = register("holy_farmer_portal", new HolyFarmerPortalBlock(FabricBlockSettings.of(Material.PORTAL).noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.GLASS).lightLevel(12)));
-        CULTIVATION_CRYSTAL = register("cultivation_crystal", new CultivationCrystalBlock(FabricBlockSettings.of(Material.GLASS).strength(-1).nonOpaque()));
         SUCCULENT_BLOCK = register("succulent_block", new SucculentBlock(FabricBlockSettings.of(Material.ORGANIC_PRODUCT, MapColor.PALE_GREEN).slipperiness(0.8F).sounds(BlockSoundGroup.SLIME).nonOpaque().lightLevel((state) ->
                 state.get(SucculentBlock.SHINING) ? 8 : 0
         )));

@@ -33,9 +33,9 @@ public class HolyFarmerPortalBlock extends BasicBlock {
     public static void createPortal(World world, BlockPos pos) {
         if (world.getRegistryKey() == Dimensions.HOLY_FARMER || world.getRegistryKey() == World.OVERWORLD) {
             Block block = world.getBlockState(pos).getBlock();
-            if (block == Blocks.HOLY_FARMER_PORTAL || block == ModBlocks.PLANT_OBSIDIAN)
+            if (block == ModBlocks.HOLY_FARMER_PORTAL || block == ModBlocks.PLANT_OBSIDIAN)
                 return;
-            world.setBlockState(pos, Blocks.HOLY_FARMER_PORTAL.getDefaultState(), 3);
+            world.setBlockState(pos, ModBlocks.HOLY_FARMER_PORTAL.getDefaultState(), 3);
             if (block == ModBlocks.PHOENIX_LEAVES) {
                 for (BlockPos dir : Utils.poses_of_horizontal) {
                     createPortal(world, pos.add(dir));
@@ -64,7 +64,7 @@ public class HolyFarmerPortalBlock extends BasicBlock {
     public void onBroken(WorldAccess world, BlockPos pos, BlockState state) {
         for (BlockPos pos1 : Utils.poses_of_horizontal) {
             BlockPos pos2 = pos.add(pos1);
-            if (world.getBlockState(pos2).isOf(Blocks.HOLY_FARMER_PORTAL)) {
+            if (world.getBlockState(pos2).isOf(ModBlocks.HOLY_FARMER_PORTAL)) {
                 world.breakBlock(pos2, false);
             }
         }

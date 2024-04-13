@@ -20,7 +20,7 @@ import xyz.shurlin.cultivation.CultivationRealm;
 public class CultivationCrystalBlock extends BlockWithEntity {
     private static final VoxelShape SHAPE = Block.createCuboidShape(4, 4, 4, 12, 12, 12);
 
-    CultivationCrystalBlock(Settings settings) {
+   public CultivationCrystalBlock(Settings settings) {
         super(settings);
     }
 
