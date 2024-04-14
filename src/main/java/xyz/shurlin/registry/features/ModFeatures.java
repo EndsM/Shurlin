@@ -8,6 +8,8 @@ public class ModFeatures {
         // TODO
         registerFeatures();
 
+
+        // Handle this in the last, so every thing it needed will be registered while handle them
         handleBiomeModifications();
     }
 
