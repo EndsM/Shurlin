@@ -14,13 +14,9 @@ import net.minecraft.world.gen.placer.SimpleBlockPlacer;
 import net.minecraft.world.gen.stateprovider.SimpleBlockStateProvider;
 
 public class ShurlinBiomeFeatures {
-
+    // Oh my word...
     public static void addPearTrees(Builder builder) {
         builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ShurlinConfiguredFeatures.TREES_PEAR);
-    }
-
-    public static void addAncientPearTrees(Builder builder) {
-//        builder.feature(GenerationStep.Feature.SURFACE_STRUCTURES, ShurlinConfiguredFeatures.ANCIENT_PEAR_TREE);
     }
 
     public static void addMysteriousStonePillar(Builder builder) {

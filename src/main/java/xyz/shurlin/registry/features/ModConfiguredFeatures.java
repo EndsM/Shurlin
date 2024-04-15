@@ -35,13 +35,13 @@ public class ModConfiguredFeatures {
             new StraightTrunkPlacer(5, 2, 0),
             new TwoLayersFeatureSize(1, 0, 1)
     ).build());
-    public static ConfiguredFeature<TreeFeatureConfig, ?> PHOENIX_TREE= Feature.TREE.configure(new TreeFeatureConfig.Builder(
+    public static ConfiguredFeature<TreeFeatureConfig, ?> PHOENIX_TREE = Feature.TREE.configure(new TreeFeatureConfig.Builder(
             new SimpleBlockStateProvider(ModBlocks.PHOENIX_LOG.getDefaultState()),
             // This tree don't have other types of leaves though
             new SimpleBlockStateProvider(ModBlocks.PHOENIX_LEAVES.getDefaultState()),
-            new DarkOakFoliagePlacer(UniformIntDistribution.of(0),UniformIntDistribution.of(0)),
-            new DarkOakTrunkPlacer(6,2,1),
-            new ThreeLayersFeatureSize(1,1,0,1,2, OptionalInt.empty())
+            new DarkOakFoliagePlacer(UniformIntDistribution.of(0), UniformIntDistribution.of(0)),
+            new DarkOakTrunkPlacer(6, 2, 1),
+            new ThreeLayersFeatureSize(1, 1, 0, 1, 2, OptionalInt.empty())
     ).build());
 
     // A little helper to reduce the length of a registry
