@@ -49,11 +49,11 @@ public class ModConfiguredFeatures {
     public static ConfiguredFeature<?, ?> TREES_PHOENIX = PHOENIX_TREE
             .decorate(ConfiguredFeatures.Decorators.SQUARE_HEIGHTMAP)
             .decorate(Decorator.COUNT_EXTRA.configure(new CountExtraDecoratorConfig(6, 0.1f, 1)));
-    public static ConfiguredFeature<?,?> SMALL_BUD=Feature.RANDOM_PATCH.configure(new RandomPatchFeatureConfig.Builder(
-            new SimpleBlockStateProvider(ModBlocks.SMALL_BUD.getDefaultState()),
-             SimpleBlockPlacer.INSTANCE
-    ).tries(12).build())
-            .decorate(Decorator.COUNT_EXTRA.configure(new CountExtraDecoratorConfig(6,0.1f,1)));
+    public static ConfiguredFeature<?, ?> SMALL_BUD = Feature.RANDOM_PATCH.configure(new RandomPatchFeatureConfig.Builder(
+                    new SimpleBlockStateProvider(ModBlocks.SMALL_BUD.getDefaultState()),
+                    SimpleBlockPlacer.INSTANCE
+            ).tries(12).build())
+            .decorate(Decorator.COUNT_EXTRA.configure(new CountExtraDecoratorConfig(6, 0.1f, 1)));
 
     // A little helper to reduce the length of a registry
     private static void registerConfiguredFeature(String id, ConfiguredFeature<?, ?> configuredFeature) {
@@ -66,5 +66,6 @@ public class ModConfiguredFeatures {
         registerConfiguredFeature("phoenix_tree", PHOENIX_TREE);
         registerConfiguredFeature("trees_pear", TREES_PEAR);
         registerConfiguredFeature("trees_phoenix", TREES_PHOENIX);
+        registerConfiguredFeature("small_bud", SMALL_BUD);
     }
 }

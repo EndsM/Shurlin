@@ -43,7 +43,7 @@ public class ShurlinBiomeFeatures {
     }
 
     public static void addSmallBud(Builder builder) {
-        builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ShurlinConfiguredFeatures.SMALL_BUD
+        builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModConfiguredFeatures.SMALL_BUD
 
         );
     }

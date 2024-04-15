@@ -24,7 +24,6 @@ import java.util.HashSet;
 
 public class ShurlinConfiguredFeatures {
     // Oh my word, I need do something to this too...
-    public static final ConfiguredFeature<?, ?> SMALL_BUD;
     public static final ConfiguredFeature<?, ?> PLATYCODON_GRANDIFLORUS;
     public static final ConfiguredFeature<?, ?> PATCH_FIRE;
 
@@ -50,7 +49,6 @@ public class ShurlinConfiguredFeatures {
     }
 
     static {
-        SMALL_BUD = register("small_bud", Feature.RANDOM_PATCH.configure(Configs.SMALL_BUD_CONFIG).decorate(Decorator.COUNT_EXTRA.configure(new CountExtraDecoratorConfig(6, 0.1f, 1))));
         PLATYCODON_GRANDIFLORUS = register("platycodon_grandiflorus", Feature.RANDOM_PATCH.configure(Configs.PLATYCODON_GRANDIFLORUS_CONFIG).decorate(Decorator.COUNT_EXTRA.configure(new CountExtraDecoratorConfig(6, 0.1f, 1))));
         PATCH_FIRE = register("patch_fire", Feature.RANDOM_PATCH.configure(Configs.PATCH_FIRE_CONFIG)
                 .decorate(ConfiguredFeatures.Decorators.FIRE));
@@ -58,13 +56,10 @@ public class ShurlinConfiguredFeatures {
     }
 
     private static final class Configs {
-        private static final RandomPatchFeatureConfig SMALL_BUD_CONFIG;
         private static final RandomPatchFeatureConfig PLATYCODON_GRANDIFLORUS_CONFIG;
         private static final RandomPatchFeatureConfig PATCH_FIRE_CONFIG;
 
         static {
-            SMALL_BUD_CONFIG = (new RandomPatchFeatureConfig.Builder(new SimpleBlockStateProvider(States.SMALL_BUD), SimpleBlockPlacer.INSTANCE))
-                    .tries(12).build();
             PLATYCODON_GRANDIFLORUS_CONFIG = (new RandomPatchFeatureConfig.Builder(new SimpleBlockStateProvider(States.PLATYCODON_GRANDIFLORUS), SimpleBlockPlacer.INSTANCE))
                     .tries(4).build();
             PATCH_FIRE_CONFIG = (new RandomPatchFeatureConfig.Builder(new SimpleBlockStateProvider(States.FIRE), SimpleBlockPlacer.INSTANCE))
@@ -75,7 +70,6 @@ public class ShurlinConfiguredFeatures {
     }
 
     static final class States {
-        private static final BlockState SMALL_BUD;
         private static final BlockState PLATYCODON_GRANDIFLORUS;
         private static final BlockState FIRE;
         private static final BlockState HOT_FIRE_DIRT;
@@ -96,7 +90,6 @@ public class ShurlinConfiguredFeatures {
         static final BlockState TENUOUS_TIME_SPACE_SPIRIT_ORE_BLOCK;
 
         static {
-            SMALL_BUD = ModBlocks.SMALL_BUD.getDefaultState();
             PLATYCODON_GRANDIFLORUS = ModBlocks.PLATYCODON_GRANDIFLORUS.getDefaultState();
             PLANT_IRON_ORE_BLOCK = ModBlocks.PLANT_IRON_ORE_BLOCK.getDefaultState();
             PLANT_GOLD_ORE_BLOCK = ModBlocks.PLANT_GOLD_ORE_BLOCK.getDefaultState();
@@ -124,6 +117,5 @@ public class ShurlinConfiguredFeatures {
 
     public static void ApplyToBiome() {
         BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.FIRE_LAND_KEY), GenerationStep.Feature.VEGETAL_DECORATION, getRegKey("patch_fire"));
-
     }
 }
