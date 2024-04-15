@@ -52,5 +52,7 @@ public class ModConfiguredFeatures {
     // Accessible in the same package
     static void Register() {
         registerConfiguredFeature("pear_tree", PEAR_TREE);
+        registerConfiguredFeature("phoenix_tree", PHOENIX_TREE);
+
     }
 }

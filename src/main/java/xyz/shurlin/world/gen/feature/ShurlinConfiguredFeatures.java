@@ -95,9 +95,6 @@ public class ShurlinConfiguredFeatures {
     }
 
     static final class States {
-        private static final BlockState PEAR_LOG;
-        private static final BlockState PEAR_LEAVES;
-        private static final BlockState PEAR_RIPE_LEAVES;
         private static final BlockState PHOENIX_LOG;
         private static final BlockState PHOENIX_LEAVES;
         private static final BlockState SMALL_BUD;
@@ -121,9 +118,6 @@ public class ShurlinConfiguredFeatures {
         static final BlockState TENUOUS_TIME_SPACE_SPIRIT_ORE_BLOCK;
 
         static {
-            PEAR_LOG = ModBlocks.PEAR_LOG.getDefaultState();
-            PEAR_LEAVES = ModBlocks.PEAR_LEAVES.getDefaultState().with(LeavesBlock.PERSISTENT, true);
-            PEAR_RIPE_LEAVES = ModBlocks.PEAR_RIPE_LEAVES.getDefaultState().with(LeavesBlock.PERSISTENT, true);
             PHOENIX_LOG = ModBlocks.PHOENIX_LOG.getDefaultState();
             PHOENIX_LEAVES = ModBlocks.PHOENIX_LEAVES.getDefaultState().with(LeavesBlock.PERSISTENT, true);
             SMALL_BUD = ModBlocks.SMALL_BUD.getDefaultState();

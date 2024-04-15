@@ -7,7 +7,7 @@ public class ModFeatures {
     public static void RegisterAndHandle() {
         // TODO
         registerFeatures();
-
+        ModConfiguredFeatures.Register();
 
         // Handle this in the last, so every thing it needed will be registered while handle them
         handleBiomeModifications();
