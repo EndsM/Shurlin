@@ -1,5 +1,7 @@
 package xyz.shurlin.registry.features;
 
+import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
 import net.minecraft.block.LeavesBlock;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.BuiltinRegistries;
@@ -20,6 +22,7 @@ import net.minecraft.world.gen.trunk.StraightTrunkPlacer;
 import xyz.shurlin.Shurlin;
 import xyz.shurlin.registry.ModBlocks;
 
+import java.util.HashSet;
 import java.util.OptionalInt;
 
 public class ModConfiguredFeatures {
@@ -59,7 +62,13 @@ public class ModConfiguredFeatures {
                     SimpleBlockPlacer.INSTANCE
             ).tries(4).build())
             .decorate(Decorator.COUNT_EXTRA.configure(new CountExtraDecoratorConfig(6, 0.1f, 1)));
-    public static ConfiguredFeature<?, ?> PATCH_FIRE;
+    public static ConfiguredFeature<?, ?> PATCH_FIRE = Feature.RANDOM_PATCH.configure(new RandomPatchFeatureConfig.Builder(
+                    new SimpleBlockStateProvider(Blocks.FIRE.getDefaultState()),
+                    SimpleBlockPlacer.INSTANCE
+            ).tries(64).whitelist(new HashSet<Block>() {{
+                add(ModBlocks.HOT_FIRE_DIRT);
+            }}).cannotProject().build())
+            .decorate(ConfiguredFeatures.Decorators.FIRE);
 
     // A little helper to reduce the length of a registry
     private static void registerConfiguredFeature(String id, ConfiguredFeature<?, ?> configuredFeature) {
@@ -73,7 +82,7 @@ public class ModConfiguredFeatures {
         registerConfiguredFeature("trees_pear", TREES_PEAR);
         registerConfiguredFeature("trees_phoenix", TREES_PHOENIX);
         registerConfiguredFeature("small_bud", SMALL_BUD);
-        registerConfiguredFeature("platycodon_grandiflorus",PLATYCODON_GRANDIFLORUS);
-
+        registerConfiguredFeature("platycodon_grandiflorus", PLATYCODON_GRANDIFLORUS);
+        registerConfiguredFeature("patch_fire", PATCH_FIRE);
     }
 }
