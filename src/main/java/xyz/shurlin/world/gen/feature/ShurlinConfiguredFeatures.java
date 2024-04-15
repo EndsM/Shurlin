@@ -26,28 +26,7 @@ public class ShurlinConfiguredFeatures {
     private static RegistryKey<ConfiguredFeature<?, ?>> getRegKey(String registryName) {
         return RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN, new Identifier(Shurlin.MODID, registryName));
     }
-
-    private static ConfiguredFeature<?, ?> createOre(RuleTest ruleTest, BlockState state, int size, int numPerChunk, int maxy) {
-        return Feature.ORE.configure(new OreFeatureConfig(ruleTest, state, size)) // vein size
-                .decorate(Decorator.RANGE.configure(new RangeDecoratorConfig(
-                        0, // bottom offset
-                        0, // min y level
-                        maxy))) // max y level
-                .repeat(numPerChunk); // number of veins per chunk
-    }
-
-
-    private static final class Configs {
-        private static final RandomPatchFeatureConfig PATCH_FIRE_CONFIG;
-
-        static {
-            PATCH_FIRE_CONFIG = (new RandomPatchFeatureConfig.Builder(new SimpleBlockStateProvider(States.FIRE), SimpleBlockPlacer.INSTANCE))
-                    .tries(64).whitelist(new HashSet<Block>() {{
-                        add(States.HOT_FIRE_DIRT.getBlock());
-                    }}).cannotProject().build();
-        }
-    }
-
+    
     static final class States {
         private static final BlockState FIRE;
         private static final BlockState HOT_FIRE_DIRT;
