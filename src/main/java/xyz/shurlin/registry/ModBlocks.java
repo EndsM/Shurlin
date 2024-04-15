@@ -148,7 +148,7 @@ public class ModBlocks {
         DEAD_LEAVE_CORAL_BLOCK = registerBlock("dead_leave_coral_block", new Block(BlockSettings.DEAD_CORAL_BLOCK), true);
         LEAVE_CORAL_BLOCK = registerBlock("leave_coral_block", new LeaveCoralBlockBlock(DEAD_LEAVE_CORAL_BLOCK, BlockSettings.CORAL_BLOCK), true);
         // Fire land blocks
-        HOT_FIRE_STONE = registerBlock("hot_fire_stone ", new Block(BlockSettings.STONE), true);
+        HOT_FIRE_STONE = registerBlock("hot_fire_stone", new Block(BlockSettings.STONE), true);
         HOT_FIRE_DIRT = registerBlock("hot_fire_dirt", new Block(BlockSettings.DIRT), true);
         // Spirit ore blocks
         TENUOUS_METAL_SPIRIT_ORE_BLOCK = registerBlock("tenuous_metal_spirit_ore_block", new SpiritOreBlock(BlockSettings.ORE), true);
