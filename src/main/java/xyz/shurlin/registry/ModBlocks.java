@@ -21,7 +21,6 @@ import xyz.shurlin.block.worker.ExtractorBlock;
 import xyz.shurlin.item.ItemGroups;
 import xyz.shurlin.registry.features.ModConfiguredFeatures;
 import xyz.shurlin.registry.setting.BlockSettings;
-import xyz.shurlin.world.gen.feature.ShurlinConfiguredFeatures;
 
 public class ModBlocks {
     public static Block PLANT_IRON_ORE_BLOCK;
