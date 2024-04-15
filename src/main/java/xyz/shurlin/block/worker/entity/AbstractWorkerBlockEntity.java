@@ -50,25 +50,6 @@ public abstract class AbstractWorkerBlockEntity extends BasicBlockEntity impleme
         return tag;
     }
 
-    //    boolean canAcceptRecipeOutput() {
-//        BreakerRecipes.contains()
-//    }
-//
-//    protected abstract int getOutputSlot();
-//
-//    void craftRecipe(Item input) {
-//        if (input != null && this.canAcceptRecipeOutput(input)) {
-//            ItemStack itemStack = this.inventory.get(0);
-//            ItemStack itemStack2 = getOutput(input);
-//            ItemStack itemStack3 = this.inventory.get(1);
-//            if (itemStack3.isEmpty()) {
-//                this.inventory.set(1, itemStack2.copy());
-//            } else if (itemStack3.getItem() == itemStack2.getItem()) {
-//                itemStack3.increment(1);
-//            }
-//            itemStack.decrement(1);
-//        }
-//    }
     void craftRecipe(@Nullable Recipe<?> recipe) {
         if (recipe != null && this.canAcceptRecipeOutput(recipe)) {
             ItemStack itemStack = this.inventory.get(0);
@@ -84,44 +65,9 @@ public abstract class AbstractWorkerBlockEntity extends BasicBlockEntity impleme
         }
     }
 
-//
-//    public void provideRecipeInputs(RecipeFinder finder) {
-//        for (ItemStack itemStack : this.inventory) {
-//            finder.addItem(itemStack);
-//        }
-//    }
-//
-//    int getWorkTime(Item input){
-//        return BreakerRecipes.getData(input).getTime();
-//    }
-
     boolean isWorking() {
         return this.workTime > 0;
     }
-//
-//    private ItemStack getOutput(Item input){
-//        return BreakerRecipes.getData(input).getResult();
-//    }
-
-//    boolean canAcceptRecipeOutput(Item input) {
-//        if(input != null && BreakerRecipes.contains(input)){
-//            ItemStack output = getOutput(input);
-//            if(output.isEmpty())
-//                return false;
-//            else {
-//                ItemStack itemStack = this.inventory.get(1);
-//                if(itemStack.isEmpty())
-//                    return true;
-//                else if(!itemStack.isItemEqualIgnoreDamage(output))
-//                    return false;
-//                else if(itemStack.getCount() < this.getMaxCountPerStack() && itemStack.getCount() < itemStack.getMaxCount())
-//                    return true;
-//                else
-//                    return itemStack.getCount() < output.getMaxCount();
-//            }
-//        }
-//        return false;
-//    }
 
     boolean canAcceptRecipeOutput(@Nullable Recipe<?> recipe) {
         if (!(this.inventory.get(0)).isEmpty() && recipe != null) {
