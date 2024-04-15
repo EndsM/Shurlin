@@ -62,7 +62,7 @@ public class ShurlinOreFeatures {
     }
 
     private static ConfiguredFeature<?, ?> createOre(String registryName, RuleTest ruleTest, BlockState state, int size, int numPerChunk, int topOffset, int maxy, Predicate<BiomeSelectionContext> selectors) {
-        RegistryKey key = RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN, new Identifier(Shurlin.MODID, registryName));
+        RegistryKey<ConfiguredFeature<?, ?>> key = RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN, new Identifier(Shurlin.MODID, registryName));
         ConfiguredFeature<?, ?> ore = Feature.ORE.configure(new OreFeatureConfig(ruleTest, state, size)) // vein size
                 .decorate(Decorator.RANGE.configure(new RangeDecoratorConfig(
                         0, // bottom offset
