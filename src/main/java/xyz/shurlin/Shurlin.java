@@ -18,7 +18,6 @@ import xyz.shurlin.world.biome.Biomes;
 import xyz.shurlin.world.dimension.DimensionTypes;
 import xyz.shurlin.world.dimension.Dimensions;
 import xyz.shurlin.world.gen.chunk.ChunkGeneratorTypes;
-import xyz.shurlin.world.gen.feature.ShurlinConfiguredFeatures;
 import xyz.shurlin.world.gen.feature.ShurlinOreFeatures;
 
 import java.util.Random;

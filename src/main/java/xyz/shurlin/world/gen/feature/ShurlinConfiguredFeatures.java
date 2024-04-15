@@ -1,16 +1,7 @@
 package xyz.shurlin.world.gen.feature;
 
-import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
-import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
 import net.minecraft.block.BlockState;
-import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
-import net.minecraft.util.registry.RegistryKey;
-import net.minecraft.world.gen.GenerationStep;
-import net.minecraft.world.gen.feature.ConfiguredFeature;
-import xyz.shurlin.Shurlin;
 import xyz.shurlin.registry.ModBlocks;
-import xyz.shurlin.world.biome.BiomeKeys;
 
 public class ShurlinConfiguredFeatures {
 
