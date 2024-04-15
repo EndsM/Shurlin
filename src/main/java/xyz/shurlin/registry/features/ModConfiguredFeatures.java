@@ -1,6 +1,9 @@
 package xyz.shurlin.registry.features;
 
 import net.minecraft.block.LeavesBlock;
+import net.minecraft.util.Identifier;
+import net.minecraft.util.registry.BuiltinRegistries;
+import net.minecraft.util.registry.Registry;
 import net.minecraft.world.gen.UniformIntDistribution;
 import net.minecraft.world.gen.feature.ConfiguredFeature;
 import net.minecraft.world.gen.feature.Feature;
@@ -10,6 +13,7 @@ import net.minecraft.world.gen.foliage.BlobFoliagePlacer;
 import net.minecraft.world.gen.stateprovider.SimpleBlockStateProvider;
 import net.minecraft.world.gen.stateprovider.WeightedBlockStateProvider;
 import net.minecraft.world.gen.trunk.StraightTrunkPlacer;
+import xyz.shurlin.Shurlin;
 import xyz.shurlin.registry.ModBlocks;
 
 public class ModConfiguredFeatures {
@@ -27,12 +31,12 @@ public class ModConfiguredFeatures {
             new TwoLayersFeatureSize(1, 0, 1)
     ).build());
 
-    private static void registerConfiguredFeature(){
-
+    private static void registerConfiguredFeature(String id, ConfiguredFeature<?, ?> configuredFeature) {
+        Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, new Identifier(Shurlin.MODID, id), configuredFeature);
     }
 
     // Accessible in the same package
     static void Register() {
-
+        registerConfiguredFeature("pear_tree", PEAR_TREE);
     }
 }
