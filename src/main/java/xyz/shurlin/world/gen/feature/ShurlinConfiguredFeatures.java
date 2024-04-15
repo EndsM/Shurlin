@@ -25,7 +25,6 @@ import java.util.HashSet;
 
 public class ShurlinConfiguredFeatures {
     // Oh my word, I need do something to this too...
-    public static final ConfiguredFeature<?, ?> TREES_PHOENIX;
     public static final ConfiguredFeature<?, ?> SMALL_BUD;
     public static final ConfiguredFeature<?, ?> PLATYCODON_GRANDIFLORUS;
     public static final ConfiguredFeature<?, ?> PATCH_FIRE;
@@ -52,7 +51,6 @@ public class ShurlinConfiguredFeatures {
     }
 
     static {
-        TREES_PHOENIX = register("trees_phoenix", ModConfiguredFeatures.PHOENIX_TREE.decorate(ConfiguredFeatures.Decorators.SQUARE_HEIGHTMAP).decorate(Decorator.COUNT_EXTRA.configure(new CountExtraDecoratorConfig(6, 0.1F, 1))));
         SMALL_BUD = register("small_bud", Feature.RANDOM_PATCH.configure(Configs.SMALL_BUD_CONFIG).decorate(Decorator.COUNT_EXTRA.configure(new CountExtraDecoratorConfig(6, 0.1f, 1))));
         PLATYCODON_GRANDIFLORUS = register("platycodon_grandiflorus", Feature.RANDOM_PATCH.configure(Configs.PLATYCODON_GRANDIFLORUS_CONFIG).decorate(Decorator.COUNT_EXTRA.configure(new CountExtraDecoratorConfig(6, 0.1f, 1))));
         PATCH_FIRE = register("patch_fire", Feature.RANDOM_PATCH.configure(Configs.PATCH_FIRE_CONFIG)

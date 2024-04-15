@@ -37,7 +37,7 @@ public class ShurlinBiomeFeatures {
     }
 
     public static void addPhoenixTrees(Builder builder) {
-        builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ShurlinConfiguredFeatures.TREES_PHOENIX
+        builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModConfiguredFeatures.TREES_PHOENIX
 //                .createDecoratedFeature(Decorator.COUNT_EXTRA_HEIGHTMAP.configure(new CountExtraChanceDecoratorConfig(8, 0.1F, 1)))
         );
     }

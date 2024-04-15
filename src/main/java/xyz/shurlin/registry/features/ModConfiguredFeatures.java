@@ -50,6 +50,9 @@ public class ModConfiguredFeatures {
     public static ConfiguredFeature<?, ?> TREES_PEAR = PEAR_TREE
             .decorate(ConfiguredFeatures.Decorators.SQUARE_HEIGHTMAP)
             .decorate(Decorator.COUNT_EXTRA.configure(new CountExtraDecoratorConfig(10, 0.1f, 1)));
+    public static ConfiguredFeature<?, ?> TREES_PHOENIX = PHOENIX_TREE
+            .decorate(ConfiguredFeatures.Decorators.SQUARE_HEIGHTMAP)
+            .decorate(Decorator.COUNT_EXTRA.configure(new CountExtraDecoratorConfig(6, 0.1f, 1)));
 
     // A little helper to reduce the length of a registry
     private static void registerConfiguredFeature(String id, ConfiguredFeature<?, ?> configuredFeature) {
@@ -61,5 +64,6 @@ public class ModConfiguredFeatures {
         registerConfiguredFeature("pear_tree", PEAR_TREE);
         registerConfiguredFeature("phoenix_tree", PHOENIX_TREE);
         registerConfiguredFeature("trees_pear", TREES_PEAR);
+        registerConfiguredFeature("trees_phoenix", TREES_PHOENIX);
     }
 }
