@@ -31,7 +31,7 @@ public class Shurlin implements ModInitializer {
     public void onInitialize() {
         ModBlocks.Register();
         ModItems.Register();
-
+        // Move all old "load" method to my preference method
         BlockEntityTypes.load();
         Items.load();
         RecipeSerializers.load();
