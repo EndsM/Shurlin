@@ -8,13 +8,18 @@ import net.minecraft.world.gen.UniformIntDistribution;
 import net.minecraft.world.gen.feature.ConfiguredFeature;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.TreeFeatureConfig;
+import net.minecraft.world.gen.feature.size.ThreeLayersFeatureSize;
 import net.minecraft.world.gen.feature.size.TwoLayersFeatureSize;
 import net.minecraft.world.gen.foliage.BlobFoliagePlacer;
+import net.minecraft.world.gen.foliage.DarkOakFoliagePlacer;
 import net.minecraft.world.gen.stateprovider.SimpleBlockStateProvider;
 import net.minecraft.world.gen.stateprovider.WeightedBlockStateProvider;
+import net.minecraft.world.gen.trunk.DarkOakTrunkPlacer;
 import net.minecraft.world.gen.trunk.StraightTrunkPlacer;
 import xyz.shurlin.Shurlin;
 import xyz.shurlin.registry.ModBlocks;
+
+import java.util.OptionalInt;
 
 public class ModConfiguredFeatures {
     // Experimental solution to register problem
@@ -29,6 +34,14 @@ public class ModConfiguredFeatures {
             new BlobFoliagePlacer(UniformIntDistribution.of(2), UniformIntDistribution.of(0), 3),
             new StraightTrunkPlacer(5, 2, 0),
             new TwoLayersFeatureSize(1, 0, 1)
+    ).build());
+    public static ConfiguredFeature<TreeFeatureConfig, ?> PHOENIX_TREE= Feature.TREE.configure(new TreeFeatureConfig.Builder(
+            new SimpleBlockStateProvider(ModBlocks.PHOENIX_LOG.getDefaultState()),
+            // This tree don't have other types of leaves though
+            new SimpleBlockStateProvider(ModBlocks.PHOENIX_LEAVES.getDefaultState()),
+            new DarkOakFoliagePlacer(UniformIntDistribution.of(0),UniformIntDistribution.of(0)),
+            new DarkOakTrunkPlacer(6,2,1),
+            new ThreeLayersFeatureSize(1,1,0,1,2, OptionalInt.empty())
     ).build());
 
     // A little helper to reduce the length of a registry

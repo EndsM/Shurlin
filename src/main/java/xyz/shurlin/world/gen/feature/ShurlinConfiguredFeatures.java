@@ -75,19 +75,12 @@ public class ShurlinConfiguredFeatures {
     }
 
     private static final class Configs {
-        private static final TreeFeatureConfig PEAR_TREE_CONFIG;
         private static final TreeFeatureConfig PHOENIX_TREE_CONFIG;
         private static final RandomPatchFeatureConfig SMALL_BUD_CONFIG;
         private static final RandomPatchFeatureConfig PLATYCODON_GRANDIFLORUS_CONFIG;
         private static final RandomPatchFeatureConfig PATCH_FIRE_CONFIG;
 
         static {
-            PEAR_TREE_CONFIG = new TreeFeatureConfig.Builder(
-                    new SimpleBlockStateProvider(States.PEAR_LOG),
-                    new WeightedBlockStateProvider().addState(States.PEAR_LEAVES, 9).addState(States.PEAR_RIPE_LEAVES, 1),
-                    new BlobFoliagePlacer(UniformIntDistribution.of(2), UniformIntDistribution.of(0), 3),
-                    new StraightTrunkPlacer(5, 2, 0),
-                    new TwoLayersFeatureSize(1, 0, 1)).build();
             PHOENIX_TREE_CONFIG = new TreeFeatureConfig.Builder(
                     new SimpleBlockStateProvider(States.PHOENIX_LOG),
                     new SimpleBlockStateProvider(States.PHOENIX_LEAVES),
