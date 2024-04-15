@@ -31,7 +31,7 @@ public class ModFeatures {
         BiomeModifications.addFeature(
                 BiomeSelectors.includeByKey(BiomeKeys.FIRE_LAND_KEY),
                 GenerationStep.Feature.VEGETAL_DECORATION,
-                RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN,new Identifier(Shurlin.MODID,"patch_fire"))
+                RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN, new Identifier(Shurlin.MODID, "patch_fire"))
         );
     }
 }

@@ -99,10 +99,6 @@ public class CollectorBlockEntity extends AbstractWorkerBlockEntity {
         return 2;
     }
 
-//    private Item getInput(){
-//        return this.inventory.get(0).getItem();
-//    }
-
     private void craftRecipe() {
         ItemStack input = this.inventory.get(0);
         ItemStack output = this.inventory.get(1);
