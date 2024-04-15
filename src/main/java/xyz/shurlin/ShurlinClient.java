@@ -29,13 +29,10 @@ public class ShurlinClient implements ClientModInitializer {
                 ModBlocks.DEAD_LEAVE_CORAL_FAN,
                 ModBlocks.LEAVE_CORAL_WALL_FAN,
                 ModBlocks.DEAD_LEAVE_CORAL_WALL_FAN);
-        // BlockRenderLayerMap.INSTANCE.putItem(Items.TENUOUS_WOOD_SPIRIT, RenderLayer.());
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getTranslucent(),
                 ModBlocks.HOLY_FARMER_PORTAL,
                 ModBlocks.CULTIVATION_CRYSTAL);
 
-        // EntityRendererRegistry.INSTANCE.register(EntityTypes.BEAN_ENTITY_TYPE, BeanEntityRender::new);
-        // EntityRendererRegistry.INSTANCE.register(EntityTypes.HOLY_PEAR_ARROW_ENTITY_TYPE, HolyPearArrowEntityRender::new);
         EntityRendererRegistry.INSTANCE
                 .register(EntityTypes.ROAMING_SPIRIT_ENTITY_TYPE, (manager, context) -> new RoamingSpiritEntityRender(manager));
 
