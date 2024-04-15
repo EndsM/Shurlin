@@ -54,6 +54,12 @@ public class ModConfiguredFeatures {
                     SimpleBlockPlacer.INSTANCE
             ).tries(12).build())
             .decorate(Decorator.COUNT_EXTRA.configure(new CountExtraDecoratorConfig(6, 0.1f, 1)));
+    public static ConfiguredFeature<?, ?> PLATYCODON_GRANDIFLORUS = Feature.RANDOM_PATCH.configure(new RandomPatchFeatureConfig.Builder(
+                    new SimpleBlockStateProvider(ModBlocks.PLATYCODON_GRANDIFLORUS.getDefaultState()),
+                    SimpleBlockPlacer.INSTANCE
+            ).tries(4).build())
+            .decorate(Decorator.COUNT_EXTRA.configure(new CountExtraDecoratorConfig(6, 0.1f, 1)));
+    public static ConfiguredFeature<?, ?> PATCH_FIRE;
 
     // A little helper to reduce the length of a registry
     private static void registerConfiguredFeature(String id, ConfiguredFeature<?, ?> configuredFeature) {
