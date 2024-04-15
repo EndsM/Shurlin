@@ -1,5 +1,15 @@
 package xyz.shurlin.registry.features;
 
+import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
+import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
+import net.minecraft.util.Identifier;
+import net.minecraft.util.registry.Registry;
+import net.minecraft.util.registry.RegistryKey;
+import net.minecraft.world.gen.GenerationStep;
+import net.minecraft.world.gen.feature.ConfiguredFeature;
+import xyz.shurlin.Shurlin;
+import xyz.shurlin.world.biome.BiomeKeys;
+
 // Use this class to init every feature related things
 // Which means other classes in this package
 public class ModFeatures {
@@ -19,5 +29,10 @@ public class ModFeatures {
 
     private static void handleBiomeModifications() {
         // TODO
+        BiomeModifications.addFeature(
+                BiomeSelectors.includeByKey(BiomeKeys.FIRE_LAND_KEY),
+                GenerationStep.Feature.VEGETAL_DECORATION,
+                RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN,new Identifier(Shurlin.MODID,"patch_fire"))
+        );
     }
 }
