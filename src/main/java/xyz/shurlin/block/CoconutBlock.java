@@ -14,6 +14,7 @@ import net.minecraft.world.World;
 
 import java.util.Random;
 
+// Boy, Coconut in Minecraft
 public class CoconutBlock extends FallingBlock {
     public static final BooleanProperty CAN_FALL = BooleanProperty.of("hardened");
 
@@ -34,11 +35,6 @@ public class CoconutBlock extends FallingBlock {
             this.configureFallingBlockEntity(fallingBlockEntity);
             world.spawnEntity(fallingBlockEntity);
         }
-    }
-
-    @Override
-    public void onProjectileHit(World world, BlockState state, BlockHitResult hit, ProjectileEntity projectile) {
-        world.setBlockState(hit.getBlockPos(), state.with(CAN_FALL, true));
     }
 
     @Override
