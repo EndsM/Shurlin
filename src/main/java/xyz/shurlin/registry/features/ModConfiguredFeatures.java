@@ -73,5 +73,7 @@ public class ModConfiguredFeatures {
         registerConfiguredFeature("trees_pear", TREES_PEAR);
         registerConfiguredFeature("trees_phoenix", TREES_PHOENIX);
         registerConfiguredFeature("small_bud", SMALL_BUD);
+        registerConfiguredFeature("platycodon_grandiflorus",PLATYCODON_GRANDIFLORUS);
+
     }
 }

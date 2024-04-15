@@ -49,7 +49,7 @@ public class ShurlinBiomeFeatures {
     }
 
     public static void addPlatycodonGrandiflorus(Builder builder) {
-        builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ShurlinConfiguredFeatures.PLATYCODON_GRANDIFLORUS);
+        builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModConfiguredFeatures.PLATYCODON_GRANDIFLORUS);
     }
 
     public static void addBlock(Builder builder, Block block, int tries) {

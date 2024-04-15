@@ -24,7 +24,6 @@ import java.util.HashSet;
 
 public class ShurlinConfiguredFeatures {
     // Oh my word, I need do something to this too...
-    public static final ConfiguredFeature<?, ?> PLATYCODON_GRANDIFLORUS;
     public static final ConfiguredFeature<?, ?> PATCH_FIRE;
 
     private static <FC extends FeatureConfig> ConfiguredFeature<FC, ?> register(String id, ConfiguredFeature<FC, ?> configuredFeature) {
@@ -49,19 +48,15 @@ public class ShurlinConfiguredFeatures {
     }
 
     static {
-        PLATYCODON_GRANDIFLORUS = register("platycodon_grandiflorus", Feature.RANDOM_PATCH.configure(Configs.PLATYCODON_GRANDIFLORUS_CONFIG).decorate(Decorator.COUNT_EXTRA.configure(new CountExtraDecoratorConfig(6, 0.1f, 1))));
         PATCH_FIRE = register("patch_fire", Feature.RANDOM_PATCH.configure(Configs.PATCH_FIRE_CONFIG)
                 .decorate(ConfiguredFeatures.Decorators.FIRE));
 
     }
 
     private static final class Configs {
-        private static final RandomPatchFeatureConfig PLATYCODON_GRANDIFLORUS_CONFIG;
         private static final RandomPatchFeatureConfig PATCH_FIRE_CONFIG;
 
         static {
-            PLATYCODON_GRANDIFLORUS_CONFIG = (new RandomPatchFeatureConfig.Builder(new SimpleBlockStateProvider(States.PLATYCODON_GRANDIFLORUS), SimpleBlockPlacer.INSTANCE))
-                    .tries(4).build();
             PATCH_FIRE_CONFIG = (new RandomPatchFeatureConfig.Builder(new SimpleBlockStateProvider(States.FIRE), SimpleBlockPlacer.INSTANCE))
                     .tries(64).whitelist(new HashSet<Block>() {{
                         add(States.HOT_FIRE_DIRT.getBlock());
@@ -70,7 +65,6 @@ public class ShurlinConfiguredFeatures {
     }
 
     static final class States {
-        private static final BlockState PLATYCODON_GRANDIFLORUS;
         private static final BlockState FIRE;
         private static final BlockState HOT_FIRE_DIRT;
         static final BlockState PLANT_IRON_ORE_BLOCK;
@@ -90,7 +84,6 @@ public class ShurlinConfiguredFeatures {
         static final BlockState TENUOUS_TIME_SPACE_SPIRIT_ORE_BLOCK;
 
         static {
-            PLATYCODON_GRANDIFLORUS = ModBlocks.PLATYCODON_GRANDIFLORUS.getDefaultState();
             PLANT_IRON_ORE_BLOCK = ModBlocks.PLANT_IRON_ORE_BLOCK.getDefaultState();
             PLANT_GOLD_ORE_BLOCK = ModBlocks.PLANT_GOLD_ORE_BLOCK.getDefaultState();
             PLANT_JADE_ORE_BLOCK = ModBlocks.PLANT_JADE_ORE_BLOCK.getDefaultState();
