@@ -5,7 +5,10 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.BuiltinRegistries;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.gen.UniformIntDistribution;
+import net.minecraft.world.gen.decorator.CountExtraDecoratorConfig;
+import net.minecraft.world.gen.decorator.Decorator;
 import net.minecraft.world.gen.feature.ConfiguredFeature;
+import net.minecraft.world.gen.feature.ConfiguredFeatures;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.TreeFeatureConfig;
 import net.minecraft.world.gen.feature.size.ThreeLayersFeatureSize;
@@ -43,6 +46,10 @@ public class ModConfiguredFeatures {
             new DarkOakTrunkPlacer(6, 2, 1),
             new ThreeLayersFeatureSize(1, 1, 0, 1, 2, OptionalInt.empty())
     ).build());
+    // Tree define how the tree looks like, and below is how they distribute
+    public static ConfiguredFeature<?, ?> TREES_PEAR = PEAR_TREE
+            .decorate(ConfiguredFeatures.Decorators.SQUARE_HEIGHTMAP)
+            .decorate(Decorator.COUNT_EXTRA.configure(new CountExtraDecoratorConfig(10, 0.1f, 1)));
 
     // A little helper to reduce the length of a registry
     private static void registerConfiguredFeature(String id, ConfiguredFeature<?, ?> configuredFeature) {
@@ -53,6 +60,6 @@ public class ModConfiguredFeatures {
     static void Register() {
         registerConfiguredFeature("pear_tree", PEAR_TREE);
         registerConfiguredFeature("phoenix_tree", PHOENIX_TREE);
-
+        registerConfiguredFeature("trees_pear", TREES_PEAR);
     }
 }

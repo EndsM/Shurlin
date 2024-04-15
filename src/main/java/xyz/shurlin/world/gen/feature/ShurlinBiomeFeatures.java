@@ -12,11 +12,12 @@ import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.RandomPatchFeatureConfig;
 import net.minecraft.world.gen.placer.SimpleBlockPlacer;
 import net.minecraft.world.gen.stateprovider.SimpleBlockStateProvider;
+import xyz.shurlin.registry.features.ModConfiguredFeatures;
 
 public class ShurlinBiomeFeatures {
     // Oh my word...
     public static void addPearTrees(Builder builder) {
-        builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ShurlinConfiguredFeatures.TREES_PEAR);
+        builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModConfiguredFeatures.TREES_PEAR);
     }
 
     public static void addMysteriousStonePillar(Builder builder) {

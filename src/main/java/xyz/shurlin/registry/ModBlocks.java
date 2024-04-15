@@ -138,7 +138,7 @@ public class ModBlocks {
         LLANDUDNO = registerBlock("llandudno_block", new Block(BlockSettings.LLANDUDNO), false);
         // Saplings
         PEAR_SAPLING = registerBlock("pear_sapling", new BasicSaplingBlock(ModConfiguredFeatures.PEAR_TREE, BlockSettings.PLANT), true);
-        PHOENIX_SAPLING = registerBlock("phoenix_sapling", new BasicSaplingBlock(ShurlinConfiguredFeatures.PHOENIX_TREE, BlockSettings.PLANT), true);
+        PHOENIX_SAPLING = registerBlock("phoenix_sapling", new BasicSaplingBlock(ModConfiguredFeatures.PHOENIX_TREE, BlockSettings.PLANT), true);
         // Coral related, Leave Coral related stuff need naming and structure changes, will figure it out later.
         DEAD_LEAVE_CORAL = registerBlock("dead_leave_coral", new DeadLeaveCoralBlock(BlockSettings.DEAD_CORAL), true);
         LEAVE_CORAL = registerBlock("leave_coral", new LeaveCoralBlock(DEAD_LEAVE_CORAL, BlockSettings.CORAL), true);
