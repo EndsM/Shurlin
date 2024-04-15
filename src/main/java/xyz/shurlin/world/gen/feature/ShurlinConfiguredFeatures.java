@@ -27,6 +27,7 @@ import net.minecraft.world.gen.trunk.DarkOakTrunkPlacer;
 import net.minecraft.world.gen.trunk.StraightTrunkPlacer;
 import xyz.shurlin.Shurlin;
 import xyz.shurlin.registry.ModBlocks;
+import xyz.shurlin.registry.features.ModConfiguredFeatures;
 import xyz.shurlin.world.biome.BiomeKeys;
 
 import java.util.HashSet;
@@ -34,7 +35,6 @@ import java.util.OptionalInt;
 
 public class ShurlinConfiguredFeatures {
     // Oh my word, I need do something to this too...
-    public static final ConfiguredFeature<TreeFeatureConfig, ?> PEAR_TREE;
     public static final ConfiguredFeature<TreeFeatureConfig, ?> PHOENIX_TREE;
     public static final ConfiguredFeature<?, ?> TREES_PEAR;
     public static final ConfiguredFeature<?, ?> TREES_PHOENIX;
@@ -64,9 +64,8 @@ public class ShurlinConfiguredFeatures {
     }
 
     static {
-        PEAR_TREE = register("pear_tree", Feature.TREE.configure(Configs.PEAR_TREE_CONFIG));
         PHOENIX_TREE = register("phoenix_tree", Feature.TREE.configure(Configs.PHOENIX_TREE_CONFIG));
-        TREES_PEAR = register("trees_pear", PEAR_TREE.decorate(ConfiguredFeatures.Decorators.SQUARE_HEIGHTMAP).decorate(Decorator.COUNT_EXTRA.configure(new CountExtraDecoratorConfig(10, 0.1F, 1))));
+        TREES_PEAR = register("trees_pear", ModConfiguredFeatures.PEAR_TREE.decorate(ConfiguredFeatures.Decorators.SQUARE_HEIGHTMAP).decorate(Decorator.COUNT_EXTRA.configure(new CountExtraDecoratorConfig(10, 0.1F, 1))));
         TREES_PHOENIX = register("trees_phoenix", PHOENIX_TREE.decorate(ConfiguredFeatures.Decorators.SQUARE_HEIGHTMAP).decorate(Decorator.COUNT_EXTRA.configure(new CountExtraDecoratorConfig(6, 0.1F, 1))));
         SMALL_BUD = register("small_bud", Feature.RANDOM_PATCH.configure(Configs.SMALL_BUD_CONFIG).decorate(Decorator.COUNT_EXTRA.configure(new CountExtraDecoratorConfig(6, 0.1f, 1))));
         PLATYCODON_GRANDIFLORUS = register("platycodon_grandiflorus", Feature.RANDOM_PATCH.configure(Configs.PLATYCODON_GRANDIFLORUS_CONFIG).decorate(Decorator.COUNT_EXTRA.configure(new CountExtraDecoratorConfig(6, 0.1f, 1))));

@@ -19,6 +19,7 @@ import xyz.shurlin.block.worker.CollectorBlock;
 import xyz.shurlin.block.worker.ConcentratorBlock;
 import xyz.shurlin.block.worker.ExtractorBlock;
 import xyz.shurlin.item.ItemGroups;
+import xyz.shurlin.registry.features.ModConfiguredFeatures;
 import xyz.shurlin.registry.setting.BlockSettings;
 import xyz.shurlin.world.gen.feature.ShurlinConfiguredFeatures;
 
@@ -136,7 +137,7 @@ public class ModBlocks {
         ), false);
         LLANDUDNO = registerBlock("llandudno_block", new Block(BlockSettings.LLANDUDNO), false);
         // Saplings
-        PEAR_SAPLING = registerBlock("pear_sapling", new BasicSaplingBlock(ShurlinConfiguredFeatures.PEAR_TREE, BlockSettings.PLANT), true);
+        PEAR_SAPLING = registerBlock("pear_sapling", new BasicSaplingBlock(ModConfiguredFeatures.PEAR_TREE, BlockSettings.PLANT), true);
         PHOENIX_SAPLING = registerBlock("phoenix_sapling", new BasicSaplingBlock(ShurlinConfiguredFeatures.PHOENIX_TREE, BlockSettings.PLANT), true);
         // Coral related, Leave Coral related stuff need naming and structure changes, will figure it out later.
         DEAD_LEAVE_CORAL = registerBlock("dead_leave_coral", new DeadLeaveCoralBlock(BlockSettings.DEAD_CORAL), true);

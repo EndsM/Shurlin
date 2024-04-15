@@ -31,6 +31,7 @@ public class ModConfiguredFeatures {
             new TwoLayersFeatureSize(1, 0, 1)
     ).build());
 
+    // A little helper to reduce the length of a registry
     private static void registerConfiguredFeature(String id, ConfiguredFeature<?, ?> configuredFeature) {
         Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, new Identifier(Shurlin.MODID, id), configuredFeature);
     }
