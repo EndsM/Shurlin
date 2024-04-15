@@ -7,14 +7,12 @@ import net.minecraft.util.registry.Registry;
 import net.minecraft.world.gen.UniformIntDistribution;
 import net.minecraft.world.gen.decorator.CountExtraDecoratorConfig;
 import net.minecraft.world.gen.decorator.Decorator;
-import net.minecraft.world.gen.feature.ConfiguredFeature;
-import net.minecraft.world.gen.feature.ConfiguredFeatures;
-import net.minecraft.world.gen.feature.Feature;
-import net.minecraft.world.gen.feature.TreeFeatureConfig;
+import net.minecraft.world.gen.feature.*;
 import net.minecraft.world.gen.feature.size.ThreeLayersFeatureSize;
 import net.minecraft.world.gen.feature.size.TwoLayersFeatureSize;
 import net.minecraft.world.gen.foliage.BlobFoliagePlacer;
 import net.minecraft.world.gen.foliage.DarkOakFoliagePlacer;
+import net.minecraft.world.gen.placer.SimpleBlockPlacer;
 import net.minecraft.world.gen.stateprovider.SimpleBlockStateProvider;
 import net.minecraft.world.gen.stateprovider.WeightedBlockStateProvider;
 import net.minecraft.world.gen.trunk.DarkOakTrunkPlacer;
@@ -25,9 +23,7 @@ import xyz.shurlin.registry.ModBlocks;
 import java.util.OptionalInt;
 
 public class ModConfiguredFeatures {
-    // Experimental solution to register problem
-    // Use this to combine ShurlinOreFeatures and ShurlinConfiguredFeatures
-    // And separate them with comments
+    // Maybe separate utility class of FeatureConfig later.
     public static ConfiguredFeature<TreeFeatureConfig, ?> PEAR_TREE = Feature.TREE.configure(new TreeFeatureConfig.Builder(
             new SimpleBlockStateProvider(ModBlocks.PEAR_LOG.getDefaultState()),
             // This config the weight of leaves with pear and without pear
@@ -53,6 +49,11 @@ public class ModConfiguredFeatures {
     public static ConfiguredFeature<?, ?> TREES_PHOENIX = PHOENIX_TREE
             .decorate(ConfiguredFeatures.Decorators.SQUARE_HEIGHTMAP)
             .decorate(Decorator.COUNT_EXTRA.configure(new CountExtraDecoratorConfig(6, 0.1f, 1)));
+    public static ConfiguredFeature<?,?> SMALL_BUD=Feature.RANDOM_PATCH.configure(new RandomPatchFeatureConfig.Builder(
+            new SimpleBlockStateProvider(ModBlocks.SMALL_BUD.getDefaultState()),
+             SimpleBlockPlacer.INSTANCE
+    ).tries(12).build())
+            .decorate(Decorator.COUNT_EXTRA.configure(new CountExtraDecoratorConfig(6,0.1f,1)));
 
     // A little helper to reduce the length of a registry
     private static void registerConfiguredFeature(String id, ConfiguredFeature<?, ?> configuredFeature) {

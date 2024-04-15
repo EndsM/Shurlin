@@ -18,7 +18,6 @@ import net.minecraft.world.gen.placer.SimpleBlockPlacer;
 import net.minecraft.world.gen.stateprovider.SimpleBlockStateProvider;
 import xyz.shurlin.Shurlin;
 import xyz.shurlin.registry.ModBlocks;
-import xyz.shurlin.registry.features.ModConfiguredFeatures;
 import xyz.shurlin.world.biome.BiomeKeys;
 
 import java.util.HashSet;
