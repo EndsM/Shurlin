@@ -10,20 +10,6 @@ import xyz.shurlin.Shurlin;
 import xyz.shurlin.entity.passive.RoamingSpiritEntity;
 
 public class EntityTypes {
-//    public static final EntityType<HolyPearArrowEntity> HOLY_PEAR_ARROW_ENTITY_TYPE =
-//            register("holy_pear_arrow_entity",
-//                    EntityType.Builder.create(
-//                            (EntityType.EntityFactory<HolyPearArrowEntity>)HolyPearArrowEntity::new, SpawnGroup.MISC)
-//                            .setDimensions(0.5f, 0.5f)
-//            );
-//
-//    public static final EntityType<BeanEntity> BEAN_ENTITY_TYPE =
-//            register("bean",
-//                    EntityType.Builder.create(
-//                            (EntityType.EntityFactory<BeanEntity>)BeanEntity::new, SpawnGroup.MISC)
-//                            .setDimensions(0.5f, 0.5f)
-//            );
-
     // Before registering mobs, the data fixer warn can be ignored.
     public static final EntityType<RoamingSpiritEntity> ROAMING_SPIRIT_ENTITY_TYPE =
             register("roaming_spirit_entity_type",
@@ -33,9 +19,5 @@ public class EntityTypes {
 
     private static <T extends Entity> EntityType<T> register(String name, EntityType.Builder<T> type) {
         return Registry.register(Registry.ENTITY_TYPE, new Identifier(Shurlin.MODID, name), type.build(name));
-    }
-
-    public static void registerAll() {
-        FabricDefaultAttributeRegistry.register(ROAMING_SPIRIT_ENTITY_TYPE, RoamingSpiritEntity.createMobAttributes());
     }
 }
