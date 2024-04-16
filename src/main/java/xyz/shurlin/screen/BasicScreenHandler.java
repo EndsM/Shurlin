@@ -29,10 +29,6 @@ public class BasicScreenHandler<I extends Inventory> extends ScreenHandler {
         inventory.onOpen(playerInventory.player);
     }
 
-    //BasicScreenHandler(ScreenHandlerType<?> type, int syncId) {
-    //    super(type, syncId);
-    //}
-
     @Override
     public boolean canUse(PlayerEntity player) {
         return this.inventory.canPlayerUse(player);

@@ -30,6 +30,7 @@ public class HolyPearAltarBlock extends Block {
         super(settings);
     }
 
+    // Maybe move these deprecated onUse methods to handler class, instead of rewrite of block
     @Override
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
         ItemStack mainStack = player.getStackInHand(Hand.MAIN_HAND);

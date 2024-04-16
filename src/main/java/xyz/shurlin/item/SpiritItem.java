@@ -26,14 +26,4 @@ public class SpiritItem extends BasicItem {
     public void usageTick(World world, LivingEntity user, ItemStack stack, int remainingUseTicks) {
         super.usageTick(world, user, stack, remainingUseTicks);
     }
-
-//    @Override
-//    public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
-//        ItemStack stack = user.getStackInHand(hand);
-//        CultivationRealm realm = getCultivationRealmByEntity(user);
-//        if(realm!=null){
-//            realm.upgrade();
-//        }
-//        return TypedActionResult.success(stack);
-//    }
 }

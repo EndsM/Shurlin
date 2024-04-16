@@ -87,10 +87,4 @@ public class BreakerBlockEntity extends AbstractWorkerBlockEntity {
     public int size() {
         return 2;
     }
-
-//    private Item getInput(){
-//        return this.inventory.get(0).getItem();
-//    }
-
-
 }

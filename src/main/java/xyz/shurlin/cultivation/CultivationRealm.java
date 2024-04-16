@@ -8,6 +8,7 @@ import java.util.Random;
 import static xyz.shurlin.cultivation.SpiritMeridians.getMaxExs;
 import static xyz.shurlin.cultivation.SpiritMeridians.getMaxSpirits;
 
+// Create a Cultivation API later, maybe five major versions later though
 public class CultivationRealm {
     private CultivationRealms realm;
     private short rank;
