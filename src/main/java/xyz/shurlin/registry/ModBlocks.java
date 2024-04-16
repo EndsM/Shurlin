@@ -84,13 +84,12 @@ public class ModBlocks {
 
     // We can do this later, just separate register Blocks and BlockItems, and remove this itemGroup parameter.
     // Also, we can move ItemGroup to each of item types after remove the BasicItem and BasicBlockItem
-    private static Block registerBlock(String name, Block block, boolean doRegisterDefaultBlockItem) {
+    private static void registerBlock(String name, Block block, boolean doRegisterDefaultBlockItem) {
         Block registeredBlock = Registry.register(Registry.BLOCK, new Identifier(Shurlin.MODID, name), block);
         if (doRegisterDefaultBlockItem) {
             // Keep the temp solution cause the corals
             registerBlockItem(name, block, ItemGroups.SHURLIN);
         }
-        return registeredBlock;
     }
 
     // Will make each registry also use this later
@@ -107,65 +106,65 @@ public class ModBlocks {
     // TODO: make it looks like ModConfiguredFeature.java
     public static void Register() {
         // Register blocks and block items
-        PLANT_IRON_ORE_BLOCK = registerBlock("plant_iron_ore_block", PLANT_IRON_ORE_BLOCK, true);
-        PLANT_IRON_BLOCK = registerBlock("plant_iron_block", PLANT_IRON_BLOCK, true);
-        PLANT_GOLD_ORE_BLOCK = registerBlock("plant_gold_ore_block", PLANT_GOLD_ORE_BLOCK, true);
-        PLANT_GOLD_BLOCK = registerBlock("plant_gold_block", PLANT_GOLD_BLOCK, true);
-        PLANT_JADE_ORE_BLOCK = registerBlock("plant_jade_ore_block", PLANT_JADE_ORE_BLOCK, true);
-        PLANT_JADE_BLOCK = registerBlock("plant_jade_block", PLANT_JADE_BLOCK, true);
-        SMALL_BUD = registerBlock("small_bud", SMALL_BUD, true);
-        PLATYCODON_GRANDIFLORUS = registerBlock("platycodon_grandiflorus", PLATYCODON_GRANDIFLORUS, true);
-        PEAR_LOG = registerBlock("pear_log", PEAR_LOG, true);
-        PEAR_PLANKS = registerBlock("pear_planks", PEAR_PLANKS, true);
-        PEAR_LEAVES = registerBlock("pear_leaves", PEAR_LEAVES, true);
-        PEAR_RIPE_LEAVES = registerBlock("pear_ripe_leaves", PEAR_RIPE_LEAVES, true);
-        PEAR_DOOR = registerBlock("pear_door", PEAR_DOOR, true);
-        PHOENIX_LOG = registerBlock("phoenix_log", PHOENIX_LOG, true);
-        PHOENIX_PLANKS = registerBlock("phoenix_planks", PHOENIX_PLANKS, true);
-        PHOENIX_LEAVES = registerBlock("phoenix_leaves", PHOENIX_LEAVES, true);
+        registerBlock("plant_iron_ore_block", PLANT_IRON_ORE_BLOCK, true);
+        registerBlock("plant_iron_block", PLANT_IRON_BLOCK, true);
+        registerBlock("plant_gold_ore_block", PLANT_GOLD_ORE_BLOCK, true);
+        registerBlock("plant_gold_block", PLANT_GOLD_BLOCK, true);
+        registerBlock("plant_jade_ore_block", PLANT_JADE_ORE_BLOCK, true);
+        registerBlock("plant_jade_block", PLANT_JADE_BLOCK, true);
+        registerBlock("small_bud", SMALL_BUD, true);
+        registerBlock("platycodon_grandiflorus", PLATYCODON_GRANDIFLORUS, true);
+        registerBlock("pear_log", PEAR_LOG, true);
+        registerBlock("pear_planks", PEAR_PLANKS, true);
+        registerBlock("pear_leaves", PEAR_LEAVES, true);
+        registerBlock("pear_ripe_leaves", PEAR_RIPE_LEAVES, true);
+        registerBlock("pear_door", PEAR_DOOR, true);
+        registerBlock("phoenix_log", PHOENIX_LOG, true);
+        registerBlock("phoenix_planks", PHOENIX_PLANKS, true);
+        registerBlock("phoenix_leaves", PHOENIX_LEAVES, true);
         // Worker Blocks
-        BREAKER_BLOCK = registerBlock("breaker_block", BREAKER_BLOCK, true);
-        COLLECTOR_BLOCK = registerBlock("collector_block", COLLECTOR_BLOCK, true);
-        CONCENTRATOR_BLOCK = registerBlock("concentrator_block", CONCENTRATOR_BLOCK, true);
-        EXTRACTOR_BLOCK = registerBlock("extractor_block", EXTRACTOR_BLOCK, true);
+        registerBlock("breaker_block", BREAKER_BLOCK, true);
+        registerBlock("collector_block", COLLECTOR_BLOCK, true);
+        registerBlock("concentrator_block", CONCENTRATOR_BLOCK, true);
+        registerBlock("extractor_block", EXTRACTOR_BLOCK, true);
         // Altars
         // Refactor these two later
-        HOLY_PEAR_ALTAR = registerBlock("holy_pear_altar", HOLY_PEAR_ALTAR, true);
-        STARRY_ALTAR = registerBlock("starry_altar", STARRY_ALTAR, true);
-        MYSTERIOUS_STONE = registerBlock("mysterious_stone", MYSTERIOUS_STONE, true);
-        PLANT_OBSIDIAN = registerBlock("plant_obsidian", PLANT_OBSIDIAN, true);
+        registerBlock("holy_pear_altar", HOLY_PEAR_ALTAR, true);
+        registerBlock("starry_altar", STARRY_ALTAR, true);
+        registerBlock("mysterious_stone", MYSTERIOUS_STONE, true);
+        registerBlock("plant_obsidian", PLANT_OBSIDIAN, true);
         // Four stuff below are not supposed to have BlockItem
-        HOLY_FARMER_PORTAL = registerBlock("holy_farmer_portal", HOLY_FARMER_PORTAL, false);
-        CULTIVATION_CRYSTAL = registerBlock("cultivation_crystal", CULTIVATION_CRYSTAL, false);
-        SUCCULENT_BLOCK = registerBlock("succulent_block", SUCCULENT_BLOCK, false);
-        LLANDUDNO = registerBlock("llandudno_block", LLANDUDNO, false);
+        registerBlock("holy_farmer_portal", HOLY_FARMER_PORTAL, false);
+        registerBlock("cultivation_crystal", CULTIVATION_CRYSTAL, false);
+        registerBlock("succulent_block", SUCCULENT_BLOCK, false);
+        registerBlock("llandudno_block", LLANDUDNO, false);
         // Saplings
-        PEAR_SAPLING = registerBlock("pear_sapling", PEAR_SAPLING, true);
-        PHOENIX_SAPLING = registerBlock("phoenix_sapling", PHOENIX_SAPLING, true);
+        registerBlock("pear_sapling", PEAR_SAPLING, true);
+        registerBlock("phoenix_sapling", PHOENIX_SAPLING, true);
         // Coral related, Leave Coral related stuff need naming and structure changes, will figure it out later.
-        DEAD_LEAVE_CORAL = registerBlock("dead_leave_coral", DEAD_LEAVE_CORAL, true);
-        LEAVE_CORAL = registerBlock("leave_coral", LEAVE_CORAL, true);
-        DEAD_LEAVE_CORAL_FAN = registerBlock("dead_leave_coral_fan", DEAD_LEAVE_CORAL_FAN, false);
-        LEAVE_CORAL_FAN = registerBlock("leave_coral_fan", LEAVE_CORAL_FAN, false);
-        DEAD_LEAVE_CORAL_WALL_FAN = registerBlock("dead_leave_coral_wall_fan", DEAD_LEAVE_CORAL_WALL_FAN, false);
-        LEAVE_CORAL_WALL_FAN = registerBlock("leave_coral_wall_fan", LEAVE_CORAL_WALL_FAN, false);
-        DEAD_LEAVE_CORAL_BLOCK = registerBlock("dead_leave_coral_block", DEAD_LEAVE_CORAL_BLOCK, true);
-        LEAVE_CORAL_BLOCK = registerBlock("leave_coral_block", LEAVE_CORAL_BLOCK, true);
+        registerBlock("dead_leave_coral", DEAD_LEAVE_CORAL, true);
+        registerBlock("leave_coral", LEAVE_CORAL, true);
+        registerBlock("dead_leave_coral_fan", DEAD_LEAVE_CORAL_FAN, false);
+        registerBlock("leave_coral_fan", LEAVE_CORAL_FAN, false);
+        registerBlock("dead_leave_coral_wall_fan", DEAD_LEAVE_CORAL_WALL_FAN, false);
+        registerBlock("leave_coral_wall_fan", LEAVE_CORAL_WALL_FAN, false);
+        registerBlock("dead_leave_coral_block", DEAD_LEAVE_CORAL_BLOCK, true);
+        registerBlock("leave_coral_block", LEAVE_CORAL_BLOCK, true);
         // Fire land blocks
-        HOT_FIRE_STONE = registerBlock("hot_fire_stone", HOT_FIRE_STONE, true);
-        HOT_FIRE_DIRT = registerBlock("hot_fire_dirt", HOT_FIRE_DIRT, true);
+        registerBlock("hot_fire_stone", HOT_FIRE_STONE, true);
+        registerBlock("hot_fire_dirt", HOT_FIRE_DIRT, true);
         // Spirit ore blocks
-        TENUOUS_METAL_SPIRIT_ORE_BLOCK = registerBlock("tenuous_metal_spirit_ore_block", TENUOUS_METAL_SPIRIT_ORE_BLOCK, true);
-        TENUOUS_WOOD_SPIRIT_ORE_BLOCK = registerBlock("tenuous_wood_spirit_ore_block", TENUOUS_WOOD_SPIRIT_ORE_BLOCK, true);
-        TENUOUS_WATER_SPIRIT_ORE_BLOCK = registerBlock("tenuous_water_spirit_ore_block", TENUOUS_WATER_SPIRIT_ORE_BLOCK, true);
-        TENUOUS_FIRE_SPIRIT_ORE_BLOCK = registerBlock("tenuous_fire_spirit_ore_block", TENUOUS_FIRE_SPIRIT_ORE_BLOCK, true);
-        TENUOUS_EARTH_SPIRIT_ORE_BLOCK = registerBlock("tenuous_earth_spirit_ore_block", TENUOUS_EARTH_SPIRIT_ORE_BLOCK, true);
-        TENUOUS_WIND_SPIRIT_ORE_BLOCK = registerBlock("tenuous_wind_spirit_ore_block", TENUOUS_WIND_SPIRIT_ORE_BLOCK, true);
-        TENUOUS_LIGHT_SPIRIT_ORE_BLOCK = registerBlock("tenuous_light_spirit_ore_block", TENUOUS_LIGHT_SPIRIT_ORE_BLOCK, true);
-        TENUOUS_DARKNESS_SPIRIT_ORE_BLOCK = registerBlock("tenuous_darkness_spirit_ore_block", TENUOUS_DARKNESS_SPIRIT_ORE_BLOCK, true);
-        TENUOUS_POISON_SPIRIT_ORE_BLOCK = registerBlock("tenuous_poison_spirit_ore_block", TENUOUS_POISON_SPIRIT_ORE_BLOCK, true);
-        TENUOUS_LIGHTNING_SPIRIT_ORE_BLOCK = registerBlock("tenuous_lightning_spirit_ore_block", TENUOUS_LIGHTNING_SPIRIT_ORE_BLOCK, true);
-        TENUOUS_ICE_SPIRIT_ORE_BLOCK = registerBlock("tenuous_ice_spirit_ore_block", TENUOUS_ICE_SPIRIT_ORE_BLOCK, true);
-        TENUOUS_TIME_SPACE_SPIRIT_ORE_BLOCK = registerBlock("tenuous_time_space_spirit_ore_block", TENUOUS_TIME_SPACE_SPIRIT_ORE_BLOCK, true);
+        registerBlock("tenuous_metal_spirit_ore_block", TENUOUS_METAL_SPIRIT_ORE_BLOCK, true);
+        registerBlock("tenuous_wood_spirit_ore_block", TENUOUS_WOOD_SPIRIT_ORE_BLOCK, true);
+        registerBlock("tenuous_water_spirit_ore_block", TENUOUS_WATER_SPIRIT_ORE_BLOCK, true);
+        registerBlock("tenuous_fire_spirit_ore_block", TENUOUS_FIRE_SPIRIT_ORE_BLOCK, true);
+        registerBlock("tenuous_earth_spirit_ore_block", TENUOUS_EARTH_SPIRIT_ORE_BLOCK, true);
+        registerBlock("tenuous_wind_spirit_ore_block", TENUOUS_WIND_SPIRIT_ORE_BLOCK, true);
+        registerBlock("tenuous_light_spirit_ore_block", TENUOUS_LIGHT_SPIRIT_ORE_BLOCK, true);
+        registerBlock("tenuous_darkness_spirit_ore_block", TENUOUS_DARKNESS_SPIRIT_ORE_BLOCK, true);
+        registerBlock("tenuous_poison_spirit_ore_block", TENUOUS_POISON_SPIRIT_ORE_BLOCK, true);
+        registerBlock("tenuous_lightning_spirit_ore_block", TENUOUS_LIGHTNING_SPIRIT_ORE_BLOCK, true);
+        registerBlock("tenuous_ice_spirit_ore_block", TENUOUS_ICE_SPIRIT_ORE_BLOCK, true);
+        registerBlock("tenuous_time_space_spirit_ore_block", TENUOUS_TIME_SPACE_SPIRIT_ORE_BLOCK, true);
     }
 }
