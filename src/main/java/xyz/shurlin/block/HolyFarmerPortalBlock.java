@@ -17,12 +17,12 @@ import xyz.shurlin.registry.ModBlocks;
 import xyz.shurlin.util.Utils;
 import xyz.shurlin.world.dimension.Dimensions;
 
-public class HolyFarmerPortalBlock extends BasicBlock {
+// Need update
+public class HolyFarmerPortalBlock extends Block {
     private static final VoxelShape SHAPE;
 
     public HolyFarmerPortalBlock(Settings settings) {
         super(settings);
-//        NetherPortalBlock
     }
 
     @Override

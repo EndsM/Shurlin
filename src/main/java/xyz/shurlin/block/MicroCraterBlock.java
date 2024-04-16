@@ -1,12 +1,13 @@
 package xyz.shurlin.block;
 
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
 
 import java.util.Random;
 
-public class MicroCraterBlock extends BasicBlock {
+public class MicroCraterBlock extends Block {
     private boolean working;
 
     public MicroCraterBlock(Settings settings) {
@@ -23,6 +24,5 @@ public class MicroCraterBlock extends BasicBlock {
 
     private void erupt(ServerWorld world) {
 //        world.addFireworkParticle();
-
     }
 }
