@@ -23,8 +23,11 @@ import xyz.shurlin.registry.features.ModConfiguredFeatures;
 import xyz.shurlin.registry.setting.BlockSettings;
 
 public class ModBlocks {
-    public static Block PLANT_IRON_ORE_BLOCK;
-    public static Block PLANT_IRON_BLOCK;
+    // So basically, this will serve as the block var we can use other places.
+    // And registry goes like just a process, not an assignment process
+    // Can change these variables to constants later
+    public static Block PLANT_IRON_ORE_BLOCK = new SpiritOreBlock(BlockSettings.ORE);
+    public static Block PLANT_IRON_BLOCK = new Block(FabricBlockSettings.copy(Blocks.IRON_BLOCK));
     public static Block PLANT_GOLD_ORE_BLOCK;
     public static Block PLANT_GOLD_BLOCK;
     public static Block PLANT_JADE_ORE_BLOCK;
