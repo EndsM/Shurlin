@@ -29,10 +29,10 @@ public class Shurlin implements ModInitializer {
 
     @Override
     public void onInitialize() {
+        ModFeatures.RegisterAndHandle();
+
         ModBlocks.Register();
         ModItems.Register();
-
-        ModFeatures.RegisterAndHandle();
 
         // Move all old "load" method to my preference method
         BlockEntityTypes.load();
