@@ -40,23 +40,26 @@ public class ModBlocks {
     public static Block PEAR_RIPE_LEAVES = new LeavesBlock(BlockSettings.LEAVES.strength(0.3f, 0.3f));
     public static Block PEAR_DOOR = new BasicDoorBlock();
     public static Block PHOENIX_LOG = new PillarBlock(BlockSettings.LOG);
-    public static Block PHOENIX_PLANKS=new Block(BlockSettings.PLANKS);
-    public static Block PHOENIX_LEAVES=new LeavesBlock(BlockSettings.LEAVES);
-    public static Block BREAKER_BLOCK=new BreakerBlock(BlockSettings.WORKER);
-    public static Block COLLECTOR_BLOCK=new CollectorBlock(BlockSettings.WORKER);
-    public static Block CONCENTRATOR_BLOCK=new ConcentratorBlock(BlockSettings.WORKER);
-    public static Block EXTRACTOR_BLOCK =new ExtractorBlock(BlockSettings.WORKER);
-    public static Block HOLY_PEAR_ALTAR =new HolyPearAltarBlock(FabricBlockSettings.copy(Blocks.OBSIDIAN));
-    public static Block STARRY_ALTAR=new StarryAltarBlock(FabricBlockSettings.of(Material.STONE).strength(10.0f).luminance(12));
-    public static Block MYSTERIOUS_STONE;
-    public static Block PLANT_OBSIDIAN;
-    public static Block HOLY_FARMER_PORTAL;
-    public static Block CULTIVATION_CRYSTAL;
-    public static Block SUCCULENT_BLOCK;
-    public static Block LLANDUDNO;
-    public static Block PEAR_SAPLING;
-    public static Block PHOENIX_SAPLING;
-    public static Block DEAD_LEAVE_CORAL;
+    public static Block PHOENIX_PLANKS = new Block(BlockSettings.PLANKS);
+    public static Block PHOENIX_LEAVES = new LeavesBlock(BlockSettings.LEAVES);
+    public static Block BREAKER_BLOCK = new BreakerBlock(BlockSettings.WORKER);
+    public static Block COLLECTOR_BLOCK = new CollectorBlock(BlockSettings.WORKER);
+    public static Block CONCENTRATOR_BLOCK = new ConcentratorBlock(BlockSettings.WORKER);
+    public static Block EXTRACTOR_BLOCK = new ExtractorBlock(BlockSettings.WORKER);
+    public static Block HOLY_PEAR_ALTAR = new HolyPearAltarBlock(FabricBlockSettings.copy(Blocks.OBSIDIAN));
+    public static Block STARRY_ALTAR = new StarryAltarBlock(FabricBlockSettings.of(Material.STONE).strength(10.0f).luminance(12));
+    public static Block MYSTERIOUS_STONE = new MysteriousStoneBlock(FabricBlockSettings.of(Material.STONE).strength(-1, 3600));
+    public static Block PLANT_OBSIDIAN = new Block(BlockSettings.OBSIDIAN);
+    public static Block HOLY_FARMER_PORTAL = new HolyFarmerPortalBlock(FabricBlockSettings.of(Material.PORTAL).noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.GLASS).luminance(12));
+    public static Block CULTIVATION_CRYSTAL = new CultivationCrystalBlock(FabricBlockSettings.of(Material.GLASS).strength(-1).nonOpaque());
+    public static Block SUCCULENT_BLOCK = new SucculentBlock(
+            FabricBlockSettings.of(Material.ORGANIC_PRODUCT, MapColor.PALE_GREEN).slipperiness(0.8F).sounds(BlockSoundGroup.SLIME).nonOpaque()
+                    .luminance((state) -> state.get(SucculentBlock.SHINING) ? 8 : 0)
+    );
+    public static Block LLANDUDNO = new Block(BlockSettings.LLANDUDNO);
+    public static Block PEAR_SAPLING = new BasicSaplingBlock(ModConfiguredFeatures.PEAR_TREE, BlockSettings.PLANT);
+    public static Block PHOENIX_SAPLING = new BasicSaplingBlock(ModConfiguredFeatures.PHOENIX_TREE, BlockSettings.PLANT);
+    public static Block DEAD_LEAVE_CORAL = new DeadLeaveCoralBlock(BlockSettings.DEAD_CORAL);
     public static Block LEAVE_CORAL;
     public static Block DEAD_LEAVE_CORAL_FAN;
     public static Block LEAVE_CORAL_FAN;
