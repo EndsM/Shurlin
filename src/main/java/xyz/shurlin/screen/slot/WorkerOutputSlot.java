@@ -39,10 +39,6 @@ public class WorkerOutputSlot extends Slot {
 
     protected void onCrafted(ItemStack stack) {
         stack.onCraft(this.player.world, this.player, this.amount);
-//        if (!this.player.world.isClient && this.inventory instanceof AbstractWorkerBlockEntity) {
-//            ((AbstractWorkerBlockEntity)this.inventory).dropExperience(this.player);
-//        }
-
         this.amount = 0;
     }
 }

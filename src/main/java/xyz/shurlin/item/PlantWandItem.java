@@ -20,15 +20,6 @@ public class PlantWandItem extends Item {
         super(new Settings().maxDamage(256).group(ItemGroups.SHURLIN));
     }
 
-//    @Override
-//    public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
-//        ItemStack stack = user.getStackInHand(hand);
-//        for (Identifier id : Registry.RECIPE_SERIALIZER.getIds()) {
-//            System.out.println(id);
-//        }
-//        return TypedActionResult.success(stack);
-//    }
-
     @Override
     public ActionResult useOnBlock(ItemUsageContext context) {
         BlockPos pos = context.getBlockPos();

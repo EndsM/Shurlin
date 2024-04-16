@@ -3,15 +3,22 @@ package xyz.shurlin.registry;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
+import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
+import xyz.shurlin.Shurlin;
 import xyz.shurlin.item.ItemGroups;
 
 public class ModItems {
     public static Item DEAD_LEAVE_CORAL_FAN_BLOCK;
     public static Item LEAVE_CORAL_FAN_BLOCK;
+    public static Item PLANT_MIXTURE;
 
     private static String getBlockId(Block block) {
         return Registry.BLOCK.getId(block).getPath();
+    }
+
+    private static Item register(String name , Item item){
+return         Registry.register(Registry.ITEM,new Identifier(Shurlin.MODID,name),item);
     }
 
     public static void Register() {
