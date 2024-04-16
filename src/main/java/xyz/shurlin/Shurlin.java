@@ -31,6 +31,9 @@ public class Shurlin implements ModInitializer {
     public void onInitialize() {
         ModBlocks.Register();
         ModItems.Register();
+
+        ModFeatures.RegisterAndHandle();
+
         // Move all old "load" method to my preference method
         BlockEntityTypes.load();
         Items.load();
@@ -44,7 +47,6 @@ public class Shurlin implements ModInitializer {
         Biomes.load();
         BiomeGenerator.load();
         ShurlinOreFeatures.load();
-        ModFeatures.RegisterAndHandle();
         Linkage.init();
     }
 }

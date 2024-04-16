@@ -98,6 +98,7 @@ public class ModBlocks {
         return registeredBlockItem;
     }
 
+    // TODO: make it looks like ModConfiguredFeature.java
     public static void Register() {
         // Register blocks and block items
         PLANT_IRON_ORE_BLOCK = registerBlock("plant_iron_ore_block", new SpiritOreBlock(BlockSettings.ORE), true);
