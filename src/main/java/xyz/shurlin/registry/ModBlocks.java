@@ -60,27 +60,27 @@ public class ModBlocks {
     public static Block PEAR_SAPLING = new BasicSaplingBlock(ModConfiguredFeatures.PEAR_TREE, BlockSettings.PLANT);
     public static Block PHOENIX_SAPLING = new BasicSaplingBlock(ModConfiguredFeatures.PHOENIX_TREE, BlockSettings.PLANT);
     public static Block DEAD_LEAVE_CORAL = new DeadLeaveCoralBlock(BlockSettings.DEAD_CORAL);
-    public static Block LEAVE_CORAL;
-    public static Block DEAD_LEAVE_CORAL_FAN;
-    public static Block LEAVE_CORAL_FAN;
-    public static Block DEAD_LEAVE_CORAL_WALL_FAN;
-    public static Block LEAVE_CORAL_WALL_FAN;
-    public static Block DEAD_LEAVE_CORAL_BLOCK;
-    public static Block LEAVE_CORAL_BLOCK;
-    public static Block HOT_FIRE_STONE;
-    public static Block HOT_FIRE_DIRT;
-    public static Block TENUOUS_METAL_SPIRIT_ORE_BLOCK;
-    public static Block TENUOUS_WOOD_SPIRIT_ORE_BLOCK;
-    public static Block TENUOUS_WATER_SPIRIT_ORE_BLOCK;
-    public static Block TENUOUS_FIRE_SPIRIT_ORE_BLOCK;
-    public static Block TENUOUS_EARTH_SPIRIT_ORE_BLOCK;
-    public static Block TENUOUS_WIND_SPIRIT_ORE_BLOCK;
-    public static Block TENUOUS_LIGHT_SPIRIT_ORE_BLOCK;
-    public static Block TENUOUS_DARKNESS_SPIRIT_ORE_BLOCK;
-    public static Block TENUOUS_POISON_SPIRIT_ORE_BLOCK;
-    public static Block TENUOUS_LIGHTNING_SPIRIT_ORE_BLOCK;
-    public static Block TENUOUS_ICE_SPIRIT_ORE_BLOCK;
-    public static Block TENUOUS_TIME_SPACE_SPIRIT_ORE_BLOCK;
+    public static Block LEAVE_CORAL = new LeaveCoralBlock(DEAD_LEAVE_CORAL, BlockSettings.CORAL);
+    public static Block DEAD_LEAVE_CORAL_FAN = new DeadLeaveCoralFanBlock(BlockSettings.DEAD_CORAL);
+    public static Block LEAVE_CORAL_FAN = new LeaveCoralFanBlock(DEAD_LEAVE_CORAL_FAN, BlockSettings.CORAL);
+    public static Block DEAD_LEAVE_CORAL_WALL_FAN = new DeadLeaveCoralWallFanBlock(BlockSettings.DEAD_CORAL.dropsLike(DEAD_LEAVE_CORAL_FAN));
+    public static Block LEAVE_CORAL_WALL_FAN = new LeaveCoralWallFanBlock(DEAD_LEAVE_CORAL_WALL_FAN, BlockSettings.CORAL.dropsLike(LEAVE_CORAL_FAN));
+    public static Block DEAD_LEAVE_CORAL_BLOCK = new Block(BlockSettings.DEAD_CORAL_BLOCK);
+    public static Block LEAVE_CORAL_BLOCK = new LeaveCoralBlockBlock(DEAD_LEAVE_CORAL_BLOCK, BlockSettings.CORAL_BLOCK);
+    public static Block HOT_FIRE_STONE = new Block(BlockSettings.STONE);
+    public static Block HOT_FIRE_DIRT = new Block(BlockSettings.DIRT);
+    public static Block TENUOUS_METAL_SPIRIT_ORE_BLOCK = new SpiritOreBlock(BlockSettings.ORE);
+    public static Block TENUOUS_WOOD_SPIRIT_ORE_BLOCK = new SpiritOreBlock(BlockSettings.ORE);
+    public static Block TENUOUS_WATER_SPIRIT_ORE_BLOCK = new SpiritOreBlock(BlockSettings.ORE);
+    public static Block TENUOUS_FIRE_SPIRIT_ORE_BLOCK = new SpiritOreBlock(BlockSettings.ORE);
+    public static Block TENUOUS_EARTH_SPIRIT_ORE_BLOCK = new SpiritOreBlock(BlockSettings.ORE);
+    public static Block TENUOUS_WIND_SPIRIT_ORE_BLOCK = new SpiritOreBlock(BlockSettings.ORE);
+    public static Block TENUOUS_LIGHT_SPIRIT_ORE_BLOCK = new SpiritOreBlock(BlockSettings.ORE);
+    public static Block TENUOUS_DARKNESS_SPIRIT_ORE_BLOCK = new SpiritOreBlock(BlockSettings.ORE);
+    public static Block TENUOUS_POISON_SPIRIT_ORE_BLOCK = new SpiritOreBlock(BlockSettings.ORE);
+    public static Block TENUOUS_LIGHTNING_SPIRIT_ORE_BLOCK = new SpiritOreBlock(BlockSettings.ORE);
+    public static Block TENUOUS_ICE_SPIRIT_ORE_BLOCK = new SpiritOreBlock(BlockSettings.ORE_IN_ICE);
+    public static Block TENUOUS_TIME_SPACE_SPIRIT_ORE_BLOCK = new SpiritOreBlock(BlockSettings.ORE);
 
     // We can do this later, just separate register Blocks and BlockItems, and remove this itemGroup parameter.
     // Also, we can move ItemGroup to each of item types after remove the BasicItem and BasicBlockItem
@@ -108,10 +108,10 @@ public class ModBlocks {
     public static void Register() {
         // Register blocks and block items
         PLANT_IRON_ORE_BLOCK = registerBlock("plant_iron_ore_block", PLANT_IRON_ORE_BLOCK, true);
-        PLANT_IRON_BLOCK = registerBlock("plant_iron_block", new Block(FabricBlockSettings.copy(Blocks.IRON_BLOCK)), true);
-        PLANT_GOLD_ORE_BLOCK = registerBlock("plant_gold_ore_block", new SpiritOreBlock(BlockSettings.ORE), true);
-        PLANT_GOLD_BLOCK = registerBlock("plant_gold_block", new Block(FabricBlockSettings.copy(Blocks.GOLD_BLOCK)), true);
-        PLANT_JADE_ORE_BLOCK = registerBlock("plant_jade_ore_block", new SpiritOreBlock(BlockSettings.ORE), true);
+        PLANT_IRON_BLOCK = registerBlock("plant_iron_block", PLANT_IRON_BLOCK, true);
+        PLANT_GOLD_ORE_BLOCK = registerBlock("plant_gold_ore_block", PLANT_GOLD_ORE_BLOCK, true);
+        PLANT_GOLD_BLOCK = registerBlock("plant_gold_block", PLANT_GOLD_BLOCK, true);
+        PLANT_JADE_ORE_BLOCK = registerBlock("plant_jade_ore_block", PLANT_JADE_ORE_BLOCK, true);
         PLANT_JADE_BLOCK = registerBlock("plant_jade_block", new Block(FabricBlockSettings.copy(Blocks.DIAMOND_BLOCK)), true);
         SMALL_BUD = registerBlock("small_bud", new SmallBudBlock(BlockSettings.PLANT), true);
         PLATYCODON_GRANDIFLORUS = registerBlock("platycodon_grandiflorus", new PlatycodonGrandiflorusBlock(StatusEffects.REGENERATION, 1314, BlockSettings.PLANT), true);
