@@ -28,10 +28,10 @@ public class ModBlocks {
     // Can change these variables to constants later
     public static Block PLANT_IRON_ORE_BLOCK = new SpiritOreBlock(BlockSettings.ORE);
     public static Block PLANT_IRON_BLOCK = new Block(FabricBlockSettings.copy(Blocks.IRON_BLOCK));
-    public static Block PLANT_GOLD_ORE_BLOCK;
-    public static Block PLANT_GOLD_BLOCK;
-    public static Block PLANT_JADE_ORE_BLOCK;
-    public static Block PLANT_JADE_BLOCK;
+    public static Block PLANT_GOLD_ORE_BLOCK = new SpiritOreBlock(BlockSettings.ORE);
+    public static Block PLANT_GOLD_BLOCK=new Block(FabricBlockSettings.copy(Blocks.GOLD_BLOCK));
+    public static Block PLANT_JADE_ORE_BLOCK=new SpiritOreBlock(BlockSettings.ORE);
+    public static Block PLANT_JADE_BLOCK =new Block(FabricBlockSettings.copy(Blocks.DIAMOND_BLOCK));
     public static Block SMALL_BUD;
     public static Block PLATYCODON_GRANDIFLORUS;
     public static Block PEAR_LOG;
@@ -104,7 +104,7 @@ public class ModBlocks {
     // TODO: make it looks like ModConfiguredFeature.java
     public static void Register() {
         // Register blocks and block items
-        PLANT_IRON_ORE_BLOCK = registerBlock("plant_iron_ore_block", new SpiritOreBlock(BlockSettings.ORE), true);
+        PLANT_IRON_ORE_BLOCK = registerBlock("plant_iron_ore_block", PLANT_IRON_ORE_BLOCK, true);
         PLANT_IRON_BLOCK = registerBlock("plant_iron_block", new Block(FabricBlockSettings.copy(Blocks.IRON_BLOCK)), true);
         PLANT_GOLD_ORE_BLOCK = registerBlock("plant_gold_ore_block", new SpiritOreBlock(BlockSettings.ORE), true);
         PLANT_GOLD_BLOCK = registerBlock("plant_gold_block", new Block(FabricBlockSettings.copy(Blocks.GOLD_BLOCK)), true);
