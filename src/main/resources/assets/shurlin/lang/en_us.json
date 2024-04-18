@@ -1,5 +1,9 @@
 {
   "itemGroup.shurlin.shurlin" : "Shurlin",
+  "category.shurlin": "Shurlin",
+  "key.shurlin.perform_cul_act": "Perform Cultivation action",
+  "key.shurlin.open_cul_menu": "Open Cultivation Menu",
+  "key.shurlin.infuse_spirit": "Infuse Spirit",
 
   "item.shurlin.bean" : "Bean",
   "item.shurlin.plant_essence" : "Plant Essence",

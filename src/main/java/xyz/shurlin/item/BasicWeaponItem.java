@@ -40,7 +40,7 @@ public class BasicWeaponItem extends Item {
     @Override
     public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
         if (selected)
-            if (KeyBindings.inject_spirit.wasPressed()) {
+            if (KeyBindings.infuse_spirit.wasPressed()) {
                 this.withSpirit = !this.withSpirit;
                 if (entity instanceof PlayerEntity)
                     ((PlayerEntity) entity).swingHand(Hand.MAIN_HAND);

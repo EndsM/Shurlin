@@ -27,8 +27,8 @@ public class KeyBindings {
             GLFW.GLFW_KEY_O,
             "category." + Shurlin.MODID
     );
-    public static KeyBinding inject_spirit = new KeyBinding(
-            "key.shurlin.inject_spirit",
+    public static KeyBinding infuse_spirit = new KeyBinding(
+            "key.shurlin.infuse_spirit",
             InputUtil.Type.KEYSYM,
             GLFW.GLFW_KEY_I,
             "category." + Shurlin.MODID
@@ -37,7 +37,7 @@ public class KeyBindings {
     public static void init() {
         KeyBindingHelper.registerKeyBinding(perform_cul_act);
         KeyBindingHelper.registerKeyBinding(open_cul_menu);
-        KeyBindingHelper.registerKeyBinding(inject_spirit);
+        KeyBindingHelper.registerKeyBinding(infuse_spirit);
 
         // This need fix later
         ClientTickEvents.END_CLIENT_TICK.register(minecraftClient -> {
