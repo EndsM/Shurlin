@@ -13,7 +13,7 @@ public class ModItems {
     public static Item DEAD_LEAVE_CORAL_FAN_BLOCK;
     public static Item LEAVE_CORAL_FAN_BLOCK;
     // Down below will just use constants I think...
-    public static Item PLANT_MIXTURE;
+    public static final Item PLANT_MIXTURE = null;
 
     private static String getBlockId(Block block) {
         return Registry.BLOCK.getId(block).getPath();
