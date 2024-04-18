@@ -37,7 +37,7 @@ public class ShurlinClient implements ClientModInitializer {
                 .register(EntityTypes.ROAMING_SPIRIT_ENTITY_TYPE, (manager, context) -> new RoamingSpiritEntityRender(manager));
 
         HandledScreens.registerAll();
-        KeyBindings.load();
+        KeyBindings.init();
         Linkage.initClient();
     }
 }
