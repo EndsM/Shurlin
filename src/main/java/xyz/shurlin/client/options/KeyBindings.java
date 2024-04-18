@@ -34,12 +34,12 @@ public class KeyBindings {
             "category." + Shurlin.MODID
     );
 
-
     public static void init() {
         KeyBindingHelper.registerKeyBinding(perform_cul_act);
         KeyBindingHelper.registerKeyBinding(open_cul_menu);
         KeyBindingHelper.registerKeyBinding(inject_spirit);
 
+        // This need fix later
         ClientTickEvents.END_CLIENT_TICK.register(minecraftClient -> {
             if (open_cul_menu.isPressed()) {
                 PacketByteBuf buffer = PacketByteBufs.create();

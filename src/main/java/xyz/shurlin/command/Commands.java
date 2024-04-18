@@ -9,15 +9,13 @@ import static net.minecraft.server.command.CommandManager.literal;
 
 public class Commands {
     public static void load() {
-        CommandRegistrationCallback.EVENT.register((dispatcher, dedicated) -> {
-            dispatcher.register(CommandManager.literal("shurlin")
-                    .then(literal("check_realm"))
-                    .executes(c -> {
-                        c.getSource().sendFeedback(
-                                ((CultivatedPlayerAccessor) c.getSource().getPlayer()).getRealm().getDescribeText(),
-                                false);
-                        return Command.SINGLE_SUCCESS;
-                    }));
-        });
+        CommandRegistrationCallback.EVENT.register((dispatcher, dedicated) -> dispatcher.register(CommandManager.literal("shurlin")
+                .then(literal("check_realm"))
+                .executes(c -> {
+                    c.getSource().sendFeedback(
+                            ((CultivatedPlayerAccessor) c.getSource().getPlayer()).getRealm().getDescribeText(),
+                            false);
+                    return Command.SINGLE_SUCCESS;
+                })));
     }
 }
