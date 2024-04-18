@@ -14,7 +14,6 @@ public class Items {
     public static void load() {
     }
 
-    public static final Item PLANT_ESSENCE_INGOT;
     public static final Item PLANT_DREGS;
     public static final Item PLANT_IRON_INGOT;
     public static final Item PLANT_IRON_NUGGET;
@@ -123,7 +122,6 @@ public class Items {
     }
 
     static {
-        PLANT_ESSENCE_INGOT = register("plant_essence_ingot");
         PLANT_DREGS = register("plant_dregs");
         PLANT_IRON_INGOT = register("plant_iron_ingot");
         PLANT_IRON_NUGGET = register("plant_iron_nugget");
