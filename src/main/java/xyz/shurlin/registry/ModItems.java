@@ -9,16 +9,18 @@ import xyz.shurlin.Shurlin;
 import xyz.shurlin.item.ItemGroups;
 
 public class ModItems {
+    // These two are using ModBlocks class' function
     public static Item DEAD_LEAVE_CORAL_FAN_BLOCK;
     public static Item LEAVE_CORAL_FAN_BLOCK;
+    // Down below will just use constants I think...
     public static Item PLANT_MIXTURE;
 
     private static String getBlockId(Block block) {
         return Registry.BLOCK.getId(block).getPath();
     }
 
-    private static Item register(String name , Item item){
-return         Registry.register(Registry.ITEM,new Identifier(Shurlin.MODID,name),item);
+    private static Item register(String name, Item item) {
+        return Registry.register(Registry.ITEM, new Identifier(Shurlin.MODID, name), item);
     }
 
     public static void Register() {
