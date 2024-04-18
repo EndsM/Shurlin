@@ -13,7 +13,12 @@ public class ModItems {
     public static Item DEAD_LEAVE_CORAL_FAN_BLOCK;
     public static Item LEAVE_CORAL_FAN_BLOCK;
     // Down below will just use constants I think...
+    // maybe separate assignment and declare later
     public static final Item PLANT_MIXTURE = new Item(new Item.Settings());
+    public static final Item PLANT_MIXTURE_HEAP = new Item(new Item.Settings());
+    // Plant Essences
+    public static final Item PLANT_ESSENCE_PARTICLE = new Item(new Item.Settings());
+    public static final Item PLANT_ESSENCE =new Item(new Item.Settings());
 
     private static String getBlockId(Block block) {
         return Registry.BLOCK.getId(block).getPath();
@@ -29,5 +34,8 @@ public class ModItems {
         LEAVE_CORAL_FAN_BLOCK = ModBlocks.registerWallStandingBlockItem(getBlockId(ModBlocks.LEAVE_CORAL_FAN), ModBlocks.LEAVE_CORAL_FAN, ItemGroups.SHURLIN);
         // Items
         register("plant_mixture", PLANT_MIXTURE);
+        register("plant_mixture_heap", PLANT_MIXTURE_HEAP);
+        register("plant_essence_particle", PLANT_ESSENCE_PARTICLE);
+        register("plant_essence",PLANT_ESSENCE);
     }
 }

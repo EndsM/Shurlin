@@ -14,7 +14,6 @@ public class Items {
     public static void load() {
     }
 
-    public static final Item PLANT_MIXTURE_HEAP;
     public static final Item PLANT_ESSENCE_PARTICLE;
     public static final Item PLANT_ESSENCE;
     public static final Item PLANT_ESSENCE_INGOT;
@@ -126,7 +125,6 @@ public class Items {
     }
 
     static {
-        PLANT_MIXTURE_HEAP = register("plant_mixture_heap");
         PLANT_ESSENCE_PARTICLE = register("plant_essence_particle");
         PLANT_ESSENCE = register("plant_essence");
         PLANT_ESSENCE_INGOT = register("plant_essence_ingot");
