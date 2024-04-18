@@ -13,7 +13,7 @@ public class ModItems {
     public static Item DEAD_LEAVE_CORAL_FAN_BLOCK;
     public static Item LEAVE_CORAL_FAN_BLOCK;
     // Down below will just use constants I think...
-    public static final Item PLANT_MIXTURE = null;
+    public static final Item PLANT_MIXTURE = new Item(new Item.Settings());
 
     private static String getBlockId(Block block) {
         return Registry.BLOCK.getId(block).getPath();
@@ -24,7 +24,10 @@ public class ModItems {
     }
 
     public static void Register() {
+        // Special BlockItem
         DEAD_LEAVE_CORAL_FAN_BLOCK = ModBlocks.registerWallStandingBlockItem(getBlockId(ModBlocks.DEAD_LEAVE_CORAL_FAN), ModBlocks.DEAD_LEAVE_CORAL_FAN, ItemGroups.SHURLIN);
         LEAVE_CORAL_FAN_BLOCK = ModBlocks.registerWallStandingBlockItem(getBlockId(ModBlocks.LEAVE_CORAL_FAN), ModBlocks.LEAVE_CORAL_FAN, ItemGroups.SHURLIN);
+        // Items
+        register("plant_mixture", PLANT_MIXTURE);
     }
 }
