@@ -66,7 +66,7 @@ public class HolyPearAltarBlock extends Block {
                 if (world.random.nextFloat() < 0.1)
                     entity.setFireTicks(200);
             if (world.isClient) {
-                if (KeyBindings.keyBinding_j.isPressed()) {
+                if (KeyBindings.perform_cul_act.isPressed()) {
                     PacketByteBuf buffer = PacketByteBufs.create();
                     buffer.writeBlockPos(pos);
                     ClientPlayNetworking.send(Utils.PACKET_ID_1, buffer);

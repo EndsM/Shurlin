@@ -13,14 +13,14 @@ import xyz.shurlin.util.Utils;
 
 @Environment(EnvType.CLIENT)
 public class KeyBindings {
-    public static KeyBinding keyBinding_j;
-    public static KeyBinding open_cul;
+    public static KeyBinding perform_cul_act;
+    public static KeyBinding open_cul_menu;
     public static KeyBinding inject_spirit;
 
 
     public static void load() {
         ClientTickEvents.END_CLIENT_TICK.register(minecraftClient -> {
-            if (open_cul.isPressed()) {
+            if (open_cul_menu.isPressed()) {
                 PacketByteBuf buffer = PacketByteBufs.create();
                 ClientPlayNetworking.send(Utils.OPEN_CUL, buffer);
             }
@@ -28,7 +28,8 @@ public class KeyBindings {
     }
 
     static {
-        open_cul = new KeyBinding(
+
+        open_cul_menu = new KeyBinding(
                 "key.shurlin.open_cul",
                 InputUtil.Type.KEYSYM,
                 GLFW.GLFW_KEY_O,
