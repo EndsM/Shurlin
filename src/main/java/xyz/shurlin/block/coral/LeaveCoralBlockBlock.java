@@ -11,6 +11,7 @@ import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import xyz.shurlin.item.Items;
+import xyz.shurlin.registry.ModItems;
 
 public class LeaveCoralBlockBlock extends CoralBlockBlock {
     private final Block deadCoralBlock;
@@ -24,7 +25,7 @@ public class LeaveCoralBlockBlock extends CoralBlockBlock {
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
         if (player.getStackInHand(hand).getItem().equals(Items.SHURLIN_INGOT)) {
             world.setBlockState(pos, this.deadCoralBlock.getDefaultState(), 2);
-            player.inventory.insertStack(new ItemStack(Items.PLANT_ESSENCE_PARTICLE, 1));
+            player.inventory.insertStack(new ItemStack(ModItems.PLANT_ESSENCE_PARTICLE, 1));
         }
         return ActionResult.SUCCESS;
     }

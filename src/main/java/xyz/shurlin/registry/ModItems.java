@@ -18,7 +18,8 @@ public class ModItems {
     public static final Item PLANT_MIXTURE_HEAP = new Item(new Item.Settings());
     // Plant Essences
     public static final Item PLANT_ESSENCE_PARTICLE = new Item(new Item.Settings());
-    public static final Item PLANT_ESSENCE =new Item(new Item.Settings());
+    // Basically nugget
+    public static final Item PLANT_ESSENCE = new Item(new Item.Settings());
 
     private static String getBlockId(Block block) {
         return Registry.BLOCK.getId(block).getPath();
@@ -36,6 +37,6 @@ public class ModItems {
         register("plant_mixture", PLANT_MIXTURE);
         register("plant_mixture_heap", PLANT_MIXTURE_HEAP);
         register("plant_essence_particle", PLANT_ESSENCE_PARTICLE);
-        register("plant_essence",PLANT_ESSENCE);
+        register("plant_essence", PLANT_ESSENCE);
     }
 }

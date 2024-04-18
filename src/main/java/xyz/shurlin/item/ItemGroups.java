@@ -5,12 +5,13 @@ import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Identifier;
 import xyz.shurlin.Shurlin;
+import xyz.shurlin.registry.ModItems;
 
 public class ItemGroups {
     // main (normal Block items goes here for now)
     public static final ItemGroup SHURLIN = FabricItemGroupBuilder
             .create(new Identifier(Shurlin.MODID, Shurlin.MODID))
-            .icon(() -> new ItemStack(Items.PLANT_ESSENCE))
+            .icon(() -> new ItemStack(ModItems.PLANT_ESSENCE))
             .build();
     // equipment
 

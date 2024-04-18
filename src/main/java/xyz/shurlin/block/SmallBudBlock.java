@@ -9,6 +9,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import xyz.shurlin.entity.damage.ShurlinDamageSource;
 import xyz.shurlin.item.Items;
+import xyz.shurlin.registry.ModItems;
 import xyz.shurlin.util.Utils;
 
 public class SmallBudBlock extends FernBlock {
@@ -28,7 +29,7 @@ public class SmallBudBlock extends FernBlock {
     @Override
     public void onBreak(World world, BlockPos pos, BlockState state, PlayerEntity player) {
         if (player.inventory.contains(new ItemStack(Items.SHURLIN_INGOT))) {
-            Utils.spawnItem(world, pos, Items.PLANT_ESSENCE_PARTICLE, world.random.nextInt(3));
+            Utils.spawnItem(world, pos, ModItems.PLANT_ESSENCE_PARTICLE, world.random.nextInt(3));
         } else if (!player.abilities.creativeMode) {
             player.sendMessage(new TranslatableText("message.shurlin.small_bud"), false);
             player.damage(ShurlinDamageSource.SMALL_BUD, 3.4028235E38F);

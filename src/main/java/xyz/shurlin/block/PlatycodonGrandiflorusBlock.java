@@ -12,6 +12,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.world.World;
 import xyz.shurlin.item.Items;
+import xyz.shurlin.registry.ModItems;
 
 public class PlatycodonGrandiflorusBlock extends FlowerBlock {
     public PlatycodonGrandiflorusBlock(StatusEffect suspiciousStewEffect, int effectDuration, Settings settings) {
@@ -22,7 +23,7 @@ public class PlatycodonGrandiflorusBlock extends FlowerBlock {
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
         // while use Plant Essence on it
         ItemStack stack = player.getStackInHand(hand);
-        if (stack.getItem().equals(Items.PLANT_ESSENCE) && stack.getCount() >= 3 && hit.getSide() == Direction.SOUTH) {
+        if (stack.getItem().equals(ModItems.PLANT_ESSENCE) && stack.getCount() >= 3 && hit.getSide() == Direction.SOUTH) {
             stack.decrement(3);
             world.breakBlock(pos, false);
             player.inventory.insertStack(new ItemStack(Items.LIFE_AMULET));
