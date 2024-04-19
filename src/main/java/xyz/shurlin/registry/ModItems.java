@@ -14,17 +14,36 @@ public class ModItems {
     public static Item LEAVE_CORAL_FAN_BLOCK;
     // Down below will just use constants I think...
     // maybe separate assignment and declare later
-    public static final Item PLANT_MIXTURE = new Item(new Item.Settings().group(ItemGroups.SHURLIN));
-    public static final Item PLANT_MIXTURE_HEAP = new Item(new Item.Settings().group(ItemGroups.SHURLIN));
+    public static final Item PLANT_MIXTURE = new Item(
+            new Item.Settings().group(ItemGroups.SHURLIN)
+    );
+    public static final Item PLANT_MIXTURE_HEAP = new Item(
+            new Item.Settings().group(ItemGroups.SHURLIN)
+    );
     // Plant Essences
-    public static final Item PLANT_ESSENCE_PARTICLE = new Item(new Item.Settings().group(ItemGroups.SHURLIN));
+    public static final Item PLANT_ESSENCE_PARTICLE = new Item(
+            new Item.Settings().group(ItemGroups.SHURLIN)
+    );
     // Basically nugget
-    public static final Item PLANT_ESSENCE = new Item(new Item.Settings().group(ItemGroups.SHURLIN));
-    public static final Item PLANT_ESSENCE_INGOT = new Item(new Item.Settings().group(ItemGroups.SHURLIN));
+    public static final Item PLANT_ESSENCE = new Item(
+            new Item.Settings().group(ItemGroups.SHURLIN)
+    );
+    public static final Item PLANT_ESSENCE_INGOT = new Item(
+            new Item.Settings().group(ItemGroups.SHURLIN)
+    );
     // End of Plant Essences
-    public static final Item PLANT_DREGS = new Item(new Item.Settings().group(ItemGroups.SHURLIN));
-    public static final Item PLANT_IRON_INGOT = new Item(new Item.Settings().group(ItemGroups.SHURLIN));
-    public static final Item PLANT_IRON_NUGGET = new Item(new Item.Settings().group(ItemGroups.SHURLIN));
+    public static final Item PLANT_DREGS = new Item(
+            new Item.Settings().group(ItemGroups.SHURLIN)
+    );
+    public static final Item PLANT_IRON_INGOT = new Item(
+            new Item.Settings().group(ItemGroups.SHURLIN)
+    );
+    public static final Item PLANT_IRON_NUGGET = new Item(
+            new Item.Settings().group(ItemGroups.SHURLIN)
+    );
+    public static final Item PLANT_GOLD_INGOT = new Item(
+            new Item.Settings().group(ItemGroups.SHURLIN)
+    );
 
     private static String getBlockId(Block block) {
         return Registry.BLOCK.getId(block).getPath();
@@ -47,5 +66,6 @@ public class ModItems {
         register("plant_dregs", PLANT_DREGS);
         register("plant_iron_ingot", PLANT_IRON_INGOT);
         register("plant_iron_nugget", PLANT_IRON_NUGGET);
+        register("plant_gold_ingot",PLANT_GOLD_INGOT);
     }
 }

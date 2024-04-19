@@ -14,7 +14,6 @@ public class Items {
     public static void load() {
     }
 
-    public static final Item PLANT_GOLD_INGOT;
     public static final Item PLANT_GOLD_NUGGET;
     public static final Item PLANT_JADE;
     public static final Item PEAR;
@@ -119,7 +118,6 @@ public class Items {
     }
 
     static {
-        PLANT_GOLD_INGOT = register("plant_gold_ingot");
         PLANT_GOLD_NUGGET = register("plant_gold_nugget");
         PLANT_JADE = register("plant_jade");
         PEAR = register("pear", new FoodComponent.Builder().hunger(3).snack().saturationModifier(0.3f).build());

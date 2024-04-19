@@ -14,7 +14,7 @@ import java.util.function.Supplier;
 
 public enum ArmorMaterials implements ArmorMaterial {
     PLANT_IRON("plant_iron", 21, new int[]{3, 6, 8, 3}, 10, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 1.0f, 0.0f, () -> Ingredient.ofItems(ModItems.PLANT_IRON_INGOT)),
-    PLANT_GOLD("plant_gold", 12, new int[]{2, 5, 6, 2}, 28, SoundEvents.ITEM_ARMOR_EQUIP_GOLD, 0.5F, 0.0F, () -> Ingredient.ofItems(Items.PLANT_GOLD_INGOT)),
+    PLANT_GOLD("plant_gold", 12, new int[]{2, 5, 6, 2}, 28, SoundEvents.ITEM_ARMOR_EQUIP_GOLD, 0.5F, 0.0F, () -> Ingredient.ofItems(ModItems.PLANT_GOLD_INGOT)),
     PLANT_JADE("plant_jade", 38, new int[]{4, 7, 9, 5}, 12, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 3.0F, 0.1F, () -> Ingredient.ofItems(Items.PLANT_JADE));
 
     private static final int[] BASE_DURABILITY = new int[]{13, 15, 16, 11};
