@@ -47,7 +47,7 @@ public class HolyPearAltarBlock extends Block {
                 for (int i = 0; i < cnt; i++) {
                     if (!player.isAlive())
                         break;
-                    player.inventory.insertStack(new ItemStack(Items.HOLY_PEAR));
+                    player.inventory.insertStack(new ItemStack(ModItems.HOLY_PEAR));
                     Utils.createLightning(world, player.getBlockPos());
                     TimeUnit.SECONDS.sleep(world.random.nextInt(3) + 1);
                 }

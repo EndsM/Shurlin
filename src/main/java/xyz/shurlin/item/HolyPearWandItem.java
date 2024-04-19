@@ -9,6 +9,7 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
 import xyz.shurlin.entity.projectile.BeanEntity;
+import xyz.shurlin.registry.ModItems;
 
 public class HolyPearWandItem extends BasicItem {
     public HolyPearWandItem() {
@@ -35,7 +36,7 @@ public class HolyPearWandItem extends BasicItem {
 
     @Override
     public boolean canRepair(ItemStack stack, ItemStack ingredient) {
-        return ingredient.getItem().equals(Items.HOLY_PEAR);
+        return ingredient.getItem().equals(ModItems.HOLY_PEAR);
     }
 
 //    @Override

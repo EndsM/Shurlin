@@ -8,6 +8,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
+import xyz.shurlin.registry.ModItems;
 
 public class HolyPearSwordItem extends BasicItem {
 
@@ -38,7 +39,7 @@ public class HolyPearSwordItem extends BasicItem {
 
     @Override
     public boolean canRepair(ItemStack stack, ItemStack ingredient) {
-        return stack.getItem() == Items.HOLY_PEAR;
+        return stack.getItem() == ModItems.HOLY_PEAR;
     }
 
     @Override

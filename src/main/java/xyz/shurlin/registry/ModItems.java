@@ -56,6 +56,9 @@ public class ModItems {
                     .food(new FoodComponent.Builder().hunger(3).snack().saturationModifier(0.3f).build())
                     .group(ItemGroups.SHURLIN)
     );
+    public static final Item HOLY_PEAR = new Item(
+            new Item.Settings().group(ItemGroups.SHURLIN)
+    );
 
     // in-class utility functions below
     private static String getBlockId(Block block) {
@@ -84,5 +87,6 @@ public class ModItems {
         register("plant_gold_nugget", PLANT_GOLD_NUGGET);
         register("plant_jade", PLANT_JADE);
         register("pear", PEAR);
+        register("holy_pear", HOLY_PEAR);
     }
 }

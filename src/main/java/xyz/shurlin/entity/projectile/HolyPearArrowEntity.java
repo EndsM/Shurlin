@@ -10,7 +10,7 @@ import net.minecraft.util.hit.EntityHitResult;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import net.minecraft.world.explosion.Explosion;
-import xyz.shurlin.item.Items;
+import xyz.shurlin.registry.ModItems;
 import xyz.shurlin.util.Utils;
 
 public class HolyPearArrowEntity extends ArrowEntity {
@@ -60,7 +60,7 @@ public class HolyPearArrowEntity extends ArrowEntity {
 
     @Override
     protected ItemStack asItemStack() {
-        return new ItemStack(Items.HOLY_PEAR);
+        return new ItemStack(ModItems.HOLY_PEAR);
     }
 
 }

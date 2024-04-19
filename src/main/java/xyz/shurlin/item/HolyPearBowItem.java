@@ -8,11 +8,12 @@ import net.minecraft.item.BowItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
+import xyz.shurlin.registry.ModItems;
 
 import java.util.function.Predicate;
 
 public class HolyPearBowItem extends BowItem {
-    private static final Predicate<ItemStack> PEARS = (stack) -> stack.getItem() == Items.HOLY_PEAR;
+    private static final Predicate<ItemStack> PEARS = (stack) -> stack.getItem() == ModItems.HOLY_PEAR;
 
     public HolyPearBowItem() {
         super(new Item.Settings().group(ItemGroups.SHURLIN).maxDamage(1000));
@@ -30,7 +31,7 @@ public class HolyPearBowItem extends BowItem {
 
     @Override
     public boolean canRepair(ItemStack stack, ItemStack ingredient) {
-        return ingredient.getItem().equals(Items.HOLY_PEAR);
+        return ingredient.getItem().equals(ModItems.HOLY_PEAR);
     }
 
 
