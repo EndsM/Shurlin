@@ -14,7 +14,6 @@ public class Items {
     public static void load() {
     }
 
-    public static final Item PLANT_IRON_NUGGET;
     public static final Item PLANT_GOLD_INGOT;
     public static final Item PLANT_GOLD_NUGGET;
     public static final Item PLANT_JADE;
@@ -120,7 +119,6 @@ public class Items {
     }
 
     static {
-        PLANT_IRON_NUGGET = register("plant_iron_nugget");
         PLANT_GOLD_INGOT = register("plant_gold_ingot");
         PLANT_GOLD_NUGGET = register("plant_gold_nugget");
         PLANT_JADE = register("plant_jade");

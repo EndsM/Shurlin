@@ -24,6 +24,7 @@ public class ModItems {
     // End of Plant Essences
     public static final Item PLANT_DREGS = new Item(new Item.Settings());
     public static final Item PLANT_IRON_INGOT = new Item(new Item.Settings());
+    public static final Item PLANT_IRON_NUGGET = new Item(new Item.Settings());
 
     private static String getBlockId(Block block) {
         return Registry.BLOCK.getId(block).getPath();
@@ -45,5 +46,6 @@ public class ModItems {
         register("plant_essence_ingot", PLANT_ESSENCE_INGOT);
         register("plant_dregs", PLANT_DREGS);
         register("plant_iron_ingot", PLANT_IRON_INGOT);
+        register("plant_iron_nugget", PLANT_IRON_NUGGET);
     }
 }
