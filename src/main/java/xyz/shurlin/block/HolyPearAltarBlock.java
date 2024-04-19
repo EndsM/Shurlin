@@ -37,7 +37,7 @@ public class HolyPearAltarBlock extends Block {
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
         ItemStack mainStack = player.getStackInHand(Hand.MAIN_HAND);
         ItemStack offStack = player.getStackInHand(Hand.OFF_HAND);
-        if (!mainStack.getItem().equals(Items.PEAR) || !offStack.getItem().equals(ModItems.PLANT_ESSENCE))
+        if (!mainStack.getItem().equals(ModItems.PEAR) || !offStack.getItem().equals(ModItems.PLANT_ESSENCE))
             return ActionResult.FAIL;
         int cnt = Math.min(mainStack.getCount(), offStack.getCount());
         mainStack.decrement(cnt);

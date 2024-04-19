@@ -14,7 +14,6 @@ public class Items {
     public static void load() {
     }
 
-    public static final Item PEAR;
     public static final Item HOLY_PEAR;
     public static final Item HOLY_PEAR_SWORD;
     public static final Item HOLT_PEAR_BOW;
@@ -116,7 +115,6 @@ public class Items {
     }
 
     static {
-        PEAR = register("pear", new FoodComponent.Builder().hunger(3).snack().saturationModifier(0.3f).build());
         HOLY_PEAR = register("holy_pear");
         HOLY_PEAR_SWORD = register("holy_pear_sword", new HolyPearSwordItem());
         HOLT_PEAR_BOW = register("holy_pear_bow", new HolyPearBowItem());

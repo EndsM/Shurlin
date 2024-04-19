@@ -2,6 +2,7 @@ package xyz.shurlin.registry;
 
 
 import net.minecraft.block.Block;
+import net.minecraft.item.FoodComponent;
 import net.minecraft.item.Item;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
@@ -50,7 +51,13 @@ public class ModItems {
     public static final Item PLANT_JADE = new Item(
             new Item.Settings().group(ItemGroups.SHURLIN)
     );
+    public static final Item PEAR = new Item(
+            new Item.Settings()
+                    .food(new FoodComponent.Builder().hunger(3).snack().saturationModifier(0.3f).build())
+                    .group(ItemGroups.SHURLIN)
+    );
 
+    // in-class utility functions below
     private static String getBlockId(Block block) {
         return Registry.BLOCK.getId(block).getPath();
     }
@@ -59,6 +66,7 @@ public class ModItems {
         return Registry.register(Registry.ITEM, new Identifier(Shurlin.MODID, name), item);
     }
 
+    // call this while init
     public static void Register() {
         // Special BlockItem
         DEAD_LEAVE_CORAL_FAN_BLOCK = ModBlocks.registerWallStandingBlockItem(getBlockId(ModBlocks.DEAD_LEAVE_CORAL_FAN), ModBlocks.DEAD_LEAVE_CORAL_FAN, ItemGroups.SHURLIN);
@@ -75,5 +83,6 @@ public class ModItems {
         register("plant_gold_ingot", PLANT_GOLD_INGOT);
         register("plant_gold_nugget", PLANT_GOLD_NUGGET);
         register("plant_jade", PLANT_JADE);
+        register("pear", PEAR);
     }
 }
