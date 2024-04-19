@@ -14,8 +14,6 @@ public class Items {
     public static void load() {
     }
 
-    public static final Item PLANT_GOLD_NUGGET;
-    public static final Item PLANT_JADE;
     public static final Item PEAR;
     public static final Item HOLY_PEAR;
     public static final Item HOLY_PEAR_SWORD;
@@ -118,8 +116,6 @@ public class Items {
     }
 
     static {
-        PLANT_GOLD_NUGGET = register("plant_gold_nugget");
-        PLANT_JADE = register("plant_jade");
         PEAR = register("pear", new FoodComponent.Builder().hunger(3).snack().saturationModifier(0.3f).build());
         HOLY_PEAR = register("holy_pear");
         HOLY_PEAR_SWORD = register("holy_pear_sword", new HolyPearSwordItem());

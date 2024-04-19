@@ -44,6 +44,12 @@ public class ModItems {
     public static final Item PLANT_GOLD_INGOT = new Item(
             new Item.Settings().group(ItemGroups.SHURLIN)
     );
+    public static final Item PLANT_GOLD_NUGGET = new Item(
+            new Item.Settings().group(ItemGroups.SHURLIN)
+    );
+    public static final Item PLANT_JADE = new Item(
+            new Item.Settings().group(ItemGroups.SHURLIN)
+    );
 
     private static String getBlockId(Block block) {
         return Registry.BLOCK.getId(block).getPath();
@@ -66,6 +72,8 @@ public class ModItems {
         register("plant_dregs", PLANT_DREGS);
         register("plant_iron_ingot", PLANT_IRON_INGOT);
         register("plant_iron_nugget", PLANT_IRON_NUGGET);
-        register("plant_gold_ingot",PLANT_GOLD_INGOT);
+        register("plant_gold_ingot", PLANT_GOLD_INGOT);
+        register("plant_gold_nugget", PLANT_GOLD_NUGGET);
+        register("plant_jade", PLANT_JADE);
     }
 }

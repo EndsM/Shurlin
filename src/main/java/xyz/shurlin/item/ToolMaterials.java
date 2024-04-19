@@ -10,7 +10,7 @@ import java.util.function.Supplier;
 public enum ToolMaterials implements ToolMaterial {
     PLANT_IRON(3, 350, 7.0f, 3.0f, 15, () -> Ingredient.ofItems(ModItems.PLANT_IRON_INGOT)),
     PLANT_GOLD(2, 48, 13.0f, 1.0f, 25, () -> Ingredient.ofItems(ModItems.PLANT_GOLD_INGOT)),
-    PLANT_JADE(4, 1800, 10.0F, 4.0F, 13, () -> Ingredient.ofItems(Items.PLANT_JADE));
+    PLANT_JADE(4, 1800, 10.0F, 4.0F, 13, () -> Ingredient.ofItems(ModItems.PLANT_JADE));
 
     private final int miningLevel;
     private final int itemDurability;

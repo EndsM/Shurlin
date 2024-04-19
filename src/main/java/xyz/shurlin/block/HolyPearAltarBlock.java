@@ -83,7 +83,7 @@ public class HolyPearAltarBlock extends Block {
         if (entity instanceof ItemEntity && this.owner != null) {
             ItemStack stack = ((ItemEntity) entity).getStack();
             Item item = stack.getItem();
-            int flag = item.equals(ModItems.PLANT_IRON_INGOT) ? 1 : (item.equals(ModItems.PLANT_GOLD_INGOT) ? 2 : (item.equals(Items.PLANT_JADE) ? 8 : 0));
+            int flag = item.equals(ModItems.PLANT_IRON_INGOT) ? 1 : (item.equals(ModItems.PLANT_GOLD_INGOT) ? 2 : (item.equals(ModItems.PLANT_JADE) ? 8 : 0));
             if (flag > 0) {
                 int cnt = stack.getCount();
                 if (entity.world.random.nextInt(64 / flag) < cnt)
