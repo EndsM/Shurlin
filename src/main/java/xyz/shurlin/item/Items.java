@@ -14,9 +14,6 @@ public class Items {
     public static void load() {
     }
 
-    public static final Item TENUOUS_METAL_SPIRIT;
-    public static final Item TENUOUS_WOOD_SPIRIT;
-    public static final Item TENUOUS_WATER_SPIRIT;
     public static final Item TENUOUS_FIRE_SPIRIT;
     public static final Item TENUOUS_EARTH_SPIRIT;
     public static final Item TENUOUS_WIND_SPIRIT;
@@ -78,9 +75,6 @@ public class Items {
     }
 
     static {
-        TENUOUS_METAL_SPIRIT = registerSpirit("tenuous_metal_spirit", SpiritPropertyType.METAL, SpiritConstants.TENUOUS);
-        TENUOUS_WOOD_SPIRIT = registerSpirit("tenuous_wood_spirit", SpiritPropertyType.WOOD, SpiritConstants.TENUOUS);
-        TENUOUS_WATER_SPIRIT = registerSpirit("tenuous_water_spirit", SpiritPropertyType.WATER, SpiritConstants.TENUOUS);
         TENUOUS_FIRE_SPIRIT = registerSpirit("tenuous_fire_spirit", SpiritPropertyType.FIRE, SpiritConstants.TENUOUS);
         TENUOUS_EARTH_SPIRIT = registerSpirit("tenuous_earth_spirit", SpiritPropertyType.EARTH, SpiritConstants.TENUOUS);
         TENUOUS_WIND_SPIRIT = registerSpirit("tenuous_wind_spirit", SpiritPropertyType.WIND, SpiritConstants.TENUOUS);

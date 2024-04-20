@@ -98,7 +98,8 @@ public class ModItems {
     );
 
     public static final Item TENUOUS_METAL_SPIRIT = new SpiritItem(SpiritPropertyType.METAL, SpiritConstants.TENUOUS);
-    public static final Item TENUOUS_WOOD_SPIRIT = new SpiritItem(SpiritPropertyType.WOOD,SpiritConstants.TENUOUS);
+    public static final Item TENUOUS_WOOD_SPIRIT = new SpiritItem(SpiritPropertyType.WOOD, SpiritConstants.TENUOUS);
+    public static final Item TENUOUS_WATER_SPIRIT = new SpiritItem(SpiritPropertyType.WATER, SpiritConstants.TENUOUS);
 
     // in-class utility functions below
     private static String getBlockId(Block block) {
@@ -144,5 +145,9 @@ public class ModItems {
         register("collector_core", COLLECTOR_CORE);
         register("concentrator_core", CONCENTRATOR_CORE);
         register("extractor_core", EXTRACTOR_CORE);
+        // Spirits below
+        register("tenuous_metal_spirit", TENUOUS_METAL_SPIRIT);
+        register("tenuous_wood_spirit",TENUOUS_WOOD_SPIRIT);
+        register("tenuous_water_spirit", TENUOUS_WATER_SPIRIT);
     }
 }
