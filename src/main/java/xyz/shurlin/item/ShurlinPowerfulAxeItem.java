@@ -23,6 +23,8 @@ public class ShurlinPowerfulAxeItem extends Item {
     public boolean postHit(ItemStack stack, LivingEntity target, LivingEntity attacker) {
         if (target instanceof PlayerEntity)
             ((PlayerEntity) target).abilities.invulnerable = false;
+        // I guess this item should be removed
+        // Or complete rework
         target.kill();
         return true;
     }
@@ -31,13 +33,6 @@ public class ShurlinPowerfulAxeItem extends Item {
     public boolean postMine(ItemStack stack, World world, BlockState state, BlockPos pos, LivingEntity miner) {
         return true;
     }
-
-//    @Override
-//    public void onStoppedUsing(ItemStack stack, World world, LivingEntity user, int remainingUseTicks) {
-//        LightningArrowEntity entity = new LightningArrowEntity(world, user);
-//        entity.setProperties(user, user.pitch, user.yaw, 0.0f, 3.0f, 1.0f);
-//
-//    }
 
     @Override
     public int getMaxUseTime(ItemStack stack) {
