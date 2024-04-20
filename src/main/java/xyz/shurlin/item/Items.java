@@ -64,10 +64,6 @@ public class Items {
     //weapon
     public static final Item DARK_IRON_SWORD;
 
-    private static String getBlockId(Block block) {
-        return Registry.BLOCK.getId(block).getPath();
-    }
-
     // These are disaster in terms of reading...
     private static Item register(String registryName, Item item) {
         return Registry.register(Registry.ITEM, new Identifier(Shurlin.MODID, registryName), item);
@@ -79,18 +75,6 @@ public class Items {
 
     private static Item registerSpirit(String registryName, SpiritPropertyType type, double consistence) {
         return register(registryName, new SpiritItem(type, consistence));
-    }
-
-    private static Item register(Block block) {
-        return register(getBlockId(block), new BasicBlockItem(block));
-    }
-
-    private static Item register(String registryName, FoodComponent component) {
-        return register(registryName, new BasicFoodItem(component));
-    }
-
-    private static Item register(String registryName) {
-        return register(registryName, new BasicItem());
     }
 
     static {

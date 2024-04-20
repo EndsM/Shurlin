@@ -98,6 +98,7 @@ public class ModItems {
     );
 
     public static final Item TENUOUS_METAL_SPIRIT = new SpiritItem(SpiritPropertyType.METAL, SpiritConstants.TENUOUS);
+    public static final Item TENUOUS_WOOD_SPIRIT = new SpiritItem(SpiritPropertyType.WOOD,SpiritConstants.TENUOUS);
 
     // in-class utility functions below
     private static String getBlockId(Block block) {
