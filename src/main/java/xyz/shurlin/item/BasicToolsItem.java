@@ -11,6 +11,7 @@ import static xyz.shurlin.item.ItemGroups.SHURLIN;
 
 
 public class BasicToolsItem {
+    // May move this registration helper to registry class
     private final ToolMaterial material;
     public final ShurlinSwordItem sword;
     public final ShurlinPickaxeItem pickaxe;
