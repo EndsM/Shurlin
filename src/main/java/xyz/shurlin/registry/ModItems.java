@@ -70,6 +70,8 @@ public class ModItems {
     public static final Item CHAIN_MINER = new ChainMinerItem();
     public static final Item LIFE_AMULET = new LifeAmuletItem();
     public static final Item CORAL_AMULET = new CoralAmuletItem();
+    // backpack thing, may rework to space storage equipment like in ae2
+    public static final Item HOLY_PEAR_BAG = new HolyPearBagItem();
 
     // in-class utility functions below
     private static String getBlockId(Block block) {
@@ -106,5 +108,6 @@ public class ModItems {
         register("chain_miner", CHAIN_MINER);
         register("life_amulet", LIFE_AMULET);
         register("coral_amulet", CORAL_AMULET);
+        register("holy_pear_bag", HOLY_PEAR_BAG);
     }
 }

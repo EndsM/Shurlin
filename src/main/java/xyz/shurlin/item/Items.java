@@ -74,8 +74,6 @@ public class Items {
     //weapon
     public static final Item DARK_IRON_SWORD;
 
-    public static final Item HOLY_PEAR_BAG;
-
     private static String getBlockId(Block block) {
         return Registry.BLOCK.getId(block).getPath();
     }
@@ -106,7 +104,6 @@ public class Items {
     }
 
     static {
-        HOLY_PEAR_BAG = register("holy_pear_bag", new HolyPearBagItem());
         PLANT_WAND = register("plant_wand", new PlantWandItem());
         MYSTERIOUS_SPIRIT_OF_PLANT = register("mysterious_spirit_of_plant");
         PLANT_EXTRACTANT = register("plant_extractant", new PlantExtractantItem(64));
