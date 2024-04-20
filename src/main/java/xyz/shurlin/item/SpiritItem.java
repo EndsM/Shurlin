@@ -7,19 +7,19 @@ import xyz.shurlin.cultivation.SpiritPropertyType;
 
 public class SpiritItem extends BasicItem {
     private final SpiritPropertyType spiritPropertyType;
-    private final double spiritConsistence;
+    private final double spiritConstant;
 
-    public SpiritItem(SpiritPropertyType spiritPropertyType, double spiritConsistence) {
+    public SpiritItem(SpiritPropertyType spiritPropertyType, double spiritConstant) {
         this.spiritPropertyType = spiritPropertyType;
-        this.spiritConsistence = spiritConsistence;
+        this.spiritConstant = spiritConstant;
     }
 
     public SpiritPropertyType getSpiritPropertyType() {
         return spiritPropertyType;
     }
 
-    public double getSpiritConsistence() {
-        return spiritConsistence;
+    public double getSpiritConstant() {
+        return spiritConstant;
     }
 
     @Override
