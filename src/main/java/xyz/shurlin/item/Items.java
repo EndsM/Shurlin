@@ -14,8 +14,6 @@ public class Items {
     public static void load() {
     }
 
-    public static final Item PLANT_WAND;
-    public static final Item MYSTERIOUS_SPIRIT_OF_PLANT;
     public static final Item PLANT_EXTRACTANT;
 
     public static final Item WORKER_SHELL;
@@ -104,8 +102,6 @@ public class Items {
     }
 
     static {
-        PLANT_WAND = register("plant_wand", new PlantWandItem());
-        MYSTERIOUS_SPIRIT_OF_PLANT = register("mysterious_spirit_of_plant");
         PLANT_EXTRACTANT = register("plant_extractant", new PlantExtractantItem(64));
 
         WORKER_SHELL = register("worker_shell");

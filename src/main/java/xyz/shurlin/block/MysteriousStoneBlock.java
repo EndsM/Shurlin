@@ -12,7 +12,6 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import xyz.shurlin.item.Items;
 import xyz.shurlin.registry.ModItems;
 import xyz.shurlin.util.Utils;
 
@@ -34,7 +33,7 @@ public class MysteriousStoneBlock extends Block {
         if (state.get(TIMES) < 9) Utils.setRandomBlock(world, pos, 4, state.with(TIMES, state.get(TIMES) + 1));
         else {
             inHand.decrement(1);
-            ItemStack result = new ItemStack(Items.MYSTERIOUS_SPIRIT_OF_PLANT, world.random.nextInt(2));
+            ItemStack result = new ItemStack(ModItems.MYSTERIOUS_SPIRIT_OF_PLANT, world.random.nextInt(2));
             player.inventory.insertStack(result);
         }
 //            ItemEntity entity = new ItemEntity(world, pos.getX(), pos.getY(), pos.getZ(), result);

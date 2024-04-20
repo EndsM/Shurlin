@@ -11,6 +11,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import xyz.shurlin.block.HolyFarmerPortalBlock;
 import xyz.shurlin.registry.ModBlocks;
+import xyz.shurlin.registry.ModItems;
 import xyz.shurlin.util.Utils;
 
 import java.util.Vector;
@@ -28,7 +29,7 @@ public class PlantWandItem extends Item {
         PlayerEntity player = context.getPlayer();
         if (player != null) {
             PlayerInventory inventory = player.inventory;
-            ItemStack stack = new ItemStack(Items.MYSTERIOUS_SPIRIT_OF_PLANT);
+            ItemStack stack = new ItemStack(ModItems.MYSTERIOUS_SPIRIT_OF_PLANT);
             if (block.equals(ModBlocks.PHOENIX_LEAVES) && inventory.contains(stack)) {
                 Vector<BlockPos> vector = new Vector<>();
                 if (Utils.isSealed(world, pos, Utils.poses_of_horizontal,

@@ -9,7 +9,7 @@ import net.minecraft.recipe.Recipe;
 import net.minecraft.recipe.RecipeType;
 import net.minecraft.util.Identifier;
 import net.minecraft.world.World;
-import xyz.shurlin.item.Items;
+import xyz.shurlin.registry.ModItems;
 import xyz.shurlin.util.ShurlinLevel;
 import xyz.shurlin.util.Utils;
 
@@ -70,7 +70,7 @@ public abstract class AbstractWorkerRecipe implements Recipe<Inventory> {
     @Override
     @Environment(EnvType.CLIENT)
     public ItemStack createIcon() {
-        return new ItemStack(Items.MYSTERIOUS_SPIRIT_OF_PLANT);
+        return new ItemStack(ModItems.MYSTERIOUS_SPIRIT_OF_PLANT);
     }
 
     @Override
