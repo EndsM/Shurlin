@@ -7,10 +7,7 @@ import net.minecraft.item.Item;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import xyz.shurlin.Shurlin;
-import xyz.shurlin.item.HolyPearBowItem;
-import xyz.shurlin.item.HolyPearSwordItem;
-import xyz.shurlin.item.HolyPearWandItem;
-import xyz.shurlin.item.ItemGroups;
+import xyz.shurlin.item.*;
 
 public class ModItems {
     // These two are using ModBlocks class' function
@@ -70,6 +67,7 @@ public class ModItems {
     public static final Item BEAN = new Item(
             new Item.Settings().group(ItemGroups.SHURLIN)
     );
+    public static final Item CHAIN_MINER = new ChainMinerItem();
 
     // in-class utility functions below
     private static String getBlockId(Block block) {
@@ -103,5 +101,6 @@ public class ModItems {
         register("holy_pear_bow", HOLY_PEAR_BOW);
         register("holy_pear_wand", HOLY_PEAR_WAND);
         register("bean", BEAN);
+        register("chain_miner", CHAIN_MINER);
     }
 }
