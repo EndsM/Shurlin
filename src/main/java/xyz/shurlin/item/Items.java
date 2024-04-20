@@ -14,8 +14,6 @@ public class Items {
     public static void load() {
     }
 
-    public static final Item HOLY_PEAR_SWORD;
-    public static final Item HOLT_PEAR_BOW;
     //    public static final Item HOLY_PEAR_ARROW;
     public static final Item HOLT_PEAR_WAND;
     public static final Item BEAN;
@@ -114,9 +112,6 @@ public class Items {
     }
 
     static {
-        HOLY_PEAR_SWORD = register("holy_pear_sword", new HolyPearSwordItem());
-        HOLT_PEAR_BOW = register("holy_pear_bow", new HolyPearBowItem());
-//        HOLY_PEAR_ARROW = register("holy_pear_arrow");
         HOLT_PEAR_WAND = register("holy_pear_wand", new HolyPearWandItem());
         BEAN = register("bean");
         CHAIN_MINER = register("chain_miner", new ChainMinerItem());

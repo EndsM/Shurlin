@@ -7,6 +7,8 @@ import net.minecraft.item.Item;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import xyz.shurlin.Shurlin;
+import xyz.shurlin.item.HolyPearBowItem;
+import xyz.shurlin.item.HolyPearSwordItem;
 import xyz.shurlin.item.ItemGroups;
 
 public class ModItems {
@@ -59,6 +61,10 @@ public class ModItems {
     public static final Item HOLY_PEAR = new Item(
             new Item.Settings().group(ItemGroups.SHURLIN)
     );
+    // Will need to consider should we still using such mode for special items later.
+    // Because I plan to have cultivation equipments crafting system that have randomized or generative stats
+    public static final Item HOLY_PEAR_SWORD = new HolyPearSwordItem();
+    public static final Item HOLY_PEAR_BOW = new HolyPearBowItem();
 
     // in-class utility functions below
     private static String getBlockId(Block block) {
@@ -88,5 +94,7 @@ public class ModItems {
         register("plant_jade", PLANT_JADE);
         register("pear", PEAR);
         register("holy_pear", HOLY_PEAR);
+        register("holy_pear_sword", HOLY_PEAR_SWORD);
+        register("holy_pear_bow", HOLY_PEAR_BOW);
     }
 }
