@@ -79,6 +79,13 @@ public class ModItems {
     );
     public static final Item PLANT_EXTRACTANT = new PlantExtractantItem(64);
 
+    public static final Item WORKER_SHELL = new Item(
+            new Item.Settings().group(ItemGroups.SHURLIN)
+    );
+    public static final Item BREAKER_CORE = new Item(
+            new Item.Settings().group(ItemGroups.SHURLIN)
+    );
+
     // in-class utility functions below
     private static String getBlockId(Block block) {
         return Registry.BLOCK.getId(block).getPath();
@@ -118,5 +125,7 @@ public class ModItems {
         register("plant_wand", PLANT_WAND);
         register("mysterious_spirit_of_plant", MYSTERIOUS_SPIRIT_OF_PLANT);
         register("plant_extractant", PLANT_EXTRACTANT);
+        register("worker_shell",WORKER_SHELL);
+        register("breaker_core",BREAKER_CORE);
     }
 }

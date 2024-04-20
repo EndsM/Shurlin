@@ -14,8 +14,6 @@ public class Items {
     public static void load() {
     }
 
-    public static final Item WORKER_SHELL;
-    public static final Item BREAKER_CORE;
     public static final Item COLLECTOR_CORE;
     public static final Item CONCENTRATOR_CORE;
     public static final Item EXTRACTOR_CORE;
@@ -100,8 +98,6 @@ public class Items {
     }
 
     static {
-        WORKER_SHELL = register("worker_shell");
-        BREAKER_CORE = register("breaker_core");
         COLLECTOR_CORE = register("collector_core");
         CONCENTRATOR_CORE = register("concentrator_core");
         EXTRACTOR_CORE = register("extractor_core");
