@@ -5,6 +5,7 @@ import net.minecraft.util.math.Vec3i;
 import net.minecraft.world.World;
 import xyz.shurlin.util.Collectable;
 
+// Don't know what is this used for yet, may use for other uses later.
 public class PlantExtractantItem extends ExtractantItem implements Collectable {
     public PlantExtractantItem(int extractant) {
         super(extractant);

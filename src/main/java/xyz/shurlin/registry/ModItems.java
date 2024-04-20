@@ -77,6 +77,7 @@ public class ModItems {
     public static final Item MYSTERIOUS_SPIRIT_OF_PLANT = new Item(
             new Item.Settings().group(ItemGroups.SHURLIN)
     );
+    public static final Item PLANT_EXTRACTANT = new PlantExtractantItem(64);
 
     // in-class utility functions below
     private static String getBlockId(Block block) {
@@ -116,5 +117,6 @@ public class ModItems {
         register("holy_pear_bag", HOLY_PEAR_BAG);
         register("plant_wand", PLANT_WAND);
         register("mysterious_spirit_of_plant", MYSTERIOUS_SPIRIT_OF_PLANT);
+        register("plant_extractant", PLANT_EXTRACTANT);
     }
 }

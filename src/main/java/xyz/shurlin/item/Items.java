@@ -14,8 +14,6 @@ public class Items {
     public static void load() {
     }
 
-    public static final Item PLANT_EXTRACTANT;
-
     public static final Item WORKER_SHELL;
     public static final Item BREAKER_CORE;
     public static final Item COLLECTOR_CORE;
@@ -102,14 +100,11 @@ public class Items {
     }
 
     static {
-        PLANT_EXTRACTANT = register("plant_extractant", new PlantExtractantItem(64));
-
         WORKER_SHELL = register("worker_shell");
         BREAKER_CORE = register("breaker_core");
         COLLECTOR_CORE = register("collector_core");
         CONCENTRATOR_CORE = register("concentrator_core");
         EXTRACTOR_CORE = register("extractor_core");
-
 
         TENUOUS_METAL_SPIRIT = registerSpirit("tenuous_metal_spirit", SpiritPropertyType.METAL, SpiritConsistences.TENUOUS);
         TENUOUS_WOOD_SPIRIT = registerSpirit("tenuous_wood_spirit", SpiritPropertyType.WOOD, SpiritConsistences.TENUOUS);
