@@ -14,7 +14,6 @@ public class Items {
     public static void load() {
     }
 
-    public static final Item BEAN;
     public static final Item CHAIN_MINER;
     public static final Item LIFE_AMULET;
     public static final Item CORAL_AMULET;
@@ -110,7 +109,6 @@ public class Items {
     }
 
     static {
-        BEAN = register("bean");
         CHAIN_MINER = register("chain_miner", new ChainMinerItem());
         LIFE_AMULET = register("life_amulet", new LifeAmuletItem());
         CORAL_AMULET = register("coral_amulet", new CoralAmuletItem());

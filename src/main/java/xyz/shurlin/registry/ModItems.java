@@ -67,6 +67,9 @@ public class ModItems {
     public static final Item HOLY_PEAR_SWORD = new HolyPearSwordItem();
     public static final Item HOLY_PEAR_BOW = new HolyPearBowItem();
     public static final Item HOLY_PEAR_WAND = new HolyPearWandItem();
+    public static final Item BEAN = new Item(
+            new Item.Settings().group(ItemGroups.SHURLIN)
+    );
 
     // in-class utility functions below
     private static String getBlockId(Block block) {
@@ -99,5 +102,6 @@ public class ModItems {
         register("holy_pear_sword", HOLY_PEAR_SWORD);
         register("holy_pear_bow", HOLY_PEAR_BOW);
         register("holy_pear_wand", HOLY_PEAR_WAND);
+        register("bean", BEAN);
     }
 }
