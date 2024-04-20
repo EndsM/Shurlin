@@ -26,7 +26,7 @@ public class PlatycodonGrandiflorusBlock extends FlowerBlock {
         if (stack.getItem().equals(ModItems.PLANT_ESSENCE) && stack.getCount() >= 3 && hit.getSide() == Direction.SOUTH) {
             stack.decrement(3);
             world.breakBlock(pos, false);
-            player.inventory.insertStack(new ItemStack(Items.LIFE_AMULET));
+            player.inventory.insertStack(new ItemStack(ModItems.LIFE_AMULET));
             return ActionResult.SUCCESS;
         }
         return ActionResult.FAIL;

@@ -68,6 +68,7 @@ public class ModItems {
             new Item.Settings().group(ItemGroups.SHURLIN)
     );
     public static final Item CHAIN_MINER = new ChainMinerItem();
+    public static final Item LIFE_AMULET = new LifeAmuletItem();
 
     // in-class utility functions below
     private static String getBlockId(Block block) {
@@ -102,5 +103,6 @@ public class ModItems {
         register("holy_pear_wand", HOLY_PEAR_WAND);
         register("bean", BEAN);
         register("chain_miner", CHAIN_MINER);
+        register("life_amulet",LIFE_AMULET);
     }
 }

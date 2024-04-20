@@ -50,8 +50,10 @@ public class HolyPearSwordItem extends BasicItem {
     @Override
     public boolean postHit(ItemStack stack, LivingEntity target, LivingEntity attacker) {
         if (target instanceof PlayerEntity) {
-            if (((PlayerEntity) target).inventory.getStack(25).getItem() == Items.LIFE_AMULET)
-                if (((PlayerEntity) attacker).inventory.getStack(25).getItem() == Items.LIFE_AMULET)
+            // This requires place the item in specific slot, which is slot 25
+            // Which doesn't make a lot of sense, cause the id of each slot may vary
+            if (((PlayerEntity) target).inventory.getStack(25).getItem() == ModItems.LIFE_AMULET)
+                if (((PlayerEntity) attacker).inventory.getStack(25).getItem() == ModItems.LIFE_AMULET)
                     return false;
                 else attacker.kill();
             else {
