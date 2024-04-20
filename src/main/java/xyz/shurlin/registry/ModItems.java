@@ -85,6 +85,15 @@ public class ModItems {
     public static final Item BREAKER_CORE = new Item(
             new Item.Settings().group(ItemGroups.SHURLIN)
     );
+    public static final Item COLLECTOR_CORE=new Item(
+            new Item.Settings().group(ItemGroups.SHURLIN)
+    );
+    public static final Item CONCENTRATOR_CORE = new Item(
+            new Item.Settings().group(ItemGroups.SHURLIN)
+    );
+    public static final Item EXTRACTOR_CORE = new Item(
+            new Item.Settings().group(ItemGroups.SHURLIN)
+    );
 
     // in-class utility functions below
     private static String getBlockId(Block block) {
@@ -127,5 +136,8 @@ public class ModItems {
         register("plant_extractant", PLANT_EXTRACTANT);
         register("worker_shell",WORKER_SHELL);
         register("breaker_core",BREAKER_CORE);
+        register("collector_core",COLLECTOR_CORE);
+        register("concentrator_core",CONCENTRATOR_CORE);
+        register("extractor_core",EXTRACTOR_CORE);
     }
 }

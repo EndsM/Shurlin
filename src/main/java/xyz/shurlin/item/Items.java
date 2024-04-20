@@ -14,10 +14,6 @@ public class Items {
     public static void load() {
     }
 
-    public static final Item COLLECTOR_CORE;
-    public static final Item CONCENTRATOR_CORE;
-    public static final Item EXTRACTOR_CORE;
-
     public static final Item TENUOUS_METAL_SPIRIT;
     public static final Item TENUOUS_WOOD_SPIRIT;
     public static final Item TENUOUS_WATER_SPIRIT;
@@ -98,10 +94,6 @@ public class Items {
     }
 
     static {
-        COLLECTOR_CORE = register("collector_core");
-        CONCENTRATOR_CORE = register("concentrator_core");
-        EXTRACTOR_CORE = register("extractor_core");
-
         TENUOUS_METAL_SPIRIT = registerSpirit("tenuous_metal_spirit", SpiritPropertyType.METAL, SpiritConsistences.TENUOUS);
         TENUOUS_WOOD_SPIRIT = registerSpirit("tenuous_wood_spirit", SpiritPropertyType.WOOD, SpiritConsistences.TENUOUS);
         TENUOUS_WATER_SPIRIT = registerSpirit("tenuous_water_spirit", SpiritPropertyType.WATER, SpiritConsistences.TENUOUS);
