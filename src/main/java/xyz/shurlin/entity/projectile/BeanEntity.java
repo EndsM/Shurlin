@@ -7,7 +7,6 @@ import net.minecraft.entity.projectile.ArrowEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.world.World;
-import xyz.shurlin.item.Items;
 import xyz.shurlin.registry.ModItems;
 
 // I guess Bean need some more work, or just delete this item
