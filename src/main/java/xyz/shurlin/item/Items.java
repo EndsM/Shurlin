@@ -1,7 +1,5 @@
 package xyz.shurlin.item;
 
-import net.minecraft.block.Block;
-import net.minecraft.item.FoodComponent;
 import net.minecraft.item.Item;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
@@ -14,7 +12,6 @@ public class Items {
     public static void load() {
     }
 
-    public static final Item TENUOUS_FIRE_SPIRIT;
     public static final Item TENUOUS_EARTH_SPIRIT;
     public static final Item TENUOUS_WIND_SPIRIT;
     public static final Item TENUOUS_LIGHT_SPIRIT;
@@ -75,7 +72,6 @@ public class Items {
     }
 
     static {
-        TENUOUS_FIRE_SPIRIT = registerSpirit("tenuous_fire_spirit", SpiritPropertyType.FIRE, SpiritConstants.TENUOUS);
         TENUOUS_EARTH_SPIRIT = registerSpirit("tenuous_earth_spirit", SpiritPropertyType.EARTH, SpiritConstants.TENUOUS);
         TENUOUS_WIND_SPIRIT = registerSpirit("tenuous_wind_spirit", SpiritPropertyType.WIND, SpiritConstants.TENUOUS);
         TENUOUS_LIGHT_SPIRIT = registerSpirit("tenuous_light_spirit", SpiritPropertyType.LIGHT, SpiritConstants.TENUOUS);
