@@ -9,6 +9,7 @@ import net.minecraft.util.registry.Registry;
 import xyz.shurlin.Shurlin;
 import xyz.shurlin.item.HolyPearBowItem;
 import xyz.shurlin.item.HolyPearSwordItem;
+import xyz.shurlin.item.HolyPearWandItem;
 import xyz.shurlin.item.ItemGroups;
 
 public class ModItems {
@@ -65,6 +66,7 @@ public class ModItems {
     // Because I plan to have cultivation equipments crafting system that have randomized or generative stats
     public static final Item HOLY_PEAR_SWORD = new HolyPearSwordItem();
     public static final Item HOLY_PEAR_BOW = new HolyPearBowItem();
+    public static final Item HOLY_PEAR_WAND = new HolyPearWandItem();
 
     // in-class utility functions below
     private static String getBlockId(Block block) {
@@ -96,5 +98,6 @@ public class ModItems {
         register("holy_pear", HOLY_PEAR);
         register("holy_pear_sword", HOLY_PEAR_SWORD);
         register("holy_pear_bow", HOLY_PEAR_BOW);
+        register("holy_pear_wand", HOLY_PEAR_WAND);
     }
 }
