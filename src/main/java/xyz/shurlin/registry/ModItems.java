@@ -7,6 +7,8 @@ import net.minecraft.item.Item;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import xyz.shurlin.Shurlin;
+import xyz.shurlin.cultivation.SpiritConsistences;
+import xyz.shurlin.cultivation.SpiritPropertyType;
 import xyz.shurlin.item.*;
 
 public class ModItems {
@@ -85,7 +87,7 @@ public class ModItems {
     public static final Item BREAKER_CORE = new Item(
             new Item.Settings().group(ItemGroups.SHURLIN)
     );
-    public static final Item COLLECTOR_CORE=new Item(
+    public static final Item COLLECTOR_CORE = new Item(
             new Item.Settings().group(ItemGroups.SHURLIN)
     );
     public static final Item CONCENTRATOR_CORE = new Item(
@@ -94,6 +96,8 @@ public class ModItems {
     public static final Item EXTRACTOR_CORE = new Item(
             new Item.Settings().group(ItemGroups.SHURLIN)
     );
+
+    public static final Item TENUOUS_METAL_SPIRIT = new SpiritItem(SpiritPropertyType.METAL, SpiritConsistences.TENUOUS);
 
     // in-class utility functions below
     private static String getBlockId(Block block) {
@@ -134,10 +138,10 @@ public class ModItems {
         register("plant_wand", PLANT_WAND);
         register("mysterious_spirit_of_plant", MYSTERIOUS_SPIRIT_OF_PLANT);
         register("plant_extractant", PLANT_EXTRACTANT);
-        register("worker_shell",WORKER_SHELL);
-        register("breaker_core",BREAKER_CORE);
-        register("collector_core",COLLECTOR_CORE);
-        register("concentrator_core",CONCENTRATOR_CORE);
-        register("extractor_core",EXTRACTOR_CORE);
+        register("worker_shell", WORKER_SHELL);
+        register("breaker_core", BREAKER_CORE);
+        register("collector_core", COLLECTOR_CORE);
+        register("concentrator_core", CONCENTRATOR_CORE);
+        register("extractor_core", EXTRACTOR_CORE);
     }
 }

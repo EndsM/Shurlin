@@ -1,5 +1,6 @@
 package xyz.shurlin.cultivation;
 
+// So I basically knows what original idea is now
 public class SpiritConsistences {
     public static final double TENUOUS = 10d;
     public static final double COMMON = 30d;
