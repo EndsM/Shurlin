@@ -7,7 +7,7 @@ import net.minecraft.item.Item;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import xyz.shurlin.Shurlin;
-import xyz.shurlin.cultivation.SpiritConsistences;
+import xyz.shurlin.cultivation.SpiritConstants;
 import xyz.shurlin.cultivation.SpiritPropertyType;
 import xyz.shurlin.item.*;
 
@@ -97,7 +97,7 @@ public class ModItems {
             new Item.Settings().group(ItemGroups.SHURLIN)
     );
 
-    public static final Item TENUOUS_METAL_SPIRIT = new SpiritItem(SpiritPropertyType.METAL, SpiritConsistences.TENUOUS);
+    public static final Item TENUOUS_METAL_SPIRIT = new SpiritItem(SpiritPropertyType.METAL, SpiritConstants.TENUOUS);
 
     // in-class utility functions below
     private static String getBlockId(Block block) {
