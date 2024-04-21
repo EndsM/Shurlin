@@ -12,30 +12,6 @@ public class Items {
     public static void load() {
     }
 
-    public static final Item COMMON_METAL_SPIRIT;
-    public static final Item COMMON_WOOD_SPIRIT;
-    public static final Item COMMON_WATER_SPIRIT;
-    public static final Item COMMON_FIRE_SPIRIT;
-    public static final Item COMMON_EARTH_SPIRIT;
-    public static final Item COMMON_WIND_SPIRIT;
-    public static final Item COMMON_LIGHT_SPIRIT;
-    public static final Item COMMON_DARKNESS_SPIRIT;
-    public static final Item COMMON_POISON_SPIRIT;
-    public static final Item COMMON_LIGHTNING_SPIRIT;
-    public static final Item COMMON_ICE_SPIRIT;
-    public static final Item COMMON_TIME_SPACE_SPIRIT;
-    public static final Item DENSE_METAL_SPIRIT;
-    public static final Item DENSE_WOOD_SPIRIT;
-    public static final Item DENSE_WATER_SPIRIT;
-    public static final Item DENSE_FIRE_SPIRIT;
-    public static final Item DENSE_EARTH_SPIRIT;
-    public static final Item DENSE_WIND_SPIRIT;
-    public static final Item DENSE_LIGHT_SPIRIT;
-    public static final Item DENSE_DARKNESS_SPIRIT;
-    public static final Item DENSE_POISON_SPIRIT;
-    public static final Item DENSE_LIGHTNING_SPIRIT;
-    public static final Item DENSE_ICE_SPIRIT;
-    public static final Item DENSE_TIME_SPACE_SPIRIT;
     public static final Item SHURLIN_INGOT;
     public static final Item SHURLIN_POWERFUL_AXE;
 
@@ -64,31 +40,6 @@ public class Items {
     }
 
     static {
-        COMMON_METAL_SPIRIT = registerSpirit("common_metal_spirit", SpiritPropertyType.METAL, SpiritConstants.COMMON);
-        COMMON_WOOD_SPIRIT = registerSpirit("common_wood_spirit", SpiritPropertyType.WOOD, SpiritConstants.COMMON);
-        COMMON_WATER_SPIRIT = registerSpirit("common_water_spirit", SpiritPropertyType.WATER, SpiritConstants.COMMON);
-        COMMON_FIRE_SPIRIT = registerSpirit("common_fire_spirit", SpiritPropertyType.FIRE, SpiritConstants.COMMON);
-        COMMON_EARTH_SPIRIT = registerSpirit("common_earth_spirit", SpiritPropertyType.EARTH, SpiritConstants.COMMON);
-        COMMON_WIND_SPIRIT = registerSpirit("common_wind_spirit", SpiritPropertyType.WIND, SpiritConstants.COMMON);
-        COMMON_LIGHT_SPIRIT = registerSpirit("common_light_spirit", SpiritPropertyType.LIGHT, SpiritConstants.COMMON);
-        COMMON_DARKNESS_SPIRIT = registerSpirit("common_darkness_spirit", SpiritPropertyType.DARKNESS, SpiritConstants.COMMON);
-        COMMON_POISON_SPIRIT = registerSpirit("common_poison_spirit", SpiritPropertyType.POISON, SpiritConstants.COMMON);
-        COMMON_LIGHTNING_SPIRIT = registerSpirit("common_lightning_spirit", SpiritPropertyType.LIGHTNING, SpiritConstants.COMMON);
-        COMMON_ICE_SPIRIT = registerSpirit("common_ice_spirit", SpiritPropertyType.ICE, SpiritConstants.COMMON);
-        COMMON_TIME_SPACE_SPIRIT = registerSpirit("common_time_space_spirit", SpiritPropertyType.TIME_SPACE, SpiritConstants.COMMON);
-        DENSE_METAL_SPIRIT = registerSpirit("dense_metal_spirit", SpiritPropertyType.METAL, SpiritConstants.DENSE);
-        DENSE_WOOD_SPIRIT = registerSpirit("dense_wood_spirit", SpiritPropertyType.WOOD, SpiritConstants.DENSE);
-        DENSE_WATER_SPIRIT = registerSpirit("dense_water_spirit", SpiritPropertyType.WATER, SpiritConstants.DENSE);
-        DENSE_FIRE_SPIRIT = registerSpirit("dense_fire_spirit", SpiritPropertyType.FIRE, SpiritConstants.DENSE);
-        DENSE_EARTH_SPIRIT = registerSpirit("dense_earth_spirit", SpiritPropertyType.EARTH, SpiritConstants.DENSE);
-        DENSE_WIND_SPIRIT = registerSpirit("dense_wind_spirit", SpiritPropertyType.WIND, SpiritConstants.DENSE);
-        DENSE_LIGHT_SPIRIT = registerSpirit("dense_light_spirit", SpiritPropertyType.LIGHT, SpiritConstants.DENSE);
-        DENSE_DARKNESS_SPIRIT = registerSpirit("dense_darkness_spirit", SpiritPropertyType.DARKNESS, SpiritConstants.DENSE);
-        DENSE_POISON_SPIRIT = registerSpirit("dense_poison_spirit", SpiritPropertyType.POISON, SpiritConstants.DENSE);
-        DENSE_LIGHTNING_SPIRIT = registerSpirit("dense_lightning_spirit", SpiritPropertyType.LIGHTNING, SpiritConstants.DENSE);
-        DENSE_ICE_SPIRIT = registerSpirit("dense_ice_spirit", SpiritPropertyType.ICE, SpiritConstants.DENSE);
-        DENSE_TIME_SPACE_SPIRIT = registerSpirit("dense_time_space_spirit", SpiritPropertyType.TIME_SPACE, SpiritConstants.DENSE);
-
         SHURLIN_INGOT = register("shurlin_ingot", new Item.Settings().group(ItemGroups.SHURLIN).fireproof());
         SHURLIN_POWERFUL_AXE = register("shurlin_powerful_axe", new ShurlinPowerfulAxeItem());
 

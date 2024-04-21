@@ -109,6 +109,31 @@ public class ModItems {
     public static final Item TENUOUS_LIGHTNING_SPIRIT = new SpiritItem(SpiritPropertyType.LIGHTNING, SpiritConstants.TENUOUS);
     public static final Item TENUOUS_ICE_SPIRIT = new SpiritItem(SpiritPropertyType.ICE, SpiritConstants.TENUOUS);
     public static final Item TENUOUS_TIME_SPACE_SPIRIT = new SpiritItem(SpiritPropertyType.TIME_SPACE, SpiritConstants.TENUOUS);
+    public static final Item COMMON_METAL_SPIRIT = new SpiritItem(SpiritPropertyType.METAL, SpiritConstants.COMMON);
+    public static final Item COMMON_WOOD_SPIRIT = new SpiritItem(SpiritPropertyType.WOOD, SpiritConstants.COMMON);
+    public static final Item COMMON_WATER_SPIRIT = new SpiritItem(SpiritPropertyType.WATER, SpiritConstants.COMMON);
+    public static final Item COMMON_FIRE_SPIRIT = new SpiritItem(SpiritPropertyType.FIRE, SpiritConstants.COMMON);
+    public static final Item COMMON_EARTH_SPIRIT = new SpiritItem(SpiritPropertyType.EARTH, SpiritConstants.COMMON);
+    public static final Item COMMON_WIND_SPIRIT = new SpiritItem(SpiritPropertyType.WIND, SpiritConstants.COMMON);
+    public static final Item COMMON_LIGHT_SPIRIT = new SpiritItem(SpiritPropertyType.LIGHT, SpiritConstants.COMMON);
+    public static final Item COMMON_DARKNESS_SPIRIT = new SpiritItem(SpiritPropertyType.DARKNESS, SpiritConstants.COMMON);
+    public static final Item COMMON_POISON_SPIRIT = new SpiritItem(SpiritPropertyType.POISON, SpiritConstants.COMMON);
+    public static final Item COMMON_LIGHTNING_SPIRIT = new SpiritItem(SpiritPropertyType.LIGHTNING, SpiritConstants.COMMON);
+    public static final Item COMMON_ICE_SPIRIT = new SpiritItem(SpiritPropertyType.ICE, SpiritConstants.COMMON);
+    public static final Item COMMON_TIME_SPACE_SPIRIT = new SpiritItem(SpiritPropertyType.TIME_SPACE, SpiritConstants.COMMON);
+    public static final Item DENSE_METAL_SPIRIT = new SpiritItem(SpiritPropertyType.METAL, SpiritConstants.DENSE);
+    public static final Item DENSE_WOOD_SPIRIT = new SpiritItem(SpiritPropertyType.WOOD, SpiritConstants.DENSE);
+    public static final Item DENSE_WATER_SPIRIT = new SpiritItem(SpiritPropertyType.WATER, SpiritConstants.DENSE);
+    public static final Item DENSE_FIRE_SPIRIT = new SpiritItem(SpiritPropertyType.FIRE, SpiritConstants.DENSE);
+    public static final Item DENSE_EARTH_SPIRIT = new SpiritItem(SpiritPropertyType.EARTH, SpiritConstants.DENSE);
+    public static final Item DENSE_WIND_SPIRIT = new SpiritItem(SpiritPropertyType.WIND, SpiritConstants.DENSE);
+    public static final Item DENSE_LIGHT_SPIRIT = new SpiritItem(SpiritPropertyType.LIGHT, SpiritConstants.DENSE);
+    public static final Item DENSE_DARKNESS_SPIRIT = new SpiritItem(SpiritPropertyType.DARKNESS, SpiritConstants.DENSE);
+    public static final Item DENSE_POISON_SPIRIT = new SpiritItem(SpiritPropertyType.POISON, SpiritConstants.DENSE);
+    public static final Item DENSE_LIGHTNING_SPIRIT = new SpiritItem(SpiritPropertyType.LIGHTNING, SpiritConstants.DENSE);
+    public static final Item DENSE_ICE_SPIRIT = new SpiritItem(SpiritPropertyType.ICE, SpiritConstants.DENSE);
+    public static final Item DENSE_TIME_SPACE_SPIRIT = new SpiritItem(SpiritPropertyType.TIME_SPACE, SpiritConstants.DENSE);
+    // End of Spirit items
 
     // in-class utility functions below
     private static String getBlockId(Block block) {
@@ -167,5 +192,30 @@ public class ModItems {
         register("tenuous_lightning_spirit", TENUOUS_LIGHTNING_SPIRIT);
         register("tenuous_ice_spirit", TENUOUS_ICE_SPIRIT);
         register("tenuous_time_space_spirit", TENUOUS_TIME_SPACE_SPIRIT);
+        register("common_metal_spirit", COMMON_METAL_SPIRIT);
+        register("common_wood_spirit", COMMON_WOOD_SPIRIT);
+        register("common_water_spirit", COMMON_WATER_SPIRIT);
+        register("common_fire_spirit", COMMON_FIRE_SPIRIT);
+        register("common_earth_spirit", COMMON_EARTH_SPIRIT);
+        register("common_wind_spirit", COMMON_WIND_SPIRIT);
+        register("common_light_spirit", COMMON_LIGHT_SPIRIT);
+        register("common_darkness_spirit", COMMON_DARKNESS_SPIRIT);
+        register("common_poison_spirit", COMMON_POISON_SPIRIT);
+        register("common_lightning_spirit", COMMON_LIGHTNING_SPIRIT);
+        register("common_ice_spirit", COMMON_ICE_SPIRIT);
+        register("common_time_space_spirit", COMMON_TIME_SPACE_SPIRIT);
+        register("dense_metal_spirit", DENSE_METAL_SPIRIT);
+        register("dense_wood_spirit", DENSE_WOOD_SPIRIT);
+        register("dense_water_spirit", DENSE_WATER_SPIRIT);
+        register("dense_fire_spirit", DENSE_FIRE_SPIRIT);
+        register("dense_earth_spirit", DENSE_EARTH_SPIRIT);
+        register("dense_wind_spirit", DENSE_WIND_SPIRIT);
+        register("dense_light_spirit", DENSE_LIGHT_SPIRIT);
+        register("dense_darkness_spirit", DENSE_DARKNESS_SPIRIT);
+        register("dense_poison_spirit", DENSE_POISON_SPIRIT);
+        register("dense_lightning_spirit", DENSE_LIGHTNING_SPIRIT);
+        register("dense_ice_spirit", DENSE_ICE_SPIRIT);
+        register("dense_time_space_spirit", DENSE_TIME_SPACE_SPIRIT);
+        // End of Spirit items
     }
 }
