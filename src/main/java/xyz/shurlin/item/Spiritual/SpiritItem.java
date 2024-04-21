@@ -1,7 +1,6 @@
 package xyz.shurlin.item.Spiritual;
 
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import xyz.shurlin.cultivation.SpiritPropertyType;

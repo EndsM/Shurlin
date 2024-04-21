@@ -1,4 +1,21 @@
 package xyz.shurlin.item.Spiritual;
 
-public class SpiritualShovelItem {
+import net.minecraft.item.Item;
+import net.minecraft.item.ShovelItem;
+import net.minecraft.item.ToolMaterial;
+import xyz.shurlin.item.ItemGroups;
+import xyz.shurlin.util.ShurlinLevel;
+
+public class SpiritualShovelItem extends ShovelItem implements ShurlinLevel {
+    private final float shurlinLevel;
+
+    public SpiritualShovelItem(ToolMaterial material,  float shurlinLevel) {
+        super(material, 1.5f, -3.0f, new Item.Settings().group(ItemGroups.SHURLIN));
+        this.shurlinLevel = shurlinLevel;
+    }
+
+    @Override
+    public float getShurlinLevel() {
+        return shurlinLevel;
+    }
 }
