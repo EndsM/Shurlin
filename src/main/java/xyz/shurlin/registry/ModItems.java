@@ -10,6 +10,8 @@ import xyz.shurlin.Shurlin;
 import xyz.shurlin.cultivation.SpiritConstants;
 import xyz.shurlin.cultivation.SpiritPropertyType;
 import xyz.shurlin.item.*;
+import xyz.shurlin.registry.helper.ModArmorItems;
+import xyz.shurlin.registry.helper.ModToolItems;
 
 public class ModItems {
     // These two are using ModBlocks class' function
@@ -224,5 +226,8 @@ public class ModItems {
         // End of Spirit items
         register("shurlin_ingot", SHURLIN_INGOT);
         register("shurlin_powerful_axe", SHURLIN_POWERFUL_AXE);
+        // Use utility class to register
+        ModToolItems.Register();
+        ModArmorItems.Register();
     }
 }
