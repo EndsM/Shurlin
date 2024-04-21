@@ -35,10 +35,4 @@ public enum SpiritPropertyType {
     public int getId() {
         return this.id;
     }
-
-    /*
-    for(SpiritPropertyType type: SpiritPropertyType.GROUPS){
-            realm.putMeridians(type, SpiritMeridians.fromTag(type, tag1));
-        }
-     */
 }
