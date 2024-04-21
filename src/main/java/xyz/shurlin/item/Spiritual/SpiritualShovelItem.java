@@ -9,7 +9,7 @@ import xyz.shurlin.util.ShurlinLevel;
 public class SpiritualShovelItem extends ShovelItem implements ShurlinLevel {
     private final float shurlinLevel;
 
-    public SpiritualShovelItem(ToolMaterial material,  float shurlinLevel) {
+    public SpiritualShovelItem(ToolMaterial material, float shurlinLevel) {
         super(material, 1.5f, -3.0f, new Item.Settings().group(ItemGroups.SHURLIN));
         this.shurlinLevel = shurlinLevel;
     }
