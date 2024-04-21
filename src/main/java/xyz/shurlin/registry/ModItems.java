@@ -10,6 +10,7 @@ import xyz.shurlin.Shurlin;
 import xyz.shurlin.cultivation.SpiritConstants;
 import xyz.shurlin.cultivation.SpiritPropertyType;
 import xyz.shurlin.item.*;
+import xyz.shurlin.item.Spiritual.SpiritItem;
 import xyz.shurlin.registry.helper.ModArmorItems;
 import xyz.shurlin.registry.helper.ModToolItems;
 
