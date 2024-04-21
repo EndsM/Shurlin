@@ -105,6 +105,7 @@ public class ModItems {
     public static final Item TENUOUS_WIND_SPIRIT = new SpiritItem(SpiritPropertyType.WIND, SpiritConstants.TENUOUS);
     public static final Item TENUOUS_LIGHT_SPIRIT = new SpiritItem(SpiritPropertyType.LIGHT, SpiritConstants.TENUOUS);
     public static final Item TENUOUS_DARKNESS_SPIRIT = new SpiritItem(SpiritPropertyType.DARKNESS, SpiritConstants.TENUOUS);
+    public static final Item TENUOUS_POISON_SPIRIT = new SpiritItem(SpiritPropertyType.POISON, SpiritConstants.TENUOUS);
 
     // in-class utility functions below
     private static String getBlockId(Block block) {
@@ -159,5 +160,6 @@ public class ModItems {
         register("tenuous_wind_spirit", TENUOUS_WIND_SPIRIT);
         register("tenuous_light_spirit", TENUOUS_LIGHT_SPIRIT);
         register("tenuous_darkness_spirit", TENUOUS_DARKNESS_SPIRIT);
+        register("tenuous_poison_spirit",TENUOUS_POISON_SPIRIT);
     }
 }

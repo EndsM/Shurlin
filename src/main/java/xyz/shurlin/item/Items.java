@@ -12,7 +12,6 @@ public class Items {
     public static void load() {
     }
 
-    public static final Item TENUOUS_POISON_SPIRIT;
     public static final Item TENUOUS_LIGHTNING_SPIRIT;
     public static final Item TENUOUS_ICE_SPIRIT;
     public static final Item TENUOUS_TIME_SPACE_SPIRIT;
@@ -68,7 +67,6 @@ public class Items {
     }
 
     static {
-        TENUOUS_POISON_SPIRIT = registerSpirit("tenuous_poison_spirit", SpiritPropertyType.POISON, SpiritConstants.TENUOUS);
         TENUOUS_LIGHTNING_SPIRIT = registerSpirit("tenuous_lightning_spirit", SpiritPropertyType.LIGHTNING, SpiritConstants.TENUOUS);
         TENUOUS_ICE_SPIRIT = registerSpirit("tenuous_ice_spirit", SpiritPropertyType.ICE, SpiritConstants.TENUOUS);
         TENUOUS_TIME_SPACE_SPIRIT = registerSpirit("tenuous_time_space_spirit", SpiritPropertyType.TIME_SPACE, SpiritConstants.TENUOUS);
