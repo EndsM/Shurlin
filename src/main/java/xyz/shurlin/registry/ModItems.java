@@ -100,7 +100,11 @@ public class ModItems {
     public static final Item TENUOUS_METAL_SPIRIT = new SpiritItem(SpiritPropertyType.METAL, SpiritConstants.TENUOUS);
     public static final Item TENUOUS_WOOD_SPIRIT = new SpiritItem(SpiritPropertyType.WOOD, SpiritConstants.TENUOUS);
     public static final Item TENUOUS_WATER_SPIRIT = new SpiritItem(SpiritPropertyType.WATER, SpiritConstants.TENUOUS);
-    public static final Item TENUOUS_FIRE_SPIRIT = new SpiritItem(SpiritPropertyType.FIRE,SpiritConstants.TENUOUS);
+    public static final Item TENUOUS_FIRE_SPIRIT = new SpiritItem(SpiritPropertyType.FIRE, SpiritConstants.TENUOUS);
+    public static final Item TENUOUS_EARTH_SPIRIT = new SpiritItem(SpiritPropertyType.EARTH, SpiritConstants.TENUOUS);
+    public static final Item TENUOUS_WIND_SPIRIT = new SpiritItem(SpiritPropertyType.WIND, SpiritConstants.TENUOUS);
+    public static final Item TENUOUS_LIGHT_SPIRIT = new SpiritItem(SpiritPropertyType.LIGHT, SpiritConstants.TENUOUS);
+    public static final Item TENUOUS_DARKNESS_SPIRIT = new SpiritItem(SpiritPropertyType.DARKNESS,SpiritConstants.TENUOUS);
 
     // in-class utility functions below
     private static String getBlockId(Block block) {
@@ -150,6 +154,10 @@ public class ModItems {
         register("tenuous_metal_spirit", TENUOUS_METAL_SPIRIT);
         register("tenuous_wood_spirit", TENUOUS_WOOD_SPIRIT);
         register("tenuous_water_spirit", TENUOUS_WATER_SPIRIT);
-        register("tenuous_fire_spirit",TENUOUS_FIRE_SPIRIT);
+        register("tenuous_fire_spirit", TENUOUS_FIRE_SPIRIT);
+        register("tenuous_earth_spirit", TENUOUS_EARTH_SPIRIT);
+        register("tenuous_wind_spirit",TENUOUS_WIND_SPIRIT);
+        register("tenuous_light_spirit",TENUOUS_LIGHT_SPIRIT);
+        register("tenuous_darkness_spirit",TENUOUS_DARKNESS_SPIRIT);
     }
 }
