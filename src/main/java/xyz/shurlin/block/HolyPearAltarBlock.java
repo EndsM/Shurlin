@@ -87,7 +87,7 @@ public class HolyPearAltarBlock extends Block {
             if (flag > 0) {
                 int cnt = stack.getCount();
                 if (entity.world.random.nextInt(64 / flag) < cnt)
-                    this.owner.inventory.insertStack(new ItemStack(Items.SHURLIN_INGOT));
+                    this.owner.inventory.insertStack(new ItemStack(ModItems.SHURLIN_INGOT));
                 entity.remove();
             }
         }

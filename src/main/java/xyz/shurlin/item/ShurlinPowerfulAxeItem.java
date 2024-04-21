@@ -15,7 +15,7 @@ import net.minecraft.world.World;
 public class ShurlinPowerfulAxeItem extends Item {
     private static final float miningSpeed = (float) 1e8;
 
-    ShurlinPowerfulAxeItem() {
+    public ShurlinPowerfulAxeItem() {
         super(new Item.Settings().group(ItemGroups.SHURLIN).maxCount(1).fireproof());
     }
 

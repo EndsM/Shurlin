@@ -134,6 +134,11 @@ public class ModItems {
     public static final Item DENSE_ICE_SPIRIT = new SpiritItem(SpiritPropertyType.ICE, SpiritConstants.DENSE);
     public static final Item DENSE_TIME_SPACE_SPIRIT = new SpiritItem(SpiritPropertyType.TIME_SPACE, SpiritConstants.DENSE);
     // End of Spirit items
+    public static final Item SHURLIN_INGOT = new Item(
+            new Item.Settings().group(ItemGroups.SHURLIN).fireproof()
+    );
+    // This need rework or delete, see its class
+    public static final Item SHURLIN_POWERFUL_AXE = new ShurlinPowerfulAxeItem();
 
     // in-class utility functions below
     private static String getBlockId(Block block) {
@@ -217,5 +222,7 @@ public class ModItems {
         register("dense_ice_spirit", DENSE_ICE_SPIRIT);
         register("dense_time_space_spirit", DENSE_TIME_SPACE_SPIRIT);
         // End of Spirit items
+        register("shurlin_ingot", SHURLIN_INGOT);
+        register("shurlin_powerful_axe", SHURLIN_POWERFUL_AXE);
     }
 }

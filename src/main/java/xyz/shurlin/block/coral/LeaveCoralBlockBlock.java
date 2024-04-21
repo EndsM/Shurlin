@@ -23,7 +23,7 @@ public class LeaveCoralBlockBlock extends CoralBlockBlock {
 
     @Override
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
-        if (player.getStackInHand(hand).getItem().equals(Items.SHURLIN_INGOT)) {
+        if (player.getStackInHand(hand).getItem().equals(ModItems.SHURLIN_INGOT)) {
             world.setBlockState(pos, this.deadCoralBlock.getDefaultState(), 2);
             player.inventory.insertStack(new ItemStack(ModItems.PLANT_ESSENCE_PARTICLE, 1));
         }

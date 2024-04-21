@@ -28,7 +28,7 @@ public class SmallBudBlock extends FernBlock {
      */
     @Override
     public void onBreak(World world, BlockPos pos, BlockState state, PlayerEntity player) {
-        if (player.inventory.contains(new ItemStack(Items.SHURLIN_INGOT))) {
+        if (player.inventory.contains(new ItemStack(ModItems.SHURLIN_INGOT))) {
             Utils.spawnItem(world, pos, ModItems.PLANT_ESSENCE_PARTICLE, world.random.nextInt(3));
         } else if (!player.abilities.creativeMode) {
             player.sendMessage(new TranslatableText("message.shurlin.small_bud"), false);
