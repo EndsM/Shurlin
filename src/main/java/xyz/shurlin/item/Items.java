@@ -35,10 +35,6 @@ public class Items {
         return register(registryName, new Item(settings));
     }
 
-    private static Item registerSpirit(String registryName, SpiritPropertyType type, double consistence) {
-        return register(registryName, new SpiritItem(type, consistence));
-    }
-
     static {
         SHURLIN_INGOT = register("shurlin_ingot", new Item.Settings().group(ItemGroups.SHURLIN).fireproof());
         SHURLIN_POWERFUL_AXE = register("shurlin_powerful_axe", new ShurlinPowerfulAxeItem());
