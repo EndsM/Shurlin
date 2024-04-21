@@ -48,8 +48,6 @@ public class CultivationScreen extends HandledScreen<CultivationScreenHandler> {
     protected void drawForeground(MatrixStack matrices, int mouseX, int mouseY) {
         this.textRenderer.draw(matrices, this.title, (float) this.titleX, (float) this.titleY, COLOR);
         for (SpiritPropertyType type : SpiritPropertyType.GROUPS) {
-//            SpiritMeridians meridians = this.meridians.get(type);
-//            this.drawText(matrices, type, meridians);
             this.drawText(matrices, type);
         }
     }
@@ -84,6 +82,4 @@ public class CultivationScreen extends HandledScreen<CultivationScreenHandler> {
         int y = this.y + 62 + order * 22 + (order > 2 ? 1 : 0);
         this.textRenderer.draw(matrices, new TranslatableText(type.getTranslation()), x, y, COLOR);
     }
-
-
 }
