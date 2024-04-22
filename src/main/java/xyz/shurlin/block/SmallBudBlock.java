@@ -8,7 +8,6 @@ import net.minecraft.text.TranslatableText;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import xyz.shurlin.entity.damage.ShurlinDamageSource;
-import xyz.shurlin.item.Items;
 import xyz.shurlin.registry.ModItems;
 import xyz.shurlin.util.Utils;
 

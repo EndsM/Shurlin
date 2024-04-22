@@ -10,7 +10,6 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import xyz.shurlin.item.Items;
 import xyz.shurlin.registry.ModItems;
 
 public class LeaveCoralBlockBlock extends CoralBlockBlock {

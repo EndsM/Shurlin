@@ -19,7 +19,6 @@ import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import xyz.shurlin.Shurlin;
 import xyz.shurlin.client.options.KeyBindings;
-import xyz.shurlin.item.Items;
 import xyz.shurlin.registry.ModItems;
 import xyz.shurlin.util.Utils;
 

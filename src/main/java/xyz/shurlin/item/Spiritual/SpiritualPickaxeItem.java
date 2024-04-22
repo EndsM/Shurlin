@@ -9,7 +9,7 @@ import xyz.shurlin.util.ShurlinLevel;
 public class SpiritualPickaxeItem extends PickaxeItem implements ShurlinLevel {
     private final float shurlinLevel;
 
-    public SpiritualPickaxeItem(ToolMaterial material,  float shurlinLevel) {
+    public SpiritualPickaxeItem(ToolMaterial material, float shurlinLevel) {
         super(material, 1, -2.8f, new Item.Settings().group(ItemGroups.SHURLIN));
         this.shurlinLevel = shurlinLevel;
     }
