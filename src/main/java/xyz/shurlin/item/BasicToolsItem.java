@@ -102,8 +102,4 @@ public class BasicToolsItem {
             return shurlinLevel;
         }
     }
-
-    public ToolMaterial getMaterial() {
-        return material;
-    }
 }
