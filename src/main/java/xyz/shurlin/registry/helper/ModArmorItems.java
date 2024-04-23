@@ -20,6 +20,10 @@ public class ModArmorItems {
     public static Item PLANT_GOLDEN_LEGGINGS = new SpiritualArmorItem(ArmorMaterials.PLANT_GOLD, EquipmentSlot.LEGS, 1.0f);
     public static Item PLANT_GOLDEN_BOOTS = new SpiritualArmorItem(ArmorMaterials.PLANT_GOLD, EquipmentSlot.FEET, 1.0f);
     // Plant Jade
+    public static Item PLANT_JADE_HELMET = new SpiritualArmorItem(ArmorMaterials.PLANT_JADE, EquipmentSlot.HEAD, 1.5f);
+    public static Item PLANT_JADE_CHESTPLATE = new SpiritualArmorItem(ArmorMaterials.PLANT_JADE, EquipmentSlot.CHEST, 1.5f);
+    public static Item PLANT_JADE_LEGGINGS = new SpiritualArmorItem(ArmorMaterials.PLANT_JADE, EquipmentSlot.LEGS, 1.5f);
+    public static Item PLANT_JADE_BOOTS = new SpiritualArmorItem(ArmorMaterials.PLANT_JADE, EquipmentSlot.FEET, 1.5f);
 
     private static void register(String name, Item item) {
         Registry.register(Registry.ITEM, new Identifier(Shurlin.MODID, name), item);
@@ -35,5 +39,10 @@ public class ModArmorItems {
         register("plant_golden_chestplate", PLANT_GOLDEN_CHESTPLATE);
         register("plant_golden_leggings", PLANT_GOLDEN_LEGGINGS);
         register("plant_golden_boots", PLANT_GOLDEN_BOOTS);
+
+        register("plant_jade_helmet", PLANT_JADE_HELMET);
+        register("plant_jade_chestplate", PLANT_JADE_CHESTPLATE);
+        register("plant_jade_leggings", PLANT_JADE_LEGGINGS);
+        register("plant_jade_boots", PLANT_JADE_BOOTS);
     }
 }

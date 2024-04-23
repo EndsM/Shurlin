@@ -10,8 +10,6 @@ public class Items {
     public static void load() {
     }
 
-    public static final BasicArmors PLANT_JADE_ARMORS;
-
     //weapon
     public static final Item DARK_IRON_SWORD;
 
@@ -20,10 +18,7 @@ public class Items {
         return Registry.register(Registry.ITEM, new Identifier(Shurlin.MODID, registryName), item);
     }
 
-
     static {
-        PLANT_JADE_ARMORS = new BasicArmors(ArmorMaterials.PLANT_JADE, "plant_jade");
-
         //weapon
         DARK_IRON_SWORD = register("dark_iron_sword", new SwordWeaponItem(WeaponLevels.INFERIOR_WEAPON, WeaponProperties.DARK_IRON));
     }
