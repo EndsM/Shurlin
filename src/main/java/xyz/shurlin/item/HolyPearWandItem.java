@@ -21,9 +21,7 @@ public class HolyPearWandItem extends BasicItem {
         ItemStack stack = user.getStackInHand(hand);
         for (int i = 0; i < 8; i++) {
             BeanEntity beanEntity = new BeanEntity(user, world);
-//            ArrowEntity arrowEntity = new ArrowEntity(world, user);
             beanEntity.setProperties(user, user.pitch, user.yaw, 0.5f, 3f, 1.0f);
-//            FireworkRocketEntity fireworkRocketEntity = new FireworkRocketEntity(world, stack, user);
             world.spawnEntity(beanEntity);
         }
         return TypedActionResult.success(stack);
@@ -38,23 +36,6 @@ public class HolyPearWandItem extends BasicItem {
     public boolean canRepair(ItemStack stack, ItemStack ingredient) {
         return ingredient.getItem().equals(ModItems.HOLY_PEAR);
     }
-
-//    @Override
-//    public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
-//        if (entity instanceof PlayerEntity) {
-//            ((PlayerEntity) entity).abilities.allowFlying = (selected && ((PlayerEntity) entity).inventory.getSlotWithStack(new ItemStack(Items.HOLY_PEAR))>0)
-//                    || ((PlayerEntity) entity).isCreative();
-//
-//            ((PlayerEntity) entity).abilities.invulnerable = selected && ((PlayerEntity) entity).inventory.getSlotWithStack(new ItemStack(Items.HOLY_PEAR))>0;
-//
-//            if(((PlayerEntity) entity).abilities.flying && !((PlayerEntity) entity).isCreative())
-//                if(entity.world.random.nextFloat() < 0.05)
-//                    stack.damage(1, (PlayerEntity) entity, e -> e.sendEquipmentBreakStatus(EquipmentSlot.MAINHAND));
-//
-//            if(!selected && ((PlayerEntity) entity).abilities.flying && !((PlayerEntity) entity).isCreative())
-//                ((PlayerEntity) entity).abilities.flying = false;
-//        }
-//    }
 
     @Override
     public boolean isDamageable() {

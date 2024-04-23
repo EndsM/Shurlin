@@ -127,11 +127,6 @@ public class ExtractorBlockEntity extends AbstractWorkerBlockEntity {
         return 3;
     }
 
-//    private Item getInput(){
-//        return this.inventory.get(0).getItem();
-//    }
-
-
     @Override
     protected int getOutputSlot() {
         return 2;

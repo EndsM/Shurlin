@@ -4,8 +4,8 @@ import net.minecraft.item.Item;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import xyz.shurlin.Shurlin;
-import xyz.shurlin.item.spiritual.*;
 import xyz.shurlin.item.ToolMaterials;
+import xyz.shurlin.item.spiritual.*;
 
 public class ModToolItems {
     // Plant Iron

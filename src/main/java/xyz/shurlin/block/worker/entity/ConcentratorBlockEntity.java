@@ -87,10 +87,6 @@ public class ConcentratorBlockEntity extends AbstractWorkerBlockEntity {
         return 5;
     }
 
-//    private Item getInput(){
-//        return this.inventory.get(0).getItem();
-//    }
-
     void craftRecipe(ConcentratorRecipe recipe) {
         if (recipe != null && this.canAcceptRecipeOutput(recipe)) {
             ItemStack itemStack2 = recipe.getOutput();

@@ -29,7 +29,7 @@ public class AncientTreeStructureFeature extends StructureFeature<AncientTreeFea
         return AncientTreeStructureFeature.Start::new;
     }
 
-    public class Start extends StructureStart<AncientTreeFeatureConfig> {
+    public static class Start extends StructureStart<AncientTreeFeatureConfig> {
 
         Start(StructureFeature<AncientTreeFeatureConfig> feature, int chunkX, int chunkZ, BlockBox box, int references, long seed) {
             super(feature, chunkX, chunkZ, box, references, seed);

@@ -32,7 +32,7 @@ public abstract class AbstractWorkerScreen<T extends AbstractWorkerScreenHandler
 
     @Override
     protected void drawBackground(MatrixStack matrices, float delta, int mouseX, int mouseY) {
-        RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
+        RenderSystem.clearColor(1.0F, 1.0F, 1.0F, 1.0F);
         Objects.requireNonNull(this.client).getTextureManager().bindTexture(TEXTURE);
         this.drawTexture(matrices, this.x, this.y, 0, 0, this.backgroundWidth, this.backgroundHeight);
     }

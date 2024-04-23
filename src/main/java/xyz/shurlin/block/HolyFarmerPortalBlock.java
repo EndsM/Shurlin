@@ -50,16 +50,6 @@ public class HolyFarmerPortalBlock extends Block {
             Utils.joinHolyFarmerDimension((ServerWorld) world, entity);
     }
 
-//    @Override
-//    public void afterBreak(World world, PlayerEntity player, BlockPos pos, BlockState state, BlockEntity blockEntity, ItemStack stack) {
-//        for(BlockPos pos1 : Utils.poses_of_horizontal){
-//            BlockPos pos2 = pos.add(pos1);
-//            if(world.getBlockState(pos2).isOf(Blocks.HOLY_FARMER_PORTAL)){
-//                world.breakBlock(pos2, false);
-//            }
-//        }
-//    }
-
     @Override
     public void onBroken(WorldAccess world, BlockPos pos, BlockState state) {
         for (BlockPos pos1 : Utils.poses_of_horizontal) {
