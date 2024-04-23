@@ -10,7 +10,6 @@ public class Items {
     public static void load() {
     }
 
-    public static final BasicToolsItem PLANT_JADE_TOOLS;
 
     public static final BasicArmors PLANT_IRON_ARMORS;
     public static final BasicArmors PLANT_GOLDEN_ARMORS;
@@ -26,8 +25,6 @@ public class Items {
 
 
     static {
-        PLANT_JADE_TOOLS = new BasicToolsItem(ToolMaterials.PLANT_JADE, "plant_jade", 1.5f);
-
         PLANT_IRON_ARMORS = new BasicArmors(ArmorMaterials.PLANT_IRON, "plant_iron");
         PLANT_GOLDEN_ARMORS = new BasicArmors(ArmorMaterials.PLANT_GOLD, "plant_golden");
         PLANT_JADE_ARMORS = new BasicArmors(ArmorMaterials.PLANT_JADE, "plant_jade");

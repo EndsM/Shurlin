@@ -21,6 +21,11 @@ public class ModToolItems {
     public static final Item PLANT_GOLDEN_SHOVEL = new SpiritualShovelItem(ToolMaterials.PLANT_GOLD, 1.0f);
     public static final Item PLANT_GOLDEN_HOE = new SpiritualHoeItem(ToolMaterials.PLANT_GOLD, 1.0f);
     // Plant Jade
+    public static final Item PLANT_JADE_SWORD = new SpiritualSwordItem(ToolMaterials.PLANT_JADE, 1.5f);
+    public static final Item PLANT_JADE_PICKAXE = new SpiritualPickaxeItem(ToolMaterials.PLANT_JADE, 1.5f);
+    public static final Item PLANT_JADE_AXE = new SpiritualAxeItem(ToolMaterials.PLANT_JADE, 1.5f);
+    public static final Item PLANT_JADE_SHOVEL = new SpiritualShovelItem(ToolMaterials.PLANT_JADE, 1.5f);
+    public static final Item PLANT_JADE_HOE = new SpiritualHoeItem(ToolMaterials.PLANT_JADE, 1.5f);
 
     private static void register(String name, Item item) {
         Registry.register(Registry.ITEM, new Identifier(Shurlin.MODID, name), item);
@@ -38,5 +43,11 @@ public class ModToolItems {
         register("plant_golden_axe", PLANT_GOLDEN_AXE);
         register("plant_golden_shovel", PLANT_GOLDEN_SHOVEL);
         register("plant_golden_hoe", PLANT_GOLDEN_HOE);
+
+        register("plant_jade_sword", PLANT_JADE_SWORD);
+        register("plant_jade_pickaxe", PLANT_JADE_PICKAXE);
+        register("plant_jade_axe", PLANT_JADE_AXE);
+        register("plant_jade_shovel", PLANT_JADE_SHOVEL);
+        register("plant_jade_hoe", PLANT_JADE_HOE);
     }
 }
