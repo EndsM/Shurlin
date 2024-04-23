@@ -15,7 +15,11 @@ public class ModToolItems {
     public static final Item PLANT_IRON_SHOVEL = new SpiritualShovelItem(ToolMaterials.PLANT_IRON, 1.0f);
     public static final Item PLANT_IRON_HOE = new SpiritualHoeItem(ToolMaterials.PLANT_IRON, 1.0f);
     // Plant Gold
-
+    public static final Item PLANT_GOLDEN_SWORD = new SpiritualSwordItem(ToolMaterials.PLANT_GOLD, 1.0f);
+    public static final Item PLANT_GOLDEN_PICKAXE = new SpiritualPickaxeItem(ToolMaterials.PLANT_GOLD, 1.0f);
+    public static final Item PLANT_GOLDEN_AXE = new SpiritualAxeItem(ToolMaterials.PLANT_GOLD, 1.0f);
+    public static final Item PLANT_GOLDEN_SHOVEL = new SpiritualShovelItem(ToolMaterials.PLANT_GOLD, 1.0f);
+    public static final Item PLANT_GOLDEN_HOE = new SpiritualHoeItem(ToolMaterials.PLANT_GOLD, 1.0f);
     // Plant Jade
 
     private static void register(String name, Item item) {
@@ -25,8 +29,14 @@ public class ModToolItems {
     public static void Register() {
         register("plant_iron_sword", PLANT_IRON_SWORD);
         register("plant_iron_pickaxe", PLANT_IRON_PICKAXE);
-        register("plant_iron_axe",PLANT_IRON_AXE);
-        register("plant_iron_shovel",PLANT_IRON_SHOVEL);
-        register("plant_iron_hoe",PLANT_IRON_HOE);
+        register("plant_iron_axe", PLANT_IRON_AXE);
+        register("plant_iron_shovel", PLANT_IRON_SHOVEL);
+        register("plant_iron_hoe", PLANT_IRON_HOE);
+
+        register("plant_golden_sword", PLANT_GOLDEN_SWORD);
+        register("plant_golden_pickaxe", PLANT_GOLDEN_PICKAXE);
+        register("plant_golden_axe", PLANT_GOLDEN_AXE);
+        register("plant_golden_shovel", PLANT_GOLDEN_SHOVEL);
+        register("plant_golden_hoe", PLANT_GOLDEN_HOE);
     }
 }
