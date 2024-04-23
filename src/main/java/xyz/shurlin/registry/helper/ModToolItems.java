@@ -11,6 +11,10 @@ public class ModToolItems {
 
     // Plant Jade
 
+    private static void register(){
+
+    }
+
     public static void Register() {
     }
 }
