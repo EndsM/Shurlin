@@ -25,9 +25,6 @@ public class Items {
         return Registry.register(Registry.ITEM, new Identifier(Shurlin.MODID, registryName), item);
     }
 
-    private static Item register(String registryName, Item.Settings settings) {
-        return register(registryName, new Item(settings));
-    }
 
     static {
         PLANT_GOLDEN_TOOLS = new BasicToolsItem(ToolMaterials.PLANT_GOLD, "plant_golden", 1.0f);
