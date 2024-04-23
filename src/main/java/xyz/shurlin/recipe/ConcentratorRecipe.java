@@ -40,7 +40,7 @@ public class ConcentratorRecipe extends AbstractWorkerRecipe {
             ItemStack stack = inv.getStack(i);
             // See if this Item has the acceptable Tag, and if itemStack in inventory bigger than needed count
             boolean isSuitable = concentrationIngredient.item.equals(stack.getItem()) && stack.getCount() >= concentrationIngredient.count;
-            if (!isSuitable){
+            if (!isSuitable) {
                 return false;
             }
         }
@@ -133,9 +133,9 @@ public class ConcentratorRecipe extends AbstractWorkerRecipe {
                     NbtCompound tag = tags.getCompound("tag" + i);
                     String id = tag.getString("id");
                     Item item = Registry.ITEM.getOrEmpty(new Identifier(id)).orElseThrow(() -> new IllegalStateException("Item: " + id + " does not exist"));
-                int count = tag.getInt("count");
-                ConcentrationIngredient concentrationIngredient = new ConcentrationIngredient(item,count);
-                concentrationIngredients.add(concentrationIngredient);
+                    int count = tag.getInt("count");
+                    ConcentrationIngredient concentrationIngredient = new ConcentrationIngredient(item, count);
+                    concentrationIngredients.add(concentrationIngredient);
                 }
             }
             return concentrationIngredients;
