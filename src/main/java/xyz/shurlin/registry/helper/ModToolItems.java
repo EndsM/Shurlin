@@ -25,5 +25,8 @@ public class ModToolItems {
     public static void Register() {
         register("plant_iron_sword", PLANT_IRON_SWORD);
         register("plant_iron_pickaxe", PLANT_IRON_PICKAXE);
+        register("plant_iron_axe",PLANT_IRON_AXE);
+        register("plant_iron_shovel",PLANT_IRON_SHOVEL);
+        register("plant_iron_hoe",PLANT_IRON_HOE);
     }
 }
