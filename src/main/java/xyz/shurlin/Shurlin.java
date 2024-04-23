@@ -5,7 +5,6 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import xyz.shurlin.block.entity.BlockEntityTypes;
 import xyz.shurlin.command.Commands;
-import xyz.shurlin.item.Items;
 import xyz.shurlin.linkage.Linkage;
 import xyz.shurlin.recipe.RecipeSerializers;
 import xyz.shurlin.registry.ModBlocks;
@@ -36,7 +35,6 @@ public class Shurlin implements ModInitializer {
 
         // Move all old "load" method to my preference method
         BlockEntityTypes.load();
-        Items.load();
         RecipeSerializers.load();
         ServerReceiver.load();
         ScreenHandlerTypes.load();
