@@ -4,7 +4,7 @@ import net.minecraft.item.Item;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import xyz.shurlin.Shurlin;
-import xyz.shurlin.item.Spiritual.*;
+import xyz.shurlin.item.spiritual.*;
 import xyz.shurlin.item.ToolMaterials;
 
 public class ModToolItems {

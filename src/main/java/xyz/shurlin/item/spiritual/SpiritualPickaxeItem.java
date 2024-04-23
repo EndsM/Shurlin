@@ -1,4 +1,4 @@
-package xyz.shurlin.item.Spiritual;
+package xyz.shurlin.item.spiritual;
 
 import net.minecraft.item.Item;
 import net.minecraft.item.PickaxeItem;

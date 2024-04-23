@@ -1,4 +1,4 @@
-package xyz.shurlin.item.Spiritual;
+package xyz.shurlin.item.spiritual;
 
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.ArmorItem;

@@ -6,7 +6,7 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import xyz.shurlin.Shurlin;
 import xyz.shurlin.item.ArmorMaterials;
-import xyz.shurlin.item.Spiritual.SpiritualArmorItem;
+import xyz.shurlin.item.spiritual.SpiritualArmorItem;
 
 public class ModArmorItems {
     // Plant Iron
