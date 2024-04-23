@@ -11,7 +11,6 @@ public class Items {
     }
 
     //weapon
-    public static final Item DARK_IRON_SWORD;
 
     // These are disaster in terms of reading...
     private static Item register(String registryName, Item item) {
@@ -19,7 +18,5 @@ public class Items {
     }
 
     static {
-        //weapon
-        DARK_IRON_SWORD = register("dark_iron_sword", new SwordWeaponItem(WeaponLevels.INFERIOR_WEAPON, WeaponProperties.DARK_IRON));
     }
 }
