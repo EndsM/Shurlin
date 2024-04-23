@@ -8,7 +8,7 @@ import net.minecraft.util.math.BlockPos;
 import java.util.Random;
 
 public class MicroCraterBlock extends Block {
-    private boolean working;
+    private boolean isWorking;
 
     public MicroCraterBlock(Settings settings) {
         super(settings);
@@ -17,8 +17,11 @@ public class MicroCraterBlock extends Block {
     @Override
     public void scheduledTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
         if (random.nextInt(200) == 0) {
-            working = true;
+            isWorking = true;
             erupt(world);
+        }
+        else {
+            isWorking = false;
         }
     }
 
