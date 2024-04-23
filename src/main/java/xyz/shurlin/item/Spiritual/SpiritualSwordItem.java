@@ -8,7 +8,7 @@ import xyz.shurlin.util.ShurlinLevel;
 
 public class SpiritualSwordItem extends SwordItem implements ShurlinLevel {
     private final float shurlinLevel;
-
+    // According to needs, may change this series' parameters to include ItemSetting
     public SpiritualSwordItem(ToolMaterial material, float shurlinLevel) {
         super(material, 3, -2.4f, new Item.Settings().group(ItemGroups.SHURLIN));
         this.shurlinLevel = shurlinLevel;
