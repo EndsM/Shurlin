@@ -16,7 +16,6 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.JsonHelper;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.World;
-import xyz.shurlin.util.ItemOrTag;
 import xyz.shurlin.util.ShurlinLevel;
 import xyz.shurlin.util.Utils;
 
@@ -32,13 +31,22 @@ public class ConcentratorRecipe extends AbstractWorkerRecipe {
 
     @Override
     public boolean matches(Inventory inv, World world) {
+        // loop through List<ConcentrationIngredient> concentrationIngredients
+        // return false the jump out of function if is not match
         for (int i = 0; i < concentrationIngredients.size(); i++) {
+            // Take one of them
             ConcentrationIngredient concentrationIngredient = concentrationIngredients.elementAt(i);
+            // Then get the itemStack of this ingredient
             ItemStack stack = inv.getStack(i);
-            boolean b = concentrationIngredient.itemOrTag.contains(stack.getItem()) && stack.getCount() >= concentrationIngredient.count;
-            if (!b)
+            // See if this Item has the acceptable Tag, and if itemStack in inventory bigger than needed count
+            boolean isSuitable = concentrationIngredient.item.equals(stack.getItem()) && stack.getCount() >= concentrationIngredient.count;
+            if (!isSuitable){
                 return false;
+            }
         }
+        // After iterating through all the ConcentrationIngredient objects, check if the Inventory object is not an instance of ShurlinLevel
+        // or if the Utils.canDo method returns true when called with the Inventory object and the shurlinLevel variable
+        // If either of these conditions is met, return true; otherwise, return false
         return !(inv instanceof ShurlinLevel) || Utils.canDo(inv, this.shurlinLevel);
     }
 
@@ -108,10 +116,7 @@ public class ConcentratorRecipe extends AbstractWorkerRecipe {
             int index = 0;
             for (ConcentrationIngredient ingredient : this) {
                 NbtCompound tag = new NbtCompound();
-                ItemOrTag itemOrTag = ingredient.itemOrTag;
-                boolean b = itemOrTag.isItem();
-                String id = b ? itemOrTag.getItem().getTranslationKey() : ServerTagManagerHolder.getTagManager().getItems().getTagId(itemOrTag.getTag()).toString();
-                tag.putBoolean("isItem", b);
+                String id = ingredient.item.getTranslationKey();
                 tag.putString("id", id);
                 tag.putInt("count", ingredient.count);
                 tags.put("tag" + ++index, tag);
@@ -126,17 +131,11 @@ public class ConcentratorRecipe extends AbstractWorkerRecipe {
             for (int i = 1; i <= size; i++) {
                 if (tags != null) {
                     NbtCompound tag = tags.getCompound("tag" + i);
-                    boolean b = tag.getBoolean("isItem");
-                    Identifier id = new Identifier(tag.getString("id"));
-                    ItemOrTag itemOrTag;
-                    if (b)
-                        itemOrTag = new ItemOrTag(Registry.ITEM.get(id));
-                    else
-                        itemOrTag = new ItemOrTag(ServerTagManagerHolder.getTagManager().getItems().getTag(id));
-                    int count = tag.getInt("count");
-                    ConcentrationIngredient concentrationIngredient = new ConcentrationIngredient(itemOrTag, count);
-                    concentrationIngredients.add(concentrationIngredient);
-
+                    String id = tag.getString("id");
+                    Item item = Registry.ITEM.getOrEmpty(new Identifier(id)).orElseThrow(() -> new IllegalStateException("Item: " + id + " does not exist"));
+                int count = tag.getInt("count");
+                ConcentrationIngredient concentrationIngredient = new ConcentrationIngredient(item,count);
+                concentrationIngredients.add(concentrationIngredient);
                 }
             }
             return concentrationIngredients;
@@ -144,15 +143,15 @@ public class ConcentratorRecipe extends AbstractWorkerRecipe {
     }
 
     public static class ConcentrationIngredient {
-        ItemOrTag itemOrTag;
+        Item item;
         int count;
 
         public int getCount() {
             return count;
         }
 
-        public ConcentrationIngredient(ItemOrTag itemOrTag, int count) {
-            this.itemOrTag = itemOrTag;
+        public ConcentrationIngredient(Item item, int count) {
+            this.item = item;
             this.count = count;
         }
 
@@ -161,14 +160,14 @@ public class ConcentratorRecipe extends AbstractWorkerRecipe {
             if (object.has("item")) {
                 identifier = new Identifier(JsonHelper.getString(object, "item"));
                 Item item = Registry.ITEM.getOrEmpty(identifier).orElseThrow(() -> new JsonSyntaxException("Unknown item '" + identifier + "'"));
-                itemOrTag = new ItemOrTag(item);
+                this.item = item;
             } else if (object.has("tag")) {
                 identifier = new Identifier(JsonHelper.getString(object, "tag"));
                 Tag<Item> tag = ServerTagManagerHolder.getTagManager().getItems().getTag(identifier);
                 if (tag == null) {
                     throw new JsonSyntaxException("Unknown item tag '" + identifier + "'");
                 }
-                itemOrTag = new ItemOrTag(tag);
+                this.item = tag.getRandom(null);
             }
             count = JsonHelper.getInt(object, "count", 1);
         }
