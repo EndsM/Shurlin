@@ -25,30 +25,30 @@ public class ShurlinBiomeCreator {
     }
 
     public static Biome createPearForest() {
-        SpawnSettings.Builder builder = new SpawnSettings.Builder();
-        DefaultBiomeFeatures.addFarmAnimals(builder);
-        DefaultBiomeFeatures.addBatsAndMonsters(builder);
-        GenerationSettings.Builder builder2 = new GenerationSettings.Builder().surfaceBuilder(ConfiguredSurfaceBuilders.GRASS);
-        DefaultBiomeFeatures.addDefaultUndergroundStructures(builder2);
-        builder2.structureFeature(ConfiguredStructureFeatures.RUINED_PORTAL);
-        builder2.structureFeature(ShurlinConfiguredStructureFeatures.ANCIENT_PEAR_TREE);
-        DefaultBiomeFeatures.addLandCarvers(builder2);
-        DefaultBiomeFeatures.addDefaultLakes(builder2);
-        DefaultBiomeFeatures.addDungeons(builder2);
-        DefaultBiomeFeatures.addForestFlowers(builder2);
-        DefaultBiomeFeatures.addMineables(builder2);
-        DefaultBiomeFeatures.addDefaultOres(builder2);
-        DefaultBiomeFeatures.addDefaultDisks(builder2);
-        DefaultBiomeFeatures.addDefaultFlowers(builder2);
-        DefaultBiomeFeatures.addForestGrass(builder2);
-        DefaultBiomeFeatures.addDefaultVegetation(builder2);
-        builder2.feature(GenerationStep.Feature.VEGETAL_DECORATION, ConfiguredFeatures.SPRING_WATER);
+        SpawnSettings.Builder spawnSettingBuilder = new SpawnSettings.Builder();
+        DefaultBiomeFeatures.addFarmAnimals(spawnSettingBuilder);
+        DefaultBiomeFeatures.addBatsAndMonsters(spawnSettingBuilder);
+        GenerationSettings.Builder generationSettingBuilder = new GenerationSettings.Builder().surfaceBuilder(ConfiguredSurfaceBuilders.GRASS);
+        DefaultBiomeFeatures.addDefaultUndergroundStructures(generationSettingBuilder);
+        generationSettingBuilder.structureFeature(ConfiguredStructureFeatures.RUINED_PORTAL);
+        generationSettingBuilder.structureFeature(ShurlinConfiguredStructureFeatures.ANCIENT_PEAR_TREE);
+        DefaultBiomeFeatures.addLandCarvers(generationSettingBuilder);
+        DefaultBiomeFeatures.addDefaultLakes(generationSettingBuilder);
+        DefaultBiomeFeatures.addDungeons(generationSettingBuilder);
+        DefaultBiomeFeatures.addForestFlowers(generationSettingBuilder);
+        DefaultBiomeFeatures.addMineables(generationSettingBuilder);
+        DefaultBiomeFeatures.addDefaultOres(generationSettingBuilder);
+        DefaultBiomeFeatures.addDefaultDisks(generationSettingBuilder);
+        DefaultBiomeFeatures.addDefaultFlowers(generationSettingBuilder);
+        DefaultBiomeFeatures.addForestGrass(generationSettingBuilder);
+        DefaultBiomeFeatures.addDefaultVegetation(generationSettingBuilder);
+        generationSettingBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ConfiguredFeatures.SPRING_WATER);
 
-        ShurlinBiomeFeatures.addPearTrees(builder2);
-        ShurlinBiomeFeatures.addSmallBud(builder2);
-        ShurlinBiomeFeatures.addPlatycodonGrandiflorus(builder2);
+        ShurlinBiomeFeatures.addPearTrees(generationSettingBuilder);
+        ShurlinBiomeFeatures.addSmallBud(generationSettingBuilder);
+        ShurlinBiomeFeatures.addPlatycodonGrandiflorus(generationSettingBuilder);
 
-        return (new Biome.Builder()).precipitation(Biome.Precipitation.RAIN).category(Biome.Category.FOREST).depth(0.1f).scale(0.2f).temperature(0.6F).downfall(0.3F).effects((new net.minecraft.world.biome.BiomeEffects.Builder()).waterColor(4159204).waterFogColor(329011).fogColor(12638463).skyColor(getSkyColor(0.6F)).moodSound(BiomeMoodSound.CAVE).build()).spawnSettings(builder.build()).generationSettings(builder2.build()).build();
+        return (new Biome.Builder()).precipitation(Biome.Precipitation.RAIN).category(Biome.Category.FOREST).depth(0.1f).scale(0.2f).temperature(0.6F).downfall(0.3F).effects((new net.minecraft.world.biome.BiomeEffects.Builder()).waterColor(4159204).waterFogColor(329011).fogColor(12638463).skyColor(getSkyColor(0.6F)).moodSound(BiomeMoodSound.CAVE).build()).spawnSettings(spawnSettingBuilder.build()).generationSettings(generationSettingBuilder.build()).build();
     }
 
     public static Biome createParasolAncientForest() {
