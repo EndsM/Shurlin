@@ -10,7 +10,6 @@ public class Items {
     public static void load() {
     }
 
-
     public static final BasicArmors PLANT_IRON_ARMORS;
     public static final BasicArmors PLANT_GOLDEN_ARMORS;
     public static final BasicArmors PLANT_JADE_ARMORS;
