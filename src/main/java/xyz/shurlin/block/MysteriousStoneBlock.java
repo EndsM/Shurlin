@@ -36,8 +36,6 @@ public class MysteriousStoneBlock extends Block {
             ItemStack result = new ItemStack(ModItems.MYSTERIOUS_SPIRIT_OF_PLANT, world.random.nextInt(2));
             player.inventory.insertStack(result);
         }
-//            ItemEntity entity = new ItemEntity(world, pos.getX(), pos.getY(), pos.getZ(), result);
-//            world.spawnEntity(entity);
         return ActionResult.SUCCESS;
     }
 

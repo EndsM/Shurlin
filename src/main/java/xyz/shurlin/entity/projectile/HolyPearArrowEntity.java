@@ -22,14 +22,6 @@ public class HolyPearArrowEntity extends ArrowEntity {
         super(entityType, world);
     }
 
-//    @Override
-//    public void tick() {
-//        super.tick();
-//        if(this.world.isClient){
-//            this.world.addParticle(ParticleTypes.ENTITY_EFFECT, this.getParticleX(0.2d), this.getRandomBodyY(), this.getParticleZ(0.2d), 0, 255, 0);
-//        }
-//    }
-
     @Override
     public void tick() {
         super.tick();

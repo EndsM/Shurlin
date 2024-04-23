@@ -28,12 +28,9 @@ public class StructureKeys {
 //        BuiltinRegistries.add(BuiltinRegistries.CONFIGURED_STRUCTURE_FEATURE, ANCIENT_SPRUCE_TREE.getValue(), ShurlinConfiguredFeatures.ANCIENT_SPRUCE_TREE);
 //        BuiltinRegistries.add(BuiltinRegistries.CONFIGURED_STRUCTURE_FEATURE, ANCIENT_JUNGLE_TREE.getValue(), ShurlinConfiguredFeatures.ANCIENT_JUNGLE_TREE);
 //        BuiltinRegistries.add(BuiltinRegistries.CONFIGURED_STRUCTURE_FEATURE, ANCIENT_PEAR_TREE.getValue(), ShurlinConfiguredFeatures.ANCIENT_PEAR_TREE);
-
     }
 
     private static RegistryKey<ConfiguredStructureFeature<?, ?>> register(String registryName) {
         return RegistryKey.of(Registry.CONFIGURED_STRUCTURE_FEATURE_WORLDGEN, new Identifier(Shurlin.MODID, registryName));
     }
-
-//    private static void create()
 }

@@ -20,12 +20,8 @@ public class MicroCraterBlock extends Block {
             isWorking = true;
             erupt(world);
         }
-        else {
-            isWorking = false;
-        }
     }
 
     private void erupt(ServerWorld world) {
-//        world.addFireworkParticle();
     }
 }
