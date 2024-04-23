@@ -148,8 +148,8 @@ public class ModItems {
         return Registry.BLOCK.getId(block).getPath();
     }
 
-    private static Item register(String name, Item item) {
-        return Registry.register(Registry.ITEM, new Identifier(Shurlin.MODID, name), item);
+    private static void register(String name, Item item) {
+        Registry.register(Registry.ITEM, new Identifier(Shurlin.MODID, name), item);
     }
 
     // call this while init
