@@ -27,7 +27,7 @@ import java.util.OptionalInt;
 
 public class ModConfiguredFeatures {
     // Maybe separate utility class of FeatureConfig later.
-    public static ConfiguredFeature<TreeFeatureConfig, ?> PEAR_TREE = Feature.TREE.configure(new TreeFeatureConfig.Builder(
+    public static final ConfiguredFeature<TreeFeatureConfig, ?> PEAR_TREE = Feature.TREE.configure(new TreeFeatureConfig.Builder(
             new SimpleBlockStateProvider(ModBlocks.PEAR_LOG.getDefaultState()),
             // This config the weight of leaves with pear and without pear
             new WeightedBlockStateProvider()
@@ -37,7 +37,7 @@ public class ModConfiguredFeatures {
             new StraightTrunkPlacer(5, 2, 0),
             new TwoLayersFeatureSize(1, 0, 1)
     ).build());
-    public static ConfiguredFeature<TreeFeatureConfig, ?> PHOENIX_TREE = Feature.TREE.configure(new TreeFeatureConfig.Builder(
+    public static final ConfiguredFeature<TreeFeatureConfig, ?> PHOENIX_TREE = Feature.TREE.configure(new TreeFeatureConfig.Builder(
             new SimpleBlockStateProvider(ModBlocks.PHOENIX_LOG.getDefaultState()),
             // This tree don't have other types of leaves though
             new SimpleBlockStateProvider(ModBlocks.PHOENIX_LEAVES.getDefaultState()),
@@ -46,23 +46,23 @@ public class ModConfiguredFeatures {
             new ThreeLayersFeatureSize(1, 1, 0, 1, 2, OptionalInt.empty())
     ).build());
     // Tree define how the tree looks like, and below is how they distribute
-    public static ConfiguredFeature<?, ?> TREES_PEAR = PEAR_TREE
+    public static final ConfiguredFeature<?, ?> TREES_PEAR = PEAR_TREE
             .decorate(ConfiguredFeatures.Decorators.SQUARE_HEIGHTMAP)
             .decorate(Decorator.COUNT_EXTRA.configure(new CountExtraDecoratorConfig(10, 0.1f, 1)));
-    public static ConfiguredFeature<?, ?> TREES_PHOENIX = PHOENIX_TREE
+    public static final ConfiguredFeature<?, ?> TREES_PHOENIX = PHOENIX_TREE
             .decorate(ConfiguredFeatures.Decorators.SQUARE_HEIGHTMAP)
             .decorate(Decorator.COUNT_EXTRA.configure(new CountExtraDecoratorConfig(6, 0.1f, 1)));
-    public static ConfiguredFeature<?, ?> SMALL_BUD = Feature.RANDOM_PATCH.configure(new RandomPatchFeatureConfig.Builder(
+    public static final ConfiguredFeature<?, ?> SMALL_BUD = Feature.RANDOM_PATCH.configure(new RandomPatchFeatureConfig.Builder(
                     new SimpleBlockStateProvider(ModBlocks.SMALL_BUD.getDefaultState()),
                     SimpleBlockPlacer.INSTANCE
             ).tries(12).build())
             .decorate(Decorator.COUNT_EXTRA.configure(new CountExtraDecoratorConfig(6, 0.1f, 1)));
-    public static ConfiguredFeature<?, ?> PLATYCODON_GRANDIFLORUS = Feature.RANDOM_PATCH.configure(new RandomPatchFeatureConfig.Builder(
+    public static final ConfiguredFeature<?, ?> PLATYCODON_GRANDIFLORUS = Feature.RANDOM_PATCH.configure(new RandomPatchFeatureConfig.Builder(
                     new SimpleBlockStateProvider(ModBlocks.PLATYCODON_GRANDIFLORUS.getDefaultState()),
                     SimpleBlockPlacer.INSTANCE
             ).tries(4).build())
             .decorate(Decorator.COUNT_EXTRA.configure(new CountExtraDecoratorConfig(6, 0.1f, 1)));
-    public static ConfiguredFeature<?, ?> PATCH_FIRE = Feature.RANDOM_PATCH.configure(new RandomPatchFeatureConfig.Builder(
+    public static final ConfiguredFeature<?, ?> PATCH_FIRE = Feature.RANDOM_PATCH.configure(new RandomPatchFeatureConfig.Builder(
                     new SimpleBlockStateProvider(Blocks.FIRE.getDefaultState()),
                     SimpleBlockPlacer.INSTANCE
             ).tries(64).whitelist(new HashSet<Block>() {{
