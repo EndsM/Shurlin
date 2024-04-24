@@ -52,8 +52,8 @@ java {
 }
 
 jar {
+    // Just include the license file, do nothing to it anyway
     from("LICENSE") {
-        rename { "${it}_${project.base.archivesName.get()}"}
     }
 }
 
