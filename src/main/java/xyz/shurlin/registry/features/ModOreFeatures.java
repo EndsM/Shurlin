@@ -20,6 +20,22 @@ public class ModOreFeatures {
             ))
             .decorate(Decorator.RANGE.configure(new RangeDecoratorConfig(0, 0, 48)))
             .repeat(6);
+    public static ConfiguredFeature<?, ?> ORE_PLANT_GOLD = Feature.ORE
+            .configure(new OreFeatureConfig(
+                    OreFeatureConfig.Rules.BASE_STONE_OVERWORLD,
+                    ModBlocks.PLANT_GOLD_ORE_BLOCK.getDefaultState(),
+                    6
+            ))
+            .decorate(Decorator.RANGE.configure(new RangeDecoratorConfig(0, 0, 32)))
+            .repeat(4);
+    public static ConfiguredFeature<?, ?> ORE_PLANT_JADE = Feature.ORE
+            .configure(new OreFeatureConfig(
+                    OreFeatureConfig.Rules.BASE_STONE_OVERWORLD,
+                    ModBlocks.PLANT_JADE_ORE_BLOCK.getDefaultState(),
+                    4
+            ))
+            .decorate(Decorator.RANGE.configure(new RangeDecoratorConfig(0, 0, 16)))
+            .repeat(2);
 
     private static void registerOreFeature(String id, ConfiguredFeature<?, ?> configuredFeature) {
         Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, new Identifier(Shurlin.MODID, id), configuredFeature);
@@ -27,5 +43,7 @@ public class ModOreFeatures {
 
     public static void Register() {
         registerOreFeature("ore_plant_iron", ORE_PLANT_IRON);
+        registerOreFeature("ore_plant_gold", ORE_PLANT_GOLD);
+        registerOreFeature("ore_plant_jade", ORE_PLANT_JADE);
     }
 }
