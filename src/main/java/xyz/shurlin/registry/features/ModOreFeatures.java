@@ -36,6 +36,7 @@ public class ModOreFeatures {
             ))
             .decorate(Decorator.RANGE.configure(new RangeDecoratorConfig(0, 0, 16)))
             .repeat(2);
+    public static ConfiguredFeature<?, ?> ORE_TENUOUS_METAL_SPIRIT;
 
     private static void registerOreFeature(String id, ConfiguredFeature<?, ?> configuredFeature) {
         Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, new Identifier(Shurlin.MODID, id), configuredFeature);
