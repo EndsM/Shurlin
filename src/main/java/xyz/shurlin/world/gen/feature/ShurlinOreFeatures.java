@@ -29,6 +29,7 @@ public class ShurlinOreFeatures {
     public static void load() {
     }
 
+    // Delete old ConfiguredFeatures class after move of this class
     public static final ConfiguredFeature<?, ?> ORE_PLANT_IRON;
     public static final ConfiguredFeature<?, ?> ORE_PLANT_GOLD;
     public static final ConfiguredFeature<?, ?> ORE_PLANT_JADE;
