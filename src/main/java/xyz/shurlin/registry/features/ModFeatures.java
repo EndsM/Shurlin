@@ -49,5 +49,10 @@ public class ModFeatures {
                 GenerationStep.Feature.UNDERGROUND_ORES,
                 RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN, new Identifier(Shurlin.MODID, "ore_plant_jade"))
         );
+        BiomeModifications.addFeature(
+                BiomeSelectors.foundInTheNether(),
+                GenerationStep.Feature.UNDERGROUND_ORES,
+                RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN, new Identifier(Shurlin.MODID, "ore_tenuous_metal_spirit"))
+        );
     }
 }
