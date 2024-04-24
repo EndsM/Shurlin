@@ -43,10 +43,6 @@ public class ShurlinOreFeatures {
     public static final ConfiguredFeature<?, ?> ORE_TENUOUS_ICE_SPIRIT;
     public static final ConfiguredFeature<?, ?> ORE_TENUOUS_TIME_SPACE_SPIRIT;
 
-    private static ConfiguredFeature<?, ?> createOre(String registryName, BlockState state, int size, int numPerChunk, int maxy) {
-        return createOre(registryName, OreFeatureConfig.Rules.BASE_STONE_OVERWORLD, state, size, numPerChunk, maxy, BiomeSelectors.foundInOverworld());
-    }
-
     private static ConfiguredFeature<?, ?> createOre(String registryName, BlockState state, int size, int numPerChunk, int maxy, RegistryKey<Biome> biomeKey) {
         return createOre(registryName, OreFeatureConfig.Rules.BASE_STONE_OVERWORLD, state, size, numPerChunk, maxy, BiomeSelectors.includeByKey(biomeKey));
     }
