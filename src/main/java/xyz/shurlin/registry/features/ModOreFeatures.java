@@ -80,6 +80,6 @@ public class ModOreFeatures {
         registerOreFeature("ore_tenuous_metal_spirit", ORE_TENUOUS_METAL_SPIRIT);
         registerOreFeature("ore_tenuous_wood_spirit", ORE_TENUOUS_WOOD_SPIRIT);
         registerOreFeature("ore_tenuous_water_spirit", ORE_TENUOUS_WATER_SPIRIT);
-        registerOreFeature("ore_tenuous_fire_spirit",ORE_TENUOUS_FIRE_SPIRIT);
+        registerOreFeature("ore_tenuous_fire_spirit", ORE_TENUOUS_FIRE_SPIRIT);
     }
 }
