@@ -30,7 +30,6 @@ public class ShurlinOreFeatures {
     }
 
     // Delete old ConfiguredFeatures class after move of this class
-    public static final ConfiguredFeature<?, ?> ORE_TENUOUS_FIRE_SPIRIT;
     public static final ConfiguredFeature<?, ?> ORE_TENUOUS_EARTH_SPIRIT;
     public static final ConfiguredFeature<?, ?> ORE_TENUOUS_WIND_SPIRIT;
     public static final ConfiguredFeature<?, ?> ORE_TENUOUS_LIGHT_SPIRIT;
@@ -66,7 +65,6 @@ public class ShurlinOreFeatures {
     }
 
     static {
-        ORE_TENUOUS_FIRE_SPIRIT = createOre("ore_tenuous_fire_spirit", OreFeatureConfig.Rules.NETHERRACK, ShurlinConfiguredFeatures.States.TENUOUS_FIRE_SPIRIT_ORE_BLOCK, 2, 2, 16, BiomeSelectors.foundInTheNether());
         ORE_TENUOUS_EARTH_SPIRIT = createOre("ore_tenuous_earth_spirit", ShurlinConfiguredFeatures.States.TENUOUS_EARTH_SPIRIT_ORE_BLOCK, 4, 2, 16, Biome.Category.EXTREME_HILLS);
         ORE_TENUOUS_WIND_SPIRIT = createOre("ore_tenuous_wind_spirit", ShurlinConfiguredFeatures.States.TENUOUS_WIND_SPIRIT_ORE_BLOCK, 2, 2, 16, Biome.Category.PLAINS);
         ORE_TENUOUS_LIGHT_SPIRIT = createOre("ore_tenuous_light_spirit", Rules.SAND, ShurlinConfiguredFeatures.States.TENUOUS_LIGHT_SPIRIT_ORE_BLOCK, 4, 2, 56, 72, BiomeSelectors.includeByKey(BiomeKeys.DESERT));

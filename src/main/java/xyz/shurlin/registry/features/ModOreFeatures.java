@@ -60,6 +60,14 @@ public class ModOreFeatures {
             ))
             .decorate(Decorator.RANGE.configure(new RangeDecoratorConfig(0, 0, 16)))
             .repeat(3);
+    public static ConfiguredFeature<?, ?> ORE_TENUOUS_FIRE_SPIRIT = Feature.ORE
+            .configure(new OreFeatureConfig(
+                    OreFeatureConfig.Rules.NETHERRACK,
+                    ModBlocks.TENUOUS_FIRE_SPIRIT_ORE_BLOCK.getDefaultState(),
+                    2
+            ))
+            .decorate(Decorator.RANGE.configure(new RangeDecoratorConfig(0, 0, 16)))
+            .repeat(2);
 
     private static void registerOreFeature(String id, ConfiguredFeature<?, ?> configuredFeature) {
         Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, new Identifier(Shurlin.MODID, id), configuredFeature);
@@ -72,5 +80,6 @@ public class ModOreFeatures {
         registerOreFeature("ore_tenuous_metal_spirit", ORE_TENUOUS_METAL_SPIRIT);
         registerOreFeature("ore_tenuous_wood_spirit", ORE_TENUOUS_WOOD_SPIRIT);
         registerOreFeature("ore_tenuous_water_spirit", ORE_TENUOUS_WATER_SPIRIT);
+        registerOreFeature("ore_tenuous_fire_spirit",ORE_TENUOUS_FIRE_SPIRIT);
     }
 }
