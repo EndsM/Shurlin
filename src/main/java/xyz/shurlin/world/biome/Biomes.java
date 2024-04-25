@@ -17,17 +17,17 @@ public class Biomes {
     }
 
     public static void load() {
-        OverworldBiomes.addContinentalBiome(BiomeKeys.PEAR_FOREST_KEY, OverworldClimate.TEMPERATE, 1.2D);
-        OverworldBiomes.addContinentalBiome(BiomeKeys.FIRE_LAND_KEY, OverworldClimate.TEMPERATE, 0.6D);
+        OverworldBiomes.addContinentalBiome(ModBiomeKeys.PEAR_FOREST_KEY, OverworldClimate.TEMPERATE, 1.2D);
+        OverworldBiomes.addContinentalBiome(ModBiomeKeys.FIRE_LAND_KEY, OverworldClimate.TEMPERATE, 0.6D);
 //        OverworldBiomes.setRiverBiome(Biomes.PEAR_FOREST, net.minecraft.world.biome.Biomes.RIVER);
-        OverworldBiomes.addContinentalBiome(BiomeKeys.PARASOL_ANCIENT_FOREST_KEY, OverworldClimate.TEMPERATE, 0.6D);
+        OverworldBiomes.addContinentalBiome(ModBiomeKeys.PARASOL_ANCIENT_FOREST_KEY, OverworldClimate.TEMPERATE, 0.6D);
 //        OverworldBiomes.setRiverBiome(Biomes.PARASOL_ANCIENT_FOREST, net.minecraft.world.biome.Biomes.RIVER);
 
     }
 
     static {
-        PEAR_FOREST = register(BiomeKeys.PEAR_FOREST_KEY.getValue(), ShurlinBiomeCreator.createPearForest());
-        PARASOL_ANCIENT_FOREST = register(BiomeKeys.PARASOL_ANCIENT_FOREST_KEY.getValue(), ShurlinBiomeCreator.createParasolAncientForest());
-        FIRE_LAND = register(BiomeKeys.FIRE_LAND_KEY.getValue(), ShurlinBiomeCreator.createFireLand());
+        PEAR_FOREST = register(ModBiomeKeys.PEAR_FOREST_KEY.getValue(), ShurlinBiomeCreator.createPearForest());
+        PARASOL_ANCIENT_FOREST = register(ModBiomeKeys.PARASOL_ANCIENT_FOREST_KEY.getValue(), ShurlinBiomeCreator.createParasolAncientForest());
+        FIRE_LAND = register(ModBiomeKeys.FIRE_LAND_KEY.getValue(), ShurlinBiomeCreator.createFireLand());
     }
 }

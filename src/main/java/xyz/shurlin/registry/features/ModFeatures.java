@@ -5,9 +5,10 @@ import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.registry.RegistryKey;
+import net.minecraft.world.biome.BiomeKeys;
 import net.minecraft.world.gen.GenerationStep;
 import xyz.shurlin.Shurlin;
-import xyz.shurlin.world.biome.BiomeKeys;
+import xyz.shurlin.world.biome.ModBiomeKeys;
 
 // Use this class to init every feature related things
 // Which means other classes in this package
@@ -29,7 +30,7 @@ public class ModFeatures {
     private static void handleBiomeModifications() {
         // TODO
         BiomeModifications.addFeature(
-                BiomeSelectors.includeByKey(BiomeKeys.FIRE_LAND_KEY),
+                BiomeSelectors.includeByKey(ModBiomeKeys.FIRE_LAND_KEY),
                 GenerationStep.Feature.VEGETAL_DECORATION,
                 RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN, new Identifier(Shurlin.MODID, "patch_fire"))
         );
@@ -53,6 +54,11 @@ public class ModFeatures {
                 BiomeSelectors.foundInTheNether(),
                 GenerationStep.Feature.UNDERGROUND_ORES,
                 RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN, new Identifier(Shurlin.MODID, "ore_tenuous_metal_spirit"))
+        );
+        BiomeModifications.addFeature(
+                BiomeSelectors.includeByKey(BiomeKeys.JUNGLE),
+                GenerationStep.Feature.UNDERGROUND_ORES,
+                RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN, new Identifier(Shurlin.MODID, "ore_tenuous_wood_spirit"))
         );
     }
 }
