@@ -1,5 +1,7 @@
 package xyz.shurlin.registry.features;
 
+import net.minecraft.block.Blocks;
+import net.minecraft.structure.rule.BlockMatchRuleTest;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.BuiltinRegistries;
 import net.minecraft.util.registry.Registry;
@@ -84,6 +86,14 @@ public class ModOreFeatures {
             ))
             .decorate(Decorator.RANGE.configure(new RangeDecoratorConfig(0, 0, 16)))
             .repeat(2);
+    public static ConfiguredFeature<?, ?> ORE_TENUOUS_LIGHT_SPIRIT = Feature.ORE
+            .configure(new OreFeatureConfig(
+                    new BlockMatchRuleTest(Blocks.SAND),
+                    ModBlocks.TENUOUS_LIGHT_SPIRIT_ORE_BLOCK.getDefaultState(),
+                    4
+            ))
+            .decorate(Decorator.RANGE.configure(new RangeDecoratorConfig(0, 56, 72)))
+            .repeat(2);
 
     // Functions below
     private static void registerOreFeature(String id, ConfiguredFeature<?, ?> configuredFeature) {
@@ -100,5 +110,6 @@ public class ModOreFeatures {
         registerOreFeature("ore_tenuous_fire_spirit", ORE_TENUOUS_FIRE_SPIRIT);
         registerOreFeature("ore_tenuous_earth_spirit", ORE_TENUOUS_EARTH_SPIRIT);
         registerOreFeature("ore_tenuous_wind_spirit", ORE_TENUOUS_WIND_SPIRIT);
+        registerOreFeature("ore_tenuous_light_spirit", ORE_TENUOUS_LIGHT_SPIRIT);
     }
 }
