@@ -91,5 +91,10 @@ public class ModFeatures {
                 GenerationStep.Feature.UNDERGROUND_ORES,
                 RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN, new Identifier(Shurlin.MODID, "ore_tenuous_darkness_spirit"))
         );
+        BiomeModifications.addFeature(
+                BiomeSelectors.includeByKey(BiomeKeys.SWAMP),
+                GenerationStep.Feature.UNDERGROUND_ORES,
+                RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN,new Identifier(Shurlin.MODID,"ore_tenuous_poison_spirit"))
+        );
     }
 }
