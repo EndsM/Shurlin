@@ -128,6 +128,14 @@ public class ModOreFeatures {
             ))
             .decorate(Decorator.RANGE.configure(new RangeDecoratorConfig(0, 48, 64)))
             .repeat(3);
+    public static ConfiguredFeature<?, ?> ORE_TENUOUS_TIME_SPACE_SPIRIT = Feature.ORE
+            .configure(new OreFeatureConfig(
+                    new BlockMatchRuleTest(Blocks.END_STONE),
+                    ModBlocks.TENUOUS_TIME_SPACE_SPIRIT_ORE_BLOCK.getDefaultState(),
+                    4
+            ))
+            .decorate(Decorator.RANGE.configure(new RangeDecoratorConfig(0, 48, 80)))
+            .repeat(4);
 
     // Functions below
     private static void registerOreFeature(String id, ConfiguredFeature<?, ?> configuredFeature) {
@@ -149,5 +157,6 @@ public class ModOreFeatures {
         registerOreFeature("ore_tenuous_poison_spirit", ORE_TENUOUS_POISON_SPIRIT);
         registerOreFeature("ore_tenuous_lightning_spirit", ORE_TENUOUS_LIGHTNING_SPIRIT);
         registerOreFeature("ore_tenuous_ice_spirit", ORE_TENUOUS_ICE_SPIRIT);
+        registerOreFeature("ore_tenuous_time_space_spirit", ORE_TENUOUS_TIME_SPACE_SPIRIT);
     }
 }

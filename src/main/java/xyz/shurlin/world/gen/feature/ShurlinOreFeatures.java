@@ -30,7 +30,6 @@ public class ShurlinOreFeatures {
     }
 
     // Delete old ConfiguredFeatures class after move of this class
-    public static final ConfiguredFeature<?, ?> ORE_TENUOUS_TIME_SPACE_SPIRIT;
 
     private static ConfiguredFeature<?, ?> createOre(String registryName, BlockState state, int size, int numPerChunk, int maxy, RegistryKey<Biome> biomeKey) {
         return createOre(registryName, OreFeatureConfig.Rules.BASE_STONE_OVERWORLD, state, size, numPerChunk, maxy, BiomeSelectors.includeByKey(biomeKey));
@@ -58,7 +57,6 @@ public class ShurlinOreFeatures {
     }
 
     static {
-        ORE_TENUOUS_TIME_SPACE_SPIRIT = createOre("ore_tenuous_time_space_spirit", Rules.THEEND, ShurlinConfiguredFeatures.States.TENUOUS_TIME_SPACE_SPIRIT_ORE_BLOCK, 4, 4, 48, 80, BiomeSelectors.foundInTheEnd());
     }
 
     private static final class Rules {
