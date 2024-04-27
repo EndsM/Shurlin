@@ -2,6 +2,8 @@ package xyz.shurlin.registry.features;
 
 import net.minecraft.block.Blocks;
 import net.minecraft.structure.rule.BlockMatchRuleTest;
+import net.minecraft.structure.rule.TagMatchRuleTest;
+import net.minecraft.tag.BlockTags;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.BuiltinRegistries;
 import net.minecraft.util.registry.Registry;
@@ -118,6 +120,14 @@ public class ModOreFeatures {
             ))
             .decorate(Decorator.RANGE.configure(new RangeDecoratorConfig(0, 0, 16)))
             .repeat(2);
+    public static ConfiguredFeature<?, ?> ORE_TENUOUS_ICE_SPIRIT = Feature.ORE
+            .configure(new OreFeatureConfig(
+                    new TagMatchRuleTest(BlockTags.ICE),
+                    ModBlocks.TENUOUS_ICE_SPIRIT_ORE_BLOCK.getDefaultState(),
+                    2
+            ))
+            .decorate(Decorator.RANGE.configure(new RangeDecoratorConfig(0, 48, 64)))
+            .repeat(3);
 
     // Functions below
     private static void registerOreFeature(String id, ConfiguredFeature<?, ?> configuredFeature) {
@@ -138,5 +148,6 @@ public class ModOreFeatures {
         registerOreFeature("ore_tenuous_darkness_spirit", ORE_TENUOUS_DARKNESS_SPIRIT);
         registerOreFeature("ore_tenuous_poison_spirit", ORE_TENUOUS_POISON_SPIRIT);
         registerOreFeature("ore_tenuous_lightning_spirit", ORE_TENUOUS_LIGHTNING_SPIRIT);
+        registerOreFeature("ore_tenuous_ice_spirit", ORE_TENUOUS_ICE_SPIRIT);
     }
 }
