@@ -4,7 +4,6 @@ import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
-import xyz.shurlin.block.entity.BlockEntityTypes;
 import xyz.shurlin.recipe.ConcentratorRecipe;
 import xyz.shurlin.recipe.RecipeTypes;
 import xyz.shurlin.registry.ModBlockEntities;

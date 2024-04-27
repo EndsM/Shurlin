@@ -8,7 +8,6 @@ import net.minecraft.nbt.NbtCompound;
 import net.minecraft.recipe.Recipe;
 import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
-import xyz.shurlin.block.entity.BlockEntityTypes;
 import xyz.shurlin.item.ExtractantItem;
 import xyz.shurlin.recipe.RecipeTypes;
 import xyz.shurlin.registry.ModBlockEntities;

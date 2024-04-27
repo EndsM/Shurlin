@@ -3,7 +3,6 @@ package xyz.shurlin;
 import net.fabricmc.api.ModInitializer;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import xyz.shurlin.block.entity.BlockEntityTypes;
 import xyz.shurlin.command.Commands;
 import xyz.shurlin.linkage.Linkage;
 import xyz.shurlin.recipe.RecipeSerializers;
@@ -35,7 +34,6 @@ public class Shurlin implements ModInitializer {
         ModItems.Register();
         ModBlockEntities.Register();
         // Move all old "load" method to my preference method
-        BlockEntityTypes.load();
         RecipeSerializers.load();
         ServerReceiver.load();
         ScreenHandlerTypes.load();
