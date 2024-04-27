@@ -12,8 +12,6 @@ public class RecipeTypes {
     public static final RecipeType<ConcentratorRecipe> CONCENTRATING = register("concentrating");
     public static final RecipeType<ExtractorRecipe> EXTRACTING = register("extracting");
     public static final RecipeType<HMPRecipe> ALCHEMY = register("alchemy");
-//    public static final RecipeType<WorkerRecipe> PURIFYING = register("purifying");
-//    public static final RecipeType<WorkerRecipe> SPIRIT_RAISING = register("spirit_raising");
 
     private static <T extends Recipe<?>> RecipeType<T> register(final String string) {
         return Registry.register(Registry.RECIPE_TYPE, new Identifier(Shurlin.MODID, string), new RecipeType<T>() {

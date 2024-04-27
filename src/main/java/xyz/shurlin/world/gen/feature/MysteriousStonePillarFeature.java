@@ -20,8 +20,6 @@ public class MysteriousStonePillarFeature extends Feature<DefaultFeatureConfig> 
     @Override
     public boolean generate(StructureWorldAccess serverWorldAccess, ChunkGenerator chunkGenerator, Random random, BlockPos pos, DefaultFeatureConfig config) {
         pos = pos.north(random.nextInt(16)).east(random.nextInt(16));
-//        int y = serverWorldAccess.getTopY(Heightmap.Type.WORLD_SURFACE_WG, pos.getX(), pos.getZ());
-//        pos = pos.down(pos.getY() - y);
         pos = serverWorldAccess.getTopPosition(Heightmap.Type.WORLD_SURFACE_WG, pos);
         BlockState state = ModBlocks.MYSTERIOUS_STONE.getDefaultState();
         serverWorldAccess.setBlockState(pos.north(), state, 3);
@@ -31,7 +29,6 @@ public class MysteriousStonePillarFeature extends Feature<DefaultFeatureConfig> 
         for (int i = 0; i < 8; i++) {
             serverWorldAccess.setBlockState(pos.up(i), state, 3);
         }
-//        Shurlin.LOGGER.debug(pos);
         return true;
     }
 }

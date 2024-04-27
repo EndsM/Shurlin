@@ -34,6 +34,7 @@ public class ModBlockEntities {
     ).build(null);
 
     private static void registerBlockEntity(String id, BlockEntityType<?> blockEntityType) {
+        // This function should take builder as parameter in the future
         Registry.register(Registry.BLOCK_ENTITY_TYPE, new Identifier(Shurlin.MODID, id), blockEntityType);
     }
 
