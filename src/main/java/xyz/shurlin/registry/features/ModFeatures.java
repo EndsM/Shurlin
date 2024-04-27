@@ -94,7 +94,12 @@ public class ModFeatures {
         BiomeModifications.addFeature(
                 BiomeSelectors.includeByKey(BiomeKeys.SWAMP),
                 GenerationStep.Feature.UNDERGROUND_ORES,
-                RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN,new Identifier(Shurlin.MODID,"ore_tenuous_poison_spirit"))
+                RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN, new Identifier(Shurlin.MODID, "ore_tenuous_poison_spirit"))
+        );
+        BiomeModifications.addFeature(
+                BiomeSelectors.includeByKey(BiomeKeys.SNOWY_MOUNTAINS),
+                GenerationStep.Feature.UNDERGROUND_ORES,
+                RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN, new Identifier(Shurlin.MODID, "ore_tenuous_lightning_spirit"))
         );
     }
 }

@@ -110,6 +110,14 @@ public class ModOreFeatures {
             ))
             .decorate(Decorator.RANGE.configure(new RangeDecoratorConfig(0, 0, 16)))
             .repeat(2);
+    public static ConfiguredFeature<?, ?> ORE_TENUOUS_LIGHTNING_SPIRIT = Feature.ORE
+            .configure(new OreFeatureConfig(
+                    OreFeatureConfig.Rules.BASE_STONE_OVERWORLD,
+                    ModBlocks.TENUOUS_LIGHTNING_SPIRIT_ORE_BLOCK.getDefaultState(),
+                    4
+            ))
+            .decorate(Decorator.RANGE.configure(new RangeDecoratorConfig(0, 0, 16)))
+            .repeat(2);
 
     // Functions below
     private static void registerOreFeature(String id, ConfiguredFeature<?, ?> configuredFeature) {
@@ -128,6 +136,7 @@ public class ModOreFeatures {
         registerOreFeature("ore_tenuous_wind_spirit", ORE_TENUOUS_WIND_SPIRIT);
         registerOreFeature("ore_tenuous_light_spirit", ORE_TENUOUS_LIGHT_SPIRIT);
         registerOreFeature("ore_tenuous_darkness_spirit", ORE_TENUOUS_DARKNESS_SPIRIT);
-        registerOreFeature("ore_tenuous_poison_spirit",ORE_TENUOUS_POISON_SPIRIT);
+        registerOreFeature("ore_tenuous_poison_spirit", ORE_TENUOUS_POISON_SPIRIT);
+        registerOreFeature("ore_tenuous_lightning_spirit", ORE_TENUOUS_LIGHTNING_SPIRIT);
     }
 }

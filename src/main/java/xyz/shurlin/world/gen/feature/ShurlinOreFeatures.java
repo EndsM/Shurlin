@@ -30,7 +30,6 @@ public class ShurlinOreFeatures {
     }
 
     // Delete old ConfiguredFeatures class after move of this class
-    public static final ConfiguredFeature<?, ?> ORE_TENUOUS_LIGHTNING_SPIRIT;
     public static final ConfiguredFeature<?, ?> ORE_TENUOUS_ICE_SPIRIT;
     public static final ConfiguredFeature<?, ?> ORE_TENUOUS_TIME_SPACE_SPIRIT;
 
@@ -60,7 +59,6 @@ public class ShurlinOreFeatures {
     }
 
     static {
-        ORE_TENUOUS_LIGHTNING_SPIRIT = createOre("ore_tenuous_lightning_spirit", ShurlinConfiguredFeatures.States.TENUOUS_LIGHTNING_SPIRIT_ORE_BLOCK, 4, 2, 16, BiomeKeys.SNOWY_MOUNTAINS);
         ORE_TENUOUS_ICE_SPIRIT = createOre("ore_tenuous_ice_spirit", Rules.ICE, ShurlinConfiguredFeatures.States.TENUOUS_ICE_SPIRIT_ORE_BLOCK, 2, 3, 48, 64, BiomeSelectors.categories(Biome.Category.ICY));
         ORE_TENUOUS_TIME_SPACE_SPIRIT = createOre("ore_tenuous_time_space_spirit", Rules.THEEND, ShurlinConfiguredFeatures.States.TENUOUS_TIME_SPACE_SPIRIT_ORE_BLOCK, 4, 4, 48, 80, BiomeSelectors.foundInTheEnd());
     }
