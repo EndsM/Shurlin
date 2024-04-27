@@ -7,12 +7,13 @@ import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
 import xyz.shurlin.block.entity.BlockEntityTypes;
 import xyz.shurlin.recipe.RecipeTypes;
+import xyz.shurlin.registry.ModBlockEntities;
 import xyz.shurlin.screen.worker.BreakerScreenHandler;
 
 public class BreakerBlockEntity extends AbstractWorkerBlockEntity {
 
     public BreakerBlockEntity(int level) {
-        super(BlockEntityTypes.BREAKER_BLOCK_ENTITY, "breaker", level, RecipeTypes.BREAKING);
+        super(ModBlockEntities.BREAKER_BLOCK_ENTITY, "breaker", level, RecipeTypes.BREAKING);
     }
 
     public BreakerBlockEntity() {

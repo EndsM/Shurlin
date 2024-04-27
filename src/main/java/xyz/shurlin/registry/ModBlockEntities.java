@@ -29,8 +29,8 @@ public class ModBlockEntities {
     public static BlockEntityType<ExtractorBlockEntity> EXTRACTOR_BLOCK_ENTITY = BlockEntityType.Builder.create(
             ExtractorBlockEntity::new, ModBlocks.EXTRACTOR_BLOCK
     ).build(null);
-    public static BlockEntityType<AlchemyFurnaceBlockEntity>LLANDUDNO_BLOCK_ENTITY=BlockEntityType.Builder.create(
-            AlchemyFurnaceBlockEntity::new,ModBlocks.LLANDUDNO
+    public static BlockEntityType<AlchemyFurnaceBlockEntity> LLANDUDNO_BLOCK_ENTITY = BlockEntityType.Builder.create(
+            AlchemyFurnaceBlockEntity::new, ModBlocks.LLANDUDNO
     ).build(null);
 
     private static void registerBlockEntity(String id, BlockEntityType<?> blockEntityType) {
@@ -39,5 +39,10 @@ public class ModBlockEntities {
 
     public static void Register() {
         registerBlockEntity("cultivation_crystal_block_entity", CULTIVATION_CRYSTAL_BLOCK_ENTITY);
+        registerBlockEntity("breaker_block_entity", BREAKER_BLOCK_ENTITY);
+        registerBlockEntity("collector_block_entity", COLLECTOR_BLOCK_ENTITY);
+        registerBlockEntity("concentrator_block_entity", CONCENTRATOR_BLOCK_ENTITY);
+        registerBlockEntity("extractor_block_entity", EXTRACTOR_BLOCK_ENTITY);
+        registerBlockEntity("llandudno_block_entity", LLANDUDNO_BLOCK_ENTITY);
     }
 }

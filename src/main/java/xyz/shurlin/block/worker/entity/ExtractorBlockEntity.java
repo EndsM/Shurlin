@@ -11,6 +11,7 @@ import net.minecraft.screen.ScreenHandler;
 import xyz.shurlin.block.entity.BlockEntityTypes;
 import xyz.shurlin.item.ExtractantItem;
 import xyz.shurlin.recipe.RecipeTypes;
+import xyz.shurlin.registry.ModBlockEntities;
 import xyz.shurlin.screen.worker.ExtractorScreenHandler;
 
 public class ExtractorBlockEntity extends AbstractWorkerBlockEntity {
@@ -18,7 +19,7 @@ public class ExtractorBlockEntity extends AbstractWorkerBlockEntity {
     private int cur_extractant;
 
     public ExtractorBlockEntity(int level) {
-        super(BlockEntityTypes.EXTRACTOR_BLOCK_ENTITY, "extractor", level, RecipeTypes.EXTRACTING);
+        super(ModBlockEntities.EXTRACTOR_BLOCK_ENTITY, "extractor", level, RecipeTypes.EXTRACTING);
     }
 
     public ExtractorBlockEntity() {

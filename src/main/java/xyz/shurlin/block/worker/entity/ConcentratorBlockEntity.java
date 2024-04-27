@@ -7,12 +7,13 @@ import net.minecraft.screen.ScreenHandler;
 import xyz.shurlin.block.entity.BlockEntityTypes;
 import xyz.shurlin.recipe.ConcentratorRecipe;
 import xyz.shurlin.recipe.RecipeTypes;
+import xyz.shurlin.registry.ModBlockEntities;
 import xyz.shurlin.screen.worker.ConcentratorScreenHandler;
 
 public class ConcentratorBlockEntity extends AbstractWorkerBlockEntity {
 
     public ConcentratorBlockEntity(int level) {
-        super(BlockEntityTypes.CONCENTRATOR_BLOCK_ENTITY, "concentrator", level, RecipeTypes.CONCENTRATING);
+        super(ModBlockEntities.CONCENTRATOR_BLOCK_ENTITY, "concentrator", level, RecipeTypes.CONCENTRATING);
     }
 
     public ConcentratorBlockEntity() {
