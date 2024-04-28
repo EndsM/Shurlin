@@ -8,12 +8,16 @@ import net.minecraft.util.registry.RegistryKey;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.BiomeKeys;
 import net.minecraft.world.gen.GenerationStep;
+import net.minecraft.world.gen.feature.DefaultFeatureConfig;
+import net.minecraft.world.gen.feature.Feature;
 import xyz.shurlin.Shurlin;
 import xyz.shurlin.world.biome.ModBiomeKeys;
 
 // Use this class to init every feature related things
 // Which means other classes in this package
 public class ModFeatures {
+    public static Feature<DefaultFeatureConfig> MYSTERIOUS_STONE_PILLAR_FEATURE;
+
 
     public static void RegisterAndHandle() {
         // TODO
