@@ -85,7 +85,7 @@ public class ModConfiguredFeatures {
 
     // Accessible in the same package
     static void Register() {
-        // These will then be used to construct PlacedFeatures, so it can be finally used for BiomeModification
+        // These will then be used to construct PlacedFeatures, so it can be finally used for BiomeModification in future versions
         registerConfiguredFeature("pear_tree", PEAR_TREE);
         registerConfiguredFeature("phoenix_tree", PHOENIX_TREE);
         registerConfiguredFeature("trees_pear", TREES_PEAR);
