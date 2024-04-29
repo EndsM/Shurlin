@@ -12,12 +12,15 @@ import net.minecraft.world.gen.feature.DefaultFeatureConfig;
 import net.minecraft.world.gen.feature.Feature;
 import xyz.shurlin.Shurlin;
 import xyz.shurlin.world.biome.ModBiomeKeys;
+import xyz.shurlin.world.gen.feature.MysteriousStonePillarFeature;
+import xyz.shurlin.world.gen.feature.PlantObsidianHeapFeature;
 
 // Use this class to init every feature related things
 // Which means other classes in this package
 public class ModFeatures {
-    public static Feature<DefaultFeatureConfig> MYSTERIOUS_STONE_PILLAR_FEATURE;
-
+    // Each Feature are placed to their separate class, for it might be very long
+    public static Feature<DefaultFeatureConfig> MYSTERIOUS_STONE_PILLAR = new MysteriousStonePillarFeature(DefaultFeatureConfig.CODEC);
+    public static Feature<DefaultFeatureConfig> PLANT_OBSIDIAN_HEAP = new PlantObsidianHeapFeature(DefaultFeatureConfig.CODEC);
 
     public static void RegisterAndHandle() {
         // TODO
@@ -30,6 +33,8 @@ public class ModFeatures {
 
     private static void registerFeatures() {
         // Use this to register Feature<>
+        Registry.register(Registry.FEATURE, new Identifier(Shurlin.MODID, "mysterious_stone_pillar"), MYSTERIOUS_STONE_PILLAR);
+        Registry.register(Registry.FEATURE, new Identifier(Shurlin.MODID, "plant_obsidian_heap"), PLANT_OBSIDIAN_HEAP);
     }
 
     private static void handleBiomeModifications() {
