@@ -9,22 +9,22 @@ import net.minecraft.entity.attribute.EntityAttributeModifier;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import xyz.shurlin.cultivation.WeaponLevels;
+import xyz.shurlin.cultivation.SpiritualEquipmentLevels;
 
 public class SwordWeaponItem extends BasicWeaponItem {
     private Multimap<EntityAttribute, EntityAttributeModifier> multimapWithSpirit;
     private Multimap<EntityAttribute, EntityAttributeModifier> multimapWithoutSpirit;
 
-    public SwordWeaponItem(Settings settings, WeaponLevels level, WeaponProperties properties) {
+    public SwordWeaponItem(Settings settings, SpiritualEquipmentLevels level, WeaponProperties properties) {
         super(settings, level);
         setProperties(properties);
     }
 
-    public SwordWeaponItem(int maxDamage, WeaponLevels level, WeaponProperties properties) {
+    public SwordWeaponItem(int maxDamage, SpiritualEquipmentLevels level, WeaponProperties properties) {
         this(level.unbreakable() ? new Item.Settings().maxCount(1) : new Item.Settings().maxDamage(maxDamage), level, properties);
     }
 
-    public SwordWeaponItem(WeaponLevels level, WeaponProperties properties) {
+    public SwordWeaponItem(SpiritualEquipmentLevels level, WeaponProperties properties) {
         this(level.getLevel() * level.getLevel() * 100, level, properties);
     }
 

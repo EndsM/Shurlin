@@ -1,6 +1,6 @@
 package xyz.shurlin.cultivation;
 
-public enum WeaponLevels {
+public enum SpiritualEquipmentLevels {
     INFERIOR_WEAPON(1),
     STANDARD_WEAPON(2),
     QUALITY_WEAPON(3),
@@ -14,7 +14,7 @@ public enum WeaponLevels {
 
     private final int lvl;
 
-    WeaponLevels(int lvl) {
+    SpiritualEquipmentLevels(int lvl) {
         this.lvl = lvl;
     }
 

@@ -10,20 +10,20 @@ import net.minecraft.text.TranslatableText;
 import net.minecraft.util.Hand;
 import net.minecraft.world.World;
 import xyz.shurlin.client.options.KeyBindings;
-import xyz.shurlin.cultivation.WeaponLevels;
+import xyz.shurlin.cultivation.SpiritualEquipmentLevels;
 
 import java.util.List;
 
 public class BasicWeaponItem extends Item {
-    protected WeaponLevels level;
+    protected SpiritualEquipmentLevels level;
     boolean withSpirit = false;
 
-    public BasicWeaponItem(Settings settings, WeaponLevels level) {
+    public BasicWeaponItem(Settings settings, SpiritualEquipmentLevels level) {
         super(settings.group(ItemGroups.SHURLIN));
         this.level = level;
     }
 
-    public WeaponLevels getLevel() {
+    public SpiritualEquipmentLevels getLevel() {
         return level;
     }
 
