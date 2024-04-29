@@ -20,22 +20,6 @@ public class ShurlinBiomeFeatures {
         builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModConfiguredFeatures.TREES_PEAR);
     }
 
-    public static void addMysteriousStonePillar(Builder builder) {
-        builder.feature(GenerationStep.Feature.SURFACE_STRUCTURES,
-                Features.MYSTERIOUS_STONE_PILLAR_FEATURE
-                        .configure(new DefaultFeatureConfig())
-                        .decorate(Decorator.CHANCE.configure(new ChanceDecoratorConfig(100)))
-        );
-    }
-
-    public static void addPlantObsidianHeap(Builder builder) {
-        builder.feature(GenerationStep.Feature.SURFACE_STRUCTURES,
-                Features.PLANT_OBSIDIAN_HEAP
-                        .configure(new DefaultFeatureConfig())
-                        .decorate(Decorator.CHANCE.configure(new ChanceDecoratorConfig(150)))
-        );
-    }
-
     public static void addPhoenixTrees(Builder builder) {
         builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModConfiguredFeatures.TREES_PHOENIX
 //                .createDecoratedFeature(Decorator.COUNT_EXTRA_HEIGHTMAP.configure(new CountExtraChanceDecoratorConfig(8, 0.1F, 1)))

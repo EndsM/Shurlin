@@ -7,6 +7,7 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.BuiltinRegistries;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.gen.UniformIntDistribution;
+import net.minecraft.world.gen.decorator.ChanceDecoratorConfig;
 import net.minecraft.world.gen.decorator.CountExtraDecoratorConfig;
 import net.minecraft.world.gen.decorator.Decorator;
 import net.minecraft.world.gen.feature.*;
@@ -69,6 +70,13 @@ public class ModConfiguredFeatures {
                 add(ModBlocks.HOT_FIRE_DIRT);
             }}).cannotProject().build())
             .decorate(ConfiguredFeatures.Decorators.FIRE);
+    // Feature<> goes here
+    public static ConfiguredFeature<?, ?> MYSTERIOUS_STONE_PILLAR = ModFeatures.MYSTERIOUS_STONE_PILLAR
+            .configure(new DefaultFeatureConfig())
+            .decorate(Decorator.CHANCE.configure(new ChanceDecoratorConfig(100)));
+    public static ConfiguredFeature<?, ?> PLANT_OBSIDIAN_HEAP = ModFeatures.PLANT_OBSIDIAN_HEAP
+            .configure(new DefaultFeatureConfig())
+            .decorate(Decorator.CHANCE.configure(new ChanceDecoratorConfig(150)));
 
     // A little helper to reduce the length of a registry
     private static void registerConfiguredFeature(String id, ConfiguredFeature<?, ?> configuredFeature) {
@@ -84,5 +92,8 @@ public class ModConfiguredFeatures {
         registerConfiguredFeature("small_bud", SMALL_BUD);
         registerConfiguredFeature("platycodon_grandiflorus", PLATYCODON_GRANDIFLORUS);
         registerConfiguredFeature("patch_fire", PATCH_FIRE);
+        // Features config of ModFeatures
+        registerConfiguredFeature("mysterious_stone_pillar", MYSTERIOUS_STONE_PILLAR);
+        registerConfiguredFeature("plant_obsidian_heap", PLANT_OBSIDIAN_HEAP);
     }
 }

@@ -121,6 +121,16 @@ public class ModFeatures {
                 RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN, new Identifier(Shurlin.MODID, "ore_tenuous_time_space_spirit"))
         );
         // Migrate old biome modifications here:
-
+        // Surface Structures
+        BiomeModifications.addFeature(
+                BiomeSelectors.includeByKey(ModBiomeKeys.PARASOL_ANCIENT_FOREST_KEY),
+                GenerationStep.Feature.SURFACE_STRUCTURES,
+                RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN,new Identifier(Shurlin.MODID,"mysterious_stone_pillar"))
+        );
+        BiomeModifications.addFeature(
+                BiomeSelectors.includeByKey(ModBiomeKeys.PARASOL_ANCIENT_FOREST_KEY),
+                GenerationStep.Feature.SURFACE_STRUCTURES,
+                RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN,new Identifier(Shurlin.MODID,"plant_obsidian_heap"))
+        );
     }
 }

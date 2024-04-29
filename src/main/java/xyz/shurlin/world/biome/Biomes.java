@@ -19,9 +19,8 @@ public class Biomes {
     public static void load() {
         OverworldBiomes.addContinentalBiome(ModBiomeKeys.PEAR_FOREST_KEY, OverworldClimate.TEMPERATE, 1.2D);
         OverworldBiomes.addContinentalBiome(ModBiomeKeys.FIRE_LAND_KEY, OverworldClimate.TEMPERATE, 0.6D);
-//        OverworldBiomes.setRiverBiome(Biomes.PEAR_FOREST, net.minecraft.world.biome.Biomes.RIVER);
+
         OverworldBiomes.addContinentalBiome(ModBiomeKeys.PARASOL_ANCIENT_FOREST_KEY, OverworldClimate.TEMPERATE, 0.6D);
-//        OverworldBiomes.setRiverBiome(Biomes.PARASOL_ANCIENT_FOREST, net.minecraft.world.biome.Biomes.RIVER);
 
     }
 
