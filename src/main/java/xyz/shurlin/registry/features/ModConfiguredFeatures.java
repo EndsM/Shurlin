@@ -85,6 +85,7 @@ public class ModConfiguredFeatures {
 
     // Accessible in the same package
     static void Register() {
+        // These will then be used to construct PlacedFeatures, so it can be finally used for BiomeModification
         registerConfiguredFeature("pear_tree", PEAR_TREE);
         registerConfiguredFeature("phoenix_tree", PHOENIX_TREE);
         registerConfiguredFeature("trees_pear", TREES_PEAR);
@@ -92,7 +93,7 @@ public class ModConfiguredFeatures {
         registerConfiguredFeature("small_bud", SMALL_BUD);
         registerConfiguredFeature("platycodon_grandiflorus", PLATYCODON_GRANDIFLORUS);
         registerConfiguredFeature("patch_fire", PATCH_FIRE);
-        // Features config of ModFeatures
+        // Built from ModFeatures
         registerConfiguredFeature("mysterious_stone_pillar", MYSTERIOUS_STONE_PILLAR);
         registerConfiguredFeature("plant_obsidian_heap", PLANT_OBSIDIAN_HEAP);
     }

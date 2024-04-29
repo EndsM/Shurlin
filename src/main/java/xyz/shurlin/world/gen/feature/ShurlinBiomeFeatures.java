@@ -7,7 +7,6 @@ import net.minecraft.world.gen.GenerationStep;
 import net.minecraft.world.gen.decorator.ChanceDecoratorConfig;
 import net.minecraft.world.gen.decorator.Decorator;
 import net.minecraft.world.gen.feature.ConfiguredFeatures;
-import net.minecraft.world.gen.feature.DefaultFeatureConfig;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.RandomPatchFeatureConfig;
 import net.minecraft.world.gen.placer.SimpleBlockPlacer;
@@ -22,7 +21,6 @@ public class ShurlinBiomeFeatures {
 
     public static void addPhoenixTrees(Builder builder) {
         builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModConfiguredFeatures.TREES_PHOENIX
-//                .createDecoratedFeature(Decorator.COUNT_EXTRA_HEIGHTMAP.configure(new CountExtraChanceDecoratorConfig(8, 0.1F, 1)))
         );
     }
 

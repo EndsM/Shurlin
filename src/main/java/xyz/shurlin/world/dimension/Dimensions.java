@@ -8,19 +8,15 @@ import xyz.shurlin.Shurlin;
 
 public class Dimensions {
     public static final RegistryKey<World> HOLY_FARMER;
-//    public static final RegistryKey<World> SHURLIN_;
 
     private static RegistryKey<World> register(String name) {
         return RegistryKey.of(Registry.WORLD_KEY, new Identifier(Shurlin.MODID, name));
     }
 
     public static void load() {
-//        FabricDimensions.registerDefaultPlacer(HOLY_FARMER, HolyFarmerChunkGenerator::placeEntityInVoid);
-
     }
 
     static {
         HOLY_FARMER = register("holy_farmer");
-//        SHURLIN_ = register("shurlin");
     }
 }
