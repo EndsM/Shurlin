@@ -69,6 +69,7 @@ public abstract class CultivatedPlayerMixin extends LivingEntity implements Cult
         return realm;
     }
 
+
     public NbtCompound writeTag() {
         NbtCompound tag = new NbtCompound();
         CultivationRealm realm = getRealm();
