@@ -1,6 +1,7 @@
-package xyz.shurlin.cultivation;
+package xyz.shurlin.cultivation.models.types;
 
-public enum RealmeStages {
+// This use to make in realm stages
+public enum RealmStage {
     LOW(1, "", "low"),
     MIDDLE(2, "§a", "middle"),
     HIGH(3, "§9", "high");
@@ -9,7 +10,7 @@ public enum RealmeStages {
     private final String color;
     private final String name;
 
-    RealmeStages(int level, String color, String name) {
+    RealmStage(int level, String color, String name) {
         this.level = level;
         this.color = color;
         this.name = name;
