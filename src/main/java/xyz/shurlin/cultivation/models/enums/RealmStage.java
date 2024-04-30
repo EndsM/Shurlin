@@ -1,4 +1,4 @@
-package xyz.shurlin.cultivation.models.types;
+package xyz.shurlin.cultivation.models.enums;
 
 // This use to make in realm stages
 public enum RealmStage {
