@@ -14,7 +14,7 @@ import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import xyz.shurlin.block.entity.CultivationCrystalBlockEntity;
-import xyz.shurlin.cultivation.CultivatedPlayerAccessor;
+import xyz.shurlin.cultivation.interfaces.CultivatedPlayerAccessor;
 import xyz.shurlin.cultivation.CultivationRealm;
 
 public class CultivationCrystalBlock extends BlockWithEntity {

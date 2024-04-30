@@ -6,7 +6,7 @@ import net.minecraft.screen.NamedScreenHandlerFactory;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.text.Text;
 import net.minecraft.text.TranslatableText;
-import xyz.shurlin.cultivation.CultivatedPlayerAccessor;
+import xyz.shurlin.cultivation.interfaces.CultivatedPlayerAccessor;
 
 // This will be Cultivation Menu Screen
 public class CultivationUI implements NamedScreenHandlerFactory {

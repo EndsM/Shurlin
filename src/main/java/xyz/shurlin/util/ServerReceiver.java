@@ -5,7 +5,7 @@ import net.minecraft.block.Block;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.math.BlockPos;
 import xyz.shurlin.block.HolyPearAltarBlock;
-import xyz.shurlin.cultivation.CultivatedPlayerAccessor;
+import xyz.shurlin.cultivation.interfaces.CultivatedPlayerAccessor;
 import xyz.shurlin.cultivation.screen.CultivationUI;
 
 public class ServerReceiver {

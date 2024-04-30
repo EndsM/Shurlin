@@ -3,7 +3,7 @@ package xyz.shurlin.command;
 import com.mojang.brigadier.Command;
 import net.fabricmc.fabric.api.command.v1.CommandRegistrationCallback;
 import net.minecraft.server.command.CommandManager;
-import xyz.shurlin.cultivation.CultivatedPlayerAccessor;
+import xyz.shurlin.cultivation.interfaces.CultivatedPlayerAccessor;
 
 import static net.minecraft.server.command.CommandManager.literal;
 
