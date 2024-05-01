@@ -3,8 +3,8 @@ package xyz.shurlin.cultivation.screen;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.screen.ScreenHandler;
-import xyz.shurlin.cultivation.interfaces.CultivatedPlayerAccessor;
 import xyz.shurlin.cultivation.CultivationRealm;
+import xyz.shurlin.cultivation.interfaces.CultivatedPlayerAccessor;
 import xyz.shurlin.screen.ScreenHandlerTypes;
 
 // Handle Cultivation related GUI
