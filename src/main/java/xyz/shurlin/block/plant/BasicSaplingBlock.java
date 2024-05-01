@@ -20,7 +20,7 @@ public class BasicSaplingBlock extends SaplingBlock {
         }
 
         @Override
-        protected ConfiguredFeature<TreeFeatureConfig, ?> createTreeFeature(Random random, boolean bl) {
+        protected ConfiguredFeature<TreeFeatureConfig, ?> getTreeFeature(Random random, boolean bl) {
             return this.treeFeatureConfig;
         }
     }

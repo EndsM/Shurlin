@@ -38,7 +38,7 @@ public class HolyPearBagItem extends BasicItem {
 
         if (!world.isClient) {
             PortableInventory inventory = new PortableInventory(104, stack);
-            NbtCompound tag = stack.getOrCreateTag();
+            NbtCompound tag = stack.getOrCreateNbt();
             inventory.readNbtList(tag.getList("inventory", 10));
             user.openHandledScreen(createScreenHandler(inventory, user.inventory.selectedSlot));
             user.incrementStat(Stats.OPEN_HOLY_PEAR_BAG);

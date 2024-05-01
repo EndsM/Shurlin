@@ -42,95 +42,95 @@ public class ModFeatures {
         BiomeModifications.addFeature(
                 BiomeSelectors.includeByKey(ModBiomeKeys.FIRE_LAND_KEY),
                 GenerationStep.Feature.VEGETAL_DECORATION,
-                RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN, new Identifier(Shurlin.MODID, "patch_fire"))
+                RegistryKey.of(Registry.CONFIGURED_FEATURE_KEY, new Identifier(Shurlin.MODID, "patch_fire"))
         );
         // Ores
         BiomeModifications.addFeature(
                 BiomeSelectors.foundInOverworld(),
                 GenerationStep.Feature.UNDERGROUND_ORES,
-                RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN, new Identifier(Shurlin.MODID, "ore_plant_iron"))
+                RegistryKey.of(Registry.CONFIGURED_FEATURE_KEY, new Identifier(Shurlin.MODID, "ore_plant_iron"))
         );
         BiomeModifications.addFeature(
                 BiomeSelectors.foundInOverworld(),
                 GenerationStep.Feature.UNDERGROUND_ORES,
-                RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN, new Identifier(Shurlin.MODID, "ore_plant_gold"))
+                RegistryKey.of(Registry.CONFIGURED_FEATURE_KEY, new Identifier(Shurlin.MODID, "ore_plant_gold"))
         );
         BiomeModifications.addFeature(
                 BiomeSelectors.foundInOverworld(),
                 GenerationStep.Feature.UNDERGROUND_ORES,
-                RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN, new Identifier(Shurlin.MODID, "ore_plant_jade"))
+                RegistryKey.of(Registry.CONFIGURED_FEATURE_KEY, new Identifier(Shurlin.MODID, "ore_plant_jade"))
         );
         BiomeModifications.addFeature(
                 BiomeSelectors.foundInTheNether(),
                 GenerationStep.Feature.UNDERGROUND_ORES,
-                RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN, new Identifier(Shurlin.MODID, "ore_tenuous_metal_spirit"))
+                RegistryKey.of(Registry.CONFIGURED_FEATURE_KEY, new Identifier(Shurlin.MODID, "ore_tenuous_metal_spirit"))
         );
         BiomeModifications.addFeature(
                 BiomeSelectors.includeByKey(BiomeKeys.JUNGLE),
                 GenerationStep.Feature.UNDERGROUND_ORES,
-                RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN, new Identifier(Shurlin.MODID, "ore_tenuous_wood_spirit"))
+                RegistryKey.of(Registry.CONFIGURED_FEATURE_KEY, new Identifier(Shurlin.MODID, "ore_tenuous_wood_spirit"))
         );
         BiomeModifications.addFeature(
                 BiomeSelectors.includeByKey(BiomeKeys.WARM_OCEAN),
                 GenerationStep.Feature.UNDERGROUND_ORES,
-                RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN, new Identifier(Shurlin.MODID, "ore_tenuous_water_spirit"))
+                RegistryKey.of(Registry.CONFIGURED_FEATURE_KEY, new Identifier(Shurlin.MODID, "ore_tenuous_water_spirit"))
         );
         BiomeModifications.addFeature(
                 BiomeSelectors.foundInTheNether(),
                 GenerationStep.Feature.UNDERGROUND_ORES,
-                RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN, new Identifier(Shurlin.MODID, "ore_tenuous_fire_spirit"))
+                RegistryKey.of(Registry.CONFIGURED_FEATURE_KEY, new Identifier(Shurlin.MODID, "ore_tenuous_fire_spirit"))
         );
         BiomeModifications.addFeature(
                 BiomeSelectors.categories(Biome.Category.EXTREME_HILLS),
                 GenerationStep.Feature.UNDERGROUND_ORES,
-                RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN, new Identifier(Shurlin.MODID, "ore_tenuous_earth_spirit"))
+                RegistryKey.of(Registry.CONFIGURED_FEATURE_KEY, new Identifier(Shurlin.MODID, "ore_tenuous_earth_spirit"))
         );
         BiomeModifications.addFeature(
                 BiomeSelectors.categories(Biome.Category.PLAINS),
                 GenerationStep.Feature.UNDERGROUND_ORES,
-                RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN, new Identifier(Shurlin.MODID, "ore_tenuous_wind_spirit"))
+                RegistryKey.of(Registry.CONFIGURED_FEATURE_KEY, new Identifier(Shurlin.MODID, "ore_tenuous_wind_spirit"))
         );
         BiomeModifications.addFeature(
                 BiomeSelectors.includeByKey(BiomeKeys.DESERT),
                 GenerationStep.Feature.UNDERGROUND_ORES,
-                RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN, new Identifier(Shurlin.MODID, "ore_tenuous_light_spirit"))
+                RegistryKey.of(Registry.CONFIGURED_FEATURE_KEY, new Identifier(Shurlin.MODID, "ore_tenuous_light_spirit"))
         );
         BiomeModifications.addFeature(
                 BiomeSelectors.foundInTheEnd(),
                 GenerationStep.Feature.UNDERGROUND_ORES,
-                RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN, new Identifier(Shurlin.MODID, "ore_tenuous_darkness_spirit"))
+                RegistryKey.of(Registry.CONFIGURED_FEATURE_KEY, new Identifier(Shurlin.MODID, "ore_tenuous_darkness_spirit"))
         );
         BiomeModifications.addFeature(
                 BiomeSelectors.includeByKey(BiomeKeys.SWAMP),
                 GenerationStep.Feature.UNDERGROUND_ORES,
-                RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN, new Identifier(Shurlin.MODID, "ore_tenuous_poison_spirit"))
+                RegistryKey.of(Registry.CONFIGURED_FEATURE_KEY, new Identifier(Shurlin.MODID, "ore_tenuous_poison_spirit"))
         );
         BiomeModifications.addFeature(
                 BiomeSelectors.includeByKey(BiomeKeys.SNOWY_MOUNTAINS),
                 GenerationStep.Feature.UNDERGROUND_ORES,
-                RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN, new Identifier(Shurlin.MODID, "ore_tenuous_lightning_spirit"))
+                RegistryKey.of(Registry.CONFIGURED_FEATURE_KEY, new Identifier(Shurlin.MODID, "ore_tenuous_lightning_spirit"))
         );
         BiomeModifications.addFeature(
                 BiomeSelectors.categories(Biome.Category.ICY),
                 GenerationStep.Feature.UNDERGROUND_ORES,
-                RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN, new Identifier(Shurlin.MODID, "ore_tenuous_ice_spirit"))
+                RegistryKey.of(Registry.CONFIGURED_FEATURE_KEY, new Identifier(Shurlin.MODID, "ore_tenuous_ice_spirit"))
         );
         BiomeModifications.addFeature(
                 BiomeSelectors.foundInTheEnd(),
                 GenerationStep.Feature.UNDERGROUND_ORES,
-                RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN, new Identifier(Shurlin.MODID, "ore_tenuous_time_space_spirit"))
+                RegistryKey.of(Registry.CONFIGURED_FEATURE_KEY, new Identifier(Shurlin.MODID, "ore_tenuous_time_space_spirit"))
         );
         // Migrate old biome modifications here:
         // Surface Structures
         BiomeModifications.addFeature(
                 BiomeSelectors.includeByKey(ModBiomeKeys.PARASOL_ANCIENT_FOREST_KEY),
                 GenerationStep.Feature.SURFACE_STRUCTURES,
-                RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN, new Identifier(Shurlin.MODID, "mysterious_stone_pillar"))
+                RegistryKey.of(Registry.CONFIGURED_FEATURE_KEY, new Identifier(Shurlin.MODID, "mysterious_stone_pillar"))
         );
         BiomeModifications.addFeature(
                 BiomeSelectors.includeByKey(ModBiomeKeys.PARASOL_ANCIENT_FOREST_KEY),
                 GenerationStep.Feature.SURFACE_STRUCTURES,
-                RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN, new Identifier(Shurlin.MODID, "plant_obsidian_heap"))
+                RegistryKey.of(Registry.CONFIGURED_FEATURE_KEY, new Identifier(Shurlin.MODID, "plant_obsidian_heap"))
         );
     }
 }

@@ -16,6 +16,6 @@ public class StructureKeys {
     public static final RegistryKey<ConfiguredStructureFeature<?, ?>> ANCIENT_PEAR_TREE = register("ancient_pear_tree");
 
     private static RegistryKey<ConfiguredStructureFeature<?, ?>> register(String registryName) {
-        return RegistryKey.of(Registry.CONFIGURED_STRUCTURE_FEATURE_WORLDGEN, new Identifier(Shurlin.MODID, registryName));
+        return RegistryKey.of(Registry.CONFIGURED_STRUCTURE_FEATURE_KEY, new Identifier(Shurlin.MODID, registryName));
     }
 }

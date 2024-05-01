@@ -109,8 +109,8 @@ public class ExtractorBlockEntity extends AbstractWorkerBlockEntity {
     }
 
     @Override
-    public void fromTag(BlockState state, NbtCompound tag) {
-        super.fromTag(state, tag);
+    public void readNbt(BlockState state, NbtCompound tag) {
+        super.readNbt(state, tag);
         this.cur_extractant = tag.getShort("Cur_extractant");
         this.extractant = tag.getShort("Extractant");
     }

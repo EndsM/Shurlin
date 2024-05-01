@@ -43,8 +43,8 @@ public class AncientTreePiece extends SimpleStructurePiece {
     }
 
     @Override
-    protected void toNbt(NbtCompound tag) {
-        super.toNbt(tag);
+    protected void writeNbt(NbtCompound tag) {
+        super.writeNbt(tag);
         tag.putString("Template", this.template.toString());
         tag.putString("Rotation", this.rotation.name());
         tag.putString("Type", this.data.getName());

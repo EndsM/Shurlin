@@ -22,8 +22,8 @@ public abstract class BasicBlockEntity extends LockableContainerBlockEntity {
     }
 
     @Override
-    public void fromTag(BlockState state, NbtCompound tag) {
-        super.fromTag(state, tag);
+    public void readNbt(BlockState state, NbtCompound tag) {
+        super.readNbt(state, tag);
         this.deserializeInventory(tag);
     }
 

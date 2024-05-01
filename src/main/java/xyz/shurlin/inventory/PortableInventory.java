@@ -47,6 +47,6 @@ public class PortableInventory extends SimpleInventory {
     public void onClose(PlayerEntity player) {
         NbtCompound compoundTag = new NbtCompound();
         compoundTag.put("inventory", this.toNbtList());
-        itemStack.setTag(compoundTag);
+        itemStack.setNbt(compoundTag);
     }
 }

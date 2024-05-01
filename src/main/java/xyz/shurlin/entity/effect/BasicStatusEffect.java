@@ -3,7 +3,7 @@ package xyz.shurlin.entity.effect;
 import net.minecraft.entity.EntityPose;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffect;
-import net.minecraft.entity.effect.StatusEffectType;
+import net.minecraft.entity.effect.StatusEffectCategory;
 
 class BasicStatusEffect extends StatusEffect {
     @Override
@@ -26,7 +26,7 @@ class BasicStatusEffect extends StatusEffect {
         return super.canApplyUpdateEffect(duration, amplifier);
     }
 
-    public BasicStatusEffect(StatusEffectType type, int color) {
+    public BasicStatusEffect(StatusEffectCategory type, int color) {
         super(type, color);
     }
 }

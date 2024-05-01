@@ -1,7 +1,7 @@
 package xyz.shurlin.entity.effect;
 
 import net.minecraft.entity.effect.StatusEffect;
-import net.minecraft.entity.effect.StatusEffectType;
+import net.minecraft.entity.effect.StatusEffectCategory;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import xyz.shurlin.Shurlin;
@@ -14,6 +14,6 @@ public class StatusEffects {
     }
 
     static {
-        LOVED = register("loved", new BasicStatusEffect(StatusEffectType.BENEFICIAL, 13458603));
+        LOVED = register("loved", new BasicStatusEffect(StatusEffectCategory.BENEFICIAL, 13458603));
     }
 }

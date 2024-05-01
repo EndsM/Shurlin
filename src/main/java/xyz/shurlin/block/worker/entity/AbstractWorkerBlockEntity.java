@@ -36,8 +36,8 @@ public abstract class AbstractWorkerBlockEntity extends BasicBlockEntity impleme
     protected abstract PropertyDelegate getPropertyDelegate();
 
     @Override
-    public void fromTag(BlockState state, NbtCompound tag) {
-        super.fromTag(state, tag);
+    public void readNbt(BlockState state, NbtCompound tag) {
+        super.readNbt(state, tag);
         this.workTime = tag.getInt("WorkTime");
         this.workTimeTotal = tag.getInt("WorkTimeTotal");
     }
@@ -100,7 +100,7 @@ public abstract class AbstractWorkerBlockEntity extends BasicBlockEntity impleme
     public void setStack(int slot, ItemStack stack) {
         super.setStack(slot, stack);
         ItemStack itemStack = this.inventory.get(slot);
-        boolean bl = !stack.isEmpty() && stack.isItemEqualIgnoreDamage(itemStack) && ItemStack.areTagsEqual(stack, itemStack);
+        boolean bl = !stack.isEmpty() && stack.isItemEqualIgnoreDamage(itemStack) && ItemStack.areNbtEqual(stack, itemStack);
         if (slot == 0 && !bl) {
             this.workTimeTotal = this.getWorkTimeTotal();
             this.workTime = 0;

@@ -42,7 +42,7 @@ public class ShurlinBiomeCreator {
         DefaultBiomeFeatures.addDefaultFlowers(surfaceBuilder);
         DefaultBiomeFeatures.addForestGrass(surfaceBuilder);
         DefaultBiomeFeatures.addDefaultVegetation(surfaceBuilder);
-        surfaceBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ConfiguredFeatures.SPRING_WATER);
+        surfaceBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ConfiguredFeatures.PROTOTYPE_SPRING_WATER);
 
         ShurlinBiomeFeatures.addPearTrees(surfaceBuilder);
         ShurlinBiomeFeatures.addSmallBud(surfaceBuilder);
