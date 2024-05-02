@@ -21,6 +21,7 @@ public class RicesBlock extends CropBlock {
 
     @Environment(EnvType.CLIENT)
     protected ItemConvertible getSeedsItem() {
+        // This is a placeholder, I guess
         return Items.POTATO;
     }
 
