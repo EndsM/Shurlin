@@ -21,13 +21,6 @@ public class CultivatedPlayer {
     private double currentCulProgress;
     private RealmStage realmStage;
 
-    // I have two solutions now:
-    // First one:
-    // Call Mixin at these functions directly, and this class itself will be interface's impl
-    // Second one:
-    // Make a INBTOperator interface and a NBTOperator impl
-    // Call them in these functions instead
-    // Third one(provided by foss llm):
     // Use a StorageAdapter interface and a MixinStorageAdapter implementation
     // Create a StorageAdapter interface that defines the methods for storing and retrieving data.
     // Then, create a MixinStorageAdapter implementation that uses the Mixin library to handle the actual storage and retrieval.
