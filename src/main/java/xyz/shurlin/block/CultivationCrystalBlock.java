@@ -14,8 +14,8 @@ import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import xyz.shurlin.block.entity.CultivationCrystalBlockEntity;
-import xyz.shurlin.cultivation.interfaces.CultivatedPlayerAccessor;
 import xyz.shurlin.cultivation.CultivationRealm;
+import xyz.shurlin.cultivation.interfaces.CultivatedPlayerAccessor;
 
 public class CultivationCrystalBlock extends BlockWithEntity {
     private static final VoxelShape SHAPE = Block.createCuboidShape(4, 4, 4, 12, 12, 12);

@@ -11,12 +11,12 @@ import xyz.shurlin.Shurlin;
 public class ShurlinConfiguredSurfaceBuilder {
     public static final ConfiguredSurfaceBuilder<TernarySurfaceConfig> FIRE_LAND;
 
-    private static <SC extends SurfaceConfig> ConfiguredSurfaceBuilder<SC> register(String id, ConfiguredSurfaceBuilder<SC> configuredSurfaceBuilder) {
-        return BuiltinRegistries.add(BuiltinRegistries.CONFIGURED_SURFACE_BUILDER, new Identifier(Shurlin.MODID, id), configuredSurfaceBuilder);
-    }
-
     static {
         FIRE_LAND = register("fire_land", SurfaceBuilder.DEFAULT.withConfig(ShurlinSurfaceBuilder.FIRE_LAND_CONFIG));
+    }
+
+    private static <SC extends SurfaceConfig> ConfiguredSurfaceBuilder<SC> register(String id, ConfiguredSurfaceBuilder<SC> configuredSurfaceBuilder) {
+        return BuiltinRegistries.add(BuiltinRegistries.CONFIGURED_SURFACE_BUILDER, new Identifier(Shurlin.MODID, id), configuredSurfaceBuilder);
     }
 
 }

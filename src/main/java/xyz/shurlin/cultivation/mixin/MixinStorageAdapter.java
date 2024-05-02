@@ -8,7 +8,7 @@ import xyz.shurlin.cultivation.models.enums.CultivationType;
 @Mixin(PlayerEntity.class)
 public class MixinStorageAdapter implements StorageAdapter {
     @Override
-    public boolean SaveCultivationType(){
+    public boolean SaveCultivationType() {
         // To be implemented
         return false;
     }
