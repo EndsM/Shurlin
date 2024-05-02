@@ -29,6 +29,19 @@ public enum CultivationRealms {
         Map.INSTANCE.put(this.gradation, this);
     }
 
+    /**
+     * Simplified this method by putting a map.
+     *
+     * @author Garay Shurlin
+     * @author teddyxlandlee
+     * @see xyz.shurlin.cultivation.CultivationRealms.Map
+     * @since 0.1.2-beta
+     */
+    @Nullable
+    public static CultivationRealms getRealmByGradation(short gradation) {
+        return Map.INSTANCE.getOrDefault(gradation, null);
+    }
+
     public String getName() {
         return name;
     }
@@ -43,19 +56,6 @@ public enum CultivationRealms {
 
     public short getGradation() {
         return gradation;
-    }
-
-    /**
-     * Simplified this method by putting a map.
-     *
-     * @author Garay Shurlin
-     * @author teddyxlandlee
-     * @see xyz.shurlin.cultivation.CultivationRealms.Map
-     * @since 0.1.2-beta
-     */
-    @Nullable
-    public static CultivationRealms getRealmByGradation(short gradation) {
-        return Map.INSTANCE.getOrDefault(gradation, null);
     }
 
     /**

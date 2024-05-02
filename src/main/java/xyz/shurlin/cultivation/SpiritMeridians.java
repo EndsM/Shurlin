@@ -3,13 +3,13 @@ package xyz.shurlin.cultivation;
 import net.minecraft.nbt.NbtCompound;
 
 public class SpiritMeridians {
+    private static final double[] ratios = new double[]{0, 1d, 3d, 10d, 30d, 100d, 300d, 1e3, 3e3, 1e4};
     private final SpiritPropertyType type;
     private short level;
     private double maxSpirit;
     private double curSpirit;
     private double curEx;
     private double maxEx;
-    private static final double[] ratios = new double[]{0, 1d, 3d, 10d, 30d, 100d, 300d, 1e3, 3e3, 1e4};
 
     public SpiritMeridians(SpiritPropertyType type) {
         this.type = type;
@@ -29,20 +29,27 @@ public class SpiritMeridians {
 
     }
 
-    public void upgrade() {
-        this.curEx = 0;
-        this.level++;
-        this.maxSpirit = getMaxSpirits(level);
-        this.maxEx = getMaxExs(level);
-        this.curSpirit = this.maxSpirit;
-    }
-
     static double getMaxSpirits(int level) {
         return ratios[level] * 1e3;
     }
 
     static double getMaxExs(int level) {
         return ratios[level] * 100d;
+    }
+
+    public static SpiritMeridians fromTag(SpiritPropertyType type, NbtCompound tag) {
+        return new SpiritMeridians(type,
+                tag.getShort("level"),
+                tag.getDouble("cur_spirit"),
+                tag.getDouble("cur_ex"));
+    }
+
+    public void upgrade() {
+        this.curEx = 0;
+        this.level++;
+        this.maxSpirit = getMaxSpirits(level);
+        this.maxEx = getMaxExs(level);
+        this.curSpirit = this.maxSpirit;
     }
 
     public void heal(int times) {
@@ -100,12 +107,5 @@ public class SpiritMeridians {
         tag.putDouble("cur_spirit", this.curSpirit);
         tag.putDouble("cur_ex", this.curEx);
         return tag;
-    }
-
-    public static SpiritMeridians fromTag(SpiritPropertyType type, NbtCompound tag) {
-        return new SpiritMeridians(type,
-                tag.getShort("level"),
-                tag.getDouble("cur_spirit"),
-                tag.getDouble("cur_ex"));
     }
 }

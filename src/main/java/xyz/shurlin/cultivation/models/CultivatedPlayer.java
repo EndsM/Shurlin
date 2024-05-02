@@ -20,4 +20,50 @@ public class CultivatedPlayer {
     // then wait for breakthrough
     private double currentCulProgress;
     private RealmStage realmStage;
+
+    // I have two solutions now:
+    // First one:
+    // Call Mixin at these functions directly, and this class itself will be interface's impl
+    // Second one:
+    // Make a INBTOperator interface and a NBTOperator impl
+    // Call them in these functions instead
+    public CultivationType getCultivationType() {
+        return cultivationType;
+    }
+
+    public void setCultivationType(CultivationType cultivationType) {
+        this.cultivationType = cultivationType;
+    }
+
+    public List<CultivationRealm> getCultivationStages() {
+        return cultivationStages;
+    }
+
+    public void setCultivationStages(List<CultivationRealm> cultivationStages) {
+        this.cultivationStages = cultivationStages;
+    }
+
+    public int getCurrentStage() {
+        return currentStage;
+    }
+
+    public void setCurrentStage(int currentStage) {
+        this.currentStage = currentStage;
+    }
+
+    public double getCurrentCulProgress() {
+        return currentCulProgress;
+    }
+
+    public void setCurrentCulProgress(double currentCulProgress) {
+        this.currentCulProgress = currentCulProgress;
+    }
+
+    public RealmStage getRealmStage() {
+        return realmStage;
+    }
+
+    public void setRealmStage(RealmStage realmStage) {
+        this.realmStage = realmStage;
+    }
 }

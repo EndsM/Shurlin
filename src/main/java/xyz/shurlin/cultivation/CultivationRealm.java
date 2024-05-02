@@ -10,9 +10,9 @@ import static xyz.shurlin.cultivation.SpiritMeridians.getMaxSpirits;
 
 // Create a Cultivation API later, maybe five major versions later though
 public class CultivationRealm {
+    private final Object2ObjectArrayMap<SpiritPropertyType, SpiritMeridians> meridians = new Object2ObjectArrayMap<>();
     private CultivationRealms realm;
     private short rank;
-    private final Object2ObjectArrayMap<SpiritPropertyType, SpiritMeridians> meridians = new Object2ObjectArrayMap<>();
 
     CultivationRealm() {
         this.realm = CultivationRealms.SOLDIER;
@@ -22,14 +22,19 @@ public class CultivationRealm {
         }
     }
 
-    public void healSpiritMeridians(int times) {
-        for (SpiritPropertyType type : SpiritPropertyType.GROUPS) {
-            this.meridians.get(type).heal(times);
-        }
+    public CultivationRealm(CultivationRealms realm, short rank) {
+        this.realm = realm;
+        this.rank = rank;
     }
 
     public static CultivationRealm of() {
         return new CultivationRealm();
+    }
+
+    public void healSpiritMeridians(int times) {
+        for (SpiritPropertyType type : SpiritPropertyType.GROUPS) {
+            this.meridians.get(type).heal(times);
+        }
     }
 
     public CultivationRealm temp() {
@@ -44,12 +49,6 @@ public class CultivationRealm {
                     random.nextInt((int) getMaxExs(i))));
         }
         return this;
-    }
-
-
-    public CultivationRealm(CultivationRealms realm, short rank) {
-        this.realm = realm;
-        this.rank = rank;
     }
 
     public void upgrade() {
