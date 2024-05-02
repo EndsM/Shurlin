@@ -1,6 +1,5 @@
 package xyz.shurlin.cultivation.models;
 
-import net.minecraft.client.realms.Realms;
 import xyz.shurlin.cultivation.models.enums.CultivationType;
 import xyz.shurlin.cultivation.models.enums.RealmStage;
 
