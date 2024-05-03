@@ -10,7 +10,10 @@ import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-import xyz.shurlin.cultivation.*;
+import xyz.shurlin.cultivation.CultivationRealm;
+import xyz.shurlin.cultivation.CultivationRealms;
+import xyz.shurlin.cultivation.SpiritMeridians;
+import xyz.shurlin.cultivation.SpiritPropertyType;
 import xyz.shurlin.cultivation.interfaces.CultivatedPlayerAccessor;
 
 
