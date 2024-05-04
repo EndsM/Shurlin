@@ -26,12 +26,15 @@ public abstract class MixinStorageAdapter implements StorageAdapter {
 
     @Inject(method = "writeCustomDataToNbt", at = @At("TAIL"))
     private void writeToNbt(NbtCompound nbt, CallbackInfo ci) {
-        cultivatedPlayer = new CultivatedPlayer();
-        cultivatedPlayer.SetCultivationType(CultivationType.SHURLIN); // Initialize with a default cultivation type
-        cultivatedPlayer.SetCultivationStages(Collections.singletonMap(1, new CultivationRealm())); // Initialize with a default cultivation stage
-        cultivatedPlayer.SetCurrentStage(0); // Initialize with a default current stage
-        cultivatedPlayer.SetCurrentCulProgress(0.0); // Initialize with a default current cultivation progress
-        cultivatedPlayer.SetRealmStage(RealmStage.LOW); // Initialize with a default realm stage
+        // Dummy data here
+        if (cultivatedPlayer == null) {
+            cultivatedPlayer = new CultivatedPlayer();
+            cultivatedPlayer.SetCultivationType(CultivationType.SHURLIN); // Initialize with a default cultivation type
+            cultivatedPlayer.SetCultivationStages(Collections.singletonMap(1, new CultivationRealm())); // Initialize with a default cultivation stage
+            cultivatedPlayer.SetCurrentStage(0); // Initialize with a default current stage
+            cultivatedPlayer.SetCurrentCulProgress(0.0); // Initialize with a default current cultivation progress
+            cultivatedPlayer.SetRealmStage(RealmStage.LOW); // Initialize with a default realm stage
+        }
 
         if (cultivatedPlayer != null) {
             NbtCompound CultivationData = new NbtCompound();
@@ -53,6 +56,7 @@ public abstract class MixinStorageAdapter implements StorageAdapter {
 
     @Inject(method = "readCustomDataFromNbt", at = @At("TAIL"))
     private void readFromNbt(NbtCompound nbt, CallbackInfo ci) {
+        NbtCompound CultivationData = nbt.getCompound(namespace);
     }
 
     @Override
