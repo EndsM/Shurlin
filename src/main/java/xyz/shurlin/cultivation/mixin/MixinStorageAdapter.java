@@ -19,6 +19,7 @@ import java.util.Map;
 
 @Mixin(PlayerEntity.class)
 public abstract class MixinStorageAdapter implements StorageAdapter {
+    @Unique
     private static final String namespace = "cultivation";
 
     @Unique
@@ -26,7 +27,7 @@ public abstract class MixinStorageAdapter implements StorageAdapter {
 
     @Inject(method = "writeCustomDataToNbt", at = @At("TAIL"))
     private void writeToNbt(NbtCompound nbt, CallbackInfo ci) {
-        // Dummy data here
+        // Dummy data purely for test
         if (cultivatedPlayer == null) {
             cultivatedPlayer = new CultivatedPlayer();
             cultivatedPlayer.SetCultivationType(CultivationType.SHURLIN); // Initialize with a default cultivation type
@@ -38,7 +39,7 @@ public abstract class MixinStorageAdapter implements StorageAdapter {
 
         if (cultivatedPlayer != null) {
             NbtCompound CultivationData = new NbtCompound();
-            CultivationData.putString("CultivationType", cultivatedPlayer.GetCultivationType().name());
+            CultivationData.putInt("CultivationType", cultivatedPlayer.GetCultivationType().getId());
             CultivationData.putInt("CurrentStage", cultivatedPlayer.GetCurrentStage());
             CultivationData.putDouble("CurrentCulProgress", cultivatedPlayer.GetCurrentCulProgress());
             CultivationData.putInt("RealmStage", cultivatedPlayer.GetRealmStage().getLevel());
@@ -57,6 +58,9 @@ public abstract class MixinStorageAdapter implements StorageAdapter {
     @Inject(method = "readCustomDataFromNbt", at = @At("TAIL"))
     private void readFromNbt(NbtCompound nbt, CallbackInfo ci) {
         NbtCompound CultivationData = nbt.getCompound(namespace);
+        if (CultivationData != null) {
+    cultivatedPlayer.SetCultivationType(CultivationType.getById(CultivationData.getInt("CultivationType")));
+        }
     }
 
     @Override
