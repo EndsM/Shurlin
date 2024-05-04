@@ -10,4 +10,12 @@ public class CultivationRealm {
     private String energyNameKey;
     // cultivation exp needed in this realm
     private double progressBar;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 }

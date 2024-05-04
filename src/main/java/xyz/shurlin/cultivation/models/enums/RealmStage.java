@@ -16,15 +16,15 @@ public enum RealmStage {
         this.name = name;
     }
 
-    private int getLevel() {
+    public int getLevel() {
         return level;
     }
 
-    private String getColor() {
+    public String getColor() {
         return color;
     }
 
-    private String getName() {
+    public String getName() {
         return name;
     }
 }
