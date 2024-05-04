@@ -3,7 +3,7 @@ package xyz.shurlin.cultivation.models;
 import xyz.shurlin.cultivation.models.enums.CultivationType;
 import xyz.shurlin.cultivation.models.enums.RealmStage;
 
-import java.util.List;
+import java.util.Map;
 
 public class CultivatedPlayer {
     // I guess I need something I'm familiar with
@@ -11,7 +11,7 @@ public class CultivatedPlayer {
     // Realms of a cultivation system will not be hard coded, though I need put more thought to it later
     // It will be created for player as they select their cultivation system, and write to their dataset.
     // However, this solution need beware of the system's update, if player already have the dataset in them
-    private List<CultivationRealm> cultivationStages;
+    private Map<Integer, CultivationRealm> cultivationStages;
     // Use this as temp solution of specify which stage player is on
     // Range[0, cultivationType.numberOfRealms - 1]
     private int currentStage;
@@ -35,11 +35,11 @@ public class CultivatedPlayer {
         this.cultivationType = cultivationType;
     }
 
-    public List<CultivationRealm> GetCultivationStages() {
+    public Map<Integer, CultivationRealm> GetCultivationStages() {
         return cultivationStages;
     }
 
-    public void SetCultivationStages(List<CultivationRealm> cultivationStages) {
+    public void SetCultivationStages(Map<Integer, CultivationRealm> cultivationStages) {
         this.cultivationStages = cultivationStages;
     }
 
