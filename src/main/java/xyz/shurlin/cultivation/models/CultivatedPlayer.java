@@ -27,43 +27,43 @@ public class CultivatedPlayer {
     // Finally, inject the StorageAdapter into the CultivatedPlayer class using dependency injection.
     // This solution provides the benefits of both the first and second solutions while minimizing their drawbacks.
     // It decouples the class from the storage mechanism, allows for easier testing and maintenance, and keeps the code simple by using Mixin in the implementation.
-    public CultivationType getCultivationType() {
+    public CultivationType GetCultivationType() {
         return cultivationType;
     }
 
-    public void setCultivationType(CultivationType cultivationType) {
+    public void SetCultivationType(CultivationType cultivationType) {
         this.cultivationType = cultivationType;
     }
 
-    public List<CultivationRealm> getCultivationStages() {
+    public List<CultivationRealm> GetCultivationStages() {
         return cultivationStages;
     }
 
-    public void setCultivationStages(List<CultivationRealm> cultivationStages) {
+    public void SetCultivationStages(List<CultivationRealm> cultivationStages) {
         this.cultivationStages = cultivationStages;
     }
 
-    public int getCurrentStage() {
+    public int GetCurrentStage() {
         return currentStage;
     }
 
-    public void setCurrentStage(int currentStage) {
+    public void SetCurrentStage(int currentStage) {
         this.currentStage = currentStage;
     }
 
-    public double getCurrentCulProgress() {
+    public double GetCurrentCulProgress() {
         return currentCulProgress;
     }
 
-    public void setCurrentCulProgress(double currentCulProgress) {
+    public void SetCurrentCulProgress(double currentCulProgress) {
         this.currentCulProgress = currentCulProgress;
     }
 
-    public RealmStage getRealmStage() {
+    public RealmStage GetRealmStage() {
         return realmStage;
     }
 
-    public void setRealmStage(RealmStage realmStage) {
+    public void SetRealmStage(RealmStage realmStage) {
         this.realmStage = realmStage;
     }
 }
