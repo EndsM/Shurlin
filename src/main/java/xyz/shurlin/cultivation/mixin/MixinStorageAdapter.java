@@ -25,18 +25,21 @@ public abstract class MixinStorageAdapter implements StorageAdapter {
     @Unique
     private CultivatedPlayer cultivatedPlayer;
 
+    // <init> means this will be injected to constructor, so I can finally do dependency injection
+    // in Java now, I'm saved
+    @Inject(method = "<init>", at = @At("RETURN"))
+    private void init(CallbackInfo ci) {
+        cultivatedPlayer = new CultivatedPlayer();
+        // Dummy data purely for test
+        cultivatedPlayer.SetCultivationType(CultivationType.SHURLIN); // Initialize with a default cultivation type
+        cultivatedPlayer.SetCultivationStages(Collections.singletonMap(1, new CultivationRealm())); // Initialize with a default cultivation stage
+        cultivatedPlayer.SetCurrentStage(0); // Initialize with a default current stage
+        cultivatedPlayer.SetCurrentCulProgress(0.0); // Initialize with a default current cultivation progress
+        cultivatedPlayer.SetRealmStage(RealmStage.LOW); // Initialize with a default realm stage
+    }
+
     @Inject(method = "writeCustomDataToNbt", at = @At("TAIL"))
     private void writeToNbt(NbtCompound nbt, CallbackInfo ci) {
-        // Dummy data purely for test
-        if (cultivatedPlayer == null) {
-            cultivatedPlayer = new CultivatedPlayer();
-            cultivatedPlayer.SetCultivationType(CultivationType.SHURLIN); // Initialize with a default cultivation type
-            cultivatedPlayer.SetCultivationStages(Collections.singletonMap(1, new CultivationRealm())); // Initialize with a default cultivation stage
-            cultivatedPlayer.SetCurrentStage(0); // Initialize with a default current stage
-            cultivatedPlayer.SetCurrentCulProgress(0.0); // Initialize with a default current cultivation progress
-            cultivatedPlayer.SetRealmStage(RealmStage.LOW); // Initialize with a default realm stage
-        }
-
         if (cultivatedPlayer != null) {
             NbtCompound CultivationData = new NbtCompound();
             CultivationData.putInt("CultivationType", cultivatedPlayer.GetCultivationType().getId());
@@ -59,7 +62,7 @@ public abstract class MixinStorageAdapter implements StorageAdapter {
     private void readFromNbt(NbtCompound nbt, CallbackInfo ci) {
         NbtCompound CultivationData = nbt.getCompound(namespace);
         if (CultivationData != null) {
-    cultivatedPlayer.SetCultivationType(CultivationType.getById(CultivationData.getInt("CultivationType")));
+            cultivatedPlayer.SetCultivationType(CultivationType.getById(CultivationData.getInt("CultivationType")));
         }
     }
 
