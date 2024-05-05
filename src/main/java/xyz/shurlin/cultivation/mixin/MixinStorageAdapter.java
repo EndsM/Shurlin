@@ -14,6 +14,7 @@ import xyz.shurlin.cultivation.models.enums.CultivationType;
 import xyz.shurlin.cultivation.models.enums.RealmStage;
 
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -66,6 +67,21 @@ public abstract class MixinStorageAdapter implements StorageAdapter {
             cultivatedPlayer.SetCurrentStage(CultivationData.getInt("CurrentStage"));
             cultivatedPlayer.SetCurrentCulProgress(CultivationData.getDouble("CurrentCulProgress"));
             cultivatedPlayer.SetRealmStage(RealmStage.getByLevel(CultivationData.getInt("RealmStage")));
+
+            NbtCompound CultivationStagesNbt = CultivationData.getCompound("CultivationStages");
+            Map<Integer, CultivationRealm> cultivationStages = new HashMap<>();
+            for (String key : CultivationStagesNbt.getKeys()) {
+                // Check if this match the pattern while written
+                if (key.startsWith("Realm")){
+                    int stageId = Integer.parseInt(key.substring(5));
+                    NbtCompound realmNbt = CultivationStagesNbt.getCompound(key);
+                    CultivationRealm realm = new CultivationRealm();
+                    realm.setId(stageId);
+                    // More data are to be impl
+                    cultivationStages.put(stageId,realm);
+                }
+            }
+            cultivatedPlayer.SetCultivationStages(cultivationStages);
         }
     }
 
