@@ -16,7 +16,6 @@ import xyz.shurlin.cultivation.models.enums.RealmStage;
 
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 @Mixin(PlayerEntity.class)
@@ -108,46 +107,110 @@ public abstract class MixinStorageAdapter implements StorageAdapter {
 
     @Override
     public CultivationType LoadCultivationType() {
+        if (cultivatedPlayer == null) {
+            Shurlin.LOGGER.error("Cultivated player is not initialized.");
+            return null;
+        }
         return cultivatedPlayer.GetCultivationType();
     }
 
     @Override
     public boolean SaveCultivationStages(Map<Integer, CultivationRealm> cultivationStages) {
-        return false;
+        if (cultivatedPlayer == null) {
+            Shurlin.LOGGER.error("Cultivated player is not initialized.");
+            return false;
+        }
+
+        try {
+            cultivatedPlayer.SetCultivationStages(cultivationStages);
+            return true;
+        } catch (Exception e) {
+            Shurlin.LOGGER.error("Error saving cultivation stages: {}", e.getMessage());
+            return false;
+        }
     }
 
     @Override
-    public List<CultivationRealm> LoadCultivationStages() {
-        return Collections.emptyList();
+    public Map<Integer, CultivationRealm> LoadCultivationStages() {
+        if (cultivatedPlayer == null) {
+            Shurlin.LOGGER.error("Cultivated player is not initialized.");
+            return null;
+        }
+        return cultivatedPlayer.GetCultivationStages();
     }
 
     @Override
     public boolean SaveCurrentStage(int currentStage) {
-        return false;
+        if (cultivatedPlayer == null) {
+            Shurlin.LOGGER.error("Cultivated player is not initialized.");
+            return false;
+        }
+
+        try {
+            cultivatedPlayer.SetCurrentStage(currentStage);
+            return true;
+        } catch (Exception e) {
+            Shurlin.LOGGER.error("Error saving current stage: {}", e.getMessage());
+            return false;
+        }
     }
 
     @Override
     public int LoadCurrentStage() {
-        return 0;
+        if (cultivatedPlayer == null) {
+            Shurlin.LOGGER.error("Cultivated player is not initialized.");
+            return 0;
+        }
+        return cultivatedPlayer.GetCurrentStage();
     }
 
     @Override
     public boolean SaveCurrentCulProgress(double currentCulProgress) {
-        return false;
+        if (cultivatedPlayer == null) {
+            Shurlin.LOGGER.error("Cultivated player is not initialized.");
+            return false;
+        }
+
+        try {
+            cultivatedPlayer.SetCurrentCulProgress(currentCulProgress);
+            return true;
+        } catch (Exception e) {
+            Shurlin.LOGGER.error("Error saving current cultivation progress: {}", e.getMessage());
+            return false;
+        }
     }
 
     @Override
     public double LoadCurrentCulProgress() {
-        return 0;
+        if (cultivatedPlayer == null) {
+            Shurlin.LOGGER.error("Cultivated player is not initialized.");
+            return 0;
+        }
+        return cultivatedPlayer.GetCurrentCulProgress();
     }
 
     @Override
     public boolean SaveRealmStage(RealmStage realmStage) {
-        return false;
+        if (cultivatedPlayer == null) {
+            Shurlin.LOGGER.error("Cultivated player is not initialized.");
+            return false;
+        }
+
+        try {
+            cultivatedPlayer.SetRealmStage(realmStage);
+            return true;
+        } catch (Exception e) {
+            Shurlin.LOGGER.error("Error saving realm stage: {}", e.getMessage());
+            return false;
+        }
     }
 
     @Override
     public RealmStage LoadRealmStage() {
-        return null;
+        if (cultivatedPlayer == null) {
+            Shurlin.LOGGER.error("Cultivated player is not initialized.");
+            return null;
+        }
+        return cultivatedPlayer.GetRealmStage();
     }
 }
