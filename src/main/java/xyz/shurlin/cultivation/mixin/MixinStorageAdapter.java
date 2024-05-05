@@ -49,6 +49,7 @@ public abstract class MixinStorageAdapter implements StorageAdapter {
     @Inject(method = "writeCustomDataToNbt", at = @At("TAIL"))
     private void writeToNbt(NbtCompound nbt, CallbackInfo ci) {
         // This is triggered when a player logged off a world.
+        // Also works while player pause the game in client env. maybe also timed save
         Shurlin.LOGGER.info("Try to save cultivation data for {}", getName());
         if (cultivatedPlayer != null) {
             NbtCompound CultivationData = new NbtCompound();
