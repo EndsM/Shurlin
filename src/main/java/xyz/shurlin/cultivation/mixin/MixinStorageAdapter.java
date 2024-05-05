@@ -26,7 +26,7 @@ public abstract class MixinStorageAdapter implements StorageAdapter {
     private CultivatedPlayer cultivatedPlayer;
 
     // <init> means this will be injected to constructor, so I can finally do dependency injection
-    // in Java now, I'm saved
+    // in Java mixin now, I'm saved
     @Inject(method = "<init>", at = @At("RETURN"))
     private void init(CallbackInfo ci) {
         cultivatedPlayer = new CultivatedPlayer();
@@ -63,6 +63,9 @@ public abstract class MixinStorageAdapter implements StorageAdapter {
         NbtCompound CultivationData = nbt.getCompound(namespace);
         if (CultivationData != null) {
             cultivatedPlayer.SetCultivationType(CultivationType.getById(CultivationData.getInt("CultivationType")));
+            cultivatedPlayer.SetCurrentStage(CultivationData.getInt("CurrentStage"));
+            cultivatedPlayer.SetCurrentCulProgress(CultivationData.getDouble("CurrentCulProgress"));
+            cultivatedPlayer.SetRealmStage(RealmStage.getByLevel(CultivationData.getInt("RealmStage")));
         }
     }
 

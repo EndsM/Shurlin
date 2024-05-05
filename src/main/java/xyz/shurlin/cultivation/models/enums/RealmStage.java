@@ -1,5 +1,7 @@
 package xyz.shurlin.cultivation.models.enums;
 
+import java.util.Arrays;
+
 // This use to make in realm stages
 public enum RealmStage {
     NONE(0, "", "none"),
@@ -27,5 +29,12 @@ public enum RealmStage {
 
     public String getName() {
         return name;
+    }
+
+    public static RealmStage getByLevel(int level) {
+        return Arrays.stream(values())
+                .filter(type -> type.level == level)
+                .findFirst()
+                .orElse(null);
     }
 }
