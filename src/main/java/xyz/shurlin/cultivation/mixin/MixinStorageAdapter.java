@@ -23,6 +23,8 @@ public abstract class MixinStorageAdapter implements StorageAdapter {
     @Unique
     private static final String namespace = "cultivation";
 
+    // This will be stored in memory while the player is active
+    // And initialize while read, store back to player data while write
     @Unique
     private CultivatedPlayer cultivatedPlayer;
 
@@ -41,6 +43,7 @@ public abstract class MixinStorageAdapter implements StorageAdapter {
 
     @Inject(method = "writeCustomDataToNbt", at = @At("TAIL"))
     private void writeToNbt(NbtCompound nbt, CallbackInfo ci) {
+        // This is triggered when a player logged off a world.
         if (cultivatedPlayer != null) {
             NbtCompound CultivationData = new NbtCompound();
             CultivationData.putInt("CultivationType", cultivatedPlayer.GetCultivationType().getId());
@@ -61,6 +64,7 @@ public abstract class MixinStorageAdapter implements StorageAdapter {
 
     @Inject(method = "readCustomDataFromNbt", at = @At("TAIL"))
     private void readFromNbt(NbtCompound nbt, CallbackInfo ci) {
+        // This is triggered when a player enters a world.
         NbtCompound CultivationData = nbt.getCompound(namespace);
         if (CultivationData != null) {
             cultivatedPlayer.SetCultivationType(CultivationType.getById(CultivationData.getInt("CultivationType")));
@@ -87,13 +91,13 @@ public abstract class MixinStorageAdapter implements StorageAdapter {
 
     @Override
     public boolean SaveCultivationType(CultivationType cultivationType) {
-        // To be implemented
-        return false;
+        cultivatedPlayer.SetCultivationType(cultivationType);
+        return true;
     }
 
     @Override
     public CultivationType LoadCultivationType() {
-        return null;
+        return cultivatedPlayer.GetCultivationType();
     }
 
     @Override
@@ -104,5 +108,35 @@ public abstract class MixinStorageAdapter implements StorageAdapter {
     @Override
     public List<CultivationRealm> LoadCultivationStages() {
         return Collections.emptyList();
+    }
+
+    @Override
+    public boolean SaveCurrentStage(int currentStage) {
+        return false;
+    }
+
+    @Override
+    public int LoadCurrentStage() {
+        return 0;
+    }
+
+    @Override
+    public boolean SaveCurrentCulProgress(double currentCulProgress) {
+        return false;
+    }
+
+    @Override
+    public double LoadCurrentCulProgress() {
+        return 0;
+    }
+
+    @Override
+    public boolean SaveRealmStage(RealmStage realmStage) {
+        return false;
+    }
+
+    @Override
+    public RealmStage LoadRealmStage() {
+        return null;
     }
 }
