@@ -72,13 +72,13 @@ public abstract class MixinStorageAdapter implements StorageAdapter {
             Map<Integer, CultivationRealm> cultivationStages = new HashMap<>();
             for (String key : CultivationStagesNbt.getKeys()) {
                 // Check if this match the pattern while written
-                if (key.startsWith("Realm")){
+                if (key.startsWith("Realm")) {
                     int stageId = Integer.parseInt(key.substring(5));
                     NbtCompound realmNbt = CultivationStagesNbt.getCompound(key);
                     CultivationRealm realm = new CultivationRealm();
                     realm.setId(stageId);
                     // More data are to be impl
-                    cultivationStages.put(stageId,realm);
+                    cultivationStages.put(stageId, realm);
                 }
             }
             cultivatedPlayer.SetCultivationStages(cultivationStages);
