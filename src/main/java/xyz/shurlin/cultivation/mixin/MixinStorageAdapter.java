@@ -7,6 +7,7 @@ import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import xyz.shurlin.Shurlin;
 import xyz.shurlin.cultivation.interfaces.StorageAdapter;
 import xyz.shurlin.cultivation.models.CultivatedPlayer;
 import xyz.shurlin.cultivation.models.CultivationRealm;
@@ -91,8 +92,18 @@ public abstract class MixinStorageAdapter implements StorageAdapter {
 
     @Override
     public boolean SaveCultivationType(CultivationType cultivationType) {
-        cultivatedPlayer.SetCultivationType(cultivationType);
-        return true;
+        if (cultivatedPlayer == null) {
+            Shurlin.LOGGER.error("Cultivated player is not initialized.");
+            return false;
+        }
+
+        try {
+            cultivatedPlayer.SetCultivationType(cultivationType);
+            return true;
+        } catch (Exception e) {
+            Shurlin.LOGGER.error("Error saving cultivation type: {}", e.getMessage());
+            return false;
+        }
     }
 
     @Override
