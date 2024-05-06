@@ -8,7 +8,7 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import xyz.shurlin.Shurlin;
 import xyz.shurlin.cultivation.SpiritConstants;
-import xyz.shurlin.cultivation.SpiritPropertyType;
+import xyz.shurlin.cultivation.models.enums.SpiritPropertyType;
 import xyz.shurlin.item.*;
 import xyz.shurlin.item.spiritual.SpiritItem;
 import xyz.shurlin.registry.helper.ModArmorItems;

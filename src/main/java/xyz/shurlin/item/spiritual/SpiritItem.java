@@ -3,7 +3,7 @@ package xyz.shurlin.item.spiritual;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
-import xyz.shurlin.cultivation.SpiritPropertyType;
+import xyz.shurlin.cultivation.models.enums.SpiritPropertyType;
 import xyz.shurlin.item.BasicItem;
 
 public class SpiritItem extends BasicItem {

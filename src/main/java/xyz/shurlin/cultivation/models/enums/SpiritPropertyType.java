@@ -1,4 +1,4 @@
-package xyz.shurlin.cultivation;
+package xyz.shurlin.cultivation.models.enums;
 
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
@@ -26,7 +26,7 @@ public enum SpiritPropertyType {
         this.id = id;
     }
 
-    public String getTranslation() {
+    public String getTranslationKey() {
         return "type.shurlin." + this.name;
     }
 
