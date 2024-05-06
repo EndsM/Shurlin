@@ -1,4 +1,4 @@
-package xyz.shurlin.cultivation;
+package xyz.shurlin.cultivation.models.enums;
 
 public enum SpiritualEquipmentLevels {
     INFERIOR_WEAPON(1),

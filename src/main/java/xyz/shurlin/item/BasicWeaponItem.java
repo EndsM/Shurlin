@@ -10,7 +10,7 @@ import net.minecraft.text.TranslatableText;
 import net.minecraft.util.Hand;
 import net.minecraft.world.World;
 import xyz.shurlin.client.options.KeyBindings;
-import xyz.shurlin.cultivation.SpiritualEquipmentLevels;
+import xyz.shurlin.cultivation.models.enums.SpiritualEquipmentLevels;
 
 import java.util.List;
 

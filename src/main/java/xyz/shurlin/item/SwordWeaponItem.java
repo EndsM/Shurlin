@@ -9,7 +9,7 @@ import net.minecraft.entity.attribute.EntityAttributeModifier;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import xyz.shurlin.cultivation.SpiritualEquipmentLevels;
+import xyz.shurlin.cultivation.models.enums.SpiritualEquipmentLevels;
 
 public class SwordWeaponItem extends BasicWeaponItem {
     private Multimap<EntityAttribute, EntityAttributeModifier> multimapWithSpirit;
