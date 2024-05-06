@@ -12,17 +12,17 @@ public enum SpiritualEquipmentLevels {
     SUPER_HOLY_WEAPON(9),
     HOLY_SPIRIT_WEAPON(10);
 
-    private final int lvl;
+    private final int level;
 
-    SpiritualEquipmentLevels(int lvl) {
-        this.lvl = lvl;
+    SpiritualEquipmentLevels(int level) {
+        this.level = level;
     }
 
     public boolean unbreakable() {
-        return this.lvl >= 8;
+        return this.level >= 8;
     }
 
     public int getLevel() {
-        return lvl;
+        return level;
     }
 }
