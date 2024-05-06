@@ -3,7 +3,6 @@ package xyz.shurlin;
 import net.fabricmc.api.ModInitializer;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import xyz.shurlin.linkage.Linkage;
 import xyz.shurlin.recipe.RecipeSerializers;
 import xyz.shurlin.registry.ModBlockEntities;
 import xyz.shurlin.registry.ModBlocks;
@@ -40,6 +39,5 @@ public class Shurlin implements ModInitializer {
         DimensionTypes.load();
         Biomes.load();
         BiomeGenerator.load();
-        Linkage.init();
     }
 }

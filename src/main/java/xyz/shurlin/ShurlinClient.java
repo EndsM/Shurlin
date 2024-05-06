@@ -10,7 +10,6 @@ import xyz.shurlin.client.gui.screen.HandledScreens;
 import xyz.shurlin.client.options.KeyBindings;
 import xyz.shurlin.client.render.entity.RoamingSpiritEntityRender;
 import xyz.shurlin.entity.EntityTypes;
-import xyz.shurlin.linkage.Linkage;
 import xyz.shurlin.registry.ModBlocks;
 
 @Environment(EnvType.CLIENT)
@@ -38,6 +37,5 @@ public class ShurlinClient implements ClientModInitializer {
 
         HandledScreens.registerAll();
         KeyBindings.init();
-        Linkage.initClient();
     }
 }

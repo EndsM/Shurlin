@@ -20,6 +20,9 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * @author EndsM
+ */
 @Mixin(PlayerEntity.class)
 public abstract class MixinStorageAdapter implements StorageAdapter {
     @Shadow
