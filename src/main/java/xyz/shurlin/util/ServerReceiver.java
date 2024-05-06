@@ -5,8 +5,6 @@ import net.minecraft.block.Block;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.math.BlockPos;
 import xyz.shurlin.block.HolyPearAltarBlock;
-import xyz.shurlin.cultivation.interfaces.CultivatedPlayerAccessor;
-import xyz.shurlin.cultivation.screen.CultivationUI;
 
 public class ServerReceiver {
     public static void load() {
@@ -19,13 +17,6 @@ public class ServerReceiver {
         });
         ServerSidePacketRegistryImpl.INSTANCE.register(Utils.OPEN_CUL, (packetContext, packetByteBuf) -> {
             PlayerEntity player = packetContext.getPlayer();
-
-            if (player instanceof PlayerEntity) {
-                CultivatedPlayerAccessor accessor = (CultivatedPlayerAccessor) player;
-
-                // Will use player as parameter to open screen later
-                player.openHandledScreen(new CultivationUI(accessor));
-            }
         });
     }
 }

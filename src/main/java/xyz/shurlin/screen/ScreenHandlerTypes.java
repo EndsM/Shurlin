@@ -5,7 +5,6 @@ import net.minecraft.screen.ScreenHandler;
 import net.minecraft.screen.ScreenHandlerType;
 import net.minecraft.util.Identifier;
 import xyz.shurlin.Shurlin;
-import xyz.shurlin.cultivation.screen.CultivationScreenHandler;
 import xyz.shurlin.screen.worker.BreakerScreenHandler;
 import xyz.shurlin.screen.worker.CollectorScreenHandler;
 import xyz.shurlin.screen.worker.ConcentratorScreenHandler;
@@ -29,9 +28,6 @@ public class ScreenHandlerTypes {
 
     public static final ScreenHandlerType<BiggerContainerScreenHandler> BIGGER_CONTAINER_SCREEN_HANDLER_TYPE = register("bigger_container",
             BiggerContainerScreenHandler::new);
-
-    public static final ScreenHandlerType<CultivationScreenHandler> CULTIVATION_SCREEN_HANDLER_TYPE = register("cultivation_ui",
-            CultivationScreenHandler::new);
 
     private static <T extends ScreenHandler> ScreenHandlerType<T> register(String registryName, ScreenHandlerRegistry.SimpleClientHandlerFactory<T> entry) {
         return ScreenHandlerRegistry.registerSimple(new Identifier(Shurlin.MODID, registryName), entry);
