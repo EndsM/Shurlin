@@ -8,13 +8,12 @@ import net.minecraft.nbt.NbtCompound;
 import net.minecraft.recipe.Recipe;
 import net.minecraft.recipe.RecipeType;
 import net.minecraft.screen.PropertyDelegate;
-import net.minecraft.util.Tickable;
 import org.jetbrains.annotations.Nullable;
 import xyz.shurlin.block.entity.BasicBlockEntity;
 import xyz.shurlin.recipe.AbstractWorkerRecipe;
 import xyz.shurlin.util.ShurlinLevel;
 
-public abstract class AbstractWorkerBlockEntity extends BasicBlockEntity implements ShurlinLevel, Tickable {
+public abstract class AbstractWorkerBlockEntity extends BasicBlockEntity implements ShurlinLevel {
     final PropertyDelegate propertyDelegate;
     int workTime;
     int workTimeTotal;

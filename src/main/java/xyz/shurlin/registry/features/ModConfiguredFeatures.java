@@ -4,6 +4,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.LeavesBlock;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.math.intprovider.UniformIntProvider;
 import net.minecraft.util.registry.BuiltinRegistries;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.gen.UniformIntDistribution;
@@ -34,7 +35,7 @@ public class ModConfiguredFeatures {
             new WeightedBlockStateProvider()
                     .addState(ModBlocks.PEAR_LEAVES.getDefaultState().with(LeavesBlock.PERSISTENT, true), 9)
                     .addState(ModBlocks.PEAR_RIPE_LEAVES.getDefaultState().with(LeavesBlock.PERSISTENT, true), 1),
-            new BlobFoliagePlacer(UniformIntDistribution.of(2), UniformIntDistribution.of(0), 3),
+            new BlobFoliagePlacer(UniformIntProvider.create(0,2), UniformIntProvider.create(0,0), 3),
             new StraightTrunkPlacer(5, 2, 0),
             new TwoLayersFeatureSize(1, 0, 1)
     ).build());
@@ -42,7 +43,7 @@ public class ModConfiguredFeatures {
             new SimpleBlockStateProvider(ModBlocks.PHOENIX_LOG.getDefaultState()),
             // This tree don't have other types of leaves though
             new SimpleBlockStateProvider(ModBlocks.PHOENIX_LEAVES.getDefaultState()),
-            new DarkOakFoliagePlacer(UniformIntDistribution.of(0), UniformIntDistribution.of(0)),
+            new DarkOakFoliagePlacer(UniformIntProvider.create(0,0), UniformIntProvider.create(0,0)),
             new DarkOakTrunkPlacer(6, 2, 1),
             new ThreeLayersFeatureSize(1, 1, 0, 1, 2, OptionalInt.empty())
     ).build());
