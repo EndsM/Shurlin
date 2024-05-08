@@ -5,20 +5,31 @@ import xyz.shurlin.cultivation.models.enums.RealmStage;
 
 import java.util.Map;
 
+/**
+ * Represents a player entity that has undergone cultivation and possesses cultivation-related attributes.
+ * @author EndsM
+ */
 public class CultivatedPlayer {
-    // I guess I need something I'm familiar with
+    /**
+     * The type of cultivation practiced by the player.
+     */
     private CultivationType cultivationType;
-    // Realms of a cultivation system will not be hard coded, though I need put more thought to it later
-    // It will be created for player as they select their cultivation system, and write to their dataset.
-    // However, this solution need beware of the system's update, if player already have the dataset in them
+    /**
+     * A map that stores the player's cultivation stages. The key is the stage number, and the value is the {@code CultivationRealm} object.
+     */
     private Map<Integer, CultivationRealm> cultivationStages;
-    // Use this as temp solution of specify which stage player is on
-    // Range[0, cultivationType.numberOfRealms - 1]
+    /**
+     * The current stage of cultivation the player is in within their chosen cultivation system.
+     * This value corresponds to the integer keys in the {@code cultivationStages} map.
+     */
     private int currentStage;
-    // This will represent the progress in current realm
-    // Once reach cultivationStages[currentStage].progressBar, will set as this value,
-    // then wait for breakthrough
+    /**
+     * The progress made by the player in the current cultivation stage.
+     */
     private double currentCulProgress;
+    /**
+     * The realm stage achieved by the player in the current cultivation stage.
+     */
     private RealmStage realmStage;
 
     // Use a StorageAdapter interface and a MixinStorageAdapter implementation
