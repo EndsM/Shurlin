@@ -40,7 +40,8 @@ public class CultivationInfoScreen extends HandledScreen<CultivationInfoScreenHa
     @Override
     public void render(MatrixStack matrices, int mouseX, int mouseY, float delta) {
         RenderSystem.clearColor(1, 1, 1, 1);
-        drawCenteredText(matrices, textRenderer, Text.of("Hello World"), width / 2, 15, 114514);
+        drawCenteredText(matrices, textRenderer, Text.of("Hello World"), width / 2, 15, 0x66ccff);
+        drawCenteredText(matrices,textRenderer,Text.of("Cultivation Type: "+handler.getCultivationType().name()),width / 2, 15, 0xffffff);
         super.render(matrices, mouseX, mouseY, delta);
     }
 

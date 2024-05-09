@@ -8,7 +8,7 @@ import xyz.shurlin.Shurlin;
 import xyz.shurlin.cultivation.gui.CultivationInfoScreenHandler;
 
 public class ModScreenHandlerTypes {
-    public static ScreenHandlerType<CultivationInfoScreenHandler> CULTIVATION_INFO = new ExtendedScreenHandlerType<>((syncId, inventory, buf) -> new CultivationInfoScreenHandler(syncId));
+    public static ScreenHandlerType<CultivationInfoScreenHandler> CULTIVATION_INFO = new ExtendedScreenHandlerType<>((syncId, inventory, buf) -> new CultivationInfoScreenHandler(syncId,inventory.player));
 
     public static void Register() {
         Registry.register(Registry.SCREEN_HANDLER, new Identifier(Shurlin.MODID, "cultivation_info"), CULTIVATION_INFO);
