@@ -11,7 +11,6 @@ import xyz.shurlin.client.options.KeyBindings;
 import xyz.shurlin.client.render.entity.RoamingSpiritEntityRender;
 import xyz.shurlin.entity.EntityTypes;
 import xyz.shurlin.registry.ModBlocks;
-import xyz.shurlin.registry.client.ModScreenHandlerTypes;
 
 @Environment(EnvType.CLIENT)
 public class ShurlinClient implements ClientModInitializer {
@@ -38,6 +37,5 @@ public class ShurlinClient implements ClientModInitializer {
 
         HandledScreens.registerAll();
         KeyBindings.init();
-        ModScreenHandlerTypes.Register();
     }
 }
