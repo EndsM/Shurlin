@@ -6,7 +6,6 @@ import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.rendereregistry.v1.EntityRendererRegistry;
 import net.minecraft.client.render.RenderLayer;
-import xyz.shurlin.client.gui.screen.HandledScreens;
 import xyz.shurlin.client.options.KeyBindings;
 import xyz.shurlin.client.render.entity.RoamingSpiritEntityRender;
 import xyz.shurlin.entity.EntityTypes;
@@ -35,9 +34,8 @@ public class ShurlinClient implements ClientModInitializer {
 
         EntityRendererRegistry.INSTANCE
                 .register(EntityTypes.ROAMING_SPIRIT_ENTITY_TYPE, (manager, context) -> new RoamingSpiritEntityRender(manager));
-
-        HandledScreens.registerAll();
-        KeyBindings.init();
         ModScreens.Register();
+
+        KeyBindings.init();
     }
 }
