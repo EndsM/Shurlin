@@ -41,7 +41,7 @@ public class ServerReceiver {
                     @Override
                     public ScreenHandler createMenu(int syncId, PlayerInventory inv, PlayerEntity player) {
                         // Temp test bench
-                        return new CultivationInfoScreen(new CultivationInfoScreenHandler(syncId,player), inv, new LiteralText("Cultivation Info")).getScreenHandler();
+                        return new CultivationInfoScreen(new CultivationInfoScreenHandler(syncId, player), inv, new LiteralText("Cultivation Info")).getScreenHandler();
                     }
                 };
                 player.openHandledScreen(factory);
