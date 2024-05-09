@@ -12,6 +12,6 @@ public class CultivationInfoScreenHandler extends ScreenHandler {
 
     @Override
     public boolean canUse(PlayerEntity player) {
-        return false;
+        return true;
     }
 }

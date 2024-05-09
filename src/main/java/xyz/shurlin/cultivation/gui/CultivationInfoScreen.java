@@ -6,7 +6,6 @@ import net.fabricmc.api.Environment;
 import net.minecraft.client.gui.screen.ingame.HandledScreen;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.entity.player.PlayerInventory;
-import net.minecraft.screen.ScreenHandler;
 import net.minecraft.text.Text;
 
 // HandledScreen and ScreenHandler in Minecraft have a close relationship and work together to provide a user interface for interacting with inventories or containers.
@@ -25,13 +24,12 @@ import net.minecraft.text.Text;
 // Together, HandledScreen and ScreenHandler work in tandem to provide a seamless and interactive user experience for managing inventories or performing actions within the game.
 // They ensure that the player's interactions are properly handled and that the screen is updated accordingly.
 @Environment(EnvType.CLIENT)
-public class CultivationInfoScreen extends HandledScreen<ScreenHandler> {
+public class CultivationInfoScreen extends HandledScreen<CultivationInfoScreenHandler> {
     // private final StorageAdapter storageAdapter;
 
-    public CultivationInfoScreen(ScreenHandler handler, PlayerInventory inventory, Text title) {
+    public CultivationInfoScreen(CultivationInfoScreenHandler handler, PlayerInventory inventory, Text title) {
         super(handler, inventory, title);
     }
-
 
     @Override
     public void render(MatrixStack matrices, int mouseX, int mouseY, float delta) {
