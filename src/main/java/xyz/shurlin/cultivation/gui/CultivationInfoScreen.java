@@ -8,8 +8,6 @@ import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.text.Text;
-import xyz.shurlin.client.gui.screen.HandledScreens;
-import xyz.shurlin.cultivation.interfaces.StorageAdapter;
 
 // HandledScreen and ScreenHandler in Minecraft have a close relationship and work together to provide a user interface for interacting with inventories or containers.
 //
@@ -28,7 +26,7 @@ import xyz.shurlin.cultivation.interfaces.StorageAdapter;
 // They ensure that the player's interactions are properly handled and that the screen is updated accordingly.
 @Environment(EnvType.CLIENT)
 public class CultivationInfoScreen extends HandledScreen<ScreenHandler> {
-   // private final StorageAdapter storageAdapter;
+    // private final StorageAdapter storageAdapter;
 
     public CultivationInfoScreen(ScreenHandler handler, PlayerInventory inventory, Text title) {
         super(handler, inventory, title);
