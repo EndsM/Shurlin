@@ -2,9 +2,7 @@ package xyz.shurlin.cultivation.mixin;
 
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.NbtCompound;
-import net.minecraft.text.Text;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -25,9 +23,6 @@ import java.util.Map;
  */
 @Mixin(PlayerEntity.class)
 public abstract class MixinStorageAdapter implements StorageAdapter {
-    @Shadow
-    public abstract Text getName();
-
     @Unique
     private static final String namespace = "cultivation";
 
@@ -53,7 +48,7 @@ public abstract class MixinStorageAdapter implements StorageAdapter {
     private void writeToNbt(NbtCompound nbt, CallbackInfo ci) {
         // This is triggered when a player logged off a world.
         // Also works while player pause the game in client env. maybe also timed save
-        Shurlin.LOGGER.info("Try to save cultivation data for {}", getName());
+        Shurlin.LOGGER.info("Try to save cultivation data.");
         if (cultivatedPlayer != null) {
             NbtCompound CultivationData = new NbtCompound();
             CultivationData.putInt("CultivationType", cultivatedPlayer.GetCultivationType().getId());
@@ -75,7 +70,7 @@ public abstract class MixinStorageAdapter implements StorageAdapter {
     @Inject(method = "readCustomDataFromNbt", at = @At("TAIL"))
     private void readFromNbt(NbtCompound nbt, CallbackInfo ci) {
         // This is triggered when a player enters a world.
-        Shurlin.LOGGER.info("Try to load cultivation data for {}", getName());
+        Shurlin.LOGGER.info("Try to load cultivation data");
         NbtCompound CultivationData = nbt.getCompound(namespace);
         if (CultivationData != null) {
             cultivatedPlayer.SetCultivationType(CultivationType.getById(CultivationData.getInt("CultivationType")));

@@ -25,10 +25,16 @@ import net.minecraft.text.Text;
 // They ensure that the player's interactions are properly handled and that the screen is updated accordingly.
 @Environment(EnvType.CLIENT)
 public class CultivationInfoScreen extends HandledScreen<CultivationInfoScreenHandler> {
-    // private final StorageAdapter storageAdapter;
+    CultivationInfoScreenHandler handler;
 
     public CultivationInfoScreen(CultivationInfoScreenHandler handler, PlayerInventory inventory, Text title) {
         super(handler, inventory, title);
+        this.handler = handler;
+    }
+
+    @Override
+    protected void init() {
+        super.init();
     }
 
     @Override

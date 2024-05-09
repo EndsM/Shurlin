@@ -34,8 +34,8 @@ public class ShurlinClient implements ClientModInitializer {
 
         EntityRendererRegistry.INSTANCE
                 .register(EntityTypes.ROAMING_SPIRIT_ENTITY_TYPE, (manager, context) -> new RoamingSpiritEntityRender(manager));
-        ModScreens.Register();
 
+        ModScreens.Register();
         KeyBindings.init();
     }
 }
