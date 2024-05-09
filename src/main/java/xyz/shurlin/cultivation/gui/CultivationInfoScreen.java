@@ -1,9 +1,16 @@
 package xyz.shurlin.cultivation.gui;
 
-import net.minecraft.client.gui.screen.Screen;
+import com.mojang.blaze3d.systems.RenderSystem;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
+import net.minecraft.client.gui.screen.ingame.HandledScreen;
 import net.minecraft.client.util.math.MatrixStack;
+import net.minecraft.entity.player.PlayerInventory;
+import net.minecraft.screen.ScreenHandler;
 import net.minecraft.text.Text;
+import xyz.shurlin.client.gui.screen.HandledScreens;
 import xyz.shurlin.cultivation.interfaces.StorageAdapter;
+
 // HandledScreen and ScreenHandler in Minecraft have a close relationship and work together to provide a user interface for interacting with inventories or containers.
 //
 // HandledScreen:
@@ -19,17 +26,24 @@ import xyz.shurlin.cultivation.interfaces.StorageAdapter;
 //
 // Together, HandledScreen and ScreenHandler work in tandem to provide a seamless and interactive user experience for managing inventories or performing actions within the game.
 // They ensure that the player's interactions are properly handled and that the screen is updated accordingly.
+@Environment(EnvType.CLIENT)
+public class CultivationInfoScreen extends HandledScreen<ScreenHandler> {
+   // private final StorageAdapter storageAdapter;
 
-public class CultivationInfoScreen extends Screen {
-    private final StorageAdapter storageAdapter;
-
-    protected CultivationInfoScreen(Text title, StorageAdapter storageAdapter) {
-        super(title);
-        this.storageAdapter = storageAdapter;
+    public CultivationInfoScreen(ScreenHandler handler, PlayerInventory inventory, Text title) {
+        super(handler, inventory, title);
     }
+
 
     @Override
     public void render(MatrixStack matrices, int mouseX, int mouseY, float delta) {
+        RenderSystem.clearColor(1, 1, 1, 1);
+        drawCenteredText(matrices, textRenderer, Text.of("Hello World"), width / 2, 15, 114514);
         super.render(matrices, mouseX, mouseY, delta);
+    }
+
+    @Override
+    protected void drawBackground(MatrixStack matrices, float delta, int mouseX, int mouseY) {
+
     }
 }

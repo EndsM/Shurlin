@@ -39,6 +39,8 @@ public class KeyBindings {
         KeyBindingHelper.registerKeyBinding(open_cul_menu);
         KeyBindingHelper.registerKeyBinding(infuse_spirit);
 
+        // Test act
+
         // This need fix later
         ClientTickEvents.END_CLIENT_TICK.register(minecraftClient -> {
             if (open_cul_menu.isPressed()) {
