@@ -1,4 +1,4 @@
-package xyz.shurlin.registry.client;
+package xyz.shurlin.registry.gui;
 
 import net.fabricmc.fabric.impl.screenhandler.ExtendedScreenHandlerType;
 import net.minecraft.screen.ScreenHandlerType;

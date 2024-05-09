@@ -2,7 +2,7 @@ package xyz.shurlin.cultivation.gui;
 
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.screen.ScreenHandler;
-import xyz.shurlin.registry.client.ModScreenHandlerTypes;
+import xyz.shurlin.registry.gui.ModScreenHandlerTypes;
 
 public class CultivationInfoScreenHandler extends ScreenHandler {
     public CultivationInfoScreenHandler(int syncId) {

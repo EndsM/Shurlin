@@ -7,7 +7,7 @@ import xyz.shurlin.recipe.RecipeSerializers;
 import xyz.shurlin.registry.ModBlockEntities;
 import xyz.shurlin.registry.ModBlocks;
 import xyz.shurlin.registry.ModItems;
-import xyz.shurlin.registry.client.ModScreenHandlerTypes;
+import xyz.shurlin.registry.gui.ModScreenHandlerTypes;
 import xyz.shurlin.registry.features.ModFeatures;
 import xyz.shurlin.screen.ScreenHandlerTypes;
 import xyz.shurlin.util.ServerReceiver;
