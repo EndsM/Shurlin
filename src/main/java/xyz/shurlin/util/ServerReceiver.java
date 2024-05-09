@@ -11,6 +11,7 @@ import net.minecraft.text.Text;
 import net.minecraft.util.math.BlockPos;
 import xyz.shurlin.block.HolyPearAltarBlock;
 import xyz.shurlin.cultivation.gui.CultivationInfoScreen;
+import xyz.shurlin.cultivation.gui.CultivationInfoScreenHandler;
 
 public class ServerReceiver {
     public static void load() {
@@ -33,7 +34,7 @@ public class ServerReceiver {
                     @Override
                     public ScreenHandler createMenu(int syncId, PlayerInventory inv, PlayerEntity player) {
                         // Temp test bench
-                        return new CultivationInfoScreen(null, inv, new LiteralText("Cultivation Info")).getScreenHandler();
+                        return new CultivationInfoScreen(new CultivationInfoScreenHandler(null, syncId), inv, new LiteralText("Cultivation Info")).getScreenHandler();
                     }
                 };
                 player.openHandledScreen(factory);
