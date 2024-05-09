@@ -21,7 +21,7 @@ public class CultivationInfoScreenHandler extends ScreenHandler {
         return true;
     }
 
-    public CultivationType getCultivationType(){
+    public CultivationType getCultivationType() {
         return cultivationType;
     }
 }
