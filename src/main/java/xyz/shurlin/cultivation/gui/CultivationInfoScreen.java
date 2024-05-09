@@ -1,4 +1,4 @@
-package xyz.shurlin.cultivation;
+package xyz.shurlin.cultivation.gui;
 
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.text.Text;
