@@ -10,7 +10,7 @@ import xyz.shurlin.client.gui.screen.worker.ExtractorScreen;
 import xyz.shurlin.screen.ScreenHandlerTypes;
 
 @Environment(EnvType.CLIENT)
-public class HandledScreens<S> {
+public class HandledScreens {
     public static void registerAll() {
         ScreenRegistry.register(ScreenHandlerTypes.BREAKER_SCREEN_HANDLER_TYPE, BreakerScreen::new);
         ScreenRegistry.register(ScreenHandlerTypes.COLLECTOR_SCREEN_HANDLER_TYPE, CollectorScreen::new);
