@@ -14,6 +14,7 @@ import xyz.shurlin.cultivation.gui.CultivationInfoScreen;
 import xyz.shurlin.entity.EntityTypes;
 import xyz.shurlin.registry.ModBlocks;
 import xyz.shurlin.registry.gui.ModScreenHandlerTypes;
+import xyz.shurlin.registry.gui.client.ModScreens;
 
 @Environment(EnvType.CLIENT)
 public class ShurlinClient implements ClientModInitializer {
@@ -40,7 +41,6 @@ public class ShurlinClient implements ClientModInitializer {
 
         HandledScreens.registerAll();
         KeyBindings.init();
-        ScreenRegistry.register(ModScreenHandlerTypes.CULTIVATION_INFO, CultivationInfoScreen::new);
-
+        ModScreens.Register();
     }
 }
