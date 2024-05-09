@@ -5,15 +5,12 @@ import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.rendereregistry.v1.EntityRendererRegistry;
-import net.fabricmc.fabric.api.client.screenhandler.v1.ScreenRegistry;
 import net.minecraft.client.render.RenderLayer;
 import xyz.shurlin.client.gui.screen.HandledScreens;
 import xyz.shurlin.client.options.KeyBindings;
 import xyz.shurlin.client.render.entity.RoamingSpiritEntityRender;
-import xyz.shurlin.cultivation.gui.CultivationInfoScreen;
 import xyz.shurlin.entity.EntityTypes;
 import xyz.shurlin.registry.ModBlocks;
-import xyz.shurlin.registry.gui.ModScreenHandlerTypes;
 import xyz.shurlin.registry.gui.client.ModScreens;
 
 @Environment(EnvType.CLIENT)

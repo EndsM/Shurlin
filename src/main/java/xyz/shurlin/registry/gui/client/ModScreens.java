@@ -5,8 +5,8 @@ import xyz.shurlin.cultivation.gui.CultivationInfoScreen;
 import xyz.shurlin.registry.gui.ModScreenHandlerTypes;
 
 public class ModScreens {
-    public static void Register(){
-         ScreenRegistry.register(ModScreenHandlerTypes.CULTIVATION_INFO, CultivationInfoScreen::new);
+    public static void Register() {
+        ScreenRegistry.register(ModScreenHandlerTypes.CULTIVATION_INFO, CultivationInfoScreen::new);
 
     }
 
