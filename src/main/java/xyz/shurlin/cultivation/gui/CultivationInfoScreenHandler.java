@@ -13,9 +13,9 @@ import java.util.Map;
 public class CultivationInfoScreenHandler extends ScreenHandler {
     private final StorageAdapter storageAdapter;
     private final CultivationType cultivationType;
-    Map<Integer, CultivationRealm> cultivationStages;
-    int currentStage;
-    RealmStage realmStage;
+  private   Map<Integer, CultivationRealm> cultivationStages;
+   private int currentStage;
+   private RealmStage realmStage;
 
     public CultivationInfoScreenHandler(int syncId, PlayerEntity player) {
         super(ModScreenHandlerTypes.CULTIVATION_INFO, syncId);
