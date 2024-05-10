@@ -39,7 +39,7 @@ public class CultivationInfoScreen extends HandledScreen<CultivationInfoScreenHa
 
     @Override
     public void render(MatrixStack matrices, int mouseX, int mouseY, float delta) {
-        RenderSystem.clearColor(1, 1, 1, 1);
+        drawBackground(matrices, delta, mouseX, mouseY);
         drawCenteredText(matrices, textRenderer, Text.of("Hello World"), width / 2, 15, 0x66ccff);
         drawCenteredText(matrices, textRenderer, Text.of("Cultivation Type: " + handler.getCultivationType().name()), width / 2, 30, 0xffffff);
         drawCenteredText(matrices, textRenderer, Text.of("Cultivation Stage: " + handler.getCurrentRealm().getNameKey()), width / 2, 45, 0xffffff);
@@ -49,6 +49,6 @@ public class CultivationInfoScreen extends HandledScreen<CultivationInfoScreenHa
 
     @Override
     protected void drawBackground(MatrixStack matrices, float delta, int mouseX, int mouseY) {
-
+        RenderSystem.clearColor(1.0f, 1.0f, 1.0f, 1.0f);
     }
 }
