@@ -13,9 +13,9 @@ import java.util.Map;
 public class CultivationInfoScreenHandler extends ScreenHandler {
     private final StorageAdapter storageAdapter;
     private final CultivationType cultivationType;
-  private   Map<Integer, CultivationRealm> cultivationStages;
-   private int currentStage;
-   private RealmStage realmStage;
+    private final Map<Integer, CultivationRealm> cultivationStages;
+    private final int currentStage;
+    private final RealmStage realmStage;
 
     public CultivationInfoScreenHandler(int syncId, PlayerEntity player) {
         super(ModScreenHandlerTypes.CULTIVATION_INFO, syncId);
@@ -47,11 +47,12 @@ public class CultivationInfoScreenHandler extends ScreenHandler {
     public RealmStage getRealmStage() {
         return realmStage;
     }
-    public CultivationRealm getCurrentRealm(){
-        if(currentStage>0){
-            return  cultivationStages.get(currentStage);
+
+    public CultivationRealm getCurrentRealm() {
+        if (currentStage > 0) {
+            return cultivationStages.get(currentStage);
         }
-        CultivationRealm realm  = new CultivationRealm();
+        CultivationRealm realm = new CultivationRealm();
         realm.setNameKey("Not cultivated Yet");
         return realm;
     }
