@@ -42,6 +42,8 @@ public class CultivationInfoScreen extends HandledScreen<CultivationInfoScreenHa
         RenderSystem.clearColor(1, 1, 1, 1);
         drawCenteredText(matrices, textRenderer, Text.of("Hello World"), width / 2, 15, 0x66ccff);
         drawCenteredText(matrices, textRenderer, Text.of("Cultivation Type: " + handler.getCultivationType().name()), width / 2, 30, 0xffffff);
+        drawCenteredText(matrices,textRenderer,Text.of("Cultivation Stage: "+handler.getCurrentRealm().getNameKey()),width/2,45,0xffffff);
+
         super.render(matrices, mouseX, mouseY, delta);
     }
 

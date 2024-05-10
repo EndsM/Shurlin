@@ -18,4 +18,12 @@ public class CultivationRealm {
     public void setId(int id) {
         this.id = id;
     }
+
+    public String getNameKey() {
+        return nameKey;
+    }
+
+    public void setNameKey(String nameKey) {
+        this.nameKey = nameKey;
+    }
 }
