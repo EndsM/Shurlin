@@ -29,6 +29,7 @@ public class CultivationInfoScreenHandler extends ScreenHandler {
 
     @Override
     public boolean canUse(PlayerEntity player) {
+        // always be able to open at this point
         return true;
     }
 
