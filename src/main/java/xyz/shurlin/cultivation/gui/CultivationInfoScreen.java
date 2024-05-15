@@ -7,6 +7,8 @@ import net.minecraft.client.gui.screen.ingame.HandledScreen;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.text.Text;
+import net.minecraft.util.Identifier;
+import xyz.shurlin.Shurlin;
 
 // HandledScreen and ScreenHandler in Minecraft have a close relationship and work together to provide a user interface for interacting with inventories or containers.
 //
@@ -26,8 +28,11 @@ import net.minecraft.text.Text;
 @Environment(EnvType.CLIENT)
 public class CultivationInfoScreen extends HandledScreen<CultivationInfoScreenHandler> {
     //
-    private CultivationInfoScreenHandler handler;
-    //
+    private final CultivationInfoScreenHandler handler;
+    // Use Identifier to store the path to texture file
+    Identifier BACKGROUND_TEXTURE = new Identifier(Shurlin.MODID, "textures/gui/cultivation_info.png");
+    private static final int TextColor = 0xffffff;
+    private static final int HighlightColor = 0x66ccff;
 
     public CultivationInfoScreen(CultivationInfoScreenHandler handler, PlayerInventory inventory, Text title) {
         super(handler, inventory, title);
@@ -42,9 +47,9 @@ public class CultivationInfoScreen extends HandledScreen<CultivationInfoScreenHa
     @Override
     public void render(MatrixStack matrices, int mouseX, int mouseY, float delta) {
         drawBackground(matrices, delta, mouseX, mouseY);
-        drawCenteredText(matrices, textRenderer, Text.of("Hello World"), width / 2, 15, 0x66ccff);
-        drawCenteredText(matrices, textRenderer, Text.of("Cultivation Type: " + handler.getCultivationType().name()), width / 2, 30, 0xffffff);
-        drawCenteredText(matrices, textRenderer, Text.of("Cultivation Stage: " + handler.getCurrentRealm().getNameKey()), width / 2, 45, 0xffffff);
+        drawCenteredText(matrices, textRenderer, Text.of("Hello World"), width / 2, 15, HighlightColor);
+        drawCenteredText(matrices, textRenderer, Text.of("Cultivation Type: " + handler.getCultivationType().name()), width / 2, 30, TextColor);
+        drawCenteredText(matrices, textRenderer, Text.of("Cultivation Stage: " + handler.getCurrentRealm().getNameKey()), width / 2, 45, TextColor);
 
         super.render(matrices, mouseX, mouseY, delta);
     }
