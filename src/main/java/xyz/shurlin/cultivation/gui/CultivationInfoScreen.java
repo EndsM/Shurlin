@@ -30,7 +30,7 @@ public class CultivationInfoScreen extends HandledScreen<CultivationInfoScreenHa
     //
     private final CultivationInfoScreenHandler handler;
     // Use Identifier to store the path to texture file
-    Identifier BACKGROUND_TEXTURE = new Identifier(Shurlin.MODID, "textures/gui/cultivation_info.png");
+    private static final Identifier BACKGROUND_TEXTURE = new Identifier(Shurlin.MODID, "textures/gui/cultivation_info.png");
     private static final int TextColor = 0xffffff;
     private static final int HighlightColor = 0x66ccff;
 
@@ -57,5 +57,8 @@ public class CultivationInfoScreen extends HandledScreen<CultivationInfoScreenHa
     @Override
     protected void drawBackground(MatrixStack matrices, float delta, int mouseX, int mouseY) {
         RenderSystem.clearColor(1.0f, 1.0f, 1.0f, 1.0f);
+        if (this.client != null) {
+            this.client.getTextureManager().bindTexture(BACKGROUND_TEXTURE);
+        }
     }
 }
