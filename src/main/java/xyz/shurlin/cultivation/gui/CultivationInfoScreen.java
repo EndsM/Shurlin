@@ -60,5 +60,6 @@ public class CultivationInfoScreen extends HandledScreen<CultivationInfoScreenHa
         if (this.client != null) {
             this.client.getTextureManager().bindTexture(BACKGROUND_TEXTURE);
         }
+        this.drawTexture(matrices, this.x, this.y, 0, 0, this.backgroundWidth, this.backgroundHeight);
     }
 }
