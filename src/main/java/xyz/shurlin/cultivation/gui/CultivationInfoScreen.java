@@ -44,13 +44,14 @@ public class CultivationInfoScreen extends HandledScreen<CultivationInfoScreenHa
     @Override
     protected void init() {
         super.init();
+        this.titleX = (backgroundWidth - textRenderer.getWidth(title)) / 2;
     }
 
     @Override
     public void render(MatrixStack matrices, int mouseX, int mouseY, float delta) {
         this.renderBackground(matrices);
         super.render(matrices, mouseX, mouseY, delta);
-this.drawMouseoverTooltip(matrices,mouseX,mouseY);
+        this.drawMouseoverTooltip(matrices, mouseX, mouseY);
     }
 
     @Override
