@@ -48,13 +48,9 @@ public class CultivationInfoScreen extends HandledScreen<CultivationInfoScreenHa
 
     @Override
     public void render(MatrixStack matrices, int mouseX, int mouseY, float delta) {
-        drawBackground(matrices, delta, mouseX, mouseY);
-        drawCenteredText(matrices, textRenderer, Text.of("Hello World"), width / 2, 15, HighlightColor);
-        drawCenteredText(matrices, textRenderer, Text.of("Cultivation Type: " + handler.getCultivationType().name()), width / 2, 30, TextColor);
-        drawCenteredText(matrices, textRenderer, Text.of("Cultivation Stage: " + handler.getCurrentRealm().getNameKey()), width / 2, 45, TextColor);
-
-        drawCenteredText(matrices, textRenderer, Text.of("Cultivation Realm: ") + handler.getCurrentRealm().getNameKey(), width / 2, 60, TextColor);
+        this.renderBackground(matrices);
         super.render(matrices, mouseX, mouseY, delta);
+this.drawMouseoverTooltip(matrices,mouseX,mouseY);
     }
 
     @Override
@@ -64,5 +60,15 @@ public class CultivationInfoScreen extends HandledScreen<CultivationInfoScreenHa
             this.client.getTextureManager().bindTexture(BACKGROUND_TEXTURE);
         }
         this.drawTexture(matrices, this.x, this.y, 0, 0, this.backgroundWidth, this.backgroundHeight);
+    }
+
+    @Override
+    protected void drawForeground(MatrixStack matrices, int mouseX, int mouseY) {
+        drawCenteredText(matrices, textRenderer, Text.of("Hello World"), width / 2, 15, HighlightColor);
+        drawCenteredText(matrices, textRenderer, Text.of("Cultivation Type: " + handler.getCultivationType().name()), width / 2, 30, TextColor);
+        drawCenteredText(matrices, textRenderer, Text.of("Cultivation Stage: " + handler.getCurrentRealm().getNameKey()), width / 2, 45, TextColor);
+
+        drawCenteredText(matrices, textRenderer, Text.of("Cultivation Realm: ") + handler.getCurrentRealm().getNameKey(), width / 2, 60, TextColor);
+
     }
 }
