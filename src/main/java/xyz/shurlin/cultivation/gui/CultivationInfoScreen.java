@@ -37,6 +37,8 @@ public class CultivationInfoScreen extends HandledScreen<CultivationInfoScreenHa
     public CultivationInfoScreen(CultivationInfoScreenHandler handler, PlayerInventory inventory, Text title) {
         super(handler, inventory, title);
         this.handler = handler;
+        this.backgroundWidth = 256;
+        this.backgroundHeight = 200;
     }
 
     @Override
