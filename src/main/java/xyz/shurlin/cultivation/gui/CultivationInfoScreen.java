@@ -27,12 +27,12 @@ import xyz.shurlin.Shurlin;
 // They ensure that the player's interactions are properly handled and that the screen is updated accordingly.
 @Environment(EnvType.CLIENT)
 public class CultivationInfoScreen extends HandledScreen<CultivationInfoScreenHandler> {
-    //
-    private final CultivationInfoScreenHandler handler;
     // Use Identifier to store the path to texture file
     private static final Identifier BACKGROUND_TEXTURE = new Identifier(Shurlin.MODID, "textures/gui/cultivation_info.png");
     private static final int TextColor = 0xffffff;
     private static final int HighlightColor = 0x66ccff;
+    // Handler will deal with the data side of the things.
+    private final CultivationInfoScreenHandler handler;
 
     public CultivationInfoScreen(CultivationInfoScreenHandler handler, PlayerInventory inventory, Text title) {
         super(handler, inventory, title);
@@ -51,6 +51,7 @@ public class CultivationInfoScreen extends HandledScreen<CultivationInfoScreenHa
         drawCenteredText(matrices, textRenderer, Text.of("Cultivation Type: " + handler.getCultivationType().name()), width / 2, 30, TextColor);
         drawCenteredText(matrices, textRenderer, Text.of("Cultivation Stage: " + handler.getCurrentRealm().getNameKey()), width / 2, 45, TextColor);
 
+        drawCenteredText(matrices, textRenderer, Text.of("Cultivation Realm: ") + handler.getCurrentRealm().getNameKey(), width / 2, 60, TextColor);
         super.render(matrices, mouseX, mouseY, delta);
     }
 
