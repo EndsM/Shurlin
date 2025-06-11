@@ -65,11 +65,12 @@ public class CultivationInfoScreen extends HandledScreen<CultivationInfoScreenHa
 
     @Override
     protected void drawForeground(MatrixStack matrices, int mouseX, int mouseY) {
-        drawCenteredText(matrices, textRenderer, Text.of("Hello World"), width / 2, 15, HighlightColor);
-        drawCenteredText(matrices, textRenderer, Text.of("Cultivation Type: " + handler.getCultivationType().name()), width / 2, 30, TextColor);
-        drawCenteredText(matrices, textRenderer, Text.of("Cultivation Stage: " + handler.getCurrentRealm().getNameKey()), width / 2, 45, TextColor);
+        int centerX = this.backgroundWidth / 2;
 
-        drawCenteredText(matrices, textRenderer, Text.of("Cultivation Realm: ") + handler.getCurrentRealm().getNameKey(), width / 2, 60, TextColor);
+        drawCenteredText(matrices, textRenderer, Text.of("Hello World"), centerX, 15, HighlightColor);
+        drawCenteredText(matrices, textRenderer, Text.of("Cultivation Type: " + handler.getCultivationType().name()), centerX, 30, TextColor);
+
+        drawCenteredText(matrices, textRenderer, Text.of("Cultivation Realm: " + handler.getCurrentRealm().getNameKey()), centerX, 45, TextColor);
 
     }
 }
