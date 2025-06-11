@@ -9,6 +9,7 @@ import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import xyz.shurlin.Shurlin;
+import xyz.shurlin.client.options.KeyBindings;
 
 // HandledScreen and ScreenHandler in Minecraft have a close relationship and work together to provide a user interface for interacting with inventories or containers.
 //
@@ -72,5 +73,14 @@ public class CultivationInfoScreen extends HandledScreen<CultivationInfoScreenHa
 
         drawCenteredText(matrices, textRenderer, Text.of("Cultivation Realm: " + handler.getCurrentRealm().getNameKey()), centerX, 45, TextColor);
 
+    }
+
+    @Override
+    public boolean keyPressed(int keyCode, int scanCode, int modifiers) {
+        if (KeyBindings.open_cul_menu.matchesKey(keyCode, scanCode)) {
+            this.onClose();
+            return true;
+        }
+        return super.keyPressed(keyCode, scanCode, modifiers);
     }
 }

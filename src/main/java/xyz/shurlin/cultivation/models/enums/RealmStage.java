@@ -19,6 +19,13 @@ public enum RealmStage {
         this.name = name;
     }
 
+    public static RealmStage getByLevel(int level) {
+        return Arrays.stream(values())
+                .filter(type -> type.level == level)
+                .findFirst()
+                .orElse(null);
+    }
+
     public int getLevel() {
         return level;
     }
@@ -29,12 +36,5 @@ public enum RealmStage {
 
     public String getName() {
         return name;
-    }
-
-    public static RealmStage getByLevel(int level) {
-        return Arrays.stream(values())
-                .filter(type -> type.level == level)
-                .findFirst()
-                .orElse(null);
     }
 }

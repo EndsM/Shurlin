@@ -11,7 +11,6 @@ import net.minecraft.client.util.InputUtil;
 import net.minecraft.network.PacketByteBuf;
 import org.lwjgl.glfw.GLFW;
 import xyz.shurlin.Shurlin;
-import xyz.shurlin.cultivation.gui.CultivationInfoScreen;
 import xyz.shurlin.util.Utils;
 
 @Environment(EnvType.CLIENT)
@@ -45,17 +44,9 @@ public class KeyBindings {
         // This need fix later
 
         ClientTickEvents.END_CLIENT_TICK.register(minecraftClient -> {
-            while (open_cul_menu.wasPressed()) {
-                String playerName = minecraftClient.player.getName().asString();
-                Shurlin.LOGGER.info(playerName + " Pressed the open cultivation menu key");
-                if (minecraftClient.currentScreen instanceof CultivationInfoScreen) {
-
-                    minecraftClient.player.closeHandledScreen();
-                } else {
-                    Shurlin.LOGGER.info(playerName + " Opened Cultivation screen");
-                    PacketByteBuf buffer = PacketByteBufs.create();
-                    ClientPlayNetworking.send(Utils.OPEN_CUL, buffer);
-                }
+            if (open_cul_menu.wasPressed()) {
+                PacketByteBuf buffer = PacketByteBufs.create();
+                ClientPlayNetworking.send(Utils.OPEN_CUL, buffer);
             }
         });
     }

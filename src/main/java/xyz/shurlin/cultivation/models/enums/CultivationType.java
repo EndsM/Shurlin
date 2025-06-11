@@ -20,6 +20,13 @@ public enum CultivationType {
         this.numberOfRealms = numberOfRealms;
     }
 
+    public static CultivationType getById(int id) {
+        return Arrays.stream(values())
+                .filter(type -> type.id == id)
+                .findFirst()
+                .orElse(null); // or throw an exception if not found
+    }
+
     public int getId() {
         return id;
     }
@@ -30,13 +37,6 @@ public enum CultivationType {
 
     public int getNumberOfRealms() {
         return numberOfRealms;
-    }
-
-    public static CultivationType getById(int id) {
-        return Arrays.stream(values())
-                .filter(type -> type.id == id)
-                .findFirst()
-                .orElse(null); // or throw an exception if not found
     }
 
 }
