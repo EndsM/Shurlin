@@ -9,12 +9,16 @@ import net.fabricmc.fabric.api.networking.v1.PacketByteBufs;
 import net.minecraft.client.option.KeyBinding;
 import net.minecraft.client.util.InputUtil;
 import net.minecraft.network.PacketByteBuf;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.lwjgl.glfw.GLFW;
 import xyz.shurlin.Shurlin;
+import xyz.shurlin.cultivation.gui.CultivationInfoScreen;
 import xyz.shurlin.util.Utils;
 
 @Environment(EnvType.CLIENT)
 public class KeyBindings {
+    private static final Log log = LogFactory.getLog(KeyBindings.class);
     public static KeyBinding perform_cul_act = new KeyBinding(
             "key.shurlin.perform_cul_act",
             InputUtil.Type.KEYSYM,
@@ -42,10 +46,20 @@ public class KeyBindings {
         // Test act
 
         // This need fix later
+
+
         ClientTickEvents.END_CLIENT_TICK.register(minecraftClient -> {
-            if (open_cul_menu.isPressed()) {
-                PacketByteBuf buffer = PacketByteBufs.create();
-                ClientPlayNetworking.send(Utils.OPEN_CUL, buffer);
+            while (open_cul_menu.wasPressed()) {
+                String playerName = minecraftClient.player.getName().asString();
+                Shurlin.LOGGER.info(playerName + " Pressed the open cultivation menu key");
+                if (minecraftClient.currentScreen instanceof CultivationInfoScreen) {
+
+                    minecraftClient.player.closeHandledScreen();
+                } else {
+                    Shurlin.LOGGER.info(playerName + " Opened Cultivation screen");
+                    PacketByteBuf buffer = PacketByteBufs.create();
+                    ClientPlayNetworking.send(Utils.OPEN_CUL, buffer);
+                }
             }
         });
     }
