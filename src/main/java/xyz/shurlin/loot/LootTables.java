@@ -4,6 +4,7 @@ import net.minecraft.util.Identifier;
 import xyz.shurlin.Shurlin;
 
 public class LootTables {
+    // Consider move it to DataGen in later version
     public static final Identifier ANCIENT_OAK_TREE_ROOT_CHEST;
     public static final Identifier ANCIENT_OAK_TREE_LEAVES_CHEST;
     public static final Identifier ANCIENT_BIRCH_TREE_ROOT_CHEST;
