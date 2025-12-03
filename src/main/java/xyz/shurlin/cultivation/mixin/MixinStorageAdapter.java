@@ -2,6 +2,7 @@ package xyz.shurlin.cultivation.mixin;
 
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.NbtCompound;
+import net.minecraft.text.LiteralText;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
@@ -218,5 +219,38 @@ public abstract class MixinStorageAdapter implements StorageAdapter {
             return null;
         }
         return cultivatedPlayer.GetRealmStage();
+    }
+
+    @Override
+    public boolean addCultivationProgress(double amount) {
+        if (cultivatedPlayer == null) {
+            return false;
+        }
+        double current = cultivatedPlayer.GetCurrentCulProgress();
+        double max = 100.0;// TODO: In the future, get this from CultivationRealm based on current stage
+
+        double newAmount = current + amount;
+
+        if (newAmount >= max) {
+            newAmount = newAmount - max;
+
+            // Logic to increase Stage
+            int currentStage = cultivatedPlayer.GetCurrentStage();
+            cultivatedPlayer.SetCurrentStage(currentStage + 1);
+
+            // Visual feedback
+            PlayerEntity player = (PlayerEntity) (Object) this;
+            if (!player.world.isClient) {
+                // Send message to player
+                player.sendMessage(new LiteralText("§6[Cultivation] §fYou have broken through to the next stage!"), false);
+                // Play sound
+                player.world.playSound(null, player.getBlockPos(), net.minecraft.sound.SoundEvents.ENTITY_PLAYER_LEVELUP, net.minecraft.sound.SoundCategory.PLAYERS, 1.0f, 1.0f);
+            }
+        }
+
+        cultivatedPlayer.SetCurrentCulProgress(newAmount);
+        // Later need a packet to sync this to client for the GUI to update
+
+        return true;
     }
 }

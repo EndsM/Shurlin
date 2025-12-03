@@ -27,4 +27,6 @@ public interface StorageAdapter {
     boolean SaveRealmStage(RealmStage realmStage);
 
     RealmStage LoadRealmStage();
+
+    boolean addCultivationProgress(double amount);
 }
