@@ -16,10 +16,10 @@ public class ModEntityTypes {
                     .build("roaming_spirit_entity_type");
 
     private static void registerEntityType(String id, EntityType entityType) {
-        Registry.register(Registry.ENTITY_TYPE,new Identifier(Shurlin.MODID, id),entityType);
+        Registry.register(Registry.ENTITY_TYPE, new Identifier(Shurlin.MODID, id), entityType);
     }
 
     public static void Register() {
-        registerEntityType("roaming_spirit_entity_type",ROAMING_SPIRIT_ENTITY_TYPE);
+        registerEntityType("roaming_spirit_entity_type", ROAMING_SPIRIT_ENTITY_TYPE);
     }
 }
