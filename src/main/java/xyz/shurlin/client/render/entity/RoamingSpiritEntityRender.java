@@ -5,11 +5,13 @@ import net.fabricmc.api.Environment;
 import net.minecraft.client.render.entity.EntityRenderDispatcher;
 import net.minecraft.client.render.entity.MobEntityRenderer;
 import net.minecraft.util.Identifier;
+import xyz.shurlin.Shurlin;
 import xyz.shurlin.client.render.entity.model.RoamingSpiritEntityModel;
 import xyz.shurlin.entity.passive.RoamingSpiritEntity;
 
 @Environment(EnvType.CLIENT)
 public class RoamingSpiritEntityRender extends MobEntityRenderer<RoamingSpiritEntity, RoamingSpiritEntityModel> {
+    private static final Identifier TEXTURE = new Identifier(Shurlin.MODID, "textures/entity/roaming_spirit.png");
 
     public RoamingSpiritEntityRender(EntityRenderDispatcher entityRenderDispatcher) {
         super(entityRenderDispatcher, new RoamingSpiritEntityModel(), 0.5f);
@@ -17,6 +19,6 @@ public class RoamingSpiritEntityRender extends MobEntityRenderer<RoamingSpiritEn
 
     @Override
     public Identifier getTexture(RoamingSpiritEntity entity) {
-        return null;//TODO
+        return TEXTURE;
     }
 }

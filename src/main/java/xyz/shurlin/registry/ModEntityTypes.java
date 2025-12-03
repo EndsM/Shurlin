@@ -1,5 +1,6 @@
 package xyz.shurlin.registry;
 
+import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnGroup;
 import net.minecraft.util.Identifier;
@@ -21,5 +22,8 @@ public class ModEntityTypes {
 
     public static void Register() {
         registerEntityType("roaming_spirit_entity_type", ROAMING_SPIRIT_ENTITY_TYPE);
+
+        // Attr registration
+        FabricDefaultAttributeRegistry.register(ROAMING_SPIRIT_ENTITY_TYPE, RoamingSpiritEntity.createAttributes());
     }
 }
