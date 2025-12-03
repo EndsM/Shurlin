@@ -6,6 +6,7 @@ import org.apache.logging.log4j.Logger;
 import xyz.shurlin.recipe.RecipeSerializers;
 import xyz.shurlin.registry.ModBlockEntities;
 import xyz.shurlin.registry.ModBlocks;
+import xyz.shurlin.registry.ModEntityTypes;
 import xyz.shurlin.registry.ModItems;
 import xyz.shurlin.registry.features.ModFeatures;
 import xyz.shurlin.registry.gui.ModScreenHandlerTypes;
@@ -31,6 +32,7 @@ public class Shurlin implements ModInitializer {
         ModBlocks.Register();
         ModItems.Register();
         ModBlockEntities.Register();
+        ModEntityTypes.Register();
         ModScreenHandlerTypes.Register();
         // Move all old "load" method to my preference method
         RecipeSerializers.load();

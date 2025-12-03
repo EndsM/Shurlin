@@ -8,8 +8,8 @@ import net.fabricmc.fabric.api.client.rendereregistry.v1.EntityRendererRegistry;
 import net.minecraft.client.render.RenderLayer;
 import xyz.shurlin.client.options.KeyBindings;
 import xyz.shurlin.client.render.entity.RoamingSpiritEntityRender;
-import xyz.shurlin.entity.EntityTypes;
 import xyz.shurlin.registry.ModBlocks;
+import xyz.shurlin.registry.ModEntityTypes;
 import xyz.shurlin.registry.gui.client.ModScreens;
 
 @Environment(EnvType.CLIENT)
@@ -33,7 +33,7 @@ public class ShurlinClient implements ClientModInitializer {
                 ModBlocks.CULTIVATION_CRYSTAL);
 
         EntityRendererRegistry.INSTANCE
-                .register(EntityTypes.ROAMING_SPIRIT_ENTITY_TYPE, (manager, context) -> new RoamingSpiritEntityRender(manager));
+                .register(ModEntityTypes.ROAMING_SPIRIT_ENTITY_TYPE, (manager, context) -> new RoamingSpiritEntityRender(manager));
 
         ModScreens.Register();
         KeyBindings.init();
