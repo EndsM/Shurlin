@@ -50,6 +50,10 @@ public class SpiritFoodItem extends Item {
     @Override
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
         super.appendTooltip(stack, world, tooltip, context);
+        if (spiritPropertyType != null) {
+            // Maybe add ability to show different color for different types
+            tooltip.add(new TranslatableText(this.spiritPropertyType.getTranslationKey()).formatted(Formatting.GOLD));
+        }
         tooltip.add(new TranslatableText("tooltip.shurlin.spirit_energy", this.spiritValue).formatted(Formatting.GREEN));
     }
 }

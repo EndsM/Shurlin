@@ -59,12 +59,16 @@ public class ModItems {
     public static final Item PEAR = new SpiritFoodItem(
             new Item.Settings()
                     .food(new FoodComponent.Builder().hunger(3).snack().saturationModifier(0.3f).build())
-                    .group(ItemGroups.SHURLIN), 1.0, SpiritPropertyType.WOOD
+                    .group(ItemGroups.SHURLIN),
+            1.0,
+            SpiritPropertyType.WOOD
     );
     public static final Item HOLY_PEAR = new SpiritFoodItem(
             new Item.Settings()
                     .food(new FoodComponent.Builder().hunger(5).snack().saturationModifier(0.6f).build())
-                    .group(ItemGroups.SHURLIN), 10.0, SpiritPropertyType.WOOD
+                    .group(ItemGroups.SHURLIN),
+            10.0,
+            SpiritPropertyType.WOOD
     );
     // Will need to consider should we still using such mode for special items later.
     // Because I plan to have cultivation equipments crafting system that have randomized or generative stats
