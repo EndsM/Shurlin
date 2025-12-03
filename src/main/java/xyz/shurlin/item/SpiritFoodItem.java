@@ -12,15 +12,18 @@ import net.minecraft.util.Formatting;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 import xyz.shurlin.cultivation.interfaces.StorageAdapter;
+import xyz.shurlin.cultivation.models.enums.SpiritPropertyType;
 
 import java.util.List;
 
 public class SpiritFoodItem extends Item {
     private final double spiritValue;
+    private final SpiritPropertyType spiritPropertyType;
 
-    public SpiritFoodItem(Settings settings, double spiritValue) {
+    public SpiritFoodItem(Settings settings, double spiritValue, SpiritPropertyType spiritPropertyType) {
         super(settings);
         this.spiritValue = spiritValue;
+        this.spiritPropertyType = spiritPropertyType;
     }
 
     @Override
