@@ -1,20 +1,26 @@
 package xyz.shurlin.item;
 
+import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.FoodComponent;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.text.LiteralText;
+import net.minecraft.text.Text;
+import net.minecraft.text.TranslatableText;
+import net.minecraft.util.Formatting;
 import net.minecraft.world.World;
+import org.jetbrains.annotations.Nullable;
 import xyz.shurlin.cultivation.interfaces.StorageAdapter;
+
+import java.util.List;
 
 public class SpiritFoodItem extends Item {
     private final double spiritValue;
 
-    public SpiritFoodItem(double spiritValue) {
-        super(new Item.Settings().group(ItemGroups.SHURLIN)
-                .food(new FoodComponent.Builder().hunger(4).saturationModifier(0.3f).alwaysEdible().build()));
+    public SpiritFoodItem(Settings settings,double spiritValue) {
+        super(settings);
         this.spiritValue = spiritValue;
     }
 
@@ -37,5 +43,11 @@ public class SpiritFoodItem extends Item {
             }
         }
         return result;
+    }
+
+    @Override
+    public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
+        super.appendTooltip(stack, world, tooltip, context);
+        tooltip.add(new TranslatableText("tooltip.shurlin.spirit_energy", this.spiritValue).formatted(Formatting.GREEN));
     }
 }
