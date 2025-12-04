@@ -4,10 +4,7 @@ import net.fabricmc.api.ModInitializer;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import xyz.shurlin.recipe.RecipeSerializers;
-import xyz.shurlin.registry.ModBlockEntities;
-import xyz.shurlin.registry.ModBlocks;
-import xyz.shurlin.registry.ModEntityTypes;
-import xyz.shurlin.registry.ModItems;
+import xyz.shurlin.registry.*;
 import xyz.shurlin.registry.features.ModFeatures;
 import xyz.shurlin.registry.gui.ModScreenHandlerTypes;
 import xyz.shurlin.screen.ScreenHandlerTypes;
@@ -33,7 +30,9 @@ public class Shurlin implements ModInitializer {
         ModItems.Register();
         ModBlockEntities.Register();
         ModEntityTypes.Register();
+        ModStatusEffects.Register();
         ModScreenHandlerTypes.Register();
+
         // Move all old "load" method to my preference method
         RecipeSerializers.load();
         ServerReceiver.load();
