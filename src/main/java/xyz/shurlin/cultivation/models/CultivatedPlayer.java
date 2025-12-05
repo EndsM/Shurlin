@@ -1,9 +1,7 @@
 package xyz.shurlin.cultivation.models;
 
-import xyz.shurlin.cultivation.models.enums.CultivationType;
-import xyz.shurlin.cultivation.models.enums.RealmStage;
-
-import java.util.Map;
+import net.minecraft.util.Identifier;
+import xyz.shurlin.cultivation.CultivationRegistry;
 
 /**
  * Represents a player entity that has undergone cultivation and possesses cultivation-related attributes.
@@ -11,70 +9,69 @@ import java.util.Map;
  * @author EndsM
  */
 public class CultivatedPlayer {
-    /**
-     * The type of cultivation practiced by the player.
-     */
-    private CultivationType cultivationType;
-    /**
-     * A map that stores the player's cultivation stages. The key is the stage number, and the value is the {@code CultivationRealm} object.
-     */
-    private Map<Integer, CultivationRealm> cultivationStages;
-    /**
-     * The current stage of cultivation the player is in within their chosen cultivation system.
-     * This value corresponds to the integer keys in the {@code cultivationStages} map.
-     */
-    private int currentStage;
-    /**
-     * The progress made by the player in the current cultivation stage.
-     */
-    private double currentCulProgress;
-    /**
-     * The realm stage achieved by the player in the current cultivation stage.
-     */
-    private RealmStage realmStage;
+    // Default to an "empty" type usually, or null
+    private Identifier cultivationTypeId = new Identifier("minecraft", "empty");
+    private int majorRealmIndex = 0;
+    private int minorRealmIndex = 0;
+    private double currentProgress = 0.0;
+    private boolean isBottlenecked = false;
 
-    /**
-     * Returns the type of cultivation practiced by the player.
-     *
-     * @return The cultivation type chosen by the player.
-     */
-    public CultivationType GetCultivationType() {
-        return cultivationType;
+
+    // Logic Helpers: Gate between stored data and abstract data
+
+    public CultivationType getCultivationType() {
+        return CultivationRegistry.INSTANCE.get(this.cultivationTypeId);
     }
 
-    public void SetCultivationType(CultivationType cultivationType) {
-        this.cultivationType = cultivationType;
+    // Retrieves the specific definition of the Major Realm the player is currently in
+    public CultivationRealm getCurrentRealmDefinition() {
+        CultivationType type = getCultivationType();
+        if (type == null) {
+            return null;
+        }
+        return type.getRealm(this.majorRealmIndex);
     }
 
-    public Map<Integer, CultivationRealm> GetCultivationStages() {
-        return cultivationStages;
+
+    // Standard getter and setter
+
+    public Identifier getCultivationTypeId() {
+        return cultivationTypeId;
     }
 
-    public void SetCultivationStages(Map<Integer, CultivationRealm> cultivationStages) {
-        this.cultivationStages = cultivationStages;
+    public void setCultivationTypeId(Identifier cultivationTypeId) {
+        this.cultivationTypeId = cultivationTypeId;
     }
 
-    public int GetCurrentStage() {
-        return currentStage;
+    public int getMajorRealmIndex() {
+        return majorRealmIndex;
     }
 
-    public void SetCurrentStage(int currentStage) {
-        this.currentStage = currentStage;
+    public void setMajorRealmIndex(int majorRealmIndex) {
+        this.majorRealmIndex = majorRealmIndex;
     }
 
-    public double GetCurrentCulProgress() {
-        return currentCulProgress;
+    public int getMinorRealmIndex() {
+        return minorRealmIndex;
     }
 
-    public void SetCurrentCulProgress(double currentCulProgress) {
-        this.currentCulProgress = currentCulProgress;
+    public void setMinorRealmIndex(int minorRealmIndex) {
+        this.minorRealmIndex = minorRealmIndex;
     }
 
-    public RealmStage GetRealmStage() {
-        return realmStage;
+    public double getCurrentProgress() {
+        return currentProgress;
     }
 
-    public void SetRealmStage(RealmStage realmStage) {
-        this.realmStage = realmStage;
+    public void setCurrentProgress(double currentProgress) {
+        this.currentProgress = currentProgress;
+    }
+
+    public boolean isBottlenecked() {
+        return isBottlenecked;
+    }
+
+    public void setBottlenecked(boolean bottlenecked) {
+        isBottlenecked = bottlenecked;
     }
 }

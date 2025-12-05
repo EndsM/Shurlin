@@ -68,10 +68,11 @@ public class CultivationInfoScreen extends HandledScreen<CultivationInfoScreenHa
     protected void drawForeground(MatrixStack matrices, int mouseX, int mouseY) {
         int centerX = this.backgroundWidth / 2;
 
-        drawCenteredText(matrices, textRenderer, Text.of("Cultivation Type: " + handler.getCultivationType().name()), centerX, 30, TextColor);
+        drawCenteredText(matrices, textRenderer, Text.of("Path: " + handler.getTypeName()), centerX, 30, TextColor);
+        drawCenteredText(matrices, textRenderer, Text.of("Realm: " + handler.getRealmName()), centerX, 45, TextColor);
 
-        drawCenteredText(matrices, textRenderer, Text.of("Cultivation Realm: " + handler.getCurrentRealm().getNameKey()), centerX, 45, TextColor);
-
+        String progressText = String.format("%.1f%%", handler.getProgressPercentage() * 100);
+        drawCenteredText(matrices, textRenderer, Text.of(progressText), centerX, 75, HighlightColor);
     }
 
     @Override

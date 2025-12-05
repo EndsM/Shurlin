@@ -1,32 +1,25 @@
 package xyz.shurlin.cultivation.interfaces;
 
-import xyz.shurlin.cultivation.models.CultivationRealm;
-import xyz.shurlin.cultivation.models.enums.CultivationType;
-import xyz.shurlin.cultivation.models.enums.RealmStage;
-
-import java.util.Map;
+import net.minecraft.util.Identifier;
+import xyz.shurlin.cultivation.models.CultivatedPlayer;
 
 
 public interface StorageAdapter {
-    boolean SaveCultivationType(CultivationType cultivationType);
+    CultivatedPlayer GetCultivatedPlayer();
 
-    CultivationType LoadCultivationType();
+    void SetCultivationType(Identifier typeId);
 
-    boolean SaveCultivationStages(Map<Integer, CultivationRealm> cultivationStages);
+    boolean AddCultivationProgress(double amount);
 
-    Map<Integer, CultivationRealm> LoadCultivationStages();
+    boolean AttemptBreakthrough();
 
-    boolean SaveCurrentStage(int currentStage);
+    boolean IsBottlenecked();
 
-    int LoadCurrentStage();
+    int GetMajorRealmIndex();
 
-    boolean SaveCurrentCulProgress(double currentCulProgress);
+    int GetMinorRealmIndex();
 
-    double LoadCurrentCulProgress();
+    double GetProgress();
 
-    boolean SaveRealmStage(RealmStage realmStage);
-
-    RealmStage LoadRealmStage();
-
-    boolean addCultivationProgress(double amount);
+    double GetMaxProgress();
 }

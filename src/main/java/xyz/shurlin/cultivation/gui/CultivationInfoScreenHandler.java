@@ -1,30 +1,40 @@
 package xyz.shurlin.cultivation.gui;
 
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.player.PlayerInventory;
+import net.minecraft.network.PacketByteBuf;
 import net.minecraft.screen.ScreenHandler;
-import xyz.shurlin.cultivation.interfaces.StorageAdapter;
+import net.minecraft.util.Identifier;
+import xyz.shurlin.cultivation.CultivationRegistry;
 import xyz.shurlin.cultivation.models.CultivationRealm;
-import xyz.shurlin.cultivation.models.enums.CultivationType;
-import xyz.shurlin.cultivation.models.enums.RealmStage;
+import xyz.shurlin.cultivation.models.CultivationType;
 import xyz.shurlin.registry.gui.ModScreenHandlerTypes;
 
-import java.util.Map;
-
 public class CultivationInfoScreenHandler extends ScreenHandler {
-    private final StorageAdapter storageAdapter;
-    private final CultivationType cultivationType;
-    private final Map<Integer, CultivationRealm> cultivationStages;
-    private final int currentStage;
-    private final RealmStage realmStage;
+    // Client side cache for display
+    private CultivationType cultivationType;
+    private int majorRealmIndex;
+    private int minorRealmIndex;
+    private double currentProgress;
+    private double maxProgress;
+    private boolean isBottlenecked;
 
+    // Server side constructor
     public CultivationInfoScreenHandler(int syncId, PlayerEntity player) {
         super(ModScreenHandlerTypes.CULTIVATION_INFO, syncId);
-        // The mixin already put the MixinStorageAdapter into the class, so it can just find impl in there.
-        storageAdapter = (StorageAdapter) player;
-        cultivationType = storageAdapter.LoadCultivationType();
-        cultivationStages = storageAdapter.LoadCultivationStages();
-        currentStage = storageAdapter.LoadCurrentStage();
-        realmStage = storageAdapter.LoadRealmStage();
+    }
+
+    // Client side constructor
+    public CultivationInfoScreenHandler(int syncId, PlayerInventory inventory, PacketByteBuf buf) {
+        super(ModScreenHandlerTypes.CULTIVATION_INFO, syncId);
+        Identifier typeId = buf.readIdentifier();
+        this.cultivationType = CultivationRegistry.INSTANCE.get(typeId);
+
+        this.majorRealmIndex = buf.readInt();
+        this.minorRealmIndex = buf.readInt();
+        this.currentProgress = buf.readDouble();
+        this.isBottlenecked = buf.readBoolean();
+        this.maxProgress = buf.readDouble();
     }
 
     @Override
@@ -33,28 +43,27 @@ public class CultivationInfoScreenHandler extends ScreenHandler {
         return true;
     }
 
-    public CultivationType getCultivationType() {
-        return cultivationType;
+    // Getters for screen
+    public String getTypeName() {
+        // TODO: Add getName() in CultivationType for name
+        return "Shurlin Path";
     }
 
-    public int getCurrentStage() {
-        return currentStage;
+    public String getRealmName() {
+        if (cultivationType == null) return "Unknown";
+        CultivationRealm realm = cultivationType.getRealm(majorRealmIndex);
+        if (realm == null) return "None";
+        return realm.getName().getString();
     }
 
-    public Map<Integer, CultivationRealm> getCultivationStages() {
-        return cultivationStages;
+
+    public String getStatusText() {
+        if (isBottlenecked) return "Bottleneck Reached!";
+        return "Stage: " + (minorRealmIndex + 1);
     }
 
-    public RealmStage getRealmStage() {
-        return realmStage;
-    }
-
-    public CultivationRealm getCurrentRealm() {
-        if (currentStage > 0) {
-            return cultivationStages.get(currentStage);
-        }
-        CultivationRealm realm = new CultivationRealm();
-        realm.setNameKey("Not cultivated Yet");
-        return realm;
+    public float getProgressPercentage() {
+        if (maxProgress <= 0) return 0;
+        return (float) (currentProgress / maxProgress);
     }
 }

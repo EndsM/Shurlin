@@ -38,7 +38,7 @@ public class SpiritFoodItem extends Item {
                 StorageAdapter cultivation = (StorageAdapter) player;
 
                 // Add the progress
-                cultivation.addCultivationProgress(this.spiritValue);
+                cultivation.AddCultivationProgress(this.spiritValue);
 
                 // Basic Feedback
                 player.sendMessage(new LiteralText("§aYou absorbed " + this.spiritValue + " spirit energy."), true);
