@@ -33,7 +33,10 @@ public class Shurlin implements ModInitializer {
         ModStatusEffects.Register();
         ModScreenHandlerTypes.Register();
 
-        // Move all old "load" method to my preference method
+        // Register the cultivation path
+        ModCultivations.Register();
+
+        // TODO: Move all old "load" method to my preference method
         RecipeSerializers.load();
         ServerReceiver.load();
         ScreenHandlerTypes.load();
