@@ -5,7 +5,7 @@ import net.fabricmc.api.Environment;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.text.LiteralText;
+import net.minecraft.text.TranslatableText;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.Identifier;
@@ -46,13 +46,13 @@ public class CultivationCrystalBlock extends BlockWithEntity {
             if (cp.getCultivationTypeId().toString().equals("minecraft:empty")) {
                 storage.SetCultivationType(new Identifier(Shurlin.MODID, "shurlin_path"));
 
-                player.sendMessage(new LiteralText("§b[启灵石] §f灵光入体，你已踏入修仙之途！"), false);
+                player.sendMessage(new TranslatableText("message.shurlin.cultivation_crystal.success"), false);
 
                 world.removeBlock(pos, false);
 
                 return ActionResult.SUCCESS;
             } else {
-                player.sendMessage(new LiteralText("§7[启灵石] 你已身具灵根，此石对你已无用处。"), true);
+                player.sendMessage(new TranslatableText("message.shurlin.cultivation_crystal.fail"), true);
                 return ActionResult.FAIL;
             }
         }

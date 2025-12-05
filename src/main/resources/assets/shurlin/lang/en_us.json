@@ -197,6 +197,9 @@
   "type.shurlin.ice": "Ice",
   "type.shurlin.time_space": "Time Space",
 
+  "message.shurlin.cultivation_crystal.success": "§b[Awakening Stone] §fSpiritual light enters your body, you have embarked on the path of cultivation!",
+  "message.shurlin.cultivation_crystal.fail": "§7[Awakening Stone] You had entered path of cultivation already, this stone is useless to you.",
+
   "death.attack.shurlin.small_bud": "%1$s violates Shurlin",
   "death.attack.shurlin.small_bud.player": "%1$s violates Shurlin whilst %2$s"
 }

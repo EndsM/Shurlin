@@ -224,6 +224,9 @@
   "type.shurlin.ice": "冰",
   "type.shurlin.time_space": "时空",
 
+  "message.shurlin.cultivation_crystal.success": "§b[启灵石] §f灵光入体，你已踏入修仙之途！",
+  "message.shurlin.cultivation_crystal.fail": "§7[启灵石] 你完成启灵，此石对你已无用处。",
+
   "death.attack.shurlin.small_bud": "%1$s触犯了仙灵",
   "death.attack.shurlin.small_bud.player": "%1$s在与%2$s战斗时触犯了仙灵"
 }
