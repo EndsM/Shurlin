@@ -53,7 +53,7 @@ public class ModBlocks {
     public static final Block HOLY_FARMER_PORTAL = new HolyFarmerPortalBlock(FabricBlockSettings.of(Material.PORTAL).noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.GLASS).luminance(12));
     public static final Block CULTIVATION_CRYSTAL = new CultivationCrystalBlock(
             FabricBlockSettings.of(Material.GLASS)
-                    .strength(3.0f,3.0f).nonOpaque());
+                    .strength(3.0f, 3.0f).nonOpaque());
     public static final Block SUCCULENT_BLOCK = new SucculentBlock(
             FabricBlockSettings.of(Material.ORGANIC_PRODUCT, MapColor.PALE_GREEN).slipperiness(0.8F).sounds(BlockSoundGroup.SLIME).nonOpaque()
                     .luminance((state) -> state.get(SucculentBlock.SHINING) ? 8 : 0)
