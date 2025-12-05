@@ -9,9 +9,9 @@ import xyz.shurlin.cultivation.models.CultivationType;
 
 public class ModCultivations {
     public static final CultivationType SHURLIN_PATH = new CultivationType.Builder()
-            .addRealm(new CultivationRealm("realm.shurlin.soldier", 9, 20.0, 1.4))
-            .addRealm(new CultivationRealm("realm.shurlin.emissary", 9, 350.0, 1.3))
-            .addRealm(new CultivationRealm("realm.shurlin.teacher", 9, 3000.0, 1.25))
+            .addRealm(new CultivationRealm("realm.shurlin.novice", 9, 20.0, 1.4))
+            .addRealm(new CultivationRealm("realm.shurlin.adept", 9, 350.0, 1.3))
+            .addRealm(new CultivationRealm("realm.shurlin.master", 9, 3000.0, 1.25))
             .build();
 
     public static void Register() {
