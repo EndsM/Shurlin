@@ -3,6 +3,7 @@ package xyz.shurlin;
 import net.fabricmc.api.ModInitializer;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import xyz.shurlin.cultivation.CultivationRegistry;
 import xyz.shurlin.recipe.RecipeSerializers;
 import xyz.shurlin.registry.*;
 import xyz.shurlin.registry.features.ModFeatures;
@@ -34,6 +35,7 @@ public class Shurlin implements ModInitializer {
         ModScreenHandlerTypes.Register();
 
         // Register the cultivation path
+        CultivationRegistry.init();
         ModCultivations.Register();
 
         // TODO: Move all old "load" method to my preference method
