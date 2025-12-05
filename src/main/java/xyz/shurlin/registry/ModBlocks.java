@@ -51,7 +51,9 @@ public class ModBlocks {
     public static final Block MYSTERIOUS_STONE = new MysteriousStoneBlock(FabricBlockSettings.of(Material.STONE).strength(-1, 3600));
     public static final Block PLANT_OBSIDIAN = new Block(BlockSettings.OBSIDIAN);
     public static final Block HOLY_FARMER_PORTAL = new HolyFarmerPortalBlock(FabricBlockSettings.of(Material.PORTAL).noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.GLASS).luminance(12));
-    public static final Block CULTIVATION_CRYSTAL = new CultivationCrystalBlock(FabricBlockSettings.of(Material.GLASS).strength(-1).nonOpaque());
+    public static final Block CULTIVATION_CRYSTAL = new CultivationCrystalBlock(
+            FabricBlockSettings.of(Material.GLASS)
+                    .strength(3.0f,3.0f).nonOpaque());
     public static final Block SUCCULENT_BLOCK = new SucculentBlock(
             FabricBlockSettings.of(Material.ORGANIC_PRODUCT, MapColor.PALE_GREEN).slipperiness(0.8F).sounds(BlockSoundGroup.SLIME).nonOpaque()
                     .luminance((state) -> state.get(SucculentBlock.SHINING) ? 8 : 0)
@@ -135,7 +137,7 @@ public class ModBlocks {
         registerBlock("plant_obsidian", PLANT_OBSIDIAN, true);
         // Four stuff below are not supposed to have BlockItem
         registerBlock("holy_farmer_portal", HOLY_FARMER_PORTAL, false);
-        registerBlock("cultivation_crystal", CULTIVATION_CRYSTAL, false);
+        registerBlock("cultivation_crystal", CULTIVATION_CRYSTAL, true);
         registerBlock("succulent_block", SUCCULENT_BLOCK, false);
         registerBlock("llandudno_block", LLANDUDNO, false);
         // Saplings
