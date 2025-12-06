@@ -6,7 +6,7 @@ import net.minecraft.screen.ArrayPropertyDelegate;
 import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.world.World;
 import xyz.shurlin.inventory.WorkerInventory;
-import xyz.shurlin.screen.ScreenHandlerTypes;
+import xyz.shurlin.registry.gui.ModScreenHandlerTypes;
 import xyz.shurlin.screen.slot.WorkerInputSlot;
 import xyz.shurlin.screen.slot.WorkerOutputSlot;
 import xyz.shurlin.util.ShurlinLevel;
@@ -14,7 +14,7 @@ import xyz.shurlin.util.ShurlinLevel;
 public class BreakerScreenHandler extends AbstractWorkerScreenHandler {
 
     public BreakerScreenHandler(int syncId, Inventory inventory, PlayerInventory playerInventory, PropertyDelegate propertyDelegate, World world, ShurlinLevel shurlinLevel) {
-        super(ScreenHandlerTypes.BREAKER_SCREEN_HANDLER_TYPE, syncId, inventory, playerInventory, propertyDelegate, world, shurlinLevel);
+        super(ModScreenHandlerTypes.BREAKER_SCREEN_HANDLER_TYPE, syncId, inventory, playerInventory, propertyDelegate, world, shurlinLevel);
         this.addSlot(new WorkerInputSlot(inventory, 0, 56, 35, shurlinLevel));
         this.addSlot(new WorkerOutputSlot(inventory, playerInventory.player, 1, 116, 35));
         this.addPlayerInventorySlots();

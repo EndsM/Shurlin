@@ -8,7 +8,6 @@ import xyz.shurlin.recipe.RecipeSerializers;
 import xyz.shurlin.registry.*;
 import xyz.shurlin.registry.features.ModFeatures;
 import xyz.shurlin.registry.gui.ModScreenHandlerTypes;
-import xyz.shurlin.screen.ScreenHandlerTypes;
 import xyz.shurlin.util.ServerReceiver;
 import xyz.shurlin.world.biome.BiomeGenerator;
 import xyz.shurlin.world.biome.Biomes;
@@ -41,7 +40,6 @@ public class Shurlin implements ModInitializer {
         // TODO: Move all old "load" method to my preference method
         RecipeSerializers.load();
         ServerReceiver.load();
-        ScreenHandlerTypes.load();
         ChunkGeneratorTypes.load();
         Dimensions.load();
         DimensionTypes.load();

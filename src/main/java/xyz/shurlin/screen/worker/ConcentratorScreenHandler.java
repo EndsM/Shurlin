@@ -9,7 +9,7 @@ import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.slot.Slot;
 import net.minecraft.world.World;
 import xyz.shurlin.inventory.WorkerInventory;
-import xyz.shurlin.screen.ScreenHandlerTypes;
+import xyz.shurlin.registry.gui.ModScreenHandlerTypes;
 import xyz.shurlin.screen.slot.WorkerInputSlot;
 import xyz.shurlin.screen.slot.WorkerOutputSlot;
 import xyz.shurlin.util.ShurlinLevel;
@@ -17,7 +17,7 @@ import xyz.shurlin.util.ShurlinLevel;
 public class ConcentratorScreenHandler extends AbstractWorkerScreenHandler {
 
     public ConcentratorScreenHandler(int syncId, Inventory inventory, PlayerInventory playerInventory, PropertyDelegate propertyDelegate, World world, ShurlinLevel shurlinLevel) {
-        super(ScreenHandlerTypes.CONCENTRATOR_SCREEN_HANDLER_TYPE, syncId, inventory, playerInventory, propertyDelegate, world, shurlinLevel);
+        super(ModScreenHandlerTypes.CONCENTRATOR_SCREEN_HANDLER_TYPE, syncId, inventory, playerInventory, propertyDelegate, world, shurlinLevel);
         this.addSlot(new Slot(inventory, 3, 15, 39));
         this.addSlot(new Slot(inventory, 2, 33, 39));
         this.addSlot(new Slot(inventory, 1, 51, 39));
