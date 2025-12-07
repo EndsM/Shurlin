@@ -4,7 +4,6 @@ import net.fabricmc.api.ModInitializer;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import xyz.shurlin.cultivation.CultivationRegistry;
-import xyz.shurlin.recipe.RecipeSerializers;
 import xyz.shurlin.registry.*;
 import xyz.shurlin.registry.features.ModFeatures;
 import xyz.shurlin.registry.gui.ModScreenHandlerTypes;
@@ -30,6 +29,7 @@ public class Shurlin implements ModInitializer {
         ModItems.Register();
         ModBlockEntities.Register();
         ModEntityTypes.Register();
+        ModRecipes.Register();
         ModStatusEffects.Register();
         ModScreenHandlerTypes.Register();
 
@@ -38,7 +38,6 @@ public class Shurlin implements ModInitializer {
         ModCultivations.Register();
 
         // TODO: Move all old "load" method to my preference method
-        RecipeSerializers.load();
         ServerReceiver.load();
         ChunkGeneratorTypes.load();
         Dimensions.load();

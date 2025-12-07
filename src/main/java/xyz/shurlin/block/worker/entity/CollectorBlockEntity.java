@@ -5,8 +5,8 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
-import xyz.shurlin.recipe.RecipeTypes;
 import xyz.shurlin.registry.ModBlockEntities;
+import xyz.shurlin.registry.ModRecipes;
 import xyz.shurlin.screen.worker.CollectorScreenHandler;
 import xyz.shurlin.util.Collectable;
 
@@ -14,7 +14,7 @@ public class CollectorBlockEntity extends AbstractWorkerBlockEntity {
     private int consistence;
 
     public CollectorBlockEntity(int level) {
-        super(ModBlockEntities.COLLECTOR_BLOCK_ENTITY, "collector", level, RecipeTypes.COLLECTING);
+        super(ModBlockEntities.COLLECTOR_BLOCK_ENTITY, "collector", level, ModRecipes.COLLECTING_TYPE);
     }
 
     public CollectorBlockEntity() {

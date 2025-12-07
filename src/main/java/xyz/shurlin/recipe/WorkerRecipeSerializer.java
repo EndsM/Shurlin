@@ -61,7 +61,7 @@ public class WorkerRecipeSerializer<T extends AbstractWorkerRecipe> implements R
         buf.writeFloat(recipe.shurlinLevel.getShurlinLevel());
     }
 
-    interface RecipeFactory<T extends AbstractWorkerRecipe> {
+    public interface RecipeFactory<T extends AbstractWorkerRecipe> {
         T create(Identifier id, String group, Ingredient input, ItemStack output, int cookTime, ShurlinLevel shurlinLevel);
     }
 }

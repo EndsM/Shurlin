@@ -5,14 +5,14 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
 import xyz.shurlin.recipe.ConcentratorRecipe;
-import xyz.shurlin.recipe.RecipeTypes;
 import xyz.shurlin.registry.ModBlockEntities;
+import xyz.shurlin.registry.ModRecipes;
 import xyz.shurlin.screen.worker.ConcentratorScreenHandler;
 
 public class ConcentratorBlockEntity extends AbstractWorkerBlockEntity {
 
     public ConcentratorBlockEntity(int level) {
-        super(ModBlockEntities.CONCENTRATOR_BLOCK_ENTITY, "concentrator", level, RecipeTypes.CONCENTRATING);
+        super(ModBlockEntities.CONCENTRATOR_BLOCK_ENTITY, "concentrator", level, ModRecipes.CONCENTRATING_TYPE);
     }
 
     public ConcentratorBlockEntity() {

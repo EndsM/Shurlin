@@ -16,6 +16,7 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.JsonHelper;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.World;
+import xyz.shurlin.registry.ModRecipes;
 import xyz.shurlin.util.ShurlinLevel;
 import xyz.shurlin.util.Utils;
 
@@ -25,7 +26,7 @@ public class ConcentratorRecipe extends AbstractWorkerRecipe {
     private final ConcentrationIngredientVector concentrationIngredients;
 
     public ConcentratorRecipe(Identifier id, String group, ConcentrationIngredientVector concentrationIngredients, ItemStack output, int workTime, ShurlinLevel shurlinLevel) {
-        super(RecipeTypes.CONCENTRATING, id, group, null, output, workTime, shurlinLevel);
+        super(ModRecipes.CONCENTRATING_TYPE, id, group, null, output, workTime, shurlinLevel);
         this.concentrationIngredients = concentrationIngredients;
     }
 
@@ -52,7 +53,7 @@ public class ConcentratorRecipe extends AbstractWorkerRecipe {
 
     @Override
     public RecipeSerializer<?> getSerializer() {
-        return RecipeSerializers.CONCENTRATING;
+        return ModRecipes.CONCENTRATING_SERIALIZER;
     }
 
     public ConcentrationIngredientVector getConcentrationIngredients() {
@@ -103,7 +104,7 @@ public class ConcentratorRecipe extends AbstractWorkerRecipe {
             buf.writeFloat(recipe.shurlinLevel.getShurlinLevel());
         }
 
-        interface RecipeFactory<ConcentratorRecipe> {
+        public interface RecipeFactory<ConcentratorRecipe> {
             ConcentratorRecipe create(Identifier id, String group, ConcentrationIngredientVector concentrationIngredientVector, ItemStack output, int cookTime, ShurlinLevel shurlinLevel);
         }
 
