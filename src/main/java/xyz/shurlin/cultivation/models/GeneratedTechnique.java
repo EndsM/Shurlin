@@ -18,16 +18,16 @@ public class GeneratedTechnique {
 
     // The stats of the Technique
     private double efficiency;
-    private double capacity;
+    private double capacityModifier;
 
-    public GeneratedTechnique(UUID id, String name, TechniqueGrade grade, TechniqueQuality quality, Identifier elementId, double efficiency, double capacity) {
+    public GeneratedTechnique(UUID id, String name, TechniqueGrade grade, TechniqueQuality quality, Identifier elementId, double efficiency, double capacityModifier) {
         this.id = id;
         this.name = name;
         this.grade = grade;
         this.quality = quality;
         this.elementId = elementId;
         this.efficiency = efficiency;
-        this.capacity = capacity;
+        this.capacityModifier = capacityModifier;
     }
 
     // Read from NBT
@@ -51,7 +51,7 @@ public class GeneratedTechnique {
         tag.putString("Quality", quality.name());
         tag.putString("Element", elementId.toString());
         tag.putDouble("Efficiency", efficiency);
-        tag.putDouble("Capacity", capacity);
+        tag.putDouble("Capacity", capacityModifier);
         return tag;
     }
 
@@ -72,8 +72,8 @@ public class GeneratedTechnique {
         return efficiency;
     }
 
-    public double getCapacity() {
-        return capacity;
+    public double getCapacityModifier() {
+        return capacityModifier;
     }
 
     public Identifier getElementId() {
