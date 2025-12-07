@@ -4,6 +4,8 @@ import net.minecraft.text.Text;
 import net.minecraft.text.TranslatableText;
 import net.minecraft.util.Identifier;
 
+import java.util.Objects;
+
 public class SpiritElement {
     private final Identifier id;
     // Maybe later change into using Color type?
@@ -23,6 +25,19 @@ public class SpiritElement {
     }
 
     public Text getName() {
-        return new TranslatableText("element." + id.getNamespace() + "." + id.getPath());
+        return new TranslatableText("spirit_element." + id.getNamespace() + "." + id.getPath());
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        SpiritElement that = (SpiritElement) obj;
+        return Objects.equals(id, that.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
     }
 }
