@@ -19,4 +19,7 @@ public class ModElements {
     public static final SpiritElement ICE = new SpiritElement(new Identifier(Shurlin.MODID, "ice"), 0xE0FFFF);
     public static final SpiritElement TIME_SPACE = new SpiritElement(new Identifier(Shurlin.MODID, "time_space"), 0x808080);
 
+    public static final SpiritElement[] SHURLIN_ELEMENTS = {
+            METAL, WOOD, WATER, FIRE, EARTH, WIND, LIGHT, DARKNESS, POISON, LIGHTNING, ICE, TIME_SPACE
+    };
 }
