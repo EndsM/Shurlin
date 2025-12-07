@@ -24,8 +24,8 @@ public class ShurlinCultivationLogic implements CultivationLogic {
 
         // Need to match ID from GeneratedTechnique to SpiritElement
         SpiritElement el = null;
-        for(SpiritElement s : ModElements.SHURLIN_ELEMENTS) {
-            if(s.getId().equals(technique.getElementId())) {
+        for (SpiritElement s : ModElements.SHURLIN_ELEMENTS) {
+            if (s.getId().equals(technique.getElementId())) {
                 el = s;
                 break;
             }

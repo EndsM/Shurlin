@@ -100,7 +100,7 @@ public class CultivationInfoScreen extends HandledScreen<CultivationInfoScreenHa
 
             Text name = new LiteralText(tech.name).formatted(tech.color);
             textRenderer.draw(matrices, name, xPos, yPos, 0xFFFFFF);
-            if(isActive) {
+            if (isActive) {
                 textRenderer.draw(matrices, "§a[Active]", xPos, yPos + 10, 0xFFFFFF); // Small indicator below if needed, layout might overlap
             }
         }
@@ -120,7 +120,7 @@ public class CultivationInfoScreen extends HandledScreen<CultivationInfoScreenHa
                 int index = scrollOffset + i;
                 if (index >= techs.size()) break;
 
-                if (isMouseOverItem((int)mouseX, (int)mouseY, i)) {
+                if (isMouseOverItem((int) mouseX, (int) mouseY, i)) {
                     // Send packet to select
                     UUID selectedId = techs.get(index).id;
                     PacketByteBuf buf = PacketByteBufs.create();
