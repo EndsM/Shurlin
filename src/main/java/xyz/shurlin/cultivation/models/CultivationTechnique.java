@@ -17,4 +17,20 @@ public class CultivationTechnique {
         this.efficiency = efficiency;
         this.capacityModifier = capacityModifier;
     }
+
+    public Identifier getId() {
+        return id;
+    }
+
+    public SpiritElement getPrimaryElement() {
+        return primaryElement;
+    }
+
+    public double getEfficiency() {
+        return efficiency;
+    }
+
+    public double getCapacityModifier() {
+        return capacityModifier;
+    }
 }

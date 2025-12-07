@@ -14,6 +14,10 @@ import xyz.shurlin.cultivation.interfaces.StorageAdapter;
 import xyz.shurlin.cultivation.models.CultivatedPlayer;
 import xyz.shurlin.cultivation.models.CultivationRealm;
 import xyz.shurlin.cultivation.models.CultivationType;
+import xyz.shurlin.cultivation.models.SpiritElement;
+import xyz.shurlin.registry.ModElements;
+
+import java.util.Map;
 
 /**
  * @author EndsM
@@ -36,6 +40,15 @@ public abstract class MixinStorageAdapter implements StorageAdapter {
         cultivatedPlayer = new CultivatedPlayer();
     }
 
+    @Inject(method = "tick", at=@At("TAIL"))
+    private void tick(CallbackInfo ci){
+        PlayerEntity player = (PlayerEntity) (Object) this;
+        // Only calc for server-side, cultivated player
+        if (!player.world.isClient && cultivatedPlayer != null){
+            cultivatedPlayer.tick();
+        }
+    }
+
     @Inject(method = "writeCustomDataToNbt", at = @At("TAIL"))
     private void writeToNbt(NbtCompound nbt, CallbackInfo ci) {
         // This is triggered when a player logs off or saves.
@@ -48,6 +61,19 @@ public abstract class MixinStorageAdapter implements StorageAdapter {
             tag.putDouble("Progress", cultivatedPlayer.getCurrentProgress());
             tag.putBoolean("Bottleneck", cultivatedPlayer.isBottlenecked());
 
+            // Save Qi
+            tag.putDouble("CurrentQi", cultivatedPlayer.getCurrentQi());
+            if (cultivatedPlayer.getActiveTechniqueId() != null) {
+                tag.putString("ActiveTechnique", cultivatedPlayer.getActiveTechniqueId().toString());
+            }
+
+            // Save Spirit Roots
+            NbtCompound rootsTag = new NbtCompound();
+            for (Map.Entry<Identifier, Integer> entry : cultivatedPlayer.getSpiritRoots().entrySet()) {
+                rootsTag.putInt(entry.getKey().toString(), entry.getValue());
+            }
+            tag.put("SpiritRoots", rootsTag);
+
             nbt.put(NBT_KEY, tag);
         }
     }
@@ -57,16 +83,36 @@ public abstract class MixinStorageAdapter implements StorageAdapter {
         // This is triggered when a player enters a world.
         if (nbt.contains(NBT_KEY)) {
             NbtCompound tag = nbt.getCompound(NBT_KEY);
-            // Restore state using ID
             try {
                 cultivatedPlayer.setCultivationTypeId(new Identifier(tag.getString("TypeId")));
                 cultivatedPlayer.setMajorRealmIndex(tag.getInt("MajorIndex"));
                 cultivatedPlayer.setMinorRealmIndex(tag.getInt("MinorIndex"));
                 cultivatedPlayer.setCurrentProgress(tag.getDouble("Progress"));
                 cultivatedPlayer.setBottlenecked(tag.getBoolean("Bottleneck"));
+
+                // Read Qi
+                cultivatedPlayer.setCurrentQi(tag.getDouble("CurrentQi"));
+                if (tag.contains("ActiveTechnique")) {
+                    cultivatedPlayer.setActiveTechniqueId(new Identifier(tag.getString("ActiveTechnique")));
+                }
+
+                // Read Spirit Roots
+                if (tag.contains("SpiritRoots")) {
+                    NbtCompound rootsTag = tag.getCompound("SpiritRoots");
+                    for (String key : rootsTag.getKeys()) {
+                        Identifier elementId = new Identifier(key);
+                        int value = rootsTag.getInt(key);
+                        for(SpiritElement el : ModElements.SHURLIN_ELEMENTS) {
+                            if(el.getId().equals(elementId)) {
+                                cultivatedPlayer.setRootValue(el, value);
+                                break;
+                            }
+                        }
+                    }
+                }
+
             } catch (Exception e) {
                 Shurlin.LOGGER.error("Failed to load cultivation data", e);
-                // Fallback reset if data is corrupted
                 cultivatedPlayer = new CultivatedPlayer();
             }
         }
