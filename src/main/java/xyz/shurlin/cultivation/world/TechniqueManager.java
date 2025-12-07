@@ -50,7 +50,7 @@ public class TechniqueManager extends PersistentState {
         return techniques.get(id);
     }
 
-    public static TechniqueManager get(ServerWorld world) {
+    public static TechniqueManager getServerInstance(ServerWorld world) {
         ServerWorld overworld = world.getServer().getOverworld();
         return overworld.getPersistentStateManager().getOrCreate(TechniqueManager::new, ID);
     }
