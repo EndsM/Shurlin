@@ -17,6 +17,7 @@ import xyz.shurlin.world.gen.chunk.ChunkGeneratorTypes;
 import java.util.Random;
 
 public class Shurlin implements ModInitializer {
+    // Consider call it Shurlin Astray if going to continue
     public static final String MODID = "shurlin";
     public static final Logger LOGGER = LogManager.getLogger(MODID);
     public static Random random = new Random();
