@@ -3,6 +3,9 @@ package xyz.shurlin.cultivation.models;
 import net.minecraft.util.Identifier;
 import xyz.shurlin.cultivation.CultivationRegistry;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * Represents a player entity that has undergone cultivation and possesses cultivation-related attributes.
  *
@@ -15,6 +18,11 @@ public class CultivatedPlayer {
     private int minorRealmIndex = 0;
     private double currentProgress = 0.0;
     private boolean isBottlenecked = false;
+
+    private double currentQi = 0.0;
+    // Each spirit root could have a value indicate its quality
+    private final Map<Identifier, Integer> spiritRoots = new HashMap<>();
+    private Identifier activeTechniqueId = null;
 
 
     // Logic Helpers: Gate between stored data and abstract data
@@ -32,8 +40,41 @@ public class CultivatedPlayer {
         return type.getRealm(this.majorRealmIndex);
     }
 
+    public CultivationTechnique getActiveTechnique() {
+        if (activeTechniqueId == null) return null;
+        return CultivationRegistry.getTechnique(activeTechniqueId);
+    }
+
 
     // Standard getter and setter
+
+    public double getCurrentQi() {
+        return currentQi;
+    }
+
+    public void setCurrentQi(double currentQi) {
+        this.currentQi = currentQi;
+    }
+
+    public int getRootValue(SpiritElement element) {
+        return spiritRoots.getOrDefault(element.getId(), 0);
+    }
+
+    public void setRootValue(SpiritElement element, int value) {
+        spiritRoots.put(element.getId(), value);
+    }
+
+    public Map<Identifier, Integer> getSpiritRoots() {
+        return spiritRoots;
+    }
+
+    public Identifier getActiveTechniqueId() {
+        return activeTechniqueId;
+    }
+
+    public void setActiveTechniqueId(Identifier activeTechniqueId) {
+        this.activeTechniqueId = activeTechniqueId;
+    }
 
     public Identifier getCultivationTypeId() {
         return cultivationTypeId;
