@@ -32,6 +32,11 @@ public class TechniqueManager extends PersistentState {
 
     @Override
     public NbtCompound writeNbt(NbtCompound nbt) {
-        return null;
+        NbtList list = new NbtList();
+        for (GeneratedTechnique tech : techniques.values()) {
+            list.add(tech.toNbt());
+        }
+        nbt.put("Techniques", list);
+        return nbt;
     }
 }
