@@ -40,11 +40,11 @@ public abstract class MixinStorageAdapter implements StorageAdapter {
         cultivatedPlayer = new CultivatedPlayer();
     }
 
-    @Inject(method = "tick", at=@At("TAIL"))
-    private void tick(CallbackInfo ci){
+    @Inject(method = "tick", at = @At("TAIL"))
+    private void tick(CallbackInfo ci) {
         PlayerEntity player = (PlayerEntity) (Object) this;
         // Only calc for server-side, cultivated player
-        if (!player.world.isClient && cultivatedPlayer != null){
+        if (!player.world.isClient && cultivatedPlayer != null) {
             cultivatedPlayer.tick();
         }
     }
@@ -102,8 +102,8 @@ public abstract class MixinStorageAdapter implements StorageAdapter {
                     for (String key : rootsTag.getKeys()) {
                         Identifier elementId = new Identifier(key);
                         int value = rootsTag.getInt(key);
-                        for(SpiritElement el : ModElements.SHURLIN_ELEMENTS) {
-                            if(el.getId().equals(elementId)) {
+                        for (SpiritElement el : ModElements.SHURLIN_ELEMENTS) {
+                            if (el.getId().equals(elementId)) {
                                 cultivatedPlayer.setRootValue(el, value);
                                 break;
                             }
