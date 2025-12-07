@@ -1,6 +1,7 @@
 package xyz.shurlin.cultivation.world;
 
 import net.minecraft.nbt.NbtCompound;
+import net.minecraft.nbt.NbtList;
 import net.minecraft.world.PersistentState;
 import xyz.shurlin.cultivation.models.GeneratedTechnique;
 
@@ -21,6 +22,12 @@ public class TechniqueManager extends PersistentState {
     @Override
     public void fromTag(NbtCompound tag) {
         techniques.clear();
+        NbtList list = tag.getList("Techniques", 10);
+        for (int i = 0; i < list.size(); i++) {
+            NbtCompound techTag = list.getCompound(i);
+            GeneratedTechnique tech = GeneratedTechnique.fromNbt(techTag);
+            techniques.put(tech.getId(), tech);
+        }
     }
 
     @Override
