@@ -2,6 +2,7 @@ package xyz.shurlin.cultivation.world;
 
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.nbt.NbtList;
+import net.minecraft.server.world.ServerWorld;
 import net.minecraft.world.PersistentState;
 import xyz.shurlin.cultivation.models.GeneratedTechnique;
 
@@ -38,5 +39,19 @@ public class TechniqueManager extends PersistentState {
         }
         nbt.put("Techniques", list);
         return nbt;
+    }
+
+    public void addTechnique(GeneratedTechnique technique) {
+        this.techniques.put(technique.getId(), technique);
+        this.markDirty();
+    }
+
+    public GeneratedTechnique getTechnique(UUID id) {
+        return techniques.get(id);
+    }
+
+    public static TechniqueManager get(ServerWorld world) {
+        ServerWorld overworld = world.getServer().getOverworld();
+        return overworld.getPersistentStateManager().getOrCreate(TechniqueManager::new, ID);
     }
 }
