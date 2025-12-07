@@ -80,14 +80,14 @@ public class TechniqueGenerator {
         Identifier id = element.getId();
 
         // Simple hardcoded matching, uses Map<Identifier, String[]> or something like that later
-        if (id.getPath().contains("metal")) prefix = METAL_PREFIX[RAND.nextInt(METAL_PREFIX.length)];
-        else if (id.getPath().contains("wood")) prefix = WOOD_PREFIX[RAND.nextInt(WOOD_PREFIX.length)];
-        else if (id.getPath().contains("water")) prefix = WATER_PREFIX[RAND.nextInt(WATER_PREFIX.length)];
-        else if (id.getPath().contains("fire")) prefix = FIRE_PREFIX[RAND.nextInt(FIRE_PREFIX.length)];
-        else if (id.getPath().contains("earth")) prefix = EARTH_PREFIX[RAND.nextInt(EARTH_PREFIX.length)];
-        else prefix = GENERIC_PREFIX[RAND.nextInt(GENERIC_PREFIX.length)];
+        if (id.getPath().contains("metal")) prefix = METAL_PREFIX[rand.nextInt(METAL_PREFIX.length)];
+        else if (id.getPath().contains("wood")) prefix = WOOD_PREFIX[rand.nextInt(WOOD_PREFIX.length)];
+        else if (id.getPath().contains("water")) prefix = WATER_PREFIX[rand.nextInt(WATER_PREFIX.length)];
+        else if (id.getPath().contains("fire")) prefix = FIRE_PREFIX[rand.nextInt(FIRE_PREFIX.length)];
+        else if (id.getPath().contains("earth")) prefix = EARTH_PREFIX[rand.nextInt(EARTH_PREFIX.length)];
+        else prefix = GENERIC_PREFIX[rand.nextInt(GENERIC_PREFIX.length)];
 
-        String suffix = SUFFIXES[RAND.nextInt(SUFFIXES.length)];
+        String suffix = SUFFIXES[rand.nextInt(SUFFIXES.length)];
         return prefix + suffix;
     }
 }
