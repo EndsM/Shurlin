@@ -1,4 +1,30 @@
 package xyz.shurlin.cultivation.world;
 
-public class TechniqueManager {
+import net.minecraft.nbt.NbtCompound;
+import net.minecraft.world.PersistentState;
+import xyz.shurlin.cultivation.models.GeneratedTechnique;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.UUID;
+
+public class TechniqueManager extends PersistentState {
+    private static final String ID = "shurlin_techniques";
+
+    // In memory cached techniques
+    private final Map<UUID, GeneratedTechnique> techniques = new HashMap<>();
+
+    public TechniqueManager() {
+        super(ID);
+    }
+
+    @Override
+    public void fromTag(NbtCompound tag) {
+        techniques.clear();
+    }
+
+    @Override
+    public NbtCompound writeNbt(NbtCompound nbt) {
+        return null;
+    }
 }
