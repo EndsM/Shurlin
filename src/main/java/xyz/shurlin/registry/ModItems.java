@@ -149,6 +149,11 @@ public class ModItems {
     // This need rework or delete, see its class
     public static final Item SHURLIN_POWERFUL_AXE = new ShurlinPowerfulAxeItem();
 
+    // Technique Book
+    public static final Item TECHNIQUE_BOOK = new TechniqueBookItem(
+            new Item.Settings().group(ItemGroups.SHURLIN).maxCount(1)
+    );
+
     // in-class utility functions below
     private static String getBlockId(Block block) {
         return Registry.BLOCK.getId(block).getPath();
@@ -193,6 +198,9 @@ public class ModItems {
         register("collector_core", COLLECTOR_CORE);
         register("concentrator_core", CONCENTRATOR_CORE);
         register("extractor_core", EXTRACTOR_CORE);
+
+        register("technique_book", TECHNIQUE_BOOK);
+
         // Spirits below
         register("tenuous_metal_spirit", TENUOUS_METAL_SPIRIT);
         register("tenuous_wood_spirit", TENUOUS_WOOD_SPIRIT);
