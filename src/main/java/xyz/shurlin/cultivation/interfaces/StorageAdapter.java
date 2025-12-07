@@ -22,4 +22,6 @@ public interface StorageAdapter {
     double GetProgress();
 
     double GetMaxProgress();
+
+    void LearnTechnique(java.util.UUID techniqueId);
 }

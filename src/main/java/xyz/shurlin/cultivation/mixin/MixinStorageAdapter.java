@@ -282,4 +282,10 @@ public abstract class MixinStorageAdapter implements StorageAdapter {
     public double GetProgress() {
         return cultivatedPlayer.getCurrentProgress();
     }
+
+    @Override
+    public void LearnTechnique(java.util.UUID techniqueId) {
+        if (this.GetCultivatedPlayer() != null) {
+        }
+    }
 }
