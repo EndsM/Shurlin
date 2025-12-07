@@ -3,6 +3,7 @@ package xyz.shurlin.cultivation.interfaces;
 import net.minecraft.util.Identifier;
 import xyz.shurlin.cultivation.models.CultivatedPlayer;
 
+import java.util.UUID;
 
 public interface StorageAdapter {
     CultivatedPlayer GetCultivatedPlayer();
@@ -23,5 +24,7 @@ public interface StorageAdapter {
 
     double GetMaxProgress();
 
-    void LearnTechnique(java.util.UUID techniqueId);
+    void LearnTechnique(UUID techniqueId);
+
+    void SetActiveTechnique(UUID techniqueId);
 }

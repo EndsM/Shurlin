@@ -64,7 +64,8 @@ public class TechniqueBookItem extends Item {
 
             if (tech != null) {
                 StorageAdapter storage = (StorageAdapter) user;
-                // storage.learnTechnique(tech);
+                // Updated to match new signature
+                storage.LearnTechnique(tech.getId());
 
                 user.sendMessage(new LiteralText("§a你成功领悟了: " + tech.getDisplayName().getString()), true);
                 stack.decrement(1);

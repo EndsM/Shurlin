@@ -6,9 +6,7 @@ import xyz.shurlin.cultivation.CultivationRegistry;
 import xyz.shurlin.cultivation.interfaces.CultivationLogic;
 import xyz.shurlin.registry.ModElements;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Random;
+import java.util.*;
 
 /**
  * Represents a player entity that has undergone cultivation and possesses cultivation-related attributes.
@@ -27,8 +25,10 @@ public class CultivatedPlayer {
     private double maxQi = 0.0; // Cache max Qi
     // Each spirit root could have a value indicate its quality
     private final Map<Identifier, Integer> spiritRoots = new HashMap<>();
-    private Identifier activeTechniqueId = null;
 
+    // Changed to UUID to support GeneratedTechniques
+    private UUID activeTechniqueId = null;
+    private final Set<UUID> learnedTechniques = new HashSet<>();
 
     // Logic Helpers: Gate between stored data and abstract data
 
@@ -45,13 +45,9 @@ public class CultivatedPlayer {
         return type.getRealm(this.majorRealmIndex);
     }
 
-    public CultivationTechnique getActiveTechnique() {
-        if (activeTechniqueId == null) return null;
-        return CultivationRegistry.getTechnique(activeTechniqueId);
-    }
-
     // Called every tick to handle passive updates like Qi regeneration
-    public void tick() {
+    // Now accepts the resolved technique object because the Player doesn't hold the Manager
+    public void tick(GeneratedTechnique activeTechnique) {
         CultivationType type = getCultivationType();
         if (type == null || type.getLogic() == null) return;
 
@@ -59,15 +55,13 @@ public class CultivatedPlayer {
         if (realm == null) return;
 
         CultivationLogic logic = type.getLogic();
-        CultivationTechnique technique = getActiveTechnique();
 
         // Update Max Qi Cache
-        this.maxQi = logic.CalculateMaxQi(this, realm, technique);
+        this.maxQi = logic.CalculateMaxQi(this, realm, activeTechnique);
 
         // Regenerate Qi
         if (this.currentQi < this.maxQi) {
-            double regen = logic.CalculateQiRegen(this, realm, technique);
-            // Assuming tick runs 20 times a second, adjust regen if logic returns "per second" or keep as "per tick"
+            double regen = logic.CalculateQiRegen(this, realm, activeTechnique);
             this.currentQi = Math.min(this.currentQi + regen, this.maxQi);
         }
     }
@@ -87,6 +81,15 @@ public class CultivatedPlayer {
             spiritRoots.put(element.getId(), quality);
         }
     }
+
+    public void learnTechnique(UUID id) {
+        this.learnedTechniques.add(id);
+    }
+
+    public boolean hasLearned(UUID id) {
+        return this.learnedTechniques.contains(id);
+    }
+
 
     // Standard getter and setter
 
@@ -110,12 +113,18 @@ public class CultivatedPlayer {
         return spiritRoots;
     }
 
-    public Identifier getActiveTechniqueId() {
+    public UUID getActiveTechniqueId() {
         return activeTechniqueId;
     }
 
-    public void setActiveTechniqueId(Identifier activeTechniqueId) {
-        this.activeTechniqueId = activeTechniqueId;
+    public void setActiveTechniqueId(UUID activeTechniqueId) {
+        if (activeTechniqueId == null || learnedTechniques.contains(activeTechniqueId)) {
+            this.activeTechniqueId = activeTechniqueId;
+        }
+    }
+
+    public Set<UUID> getLearnedTechniques() {
+        return learnedTechniques;
     }
 
     public Identifier getCultivationTypeId() {

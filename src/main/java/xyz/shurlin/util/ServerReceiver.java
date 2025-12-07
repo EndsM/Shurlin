@@ -5,9 +5,12 @@ import net.fabricmc.fabric.impl.networking.ServerSidePacketRegistryImpl;
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
+import net.minecraft.nbt.NbtCompound;
+import net.minecraft.nbt.NbtList;
 import net.minecraft.network.PacketByteBuf;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.server.network.ServerPlayerEntity;
+import net.minecraft.server.world.ServerWorld;
 import net.minecraft.text.LiteralText;
 import net.minecraft.text.Text;
 import net.minecraft.util.math.BlockPos;
@@ -15,6 +18,10 @@ import xyz.shurlin.block.HolyPearAltarBlock;
 import xyz.shurlin.cultivation.gui.CultivationInfoScreenHandler;
 import xyz.shurlin.cultivation.interfaces.StorageAdapter;
 import xyz.shurlin.cultivation.models.CultivatedPlayer;
+import xyz.shurlin.cultivation.models.GeneratedTechnique;
+import xyz.shurlin.cultivation.world.TechniqueManager;
+
+import java.util.UUID;
 
 public class ServerReceiver {
     public static void load() {
@@ -26,6 +33,7 @@ public class ServerReceiver {
             }
         });
 
+        // Open Cultivation Menu
         ServerSidePacketRegistryImpl.INSTANCE.register(Utils.OPEN_CUL, (packetContext, packetByteBuf) -> {
             PlayerEntity player = packetContext.getPlayer();
             StorageAdapter storage = (StorageAdapter) player;
@@ -34,15 +42,37 @@ public class ServerReceiver {
                 ExtendedScreenHandlerFactory factory = new ExtendedScreenHandlerFactory() {
                     @Override
                     public void writeScreenOpeningData(ServerPlayerEntity player, PacketByteBuf buf) {
-                        // Write data to packet then send to client side
                         CultivatedPlayer cp = storage.GetCultivatedPlayer();
                         buf.writeIdentifier(cp.getCultivationTypeId());
                         buf.writeInt(cp.getMajorRealmIndex());
                         buf.writeInt(cp.getMinorRealmIndex());
                         buf.writeDouble(cp.getCurrentProgress());
                         buf.writeBoolean(cp.isBottlenecked());
-                        // Also write the progress so client side can calculate the progress bar
                         buf.writeDouble(storage.GetMaxProgress());
+
+                        // Send Active Technique ID
+                        UUID activeId = cp.getActiveTechniqueId();
+                        buf.writeBoolean(activeId != null);
+                        if (activeId != null) buf.writeUuid(activeId);
+
+                        // Send List of Known Techniques (Summary for UI)
+                        // We need to look up details in TechniqueManager
+                        TechniqueManager techManager = TechniqueManager.getServerInstance((ServerWorld) player.world);
+                        NbtList techList = new NbtList();
+
+                        for (UUID id : cp.getLearnedTechniques()) {
+                            GeneratedTechnique tech = techManager.getTechnique(id);
+                            if (tech != null) {
+                                NbtCompound tag = new NbtCompound();
+                                tag.putUuid("id", tech.getId());
+                                tag.putString("name", tech.getDisplayName().getString()); // Simplified name sending
+                                tag.putString("gradeColor", tech.getGrade().getColor().getName());
+                                techList.add(tag);
+                            }
+                        }
+                        buf.writeNbt(new NbtCompound() {{
+                            put("techs", techList);
+                        }});
                     }
 
                     @Override
@@ -56,6 +86,15 @@ public class ServerReceiver {
                     }
                 };
                 player.openHandledScreen(factory);
+            });
+        });
+
+        // Select Active Technique
+        ServerSidePacketRegistryImpl.INSTANCE.register(Utils.SELECT_TECHNIQUE, (context, buf) -> {
+            UUID techId = buf.readUuid();
+            context.getTaskQueue().execute(() -> {
+                StorageAdapter storage = (StorageAdapter) context.getPlayer();
+                storage.SetActiveTechnique(techId);
             });
         });
     }
