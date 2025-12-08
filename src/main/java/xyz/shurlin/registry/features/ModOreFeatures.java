@@ -2,6 +2,7 @@ package xyz.shurlin.registry.features;
 
 import net.minecraft.block.Blocks;
 import net.minecraft.structure.rule.BlockMatchRuleTest;
+import net.minecraft.structure.rule.RuleTest;
 import net.minecraft.structure.rule.TagMatchRuleTest;
 import net.minecraft.tag.BlockTags;
 import net.minecraft.util.Identifier;
@@ -16,6 +17,10 @@ import xyz.shurlin.Shurlin;
 import xyz.shurlin.registry.ModBlocks;
 
 public class ModOreFeatures {
+    // The Rule
+    public static RuleTest HOT_FIRE_STONE_RULE = new BlockMatchRuleTest(ModBlocks.HOT_FIRE_STONE);
+
+    // The features
     public static ConfiguredFeature<?, ?> ORE_PLANT_IRON = Feature.ORE
             .configure(new OreFeatureConfig(
                     OreFeatureConfig.Rules.BASE_STONE_OVERWORLD,
