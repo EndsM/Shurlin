@@ -141,6 +141,16 @@ public class ModOreFeatures {
             ))
             .decorate(Decorator.RANGE.configure(new RangeDecoratorConfig(0, 48, 80)))
             .repeat(4);
+    // Surface ore feature
+    public static ConfiguredFeature<?, ?> ORE_TENUOUS_FIRE_SPIRIT_SURFACE = Feature.ORE
+            .configure(new OreFeatureConfig(
+                    HOT_FIRE_STONE_RULE, // Target: Hot Fire Stone
+                    ModBlocks.TENUOUS_FIRE_SPIRIT_ORE_BLOCK.getDefaultState(), // Result: Fire Spirit Ore
+                    4 // Vein Size
+            ))
+            .decorate(Decorator.RANGE.configure(new RangeDecoratorConfig(0, 0, 64))) // Height Range (0 to 64)
+            .repeat(10); // Veins per chunk
+
 
     // Functions below
     private static void registerOreFeature(String id, ConfiguredFeature<?, ?> configuredFeature) {
@@ -163,5 +173,8 @@ public class ModOreFeatures {
         registerOreFeature("ore_tenuous_lightning_spirit", ORE_TENUOUS_LIGHTNING_SPIRIT);
         registerOreFeature("ore_tenuous_ice_spirit", ORE_TENUOUS_ICE_SPIRIT);
         registerOreFeature("ore_tenuous_time_space_spirit", ORE_TENUOUS_TIME_SPACE_SPIRIT);
+
+        // Surface or feature
+        registerOreFeature("ore_tenuous_fire_spirit_surface", ORE_TENUOUS_FIRE_SPIRIT_SURFACE);
     }
 }

@@ -132,5 +132,12 @@ public class ModFeatures {
                 GenerationStep.Feature.SURFACE_STRUCTURES,
                 RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN, new Identifier(Shurlin.MODID, "plant_obsidian_heap"))
         );
+
+        BiomeModifications.addFeature(
+                BiomeSelectors.includeByKey(ModBiomeKeys.FIRE_LAND_KEY),
+                GenerationStep.Feature.UNDERGROUND_ORES,
+                RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN, new Identifier(Shurlin.MODID, "ore_tenuous_fire_spirit_surface"))
+        );
+
     }
 }

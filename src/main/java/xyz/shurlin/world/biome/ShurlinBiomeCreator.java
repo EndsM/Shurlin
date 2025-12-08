@@ -82,6 +82,7 @@ public class ShurlinBiomeCreator {
         GenerationSettings.Builder generationSettingBuilder = new GenerationSettings.Builder()
                 .surfaceBuilder(ShurlinConfiguredSurfaceBuilder.FIRE_LAND);
         DefaultBiomeFeatures.addLandCarvers(generationSettingBuilder);
+        DefaultBiomeFeatures.addDefaultOres(generationSettingBuilder);
         ShurlinBiomeFeatures.addHotSprings(generationSettingBuilder);
 
 
