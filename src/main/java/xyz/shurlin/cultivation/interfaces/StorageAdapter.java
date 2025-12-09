@@ -27,4 +27,6 @@ public interface StorageAdapter {
     void LearnTechnique(UUID techniqueId);
 
     void SetActiveTechnique(UUID techniqueId);
+
+    void refreshStats();
 }

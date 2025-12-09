@@ -252,6 +252,7 @@ public abstract class MixinStorageAdapter implements StorageAdapter {
             if (currentMinor < maxMinor - 1) {
                 cultivatedPlayer.setMinorRealmIndex(currentMinor + 1);
                 cultivatedPlayer.setCurrentProgress(0);
+                updateCultivationStats((PlayerEntity) (Object) this);
                 notifyLevelUp(false);
                 if (overflow > 0) {
                     AddCultivationProgress(overflow);
@@ -283,6 +284,7 @@ public abstract class MixinStorageAdapter implements StorageAdapter {
             cultivatedPlayer.setCurrentProgress(0);
             cultivatedPlayer.setBottlenecked(false);
 
+            updateCultivationStats((PlayerEntity) (Object) this);
             notifyLevelUp(true);
             return true;
         } else {
@@ -308,6 +310,11 @@ public abstract class MixinStorageAdapter implements StorageAdapter {
             cultivatedPlayer.setActiveTechniqueId(techniqueId);
             notifyPlayer("§a[Cultivation] Switched active technique.", true);
         }
+    }
+
+    @Override
+    public void refreshStats() {
+        updateCultivationStats((PlayerEntity) (Object) this);
     }
 
     // =========================================================
