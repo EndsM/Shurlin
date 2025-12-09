@@ -222,22 +222,49 @@
 
   "screen.shurlin.cul_screen": "修炼境界",
 
-  "type.shurlin.metal": "金",
-  "type.shurlin.wood": "木",
-  "type.shurlin.water": "水",
-  "type.shurlin.fire": "火",
-  "type.shurlin.earth": "土",
-  "type.shurlin.wind": "风",
-  "type.shurlin.light": "光",
-  "type.shurlin.darkness": "暗",
-  "type.shurlin.poison": "毒",
-  "type.shurlin.lightning": "雷",
-  "type.shurlin.ice": "冰",
-  "type.shurlin.time_space": "时空",
+  "spirit_element.shurlin.metal": "金",
+  "spirit_element.shurlin.wood": "木",
+  "spirit_element.shurlin.water": "水",
+  "spirit_element.shurlin.fire": "火",
+  "spirit_element.shurlin.earth": "土",
+  "spirit_element.shurlin.wind": "风",
+  "spirit_element.shurlin.light": "光",
+  "spirit_element.shurlin.darkness": "暗",
+  "spirit_element.shurlin.poison": "毒",
+  "spirit_element.shurlin.lightning": "雷",
+  "spirit_element.shurlin.ice": "冰",
+  "spirit_element.shurlin.time_space": "时空",
 
   "message.shurlin.cultivation_crystal.success": "§b[启灵石] §f灵光入体，你已踏入修仙之途！",
   "message.shurlin.cultivation_crystal.fail": "§7[启灵石] 你完成启灵，此石对你已无用处。",
 
   "death.attack.shurlin.small_bud": "%1$s触犯了仙灵",
-  "death.attack.shurlin.small_bud.player": "%1$s在与%2$s战斗时触犯了仙灵"
+  "death.attack.shurlin.small_bud.player": "%1$s在与%2$s战斗时触犯了仙灵",
+
+  "message.shurlin.book.learned": "已习得: %s",
+  "message.shurlin.book.already_known": "你已经习得此功法。",
+  "message.shurlin.book.lost_data": "功法数据已遗失在虚空中。",
+  "message.shurlin.altar.identified": "书中的秘密已揭晓！",
+
+  "tooltip.shurlin.book.element": "属性: %s",
+  "tooltip.shurlin.book.efficiency": "修炼速度: %s%%",
+  "tooltip.shurlin.book.capacity": "灵力容量: %s%%",
+  "tooltip.shurlin.book.grade": "品阶: %s",
+  "tooltip.shurlin.book.unidentified_hint": "在星辰祭坛上使用以鉴定",
+  "tooltip.shurlin.book.empty": "无字天书",
+  "tooltip.shurlin.book.empty_hint": "其中没有知识",
+  "message.shurlin.book.unidentified": "这是一本未鉴定的功法书。",
+  "message.shurlin.book.empty": "这是一本空白的书。",
+
+  "technique.shurlin.display_name": "§7[%s·%s] §r%s",
+
+  "grade.shurlin.yellow": "黄阶",
+  "grade.shurlin.black": "玄阶",
+  "grade.shurlin.earth": "地阶",
+  "grade.shurlin.heaven": "天阶",
+
+  "quality.shurlin.low": "下品",
+  "quality.shurlin.medium": "中品",
+  "quality.shurlin.high": "上品",
+  "quality.shurlin.perfect": "极品"
 }

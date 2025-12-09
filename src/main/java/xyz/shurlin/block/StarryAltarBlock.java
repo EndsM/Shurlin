@@ -9,8 +9,9 @@ import net.minecraft.nbt.NbtCompound;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
-import net.minecraft.text.LiteralText;
+import net.minecraft.text.TranslatableText;
 import net.minecraft.util.ActionResult;
+import net.minecraft.util.Formatting;
 import net.minecraft.util.Hand;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
@@ -79,7 +80,7 @@ public class StarryAltarBlock extends Block {
 
         // Feedback
         world.playSound(null, player.getBlockPos(), SoundEvents.BLOCK_ENCHANTMENT_TABLE_USE, SoundCategory.BLOCKS, 1.0f, 1.0f);
-        player.sendMessage(new LiteralText("§dThe secrets of the book are revealed!"), true);
+        player.sendMessage(new TranslatableText("message.shurlin.altar.identified").formatted(Formatting.LIGHT_PURPLE), true);
     }
 
     @Override

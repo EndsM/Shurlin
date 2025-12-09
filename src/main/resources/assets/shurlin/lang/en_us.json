@@ -221,22 +221,49 @@
   "realm.shurlin.emperor.rank": "Spirit Emperor Rank %d",
   "realm.shurlin.saint.rank": "Spirit Saint Rank %d",
 
-  "type.shurlin.metal": "Metal",
-  "type.shurlin.wood": "Wood",
-  "type.shurlin.water": "Water",
-  "type.shurlin.fire": "Fire",
-  "type.shurlin.earth": "Earth",
-  "type.shurlin.wind": "Wind",
-  "type.shurlin.light": "Light",
-  "type.shurlin.darkness": "Darkness",
-  "type.shurlin.poison": "Poison",
-  "type.shurlin.lightning": "Lightning",
-  "type.shurlin.ice": "Ice",
-  "type.shurlin.time_space": "Time Space",
+  "spirit_element.shurlin.metal": "Metal",
+  "spirit_element.shurlin.wood": "Wood",
+  "spirit_element.shurlin.water": "Water",
+  "spirit_element.shurlin.fire": "Fire",
+  "spirit_element.shurlin.earth": "Earth",
+  "spirit_element.shurlin.wind": "Wind",
+  "spirit_element.shurlin.light": "Light",
+  "spirit_element.shurlin.darkness": "Darkness",
+  "spirit_element.shurlin.poison": "Poison",
+  "spirit_element.shurlin.lightning": "Lightning",
+  "spirit_element.shurlin.ice": "Ice",
+  "spirit_element.shurlin.time_space": "Time Space",
 
   "message.shurlin.cultivation_crystal.success": "§b[Awakening Stone] §fSpiritual light enters your body, you have embarked on the path of cultivation!",
   "message.shurlin.cultivation_crystal.fail": "§7[Awakening Stone] You had entered path of cultivation already, this stone is useless to you.",
 
   "death.attack.shurlin.small_bud": "%1$s violates Shurlin",
-  "death.attack.shurlin.small_bud.player": "%1$s violates Shurlin whilst %2$s"
+  "death.attack.shurlin.small_bud.player": "%1$s violates Shurlin whilst %2$s",
+
+  "message.shurlin.book.learned": "Learned: %s",
+  "message.shurlin.book.already_known": "You already know this technique.",
+  "message.shurlin.book.lost_data": "The technique data is lost in the void.",
+  "message.shurlin.altar.identified": "The secrets of the book are revealed!",
+
+  "tooltip.shurlin.book.element": "Element: %s",
+  "tooltip.shurlin.book.efficiency": "Efficiency: %s%%",
+  "tooltip.shurlin.book.capacity": "Capacity: %s%%",
+  "tooltip.shurlin.book.grade": "Grade: %s",
+  "tooltip.shurlin.book.unidentified_hint": "Use on Starry Altar to identify",
+  "tooltip.shurlin.book.empty": "Empty Book",
+  "tooltip.shurlin.book.empty_hint": "Contains no knowledge",
+  "message.shurlin.book.unidentified": "This book is unidentified.",
+  "message.shurlin.book.empty": "This book is empty.",
+
+  "technique.shurlin.display_name": "§7[%s·%s] §r%s",
+
+  "grade.shurlin.yellow": "Yellow",
+  "grade.shurlin.black": "Black",
+  "grade.shurlin.earth": "Earth",
+  "grade.shurlin.heaven": "Heaven",
+
+  "quality.shurlin.low": "Low",
+  "quality.shurlin.medium": "Medium",
+  "quality.shurlin.high": "High",
+  "quality.shurlin.perfect": "Perfect"
 }

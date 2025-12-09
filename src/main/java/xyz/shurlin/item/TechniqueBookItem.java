@@ -77,13 +77,13 @@ public class TechniqueBookItem extends Item {
             StorageAdapter storage = (StorageAdapter) user;
             if (!storage.GetCultivatedPlayer().hasLearned(tech.getId())) {
                 storage.LearnTechnique(tech.getId());
-                user.sendMessage(new LiteralText("§aLearned: " + tech.getDisplayName().getString()), true);
+                user.sendMessage(new TranslatableText("message.shurlin.book.learned", tech.getDisplayName()), true);
                 stack.decrement(1);
             } else {
-                user.sendMessage(new LiteralText("§cYou already know this technique."), true);
+                user.sendMessage(new TranslatableText("message.shurlin.book.already_known").formatted(Formatting.RED), true);
             }
         } else {
-            user.sendMessage(new LiteralText("§cThe technique data is lost in the void."), true);
+            user.sendMessage(new TranslatableText("message.shurlin.book.lost_data").formatted(Formatting.RED), true);
         }
     }
 
@@ -100,16 +100,22 @@ public class TechniqueBookItem extends Item {
                     if (color == null) color = Formatting.WHITE;
 
                     tooltip.add(new LiteralText(info.getString("Name")).formatted(color));
-                    tooltip.add(new LiteralText("Element: " + info.getString("Element")).formatted(Formatting.GRAY));
-                    tooltip.add(new LiteralText(String.format("Efficiency: %.0f%%", info.getDouble("Eff") * 100)).formatted(Formatting.GREEN));
-                    tooltip.add(new LiteralText(String.format("Capacity: %.0f%%", info.getDouble("Cap") * 100)).formatted(Formatting.BLUE));
+
+                    String elementKey = "spirit_element.shurlin." + info.getString("Element");
+                    tooltip.add(new TranslatableText("tooltip.shurlin.book.element", new TranslatableText(elementKey)).formatted(Formatting.GRAY));
+
+                    String effStr = String.format("%.0f", info.getDouble("Eff") * 100);
+                    tooltip.add(new TranslatableText("tooltip.shurlin.book.efficiency", effStr).formatted(Formatting.GREEN));
+
+                    String capStr = String.format("%.0f", info.getDouble("Cap") * 100);
+                    tooltip.add(new TranslatableText("tooltip.shurlin.book.capacity", capStr).formatted(Formatting.BLUE));
                 }
                 break;
             case UNIDENTIFIED:
                 String gradeName = tag.getString(KEY_UNIDENTIFIED_GRADE);
                 TechniqueGrade grade = TechniqueGrade.valueOf(gradeName);
                 tooltip.add(new LiteralText("???").formatted(Formatting.OBFUSCATED, grade.getColor()));
-                tooltip.add(new LiteralText("Grade: " + grade.getName()).formatted(Formatting.GRAY));
+                tooltip.add(new TranslatableText("tooltip.shurlin.book.grade", grade.getNameText()).formatted(Formatting.GRAY));
                 tooltip.add(new TranslatableText("tooltip.shurlin.book.unidentified_hint").formatted(Formatting.DARK_GRAY, Formatting.ITALIC));
                 break;
             case EMPTY:
