@@ -49,6 +49,8 @@ public class ShurlinCultivationLogic implements CultivationLogic {
         int major = player.getMajorRealmIndex();
         int minor = player.getMinorRealmIndex();
 
+        // Later will create better method of calculating bonus
+        // Would need to take consideration for element, techniques, Physique, Bloodline, etc
         double majorBonus = major * 5.0;
         double minorBonus = minor * (2.0 * major);
 

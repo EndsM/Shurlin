@@ -1,5 +1,9 @@
 package xyz.shurlin.cultivation.mixin;
 
+import net.minecraft.entity.attribute.EntityAttribute;
+import net.minecraft.entity.attribute.EntityAttributeInstance;
+import net.minecraft.entity.attribute.EntityAttributeModifier;
+import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.nbt.NbtHelper;
@@ -13,6 +17,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import xyz.shurlin.Shurlin;
+import xyz.shurlin.cultivation.interfaces.CultivationLogic;
 import xyz.shurlin.cultivation.interfaces.StorageAdapter;
 import xyz.shurlin.cultivation.models.*;
 import xyz.shurlin.cultivation.world.TechniqueManager;
@@ -32,6 +37,12 @@ public abstract class MixinStorageAdapter implements StorageAdapter {
     @Unique
     private CultivatedPlayer cultivatedPlayer;
 
+    // IDs for modifiers
+    // Use UUID just for now, it seems we need wait to 1.21 to make it neat and clean...
+    @Unique
+    private static final UUID HEALTH_MODIFIER_ID = UUID.nameUUIDFromBytes("shurlin:cultivation_health".getBytes());
+
+
     @Inject(method = "<init>", at = @At("RETURN"))
     private void init(CallbackInfo ci) {
         cultivatedPlayer = new CultivatedPlayer();
@@ -40,6 +51,7 @@ public abstract class MixinStorageAdapter implements StorageAdapter {
     @Inject(method = "tick", at = @At("TAIL"))
     private void tick(CallbackInfo ci) {
         PlayerEntity player = (PlayerEntity) (Object) this;
+
         // Only calc for server-side
         if (!player.world.isClient && cultivatedPlayer != null) {
             GeneratedTechnique activeTech = null;
@@ -53,6 +65,59 @@ public abstract class MixinStorageAdapter implements StorageAdapter {
             cultivatedPlayer.tick(activeTech);
         }
     }
+
+    @Unique
+    private void updateCultivationStats(PlayerEntity player) {
+        CultivationType type = cultivatedPlayer.getCultivationType();
+        if (type == null || type.getLogic() == null) return;
+
+        CultivationRealm realm = cultivatedPlayer.getCurrentRealmDefinition();
+        if (realm == null) return;
+
+        CultivationLogic logic = type.getLogic();
+
+        double healthBonus = logic.CalculateHealthBonus(cultivatedPlayer, realm);
+
+        // Apply Health
+        applyAttributeModifier(
+                player,
+                EntityAttributes.GENERIC_MAX_HEALTH,
+                HEALTH_MODIFIER_ID,
+                "Shurlin Cultivation Health",
+                healthBonus,
+                EntityAttributeModifier.Operation.ADDITION
+        );
+    }
+
+
+    @Unique
+    private void applyAttributeModifier(PlayerEntity player, EntityAttribute attribute, UUID uuid, String name, double value, EntityAttributeModifier.Operation operation) {
+        EntityAttributeInstance instance = player.getAttributeInstance(attribute);
+        if (instance != null) {
+            EntityAttributeModifier existing = instance.getModifier(uuid);
+
+            // Only remove/add if the value actually changed.
+            // This prevents lag and unnecessary packet syncing.
+            if (existing != null) {
+                if (Math.abs(existing.getValue() - value) < 0.01) {
+                    return;
+                }
+                instance.removeModifier(uuid);
+            }
+
+            if (value > 0) {
+                instance.addPersistentModifier(new EntityAttributeModifier(uuid, name, value, operation));
+
+                // If max health increases, heal the difference so the hearts aren't empty
+                if (attribute == EntityAttributes.GENERIC_MAX_HEALTH) {
+                    if (player.getHealth() > player.getMaxHealth()) {
+                        player.setHealth(player.getMaxHealth());
+                    }
+                }
+            }
+        }
+    }
+
 
     @Inject(method = "writeCustomDataToNbt", at = @At("TAIL"))
     private void writeToNbt(NbtCompound nbt, CallbackInfo ci) {
