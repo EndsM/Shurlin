@@ -1,18 +1,25 @@
 package xyz.shurlin.cultivation.dynamic;
 
+import net.minecraft.text.Text;
+import net.minecraft.text.TranslatableText;
+
 public enum TechniqueQuality {
-    LOW("下品"),
-    MEDIUM("中品"),
-    HIGH("上品"),
-    PERFECT("极品");
+    LOW("quality.shurlin.low"),
+    MEDIUM("quality.shurlin.medium"),
+    HIGH("quality.shurlin.high"),
+    PERFECT("quality.shurlin.perfect");
 
-    private final String name;
+    private final String translationKey;
 
-    TechniqueQuality(String name) {
-        this.name = name;
+    TechniqueQuality(String translationKey) {
+        this.translationKey = translationKey;
     }
 
     public String getName() {
-        return name;
+        return translationKey;
+    }
+
+    public Text getNameText() {
+        return new TranslatableText(translationKey);
     }
 }

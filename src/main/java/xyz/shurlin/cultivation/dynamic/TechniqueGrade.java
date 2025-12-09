@@ -1,23 +1,24 @@
 package xyz.shurlin.cultivation.dynamic;
 
+import net.minecraft.text.Text;
+import net.minecraft.text.TranslatableText;
 import net.minecraft.util.Formatting;
 
 public enum TechniqueGrade {
-    YELLOW(0, "黄阶", 2, Formatting.YELLOW),
-    BLACK(1, "玄阶", 5, Formatting.BLUE),
-    EARTH(2, "地阶", 8, Formatting.DARK_PURPLE),
-    HEAVEN(3, "天阶", 11, Formatting.GOLD);
+    YELLOW(0, "grade.shurlin.yellow", 2, Formatting.YELLOW),
+    BLACK(1, "grade.shurlin.black", 5, Formatting.BLUE),
+    EARTH(2, "grade.shurlin.earth", 8, Formatting.DARK_PURPLE),
+    HEAVEN(3, "grade.shurlin.heaven", 11, Formatting.GOLD);
 
     private final int id;
-    // Uses localization later
-    private final String name;
+    private final String translationKey;
     // The maximum realm can this technique progress to
     private final int maxRealmIndex;
     private final Formatting color;
 
-    TechniqueGrade(int id, String name, int maxRealmIndex, Formatting color) {
+    TechniqueGrade(int id, String translationKey, int maxRealmIndex, Formatting color) {
         this.id = id;
-        this.name = name;
+        this.translationKey = translationKey;
         this.maxRealmIndex = maxRealmIndex;
         this.color = color;
     }
@@ -31,6 +32,10 @@ public enum TechniqueGrade {
     }
 
     public String getName() {
-        return name;
+        return translationKey;
+    }
+
+    public Text getNameText() {
+        return new TranslatableText(translationKey);
     }
 }
