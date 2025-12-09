@@ -43,4 +43,15 @@ public class ShurlinCultivationLogic implements CultivationLogic {
     public SpiritElement[] GetDisplayElements() {
         return ModElements.SHURLIN_ELEMENTS;
     }
+
+    @Override
+    public double CalculateHealthBonus(CultivatedPlayer player, CultivationRealm cultivationRealm) {
+        int major = player.getMajorRealmIndex();
+        int minor = player.getMinorRealmIndex();
+
+        double majorBonus = major * 5.0;
+        double minorBonus = minor * (2.0 * major);
+
+        return majorBonus + minorBonus;
+    }
 }

@@ -14,4 +14,7 @@ public interface CultivationLogic {
 
     // Get list of spirit elements for display
     SpiritElement[] GetDisplayElements();
+
+    // Calculate modifier for health
+    double CalculateHealthBonus(CultivatedPlayer player, CultivationRealm cultivationRealm);
 }
