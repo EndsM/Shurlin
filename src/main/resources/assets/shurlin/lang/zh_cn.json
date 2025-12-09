@@ -246,6 +246,7 @@
   "message.shurlin.book.lost_data": "功法数据已遗失在虚空中。",
   "message.shurlin.altar.identified": "书中的秘密已揭晓！",
 
+  "tooltip.shurlin.spirit_energy": "灵气值: %s",
   "tooltip.shurlin.book.element": "属性: %s",
   "tooltip.shurlin.book.efficiency": "修炼速度: %s%%",
   "tooltip.shurlin.book.capacity": "灵力容量: %s%%",

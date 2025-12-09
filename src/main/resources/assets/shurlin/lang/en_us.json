@@ -245,6 +245,7 @@
   "message.shurlin.book.lost_data": "The technique data is lost in the void.",
   "message.shurlin.altar.identified": "The secrets of the book are revealed!",
 
+  "tooltip.shurlin.spirit_energy": "Spirit Energy: %s",
   "tooltip.shurlin.book.element": "Element: %s",
   "tooltip.shurlin.book.efficiency": "Efficiency: %s%%",
   "tooltip.shurlin.book.capacity": "Capacity: %s%%",
