@@ -32,8 +32,8 @@ public class ModConfiguredFeatures {
             new SimpleBlockStateProvider(ModBlocks.PEAR_LOG.getDefaultState()),
             // This config the weight of leaves with pear and without pear
             new WeightedBlockStateProvider()
-                    .addState(ModBlocks.PEAR_LEAVES.getDefaultState().with(LeavesBlock.PERSISTENT, true), 9)
-                    .addState(ModBlocks.PEAR_RIPE_LEAVES.getDefaultState().with(LeavesBlock.PERSISTENT, true), 1),
+                    .addState(ModBlocks.PEAR_LEAVES.getDefaultState().with(LeavesBlock.PERSISTENT, false), 9)
+                    .addState(ModBlocks.PEAR_RIPE_LEAVES.getDefaultState().with(LeavesBlock.PERSISTENT, false), 1),
             new BlobFoliagePlacer(UniformIntDistribution.of(2), UniformIntDistribution.of(0), 3),
             new StraightTrunkPlacer(5, 2, 0),
             new TwoLayersFeatureSize(1, 0, 1)
