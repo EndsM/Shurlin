@@ -12,18 +12,18 @@ import net.minecraft.util.Formatting;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 import xyz.shurlin.cultivation.interfaces.StorageAdapter;
-import xyz.shurlin.cultivation.models.enums.SpiritPropertyType;
+import xyz.shurlin.cultivation.models.SpiritElement;
 
 import java.util.List;
 
 public class SpiritFoodItem extends Item {
     private final double spiritValue;
-    private final SpiritPropertyType spiritPropertyType;
+    private final SpiritElement spiritElement;
 
-    public SpiritFoodItem(Settings settings, double spiritValue, SpiritPropertyType spiritPropertyType) {
+    public SpiritFoodItem(Settings settings, double spiritValue, SpiritElement spiritElement) {
         super(settings);
         this.spiritValue = spiritValue;
-        this.spiritPropertyType = spiritPropertyType;
+        this.spiritElement = spiritElement;
     }
 
     @Override
@@ -50,9 +50,9 @@ public class SpiritFoodItem extends Item {
     @Override
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
         super.appendTooltip(stack, world, tooltip, context);
-        if (spiritPropertyType != null) {
+        if (spiritElement != null) {
             // Maybe add ability to show different color for different types
-            tooltip.add(new TranslatableText(this.spiritPropertyType.getTranslationKey()).formatted(Formatting.GOLD));
+            tooltip.add(this.spiritElement.getName().copy().formatted(Formatting.GOLD));
         }
         tooltip.add(new TranslatableText("tooltip.shurlin.spirit_energy", this.spiritValue).formatted(Formatting.GREEN));
     }

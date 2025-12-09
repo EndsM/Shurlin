@@ -1,11 +1,12 @@
 package xyz.shurlin.registry;
 
 import net.minecraft.util.Identifier;
+import net.minecraft.util.registry.Registry;
 import xyz.shurlin.Shurlin;
+import xyz.shurlin.cultivation.CultivationRegistry;
 import xyz.shurlin.cultivation.models.SpiritElement;
 
 public class ModElements {
-    // In the future, the originally named "type", will be replaced with this proper SpiritElement setting
     public static final SpiritElement METAL = new SpiritElement(new Identifier(Shurlin.MODID, "metal"), 0xFFD700);
     public static final SpiritElement WOOD = new SpiritElement(new Identifier(Shurlin.MODID, "wood"), 0x00FF00);
     public static final SpiritElement WATER = new SpiritElement(new Identifier(Shurlin.MODID, "water"), 0x0000FF);
@@ -22,4 +23,23 @@ public class ModElements {
     public static final SpiritElement[] SHURLIN_ELEMENTS = {
             METAL, WOOD, WATER, FIRE, EARTH, WIND, LIGHT, DARKNESS, POISON, LIGHTNING, ICE, TIME_SPACE
     };
+
+    public static void Register() {
+        register(METAL);
+        register(WOOD);
+        register(WATER);
+        register(FIRE);
+        register(EARTH);
+        register(WIND);
+        register(LIGHT);
+        register(DARKNESS);
+        register(POISON);
+        register(LIGHTNING);
+        register(ICE);
+        register(TIME_SPACE);
+    }
+
+    private static void register(SpiritElement element) {
+        Registry.register(CultivationRegistry.ELEMENT_REGISTRY, element.getId(), element);
+    }
 }

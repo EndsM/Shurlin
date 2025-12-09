@@ -28,8 +28,11 @@ public class Shurlin implements ModInitializer {
     @Override
     public void onInitialize() {
         ModFeatures.RegisterAndHandle();
-
         ModLootFunctions.Register();
+
+        // Register the cultivation path
+        CultivationRegistry.init();
+        ModElements.Register();
 
         ModBlocks.Register();
         ModItems.Register();
@@ -39,8 +42,6 @@ public class Shurlin implements ModInitializer {
         ModStatusEffects.Register();
         ModScreenHandlerTypes.Register();
 
-        // Register the cultivation path
-        CultivationRegistry.init();
         ModCultivations.Register();
 
         // TODO: Move all old "load" method to my preference method

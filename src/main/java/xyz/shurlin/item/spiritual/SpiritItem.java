@@ -3,20 +3,20 @@ package xyz.shurlin.item.spiritual;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
-import xyz.shurlin.cultivation.models.enums.SpiritPropertyType;
+import xyz.shurlin.cultivation.models.SpiritElement;
 import xyz.shurlin.item.BasicItem;
 
 public class SpiritItem extends BasicItem {
-    private final SpiritPropertyType spiritPropertyType;
+    private final SpiritElement spiritElement;
     private final double spiritConstant;
 
-    public SpiritItem(SpiritPropertyType spiritPropertyType, double spiritConstant) {
-        this.spiritPropertyType = spiritPropertyType;
+    public SpiritItem(SpiritElement spiritElement, double spiritConstant) {
+        this.spiritElement = spiritElement;
         this.spiritConstant = spiritConstant;
     }
 
-    public SpiritPropertyType getSpiritPropertyType() {
-        return spiritPropertyType;
+    public SpiritElement getSpiritPropertyType() {
+        return spiritElement;
     }
 
     public double getSpiritConstant() {

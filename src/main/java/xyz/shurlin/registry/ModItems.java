@@ -8,7 +8,6 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import xyz.shurlin.Shurlin;
 import xyz.shurlin.cultivation.SpiritConstants;
-import xyz.shurlin.cultivation.models.enums.SpiritPropertyType;
 import xyz.shurlin.item.*;
 import xyz.shurlin.item.spiritual.SpiritItem;
 import xyz.shurlin.registry.helper.ModArmorItems;
@@ -61,14 +60,14 @@ public class ModItems {
                     .food(new FoodComponent.Builder().hunger(3).snack().saturationModifier(0.3f).build())
                     .group(ItemGroups.SHURLIN),
             1.0,
-            SpiritPropertyType.WOOD
+            ModElements.WOOD
     );
     public static final Item HOLY_PEAR = new SpiritFoodItem(
             new Item.Settings()
                     .food(new FoodComponent.Builder().hunger(5).snack().saturationModifier(0.6f).build())
                     .group(ItemGroups.SHURLIN),
             10.0,
-            SpiritPropertyType.WOOD
+            ModElements.WOOD
     );
     // Will need to consider should we still using such mode for special items later.
     // Because I plan to have cultivation equipments crafting system that have randomized or generative stats
@@ -106,42 +105,42 @@ public class ModItems {
             new Item.Settings().group(ItemGroups.SHURLIN)
     );
 
-    public static final Item TENUOUS_METAL_SPIRIT = new SpiritItem(SpiritPropertyType.METAL, SpiritConstants.TENUOUS);
-    public static final Item TENUOUS_WOOD_SPIRIT = new SpiritItem(SpiritPropertyType.WOOD, SpiritConstants.TENUOUS);
-    public static final Item TENUOUS_WATER_SPIRIT = new SpiritItem(SpiritPropertyType.WATER, SpiritConstants.TENUOUS);
-    public static final Item TENUOUS_FIRE_SPIRIT = new SpiritItem(SpiritPropertyType.FIRE, SpiritConstants.TENUOUS);
-    public static final Item TENUOUS_EARTH_SPIRIT = new SpiritItem(SpiritPropertyType.EARTH, SpiritConstants.TENUOUS);
-    public static final Item TENUOUS_WIND_SPIRIT = new SpiritItem(SpiritPropertyType.WIND, SpiritConstants.TENUOUS);
-    public static final Item TENUOUS_LIGHT_SPIRIT = new SpiritItem(SpiritPropertyType.LIGHT, SpiritConstants.TENUOUS);
-    public static final Item TENUOUS_DARKNESS_SPIRIT = new SpiritItem(SpiritPropertyType.DARKNESS, SpiritConstants.TENUOUS);
-    public static final Item TENUOUS_POISON_SPIRIT = new SpiritItem(SpiritPropertyType.POISON, SpiritConstants.TENUOUS);
-    public static final Item TENUOUS_LIGHTNING_SPIRIT = new SpiritItem(SpiritPropertyType.LIGHTNING, SpiritConstants.TENUOUS);
-    public static final Item TENUOUS_ICE_SPIRIT = new SpiritItem(SpiritPropertyType.ICE, SpiritConstants.TENUOUS);
-    public static final Item TENUOUS_TIME_SPACE_SPIRIT = new SpiritItem(SpiritPropertyType.TIME_SPACE, SpiritConstants.TENUOUS);
-    public static final Item COMMON_METAL_SPIRIT = new SpiritItem(SpiritPropertyType.METAL, SpiritConstants.COMMON);
-    public static final Item COMMON_WOOD_SPIRIT = new SpiritItem(SpiritPropertyType.WOOD, SpiritConstants.COMMON);
-    public static final Item COMMON_WATER_SPIRIT = new SpiritItem(SpiritPropertyType.WATER, SpiritConstants.COMMON);
-    public static final Item COMMON_FIRE_SPIRIT = new SpiritItem(SpiritPropertyType.FIRE, SpiritConstants.COMMON);
-    public static final Item COMMON_EARTH_SPIRIT = new SpiritItem(SpiritPropertyType.EARTH, SpiritConstants.COMMON);
-    public static final Item COMMON_WIND_SPIRIT = new SpiritItem(SpiritPropertyType.WIND, SpiritConstants.COMMON);
-    public static final Item COMMON_LIGHT_SPIRIT = new SpiritItem(SpiritPropertyType.LIGHT, SpiritConstants.COMMON);
-    public static final Item COMMON_DARKNESS_SPIRIT = new SpiritItem(SpiritPropertyType.DARKNESS, SpiritConstants.COMMON);
-    public static final Item COMMON_POISON_SPIRIT = new SpiritItem(SpiritPropertyType.POISON, SpiritConstants.COMMON);
-    public static final Item COMMON_LIGHTNING_SPIRIT = new SpiritItem(SpiritPropertyType.LIGHTNING, SpiritConstants.COMMON);
-    public static final Item COMMON_ICE_SPIRIT = new SpiritItem(SpiritPropertyType.ICE, SpiritConstants.COMMON);
-    public static final Item COMMON_TIME_SPACE_SPIRIT = new SpiritItem(SpiritPropertyType.TIME_SPACE, SpiritConstants.COMMON);
-    public static final Item DENSE_METAL_SPIRIT = new SpiritItem(SpiritPropertyType.METAL, SpiritConstants.DENSE);
-    public static final Item DENSE_WOOD_SPIRIT = new SpiritItem(SpiritPropertyType.WOOD, SpiritConstants.DENSE);
-    public static final Item DENSE_WATER_SPIRIT = new SpiritItem(SpiritPropertyType.WATER, SpiritConstants.DENSE);
-    public static final Item DENSE_FIRE_SPIRIT = new SpiritItem(SpiritPropertyType.FIRE, SpiritConstants.DENSE);
-    public static final Item DENSE_EARTH_SPIRIT = new SpiritItem(SpiritPropertyType.EARTH, SpiritConstants.DENSE);
-    public static final Item DENSE_WIND_SPIRIT = new SpiritItem(SpiritPropertyType.WIND, SpiritConstants.DENSE);
-    public static final Item DENSE_LIGHT_SPIRIT = new SpiritItem(SpiritPropertyType.LIGHT, SpiritConstants.DENSE);
-    public static final Item DENSE_DARKNESS_SPIRIT = new SpiritItem(SpiritPropertyType.DARKNESS, SpiritConstants.DENSE);
-    public static final Item DENSE_POISON_SPIRIT = new SpiritItem(SpiritPropertyType.POISON, SpiritConstants.DENSE);
-    public static final Item DENSE_LIGHTNING_SPIRIT = new SpiritItem(SpiritPropertyType.LIGHTNING, SpiritConstants.DENSE);
-    public static final Item DENSE_ICE_SPIRIT = new SpiritItem(SpiritPropertyType.ICE, SpiritConstants.DENSE);
-    public static final Item DENSE_TIME_SPACE_SPIRIT = new SpiritItem(SpiritPropertyType.TIME_SPACE, SpiritConstants.DENSE);
+    public static final Item TENUOUS_METAL_SPIRIT = new SpiritItem(ModElements.METAL, SpiritConstants.TENUOUS);
+    public static final Item TENUOUS_WOOD_SPIRIT = new SpiritItem(ModElements.WOOD, SpiritConstants.TENUOUS);
+    public static final Item TENUOUS_WATER_SPIRIT = new SpiritItem(ModElements.WATER, SpiritConstants.TENUOUS);
+    public static final Item TENUOUS_FIRE_SPIRIT = new SpiritItem(ModElements.FIRE, SpiritConstants.TENUOUS);
+    public static final Item TENUOUS_EARTH_SPIRIT = new SpiritItem(ModElements.EARTH, SpiritConstants.TENUOUS);
+    public static final Item TENUOUS_WIND_SPIRIT = new SpiritItem(ModElements.WIND, SpiritConstants.TENUOUS);
+    public static final Item TENUOUS_LIGHT_SPIRIT = new SpiritItem(ModElements.LIGHT, SpiritConstants.TENUOUS);
+    public static final Item TENUOUS_DARKNESS_SPIRIT = new SpiritItem(ModElements.DARKNESS, SpiritConstants.TENUOUS);
+    public static final Item TENUOUS_POISON_SPIRIT = new SpiritItem(ModElements.POISON, SpiritConstants.TENUOUS);
+    public static final Item TENUOUS_LIGHTNING_SPIRIT = new SpiritItem(ModElements.LIGHTNING, SpiritConstants.TENUOUS);
+    public static final Item TENUOUS_ICE_SPIRIT = new SpiritItem(ModElements.ICE, SpiritConstants.TENUOUS);
+    public static final Item TENUOUS_TIME_SPACE_SPIRIT = new SpiritItem(ModElements.TIME_SPACE, SpiritConstants.TENUOUS);
+    public static final Item COMMON_METAL_SPIRIT = new SpiritItem(ModElements.METAL, SpiritConstants.COMMON);
+    public static final Item COMMON_WOOD_SPIRIT = new SpiritItem(ModElements.WOOD, SpiritConstants.COMMON);
+    public static final Item COMMON_WATER_SPIRIT = new SpiritItem(ModElements.WATER, SpiritConstants.COMMON);
+    public static final Item COMMON_FIRE_SPIRIT = new SpiritItem(ModElements.FIRE, SpiritConstants.COMMON);
+    public static final Item COMMON_EARTH_SPIRIT = new SpiritItem(ModElements.EARTH, SpiritConstants.COMMON);
+    public static final Item COMMON_WIND_SPIRIT = new SpiritItem(ModElements.WIND, SpiritConstants.COMMON);
+    public static final Item COMMON_LIGHT_SPIRIT = new SpiritItem(ModElements.LIGHT, SpiritConstants.COMMON);
+    public static final Item COMMON_DARKNESS_SPIRIT = new SpiritItem(ModElements.DARKNESS, SpiritConstants.COMMON);
+    public static final Item COMMON_POISON_SPIRIT = new SpiritItem(ModElements.POISON, SpiritConstants.COMMON);
+    public static final Item COMMON_LIGHTNING_SPIRIT = new SpiritItem(ModElements.LIGHTNING, SpiritConstants.COMMON);
+    public static final Item COMMON_ICE_SPIRIT = new SpiritItem(ModElements.ICE, SpiritConstants.COMMON);
+    public static final Item COMMON_TIME_SPACE_SPIRIT = new SpiritItem(ModElements.TIME_SPACE, SpiritConstants.COMMON);
+    public static final Item DENSE_METAL_SPIRIT = new SpiritItem(ModElements.METAL, SpiritConstants.DENSE);
+    public static final Item DENSE_WOOD_SPIRIT = new SpiritItem(ModElements.WOOD, SpiritConstants.DENSE);
+    public static final Item DENSE_WATER_SPIRIT = new SpiritItem(ModElements.WATER, SpiritConstants.DENSE);
+    public static final Item DENSE_FIRE_SPIRIT = new SpiritItem(ModElements.FIRE, SpiritConstants.DENSE);
+    public static final Item DENSE_EARTH_SPIRIT = new SpiritItem(ModElements.EARTH, SpiritConstants.DENSE);
+    public static final Item DENSE_WIND_SPIRIT = new SpiritItem(ModElements.WIND, SpiritConstants.DENSE);
+    public static final Item DENSE_LIGHT_SPIRIT = new SpiritItem(ModElements.LIGHT, SpiritConstants.DENSE);
+    public static final Item DENSE_DARKNESS_SPIRIT = new SpiritItem(ModElements.DARKNESS, SpiritConstants.DENSE);
+    public static final Item DENSE_POISON_SPIRIT = new SpiritItem(ModElements.POISON, SpiritConstants.DENSE);
+    public static final Item DENSE_LIGHTNING_SPIRIT = new SpiritItem(ModElements.LIGHTNING, SpiritConstants.DENSE);
+    public static final Item DENSE_ICE_SPIRIT = new SpiritItem(ModElements.ICE, SpiritConstants.DENSE);
+    public static final Item DENSE_TIME_SPACE_SPIRIT = new SpiritItem(ModElements.TIME_SPACE, SpiritConstants.DENSE);
     // End of Spirit items
     public static final Item SHURLIN_INGOT = new Item(
             new Item.Settings().group(ItemGroups.SHURLIN).fireproof()

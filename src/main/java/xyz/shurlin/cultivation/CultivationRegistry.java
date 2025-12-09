@@ -8,6 +8,7 @@ import net.minecraft.util.registry.SimpleRegistry;
 import xyz.shurlin.Shurlin;
 import xyz.shurlin.cultivation.models.CultivationTechnique;
 import xyz.shurlin.cultivation.models.CultivationType;
+import xyz.shurlin.cultivation.models.SpiritElement;
 
 public class CultivationRegistry {
     // Register the type of cultivation path
@@ -18,6 +19,8 @@ public class CultivationRegistry {
     // Maybe create a randomizer and technique generator, which makes every save could have a different set of techniques
     public static final SimpleRegistry<CultivationTechnique> TECHNIQUE_REGISTRY = FabricRegistryBuilder.createSimple(CultivationTechnique.class, new Identifier(Shurlin.MODID, "cultivation_techniques")).buildAndRegister();
 
+    // Spirit Elements
+    public static final SimpleRegistry<SpiritElement> ELEMENT_REGISTRY = FabricRegistryBuilder.createSimple(SpiritElement.class, new Identifier(Shurlin.MODID, "spirit_elements")).buildAndRegister();
 
     public static void init() {
     }
@@ -28,5 +31,10 @@ public class CultivationRegistry {
 
     public static void registerTechnique(Identifier id, CultivationTechnique technique) {
         Registry.register(TECHNIQUE_REGISTRY, id, technique);
+    }
+
+    // Helper for Elements
+    public static SpiritElement getElement(Identifier id) {
+        return ELEMENT_REGISTRY.get(id);
     }
 }
