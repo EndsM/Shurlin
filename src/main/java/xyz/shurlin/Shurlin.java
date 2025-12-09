@@ -29,6 +29,8 @@ public class Shurlin implements ModInitializer {
     public void onInitialize() {
         ModFeatures.RegisterAndHandle();
 
+        ModLootFunctions.Register();
+
         ModBlocks.Register();
         ModItems.Register();
         ModBlockEntities.Register();
