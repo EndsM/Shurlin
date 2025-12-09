@@ -6,6 +6,7 @@ import net.minecraft.entity.attribute.EntityAttributeModifier;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.NbtCompound;
+import net.minecraft.nbt.NbtElement;
 import net.minecraft.nbt.NbtHelper;
 import net.minecraft.nbt.NbtList;
 import net.minecraft.server.world.ServerWorld;
@@ -173,8 +174,8 @@ public abstract class MixinStorageAdapter implements StorageAdapter {
 
                 if (tag.contains("LearnedTechniques")) {
                     NbtList list = tag.getList("LearnedTechniques", 11); // 11 is IntArray (UUID)
-                    for (int i = 0; i < list.size(); i++) {
-                        cultivatedPlayer.learnTechnique(NbtHelper.toUuid(list.get(i)));
+                    for (NbtElement nbtElement : list) {
+                        cultivatedPlayer.learnTechnique(NbtHelper.toUuid(nbtElement));
                     }
                 }
 
