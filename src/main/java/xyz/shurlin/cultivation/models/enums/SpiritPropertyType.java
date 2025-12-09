@@ -2,6 +2,7 @@ package xyz.shurlin.cultivation.models.enums;
 
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
+import xyz.shurlin.Shurlin;
 
 public enum SpiritPropertyType {
     METAL("metal", 1),
@@ -27,7 +28,7 @@ public enum SpiritPropertyType {
     }
 
     public String getTranslationKey() {
-        return "type.shurlin." + this.name;
+        return "spirit_element." + Shurlin.MODID + "." + this.name;
     }
 
     @Environment(EnvType.CLIENT)
