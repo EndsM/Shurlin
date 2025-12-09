@@ -192,6 +192,7 @@ public abstract class MixinStorageAdapter implements StorageAdapter {
                     }
                 }
 
+                updateCultivationStats((PlayerEntity) (Object) this);
             } catch (Exception e) {
                 Shurlin.LOGGER.error("Failed to load cultivation data", e);
                 cultivatedPlayer = new CultivatedPlayer();
