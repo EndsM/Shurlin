@@ -52,7 +52,7 @@ public class ShurlinCultivationLogic implements CultivationLogic {
         // Later will create better method of calculating bonus
         // Would need to take consideration for element, techniques, Physique, Bloodline, etc
         double majorBonus = major * 5.0;
-        double minorBonus = minor * (2.0 * major);
+        double minorBonus = minor * (2.0 + major);
 
         return majorBonus + minorBonus;
     }
