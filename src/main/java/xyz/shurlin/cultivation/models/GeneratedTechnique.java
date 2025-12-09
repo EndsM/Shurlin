@@ -3,6 +3,7 @@ package xyz.shurlin.cultivation.models;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.text.LiteralText;
 import net.minecraft.text.Text;
+import net.minecraft.text.TranslatableText;
 import net.minecraft.util.Identifier;
 import xyz.shurlin.cultivation.dynamic.TechniqueGrade;
 import xyz.shurlin.cultivation.dynamic.TechniqueQuality;
@@ -56,7 +57,8 @@ public class GeneratedTechnique {
     }
 
     public Text getDisplayName() {
-        return new LiteralText(String.format("§7[%s·%s] §r%s", grade.getName(), quality.getName(), name))
+        // "technique.shurlin.display_name": "§7[%s·%s] §r%s"
+        return new TranslatableText("technique.shurlin.display_name", grade.getNameText(), quality.getNameText(), new LiteralText(name))
                 .formatted(grade.getColor());
     }
 
