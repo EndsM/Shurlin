@@ -321,6 +321,7 @@ public abstract class MixinStorageAdapter implements StorageAdapter {
     // Helper Functions
     // =========================================================
 
+    @Unique
     private void notifyLevelUp(boolean isMajor) {
         PlayerEntity player = (PlayerEntity) (Object) this;
         if (!player.world.isClient) {
@@ -334,6 +335,7 @@ public abstract class MixinStorageAdapter implements StorageAdapter {
         }
     }
 
+    @Unique
     private void notifyBottleneck() {
         PlayerEntity player = (PlayerEntity) (Object) this;
         if (!player.world.isClient) {
@@ -342,6 +344,7 @@ public abstract class MixinStorageAdapter implements StorageAdapter {
         }
     }
 
+    @Unique
     private void notifyPlayer(String message, boolean actionBar) {
         PlayerEntity player = (PlayerEntity) (Object) this;
         if (!player.world.isClient) {
