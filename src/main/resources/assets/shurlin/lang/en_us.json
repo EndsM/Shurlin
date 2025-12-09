@@ -5,6 +5,16 @@
   "key.shurlin.open_cul_menu": "Open Cultivation Menu",
   "key.shurlin.infuse_spirit": "Infuse Spirit",
 
+  "gui.shurlin.hub.title": "Cultivation Hub",
+  "gui.shurlin.btn.general": "General Info",
+  "gui.shurlin.btn.techniques": "Techniques",
+  "gui.shurlin.btn.skills": "Skills",
+  "gui.shurlin.btn.back": "Back",
+  "gui.shurlin.path": "Path: %s",
+  "gui.shurlin.realm": "Realm: %s",
+  "gui.shurlin.techniques": "Techniques:",
+  "gui.shurlin.active_tag": "[Active]",
+
   "item.shurlin.bean": "Bean",
   "item.shurlin.plant_essence": "Plant Essence",
   "item.shurlin.pear": "Pear",

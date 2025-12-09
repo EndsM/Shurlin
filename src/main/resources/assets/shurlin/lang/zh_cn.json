@@ -5,6 +5,16 @@
   "key.shurlin.open_cul_menu": "打开修仙菜单",
   "key.shurlin.infuse_spirit": "灌注灵气",
 
+  "gui.shurlin.hub.title": "修仙信息面板",
+  "gui.shurlin.btn.general": "基本信息",
+  "gui.shurlin.btn.techniques": "功法",
+  "gui.shurlin.btn.skills": "技能",
+  "gui.shurlin.btn.back": "返回",
+  "gui.shurlin.path": "修仙体系: %s",
+  "gui.shurlin.realm": "境界: %s",
+  "gui.shurlin.techniques": "已习得功法:",
+  "gui.shurlin.active_tag": "[已选择]",
+
   "item.shurlin.bean": "豆子",
   "item.shurlin.plant_essence": "植物精华",
   "item.shurlin.pear": "梨子",
