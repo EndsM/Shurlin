@@ -23,6 +23,10 @@ import java.util.List;
 import java.util.UUID;
 
 public class TechniqueBookItem extends Item {
+    // Root key to prevent conflicts with other mods
+    public static final String ROOT_KEY = "ShurlinData";
+
+    // Sub-keys used inside the ShurlinData compound
     public static final String KEY_TECH_UUID = "TechUUID";
     public static final String KEY_UNIDENTIFIED_GRADE = "UnidentifiedGrade";
     public static final String KEY_DISPLAY = "Display";
@@ -38,10 +42,12 @@ public class TechniqueBookItem extends Item {
     }
 
     public static BookState getState(ItemStack stack) {
-        NbtCompound tag = stack.getTag();
-        if (tag == null) return BookState.EMPTY;
-        if (tag.contains(KEY_TECH_UUID)) return BookState.IDENTIFIED;
-        if (tag.contains(KEY_UNIDENTIFIED_GRADE)) return BookState.UNIDENTIFIED;
+        // Use getSubTag to read without creating if it doesn't exist
+        NbtCompound data = stack.getSubTag(ROOT_KEY);
+
+        if (data == null) return BookState.EMPTY;
+        if (data.contains(KEY_TECH_UUID)) return BookState.IDENTIFIED;
+        if (data.contains(KEY_UNIDENTIFIED_GRADE)) return BookState.UNIDENTIFIED;
         return BookState.EMPTY;
     }
 
@@ -67,10 +73,10 @@ public class TechniqueBookItem extends Item {
     }
 
     private void attemptLearnTechnique(World world, PlayerEntity user, ItemStack stack) {
-        NbtCompound tag = stack.getTag();
-        if (tag == null) return;
+        NbtCompound data = stack.getSubTag(ROOT_KEY);
+        if (data == null) return;
 
-        UUID id = tag.getUuid(KEY_TECH_UUID);
+        UUID id = data.getUuid(KEY_TECH_UUID);
         GeneratedTechnique tech = TechniqueManager.getServerInstance((ServerWorld) world).getTechnique(id);
 
         if (tech != null) {
@@ -90,12 +96,13 @@ public class TechniqueBookItem extends Item {
     @Override
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
         BookState state = getState(stack);
-        NbtCompound tag = stack.getTag();
+        // Safe to get sub tag or null
+        NbtCompound data = stack.getSubTag(ROOT_KEY);
 
         switch (state) {
             case IDENTIFIED:
-                if (tag != null && tag.contains(KEY_DISPLAY)) {
-                    NbtCompound info = tag.getCompound(KEY_DISPLAY);
+                if (data != null && data.contains(KEY_DISPLAY)) {
+                    NbtCompound info = data.getCompound(KEY_DISPLAY);
                     Formatting color = Formatting.byName(info.getString("GradeColor"));
                     if (color == null) color = Formatting.WHITE;
 
@@ -112,11 +119,18 @@ public class TechniqueBookItem extends Item {
                 }
                 break;
             case UNIDENTIFIED:
-                String gradeName = tag.getString(KEY_UNIDENTIFIED_GRADE);
-                TechniqueGrade grade = TechniqueGrade.valueOf(gradeName);
-                tooltip.add(new LiteralText("???").formatted(Formatting.OBFUSCATED, grade.getColor()));
-                tooltip.add(new TranslatableText("tooltip.shurlin.book.grade", grade.getNameText()).formatted(Formatting.GRAY));
-                tooltip.add(new TranslatableText("tooltip.shurlin.book.unidentified_hint").formatted(Formatting.DARK_GRAY, Formatting.ITALIC));
+                if (data != null) {
+                    String gradeName = data.getString(KEY_UNIDENTIFIED_GRADE);
+                    TechniqueGrade grade;
+                    try {
+                        grade = TechniqueGrade.valueOf(gradeName);
+                    } catch (IllegalArgumentException e) {
+                        grade = TechniqueGrade.YELLOW;
+                    }
+                    tooltip.add(new LiteralText("???").formatted(Formatting.OBFUSCATED, grade.getColor()));
+                    tooltip.add(new TranslatableText("tooltip.shurlin.book.grade", grade.getNameText()).formatted(Formatting.GRAY));
+                    tooltip.add(new TranslatableText("tooltip.shurlin.book.unidentified_hint").formatted(Formatting.DARK_GRAY, Formatting.ITALIC));
+                }
                 break;
             case EMPTY:
                 tooltip.add(new TranslatableText("tooltip.shurlin.book.empty").formatted(Formatting.GRAY));

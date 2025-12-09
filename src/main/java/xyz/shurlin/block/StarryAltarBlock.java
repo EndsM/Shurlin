@@ -49,11 +49,11 @@ public class StarryAltarBlock extends Block {
     }
 
     private void identifyBook(ServerWorld world, ItemStack stack, PlayerEntity player) {
-        NbtCompound tag = stack.getTag();
-        if (tag == null) return;
+        // Make it work with newly nested NBT data
+        NbtCompound data = stack.getOrCreateSubTag(TechniqueBookItem.ROOT_KEY);
 
         // Get Grade
-        String gradeName = tag.getString(TechniqueBookItem.KEY_UNIDENTIFIED_GRADE);
+        String gradeName = data.getString(TechniqueBookItem.KEY_UNIDENTIFIED_GRADE);
         TechniqueGrade grade;
         try {
             grade = TechniqueGrade.valueOf(gradeName);
@@ -65,9 +65,9 @@ public class StarryAltarBlock extends Block {
         GeneratedTechnique tech = TechniqueGenerator.createRandom(grade);
         TechniqueManager.getServerInstance(world).addTechnique(tech);
 
-        // Update Item NBT
-        tag.remove(TechniqueBookItem.KEY_UNIDENTIFIED_GRADE);
-        tag.putUuid(TechniqueBookItem.KEY_TECH_UUID, tech.getId());
+        // Update NBT inside ShurlinData
+        data.remove(TechniqueBookItem.KEY_UNIDENTIFIED_GRADE);
+        data.putUuid(TechniqueBookItem.KEY_TECH_UUID, tech.getId());
 
         // Add Cache Display
         NbtCompound display = new NbtCompound();
@@ -76,7 +76,7 @@ public class StarryAltarBlock extends Block {
         display.putString("Element", tech.getElementId().getPath());
         display.putDouble("Eff", tech.getEfficiency());
         display.putDouble("Cap", tech.getCapacityModifier());
-        tag.put(TechniqueBookItem.KEY_DISPLAY, display);
+        data.put(TechniqueBookItem.KEY_DISPLAY, display);
 
         // Feedback
         world.playSound(null, player.getBlockPos(), SoundEvents.BLOCK_ENCHANTMENT_TABLE_USE, SoundCategory.BLOCKS, 1.0f, 1.0f);

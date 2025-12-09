@@ -31,8 +31,9 @@ public class SetUnidentifiedTechniqueFunction extends ConditionalLootFunction {
         else if (roll < 0.98) grade = TechniqueGrade.EARTH;
         else grade = TechniqueGrade.HEAVEN;
 
-        NbtCompound tag = stack.getOrCreateTag();
-        tag.putString(TechniqueBookItem.KEY_UNIDENTIFIED_GRADE, grade.name());
+        // Use getOrCreateSubTag to access the nested compound
+        NbtCompound data = stack.getOrCreateSubTag(TechniqueBookItem.ROOT_KEY);
+        data.putString(TechniqueBookItem.KEY_UNIDENTIFIED_GRADE, grade.name());
 
         return stack;
     }
