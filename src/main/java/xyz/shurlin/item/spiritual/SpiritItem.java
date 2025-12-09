@@ -15,7 +15,7 @@ public class SpiritItem extends BasicItem {
         this.spiritConstant = spiritConstant;
     }
 
-    public SpiritElement getSpiritPropertyType() {
+    public SpiritElement getSpiritElement() {
         return spiritElement;
     }
 
