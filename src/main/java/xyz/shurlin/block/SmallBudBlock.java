@@ -7,7 +7,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.text.TranslatableText;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import xyz.shurlin.entity.damage.ShurlinDamageSource;
 import xyz.shurlin.registry.ModItems;
 import xyz.shurlin.util.Utils;
 
@@ -31,7 +30,7 @@ public class SmallBudBlock extends FernBlock {
             Utils.spawnItem(world, pos, ModItems.PLANT_ESSENCE_PARTICLE, world.random.nextInt(3));
         } else if (!player.abilities.creativeMode) {
             player.sendMessage(new TranslatableText("message.shurlin.small_bud"), false);
-           // player.damage(ShurlinDamageSource.SMALL_BUD, 3.4028235E38F);
+            // player.damage(ShurlinDamageSource.SMALL_BUD, 3.4028235E38F);
         }
     }
 }

@@ -46,4 +46,9 @@ public class ShurlinBiomeFeatures {
     public static void addHotSprings(Builder builder) {
         builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ConfiguredFeatures.SPRING_LAVA.decorate(Decorator.CHANCE.configure(new ChanceDecoratorConfig(5))));
     }
+
+    public static void addStarryAltar(Builder builder) {
+        // SURFACE_STRUCTURES step ensures it generates after terrain but before some decorations
+        builder.feature(GenerationStep.Feature.SURFACE_STRUCTURES, ModConfiguredFeatures.STARRY_ALTAR_STRUCTURE);
+    }
 }

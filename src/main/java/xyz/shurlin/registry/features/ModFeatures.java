@@ -14,6 +14,7 @@ import xyz.shurlin.Shurlin;
 import xyz.shurlin.world.biome.ModBiomeKeys;
 import xyz.shurlin.world.gen.feature.MysteriousStonePillarFeature;
 import xyz.shurlin.world.gen.feature.PlantObsidianHeapFeature;
+import xyz.shurlin.world.gen.feature.StarryAltarFeature;
 
 // Use this class to init every feature related things
 // Which means other classes in this package
@@ -21,6 +22,7 @@ public class ModFeatures {
     // Each Feature are placed to their separate class, for it might be very long
     public static Feature<DefaultFeatureConfig> MYSTERIOUS_STONE_PILLAR = new MysteriousStonePillarFeature(DefaultFeatureConfig.CODEC);
     public static Feature<DefaultFeatureConfig> PLANT_OBSIDIAN_HEAP = new PlantObsidianHeapFeature(DefaultFeatureConfig.CODEC);
+    public static Feature<DefaultFeatureConfig> STARRY_ALTAR_STRUCTURE = new StarryAltarFeature(DefaultFeatureConfig.CODEC);
 
     public static void RegisterAndHandle() {
         // TODO
@@ -35,6 +37,7 @@ public class ModFeatures {
         // Use this to register Feature<>
         Registry.register(Registry.FEATURE, new Identifier(Shurlin.MODID, "mysterious_stone_pillar"), MYSTERIOUS_STONE_PILLAR);
         Registry.register(Registry.FEATURE, new Identifier(Shurlin.MODID, "plant_obsidian_heap"), PLANT_OBSIDIAN_HEAP);
+        Registry.register(Registry.FEATURE, new Identifier(Shurlin.MODID, "starry_altar_structure"), STARRY_ALTAR_STRUCTURE);
     }
 
     private static void handleBiomeModifications() {

@@ -77,6 +77,10 @@ public class ModConfiguredFeatures {
     public static ConfiguredFeature<?, ?> PLANT_OBSIDIAN_HEAP = ModFeatures.PLANT_OBSIDIAN_HEAP
             .configure(new DefaultFeatureConfig())
             .decorate(Decorator.CHANCE.configure(new ChanceDecoratorConfig(150)));
+    public static ConfiguredFeature<?, ?> STARRY_ALTAR_STRUCTURE = ModFeatures.STARRY_ALTAR_STRUCTURE
+            .configure(new DefaultFeatureConfig())
+            .decorate(ConfiguredFeatures.Decorators.SQUARE_HEIGHTMAP)
+            .decorate(Decorator.CHANCE.configure(new ChanceDecoratorConfig(100)));
 
     // A little helper to reduce the length of a registry
     private static void registerConfiguredFeature(String id, ConfiguredFeature<?, ?> configuredFeature) {
@@ -96,5 +100,6 @@ public class ModConfiguredFeatures {
         // Built from ModFeatures
         registerConfiguredFeature("mysterious_stone_pillar", MYSTERIOUS_STONE_PILLAR);
         registerConfiguredFeature("plant_obsidian_heap", PLANT_OBSIDIAN_HEAP);
+        registerConfiguredFeature("starry_altar_structure", STARRY_ALTAR_STRUCTURE);
     }
 }
